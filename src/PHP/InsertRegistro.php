@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($statementInsert->execute()) {
             echo "Datos insertados correctamente.";
+            header('Refresh:3;URL=http://localhost/Astro-salesianum/src/Login.html');
         } else {
             echo "Error al insertar los datos.";
         }
