@@ -91,14 +91,14 @@
                                 <div class="my-5">
                                     <label for="email" class="mb-3 block text-base font-medium text-[#07074D]"> Correo Electronico [ID]*
                                     </label>
-                                    <input type="text" name="email" id="name" placeholder="Correo Electronico"
+                                    <input required type="email" name="email" id="name" placeholder="Correo Electronico"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
                                 <div class="my-5">
                                     <label for="password" class="mb-3 block text-base font-medium text-[#07074D]"> Contraseña
                                     </label>
-                                    <input type="password" name="password" id="name" placeholder="Contraseña"
+                                    <input required type="password" name="password" id="name" placeholder="Contraseña"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
@@ -106,14 +106,14 @@
                                 <div class="my-5">
                                     <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Nombres
                                     </label>
-                                    <input type="text" name="name" id="name" placeholder="Nombre Completo"
+                                    <input required type="text" name="name" id="name" placeholder="Nombre Completo"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
                                 <div class="my-5">
                                     <label for="lastnames" class="mb-3 block text-base font-medium text-[#07074D]"> Apellidos
                                     </label>
-                                    <input type="text" name="lastname" id="name" placeholder="Apellidos"
+                                    <input required type="text" name="lastname" id="name" placeholder="Apellidos"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
@@ -122,8 +122,8 @@
                                 <div class="my-5">
                                     <label for="phonenumber" class="mb-3 block text-base font-medium text-[#07074D]"> Numero Telefonico
                                     </label>
-                                    <input type="number" name="phonenumber" id="email" placeholder="Correo electronico"
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input required type="number" name="phonenumber" id="email" placeholder="Correo electronico"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" max="8" />
                                 </div>
 
                                 
@@ -134,6 +134,7 @@
 
 
                               <input type="submit" name="Enviar" value="ENVIAR">
+
                             </form>
 
 
