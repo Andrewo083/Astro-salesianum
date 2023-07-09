@@ -10,8 +10,8 @@ function diference($conexion){
     if(isset($_POST['Enviar'])){
         insertar($conexion);
     }
-    if(isset($_POST['Edit'])){
-        edit($conexion);
+    if(isset($_POST['Editar'])){
+        editar($conexion);
     }
     if(isset($_POST['Eliminar'])){
         delete($conexion);
@@ -42,7 +42,7 @@ function insertar($conexion){
     }
 }
 
-function edit($conexion){
+function editar($conexion){
 
     if(!empty($_POST["Edit"])){
        
@@ -70,9 +70,9 @@ function edit($conexion){
 
 function delete($conexion){
     
-if(!empty($_GET["Email"])){
+if(!empty($_POST["Email"])){
 
-    $Email = $_GET["Email"];
+    $Email = $_POST["Email"];
     $sql = $conexion->query(" delete from reporter where Enail = $Email");
     if($sql==1){
             echo"<div class='alert alert-danger'>Eliminado</div>";
