@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$bd="BD";
+$bd="baseprueba";
 
 $conexion= new mysqli($host,$user,$password,$bd);
 
