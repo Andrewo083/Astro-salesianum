@@ -25,7 +25,7 @@
                 <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
                 </ul>
                 <!-- Header Icons -->
-                <div class="hidden xl:flex items-center space-x-5 items-center">
+                <div class="hidden xl:flex items-center space-x-5 ">
                 <a class="hover:text-gray-200" href="#">
                     
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -57,45 +57,98 @@
             
         </section>
         </div>
-    <form>
+    <form method="post" enctype="multipart/form-data">
         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Subir publicacion</h1>
+            <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Subir Noticia</h1>
             <div class="space-y-4">
+
+
               <div>
-                <label for="title" class="text-2lx font-bold text-gray-500">Titulo:</label>
-                <input type="text"  id="title" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+                <label for="title" class="text-2lx font-bold text-gray-500">Reportero</label>
+                <input  type="text"  id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
+
+
               <div class="shrink-0 mt-5">
-                <img class="h-20 w-20 object-cover rounded-full" src="../img/subir.jpg" alt="Current profile photo" />
+
+
+                <img class="h-56 w-60 object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" />
+
+
               </div> 
+
+
               <label class="block pt-2">
                 <span class="sr-only t-2">Choose profile photo</span>
-                <input type="file" class="w-full text-sm text-slate-500
+
+
+                <input type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
                   file:mr-4 file:py-2 file:px-4
                   file:rounded-full file:border-0
                   file:text-sm file:font-semibold
-                  file:bg-pink-300 file:text-zinc-900
+                  border-green-300
+                  file:bg-green file:text-zinc-900
                   hover:file:bg-rose-300
-                "/>
+                "/> <br><br>
+               
+                
+                
+
               </label>
               <div>
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Description:</label>
-                <textarea id="description" cols="30" rows="10" placeholder="whrite here.." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
+                <input  type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
-                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una categoria:</label>
+                <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
+                <input  type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+              </div>
+              <div>
+                <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
+                <input  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+              </div>
+              <div>
+                <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
+                <input  type="date"  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+              </div>
+
+
+
+
+
+
+              <div>
+
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
+                <textarea id="description" cols="30" rows="10" name="body" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+              </div>
+              <div>
+                <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
-                    <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
-                        <option value="deportes">Deportes</option>
-                        <option value="cultura">Cultura</option>
-                        <option value="eventos">Eventos especiales</option>
+                    <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="school">
+                        <option value="Colegio Don Bosco">Colegio Don Bosco</option>
+                        <option value="Instituto Ricaldone">Instituto Ricaldone</option>
+                        <option value="Colegio Santa Cecilia">Colegio Santa Cecilia especiales</option>
+                        <option value="Colegio Maria Auxiliadora">Colegio Maria Auxiliadora</option>
+                    </select>
+                </div>    
+              </div>
+              <div>
+                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una Categoria:</label>
+                <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+
+                    <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="category">
+                        <option value="Deportes">Deportes</option>
+                        <option value="Cultura">Cultura</option>
+                        <option value="Eventos Especiales">Eventos Especiales</option>
+                        
                     </select>
                 </div>    
               </div>
            
-              <button class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  ">Aceptar</button>
+              <button class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " name="insert">Subir</button>
             </div>
           </div>
         </div>
@@ -103,3 +156,24 @@
 
 </body>
 </html>
+<script>
+  const imagde1 = document.getElementById('imagde1');
+  const preview1 = document.getElementById('preview1');
+
+  imagde1.addEventListener('change', function() {
+    const archivo = imagde1.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+
+      lector.addEventListener('load', function() {
+        preview1.src = lector.result;
+        preview1.style.display = 'block';
+      });
+
+      lector.readAsDataURL(archivo);
+    } else {
+      preview1.src = '#';
+      preview1.style.display = 'none';
+    }
+  });
+</script>
