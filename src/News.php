@@ -92,9 +92,9 @@ while($row = mysqli_fetch_array($result)){
         
         <?php
         
-        echo $row['main_image'];
+       
         $carpet_images = "../img/";
-         echo $carpet_images.$row['main_image']; 
+         
         ?>
         <div class="hidden lg:mt-0 lg:col-span-3 lg:flex rounded-lg">
             <img src="<?php echo $carpet_images.$row['main_image']; ?>"  class="rounded-lg"  >
