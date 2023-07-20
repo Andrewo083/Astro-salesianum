@@ -1,9 +1,9 @@
 <?php
 $conexion = mysqli_connect('localhost', 'root', '','astrodb')or die(mysqli_error($mysqli));
 
-diference($conexion);
+difference($conexion);
 
-function diference($conexion){
+function difference($conexion){
     if(isset($_POST['submit'])){
         submit($conexion);
     }else if(isset($_POST['edit'])){
@@ -15,7 +15,7 @@ function diference($conexion){
 
 function submit($conexion){
     //Carpeta   
-    $carpet_images = "./IMG/";
+    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
     $id_reporter = $_POST['id_reporter'];
 
     //Nombre y propiedad de la imagen
@@ -29,18 +29,20 @@ function submit($conexion){
     $body = $_POST['body'];
     $school = $_POST['school'];
     $category = $_POST['category'];
+    $photographer = $_POST['photographer'];
     
     //nuevo nommbre
-    $imagen =  "$headline-$id_reporter.png";
+    $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
     echo $imagen;
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `headline`, `drophead`, `date`, `body`, `school`, `category`) VALUES ('$id_reporter','$url_main','$headline','$drophead','$date','$body','$school', '$category')";
+        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `headline`, `drophead`, `date`, `body`, `school`, `category`,`photographer`) VALUES ('$id_reporter','$imagen','$headline','$drophead','$date','$body','$school', '$category', '$photographer')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
-    header("Location: ./index.php");
+    //header("Location: ./index.php");
+   
 }
 
 function edit($conexion){
