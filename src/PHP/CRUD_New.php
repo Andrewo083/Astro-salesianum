@@ -15,7 +15,7 @@ function difference($conexion){
 
 function submit($conexion){
     //Carpeta   
-    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/Astro-salesianum/src/IMG/";
+    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
     $id_reporter = $_POST['id_reporter'];
 
     //Nombre y propiedad de la imagen
@@ -37,7 +37,7 @@ function submit($conexion){
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `headline`, `drophead`, `date`, `body`, `school`, `category`,`photographer`) VALUES ('$id_reporter','$url_main','$headline','$drophead','$date','$body','$school', '$category', '$photographer')";
+        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `headline`, `drophead`, `date`, `body`, `school`, `category`,`photographer`) VALUES ('$id_reporter','$imagen','$headline','$drophead','$date','$body','$school', '$category', '$photographer')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";

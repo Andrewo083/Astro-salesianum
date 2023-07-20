@@ -90,11 +90,16 @@ while($row = mysqli_fetch_array($result)){
         </div>
         
         
-        <?php echo $row['main_image'];?>
+        <?php
+        
+        echo $row['main_image'];
+        $carpet_images = "../img/";
+         echo $carpet_images.$row['main_image']; 
+        ?>
         <div class="hidden lg:mt-0 lg:col-span-3 lg:flex rounded-lg">
-            <img src="<?php echo $row['main_image'];?>"  class="rounded-lg" width="500px">
+            <img src="<?php echo $carpet_images.$row['main_image']; ?>"  class="rounded-lg"  >
         </div>   
-        <img src="C:/xampp/htdocs/ASTRO SALES/Astro-salesianum/src/IMG/q-q-fotografo-q.png" width="300px" alt="">             
+                  
     </div>
 </section>
 <!-- box -->
