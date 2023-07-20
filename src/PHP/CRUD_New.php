@@ -16,6 +16,7 @@ function difference($conexion){
 function submit($conexion){
     //Carpeta   
     $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
+    echo $carpet_images;
     $id_reporter = $_POST['id_reporter'];
 
     //Nombre y propiedad de la imagen
