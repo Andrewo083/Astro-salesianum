@@ -28,7 +28,7 @@ if ($datosEmail['total'] > 0) {
 
     if ($conexion->query($sql)) {
         echo "Datos insertados correctamente";
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.html');
+        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
         
     } else {
         echo "Error en la inserción";
