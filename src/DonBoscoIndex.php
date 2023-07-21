@@ -1,23 +1,20 @@
 <?PHP
-
+ $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
 $query = "SELECT * FROM `news` WHERE `school` = 'Colegio Don Bosco'";
 $result = mysqli_query($conexion, $query);
-while($row = mysqli_fetch_array($result)){
 
   $carpet_images = "../img/";
 
 
 
-$contenido = "Aquí va el contenido extraído de la base de datos..."; // Supongamos que aquí tienes el contenido de la base de datos
-$numero_caracteres = 100;
-$contenido_recortado = substr($contenido, 0, $numero_caracteres);
+
 ?>
 
 <!-- Luego, en tu código HTML -->
-<p><?php echo $contenido_recortado; ?></p>
-?>
+<p></p>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,21 +111,32 @@ $contenido_recortado = substr($contenido, 0, $numero_caracteres);
       <div class="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
 
 
-
+<?php while($row = mysqli_fetch_array($result)){
+  $contenido = $row['body']; // Supongamos que aquí tienes el contenido de la base de datos
+  $numero_caracteres = 300;
+  $contenido_recortado = substr($contenido, 0, $numero_caracteres);
+?>
         <!--INCIO DE NOTICIA-->
-        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
+       
+        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  hover:bg-gray-400 ease-in duration-200"> 
+          <a href="./News.php?new=<?php echo $row['id_news']?>"> 
           <img
-              src="../img/ricaldepo.jpeg" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
-          <p class="bg-black flex items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
+              src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
+          <p class="bg-black  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
               rounded-full uppercase inline-block"><?php echo $row['Category'];?></p>
-          <a class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></a>
-          <p class="text-sm text-black" data-originallength="100" ><?php echo $row['body']; ?></p>
+              
+          <p class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></p>
+          <p class="text-sm text-black" data-originallength="100" ><?php echo $contenido_recortado."..."; ?></p>
+        
           <div class="pt-2 pr-0 pb-0 pl-0">
-            <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"><?php echo $row['id_reporter']; ?></a>
+            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"><?php echo $row['id_reporter']; ?></p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>
-            <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p>
+            <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1"><?php echo $row['photographer']; ?> </p>
           </div>
+          </a>
         </div>
+        <?php } ?>
+        
          <!--FIN DE NOTICIA-->
 
 
@@ -142,4 +150,3 @@ $contenido_recortado = substr($contenido, 0, $numero_caracteres);
   
 </body>
 </html>
-<?php } ?>
