@@ -7,6 +7,16 @@ $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
 
   $carpet_images = "../img/";
+
+
+
+$contenido = "Aquí va el contenido extraído de la base de datos..."; // Supongamos que aquí tienes el contenido de la base de datos
+$numero_caracteres = 100;
+$contenido_recortado = substr($contenido, 0, $numero_caracteres);
+?>
+
+<!-- Luego, en tu código HTML -->
+<p><?php echo $contenido_recortado; ?></p>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,12 +121,11 @@ while($row = mysqli_fetch_array($result)){
               src="../img/ricaldepo.jpeg" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
           <p class="bg-black flex items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
               rounded-full uppercase inline-block"><?php echo $row['Category'];?></p>
-          <a class="text-lg font-bold sm:text-xl md:text-2xl">Improving your day to the MAX</a>
-          <p class="text-sm text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+          <a class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></a>
+          <p class="text-sm text-black" data-originallength="100" ><?php echo $row['body']; ?></p>
           <div class="pt-2 pr-0 pb-0 pl-0">
-            <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">Jack Sparrow</a>
-            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· 23rd, March 2021 ·</p>
+            <a class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"><?php echo $row['id_reporter']; ?></a>
+            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>
             <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p>
           </div>
         </div>
