@@ -10,8 +10,8 @@
 
 <body>
 
-    <aside
-        class="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+    <!--<aside
+        class="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">-->
         <div class="flex flex-col justify-between flex-1 mt-6">
             <nav class="-mx-3 space-y-6">
                 <!-- component -->
@@ -83,47 +83,58 @@
 
                         <!-- main content page -->
                         <div class="w-full p-4">
-                            <form action="otro.html">
+
+                            <form action="../src/PHP/CRUD_journalist.php" method="post">
                                 <h1 class="text-center">Formulario para ingreso de Reporteros</h1>
-                                <div class="my-5">
-                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Full Name
-                                    </label>
-                                    <input type="text" name="name" id="name" placeholder="Nombre Completo"
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                </div>
 
-                                <div class="mb-5">
-                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Apellidos
+                                <!--DIV PARA INOT-->
+                                <div class="my-5">
+                                    <label for="email" class="mb-3 block text-base font-medium text-[#07074D]"> Correo Electronico [ID]*
                                     </label>
-                                    <input type="text" name="name" id="name" placeholder="Apellidos"
+                                    <input required type="email" name="email" id="name" placeholder="Correo Electronico"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
                                 <div class="my-5">
-                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Correo electronico
+                                    <label for="password" class="mb-3 block text-base font-medium text-[#07074D]"> Contraseña
                                     </label>
-                                    <input type="email" name="email" id="email" placeholder="Correo electronico"
+                                    <input required type="password" name="password" id="name" placeholder="Contraseña"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                </div>
+
+
+                                <div class="my-5">
+                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Nombres
+                                    </label>
+                                    <input required type="text" name="name" id="name" placeholder="Nombre Completo"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
                                 <div class="my-5">
-                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Dui
+                                    <label for="lastnames" class="mb-3 block text-base font-medium text-[#07074D]"> Apellidos
                                     </label>
-                                    <input type="text" name="Dui" id="Dui" placeholder="Dui"
+                                    <input required type="text" name="lastname" id="name" placeholder="Apellidos"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
+
+                                
 
                                 <div class="my-5">
-                                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Fecha de nacimiento
+                                    <label for="phonenumber" class="mb-3 block text-base font-medium text-[#07074D]"> Numero Telefonico
                                     </label>
-                                    <input type="date" name="date" id="date" placeholder="Fecha de nacimiento"
-                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input required type="number" name="phonenumber" id="email" placeholder="Correo electronico"
+                                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" max="8" />
                                 </div>
 
+                                
+
+                                
 
 
 
-                                <button type="submit">Enviar</button>
+
+                              <input type="submit" name="Enviar" value="ENVIAR">
+
                             </form>
 
 
@@ -143,5 +154,3 @@
         </nav>
         </div>
     </aside>
-
-           
