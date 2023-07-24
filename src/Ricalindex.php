@@ -2,7 +2,7 @@
  $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Don Bosco'";
+$query = "SELECT * FROM `news` WHERE `school` = 'Instituto Ricaldone'";
 $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";
@@ -27,7 +27,7 @@ $result = mysqli_query($conexion, $query);
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-blue-950 text-white w-screen">
+            <nav class="flex justify-between bg-black text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                 <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -90,9 +90,9 @@ $result = mysqli_query($conexion, $query);
                     1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
                     0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </p>
-              <p class="inline text-xs font-medium">COLEGIO DON BOSCO</p>
+              <p class="inline text-xs font-medium">COLEGIO RICALDONE/p>
             </div>
-            <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Don Bosco</a>
+            <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Rical</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
               <p class="text-sm font-medium inline">Ubicación: Km 1 1/2 Calle a Plan del Pino, Ciudadela Don Bosco, 884204 Soyapango</p>
               <a class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </a>
@@ -122,7 +122,7 @@ $result = mysqli_query($conexion, $query);
           <a href="./News.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
-          <p class="bg-yellow-400 items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
+          <p class="bg-red-800  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
               rounded-full uppercase inline-block"><?php echo $row['Category'];?></p>
               
           <p class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></p>
