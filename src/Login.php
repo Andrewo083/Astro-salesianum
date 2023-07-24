@@ -2,8 +2,8 @@
 // Verificamos si el formulario de inicio de sesión fue enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener el correo y la contraseña ingresados en el formulario
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $Email = $_POST["Email"];
+    $Password = $_POST["Password"];
 
     // Conexión a la base de datos (debes reemplazar los valores por los de tu base de datos)
     $host = "localhost";
@@ -16,19 +16,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Error en la conexión" . mysqli_connect_error());
     }
 
-    // Consulta para seleccionar el correo y contraseña que coincidan con los ingresados
-    $consulta = "SELECT * FROM `user` WHERE `Email` = '$email' AND `Password` = '$password'";
-    $resultado = $conexion->query($consulta);
+    // Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
+    // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
-    // Verificamos si se encontró una fila coincidente en la tabla
-    if ($resultado->num_rows === 1) {
-        // Inicio de sesión exitoso
+    // $resultadoRol1 = $conexion->query($consultaRol1);
+    $resultadoRol2 = $conexion->query($consultaRol2);
+    $resultadoRol3 = $conexion->query($consultaRol3);
+
+    // Verificamos si se encontró una fila coincidente en alguna de las tablas
+    if ($resultadoRol1->num_rows === 1) {
+        // Inicio de sesión exitoso para el rol 1
         session_start();
-
-        // Guardamos el correo electrónico en una variable de sesión para usarlo posteriormente
-        $_SESSION["email"] = $email;
-
-        // Redirigimos a la página que deseamos mostrar después del inicio de sesión exitoso
+        $_SESSION["Email"] = $Email;
+        header("Location: ./pagina_rol_1.php");
+        exit();
+    } elseif ($resultadoRol2->num_rows === 1) {
+        // Inicio de sesión exitoso para el rol 2
+        session_start();
+        $_SESSION["Email"] = $Email;
+        header("Location: ./formsnews.html"); //Cambiarle a la parte de reportero
+        exit();
+    } elseif ($resultadoRol3->num_rows === 1) {
+        // Inicio de sesión exitoso para el rol 3
+        session_start();
+        $_SESSION["Email"] = $Email;
         header("Location: ./maindex.html");
         exit();
     } else {
@@ -37,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,14 +139,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
-                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="email">
+                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email">
                         </div>
                         <div class="mt-4">
                             <div class="flex justify-between">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
                                 <a href="#" class="text-xs text-gray-500">Olvidaste tu contraseña?(ni modo)</a>
                             </div>
-                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="password">
+                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="Password">
                         </div>
                         <div class="mt-8">
                             <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
