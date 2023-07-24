@@ -7,8 +7,8 @@
           <link rel="stylesheet" href="../Public/tailwind.css">
 </head>
 <body>
-          <div class="flex ">
-                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white puta" onclick="myFunction()" id="puta">
+          <div class="flex w-full">
+                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white" id="puta">
                       <div class="mx-auto py-10">
                         <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">Astrum Salesianum</h1>
                         <ul>
@@ -34,8 +34,18 @@
 
 
                     <main class=" min-h-screen w-full">
-                      <nav class="flex justify-between px-10 bg-white py-6">
-                        <div class="flex items-center  px-4 py-2 rounded-md space-x-3 w-96">
+                      <nav class="flex justify-center px-10 bg-white py-6" id="mequieromatar">
+
+                       
+                        <div class="flex items-center ">
+                         
+                         
+                          <a href="#">
+                            <img class="w-auto h-24 hidden" src="../img/logis.png" alt="" id="mimami">
+                        </a>
+            
+                        </div>
+                        <div class="flex items-center justify-center  px-4 py-2 rounded-md space-x-3">
                           <ul class="flex items-center flex-shrink-0 space-x-6">
                             <!-- Profile menu -->
                             <li class="relative ">
@@ -62,38 +72,12 @@
                               </button>
                             </li>
               
-                                <li class="relative">
-                              <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="https://picsum.photos/200/200?i=2011" alt="" aria-hidden="true">
-                              </button>
-                            </li>
+                               
               
                           </ul>
                         </div>
 
-                        <div x-data="{ dropdownOpen: false }" class="relative">
-                          <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-                          <button @click="dropdownOpen = ! dropdownOpen"
-                              class="flex items-center space-x-2 relative focus:outline-none">
-                              <h2 class="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">Periodista/Usuario</h2>
-                              <img class="h-9 w-9 rounded-full object-cover"
-                                  src="../img/user.jpg"
-                                  alt="Your avatar">
-                          </button>
-  
-                          <div class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
-                              x-show="dropdownOpen" x-transition:enter="transition ease-out duration-100 transform"
-                              x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-                              x-transition:leave="transition ease-in duration-75 transform"
-                              x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                              @click.away="dropdownOpen = false">
-                              <a href="#"
-                                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-800 hover:text-white">Profile</a>
-                              
-                              <a href="/login"
-                                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white">Logout</a>
-                          </div>
-                      </div>
+                  
                       </nav>
                       <section class="my-8">
                               <div class="container mx-auto px-6">
@@ -298,9 +282,24 @@
 
                   <script>
                     let puta = document.getElementById("puta")
-                    function myFunction() {
-                              puta.classList.add("hidden")
-                    }
+                    let mimami = document.getElementById('mimami')
+                    let mequieromatar = document.getElementById('mequieromatar')
+                    puta.addEventListener('click', () => {
+                      puta.classList.add("translate-x-[-100%]")
+                      puta.classList.add("absolute")
+                      mimami.classList.remove('hidden')
+                      mequieromatar.classList.remove('justify-center')
+                      mequieromatar.classList.add('justify-between')
+                    })
+
+                    mimami.addEventListener('click', () => {
+                      mimami.classList.add('hidden')
+                      puta.classList.remove("absolute")
+                      puta.classList.remove("translate-x-[-100%]")
+                      mequieromatar.classList.add('justify-center')
+                      mequieromatar.classList.remove('justify-between')
+                    })
+
 
 
                   </script>
