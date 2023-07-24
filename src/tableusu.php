@@ -38,7 +38,7 @@ $query = mysqli_query($conexion, $sql);
       </div>
       <div id="menu" class="lg:flex hidden flex-grow justify-between items-center absolute lg:relative lg:top-0 top-20 ">
         <div>
-          <a href="../src/tableusu.html" class="text-white hover:text-black lg:mr-7 font-semibold ">Reporteros</a>
+          <a href="./Administrador.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Creacion de Reporteros</a>
           <a href="../src/tablemain.html" class="text-white hover:text-black lg:mr-7 font-semibold ">Publicaciones</a>
           <a href="#" class="text-white  hover:text-black lg:mr-7 font-semibold ">mision</a>
           <a href="#" class="text-white hover:text-black font-semibold ">other</a>
@@ -83,7 +83,7 @@ $query = mysqli_query($conexion, $sql);
                     <div class="mt-4 mr-0 mb-0 ml-0 pt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 sm:pl-0 sm:mt-0">
                       <a href="./AdministradorUptdate.php?ID=<?php echo $row['Email']; ?>" class="bg-gray-900 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Edit</a>
-                      <a href="./PHP/DeleteReportero.php?ID=<?php echo $row['Email'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                      <a href="./PHP/Confirmation.php?ID=<?php echo $row['Email'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
                     </div>
 

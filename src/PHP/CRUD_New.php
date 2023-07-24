@@ -49,7 +49,8 @@ function submit($conexion){
 function edit($conexion){
    
     //Carpeta   
-    $carpet_images = "./IMG/";
+    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
+    echo $carpet_images;
     $id_news = $_POST['id_news'];
     $id_reporter = $_POST['id_reporter'];
 
@@ -64,17 +65,18 @@ function edit($conexion){
     $body = $_POST['body'];
     $school = $_POST['school'];
     $category = $_POST['category'];
+    $photographer = $_POST['photographer'];
     
     //nuevo nommbre
-    $imagen =  "$headline-$id_reporter.png";
+    $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
     echo $imagen;
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-    $query = "UPDATE `news` SET ,`id_reporter`='$id_reporter',`main_image`='$url_main',`headline`='$headline',`drophead`='$drophead',`date`='$date',`body`='$body',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
+    $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`headline`='$headline',`drophead`='$drophead',`date`='$date',`body`='$body',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
 
     mysqli_query($conexion, $query);
-    header('location: ./index.php');
+    //header('location: ../DonBoscoIndex.php');
 
 }
 
