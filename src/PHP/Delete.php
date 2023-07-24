@@ -1,6 +1,5 @@
 <?php
 include('conexion.php');
-
 $conexion = new mysqli($host, $user, $password, $bd);
 
 if (!$conexion) {

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 3
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./maindex.html");
+        header("Location: ./newindex.html");
         exit();
     } else {
         // Inicio de sesión fallido
