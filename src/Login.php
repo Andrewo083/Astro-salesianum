@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Error en la conexión" . mysqli_connect_error());
     }
 
-    // Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
-    // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    //Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
+     $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
@@ -66,7 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else {
         // Inicio de sesión fallido
-        echo '<script>alert("Credenciales incorrectas");</script>';
+        echo '<script>alert("Credenciales incorrectas");
+         window.location.href = "./Login.php";</script>';
     }
 }
 ?>
