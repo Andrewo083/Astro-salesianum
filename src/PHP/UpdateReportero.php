@@ -1,30 +1,33 @@
 <?php
+// UpdateReportero.php
+
 include('./conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
 if (!$conexion) {
-    die("Error en la conexión" . mysqli_connect_error());
+    die("Error en la conexion" . mysqli_connect_error());
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $ID = $_POST["ID"];
-    $Name = $_POST['Name'];
-    $LastName = $_POST['LastName'];
-    $Email = $_POST['Email'];
-    $PhoneNumber = $_POST['PhoneNumber'];
-    $Contrasena = $_POST['Password'];
-    // Otros campos que desees actualizar
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener el ID del reportero desde el formulario
+    $reportero_id = $_POST['ID'];
 
-    // Consulta para actualizar los datos en la base de datos
-    $sql = "UPDATE `reporter` SET `Email`='$Email',`Password`='$Contrasena',`Name`='$Name',`LastName`='$LastName,`PhoneNumber`='$PhoneNumber' WHERE Email = '$ID' ";
+    // Obtener los otros datos del formulario
+    $email = $_POST['Email'];
+    $password = $_POST['Password'];
+    $name = $_POST['Name'];
+    $lastName = $_POST['LastName'];
+    $phoneNumber = $_POST['PhoneNumber'];
 
-    if ($conexion->query($sql)) {
-        echo "Datos actualizados correctamente";
+    // Consulta SQL para actualizar el registro del reportero
+    $sql = "UPDATE `reporter` SET Email='$email', Password='$password', Name='$name', LastName='$lastName', PhoneNumber='$phoneNumber' WHERE Email='$reportero_id'";
+
+    if ($conexion->query($sql) === TRUE) {
+        echo "Registro actualizado correctamente";
+        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/tableusu.php');
     } else {
-        echo "Error en la actualización";
+        echo "Error al actualizar el registro: " . $conexion->error;
     }
 }
-
-$conexion->close();
 ?>

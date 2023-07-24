@@ -9,6 +9,8 @@ if (!$conexion) {
 
 $sql = "SELECT * FROM `reporter`";
 
+$ID=$_GET['ID'];
+
 $query = mysqli_query($conexion, $sql);
 ?>
 
@@ -98,33 +100,36 @@ $query = mysqli_query($conexion, $sql);
                             <!--DIV PARA INOT-->
                             <?php
                             while ($row = mysqli_fetch_array($query)) {
-
+                                echo '<input type="hidden" name="ID" value="' . $ID . '">';
                             ?>
 
+        
+
                                 <div class="my-5">
-                                    
+
                                     <label for="email" class="mb-3 block text-base font-medium text-[#07074D]"> Correo Electronico [ID]*
                                     </label>
-                                    <input type="email" value="<?php echo $row['Email']?>" name="Email" id="name"  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input type="email" value="<?php echo $row['Email'] ?>" name="Email" id="name" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    
                                 </div>
 
                                 <div class="my-5">
                                     <label for="password" class="mb-3 block text-base font-medium text-[#07074D]"> Contraseña
                                     </label>
-                                    <input type="password"  value="<?php echo $row['Password']?>" name="Password" id="name" placeholder="Contraseña" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input type="password" value="<?php echo $row['Password'] ?>" name="Password" id="name" placeholder="Contraseña" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
 
                                 <div class="my-5">
                                     <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Nombres
                                     </label>
-                                    <input type="text"  value="<?php echo $row['Name']?>" name="Name" id="name" placeholder="Nombre Completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input type="text" value="<?php echo $row['Name'] ?>" name="Name" id="name" placeholder="Nombre Completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
                                 <div class="my-5">
                                     <label for="lastnames" class="mb-3 block text-base font-medium text-[#07074D]"> Apellidos
                                     </label>
-                                    <input type="text" name="LastName"  value="<?php echo $row['LastName']?>" id="name" placeholder="Apellidos" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                    <input type="text" name="LastName" value="<?php echo $row['LastName'] ?>" id="name" placeholder="Apellidos" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>
 
 
@@ -132,21 +137,21 @@ $query = mysqli_query($conexion, $sql);
                                 <div class="my-5">
                                     <label for="phonenumber" class="mb-3 block text-base font-medium text-[#07074D]"> Numero Telefonico
                                     </label>
-                                    <input type="text"  value="<?php echo $row['PhoneNumber']?>" name="PhoneNumber" id="email" placeholder="Correo electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" min="8" max="8" />
+                                    <input type="text" value="<?php echo $row['PhoneNumber'] ?>" name="PhoneNumber" id="email" placeholder="Correo electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" min="8" max="8" />
                                 </div>
 
-                                
-                                
-  
 
 
-                                
+
+
+
                                 <input type="submit" name="Enviar" value="ENVIAR">
 
                         </form>
 
                     <?php
-                    
+
+
 
                             }
                     ?>
