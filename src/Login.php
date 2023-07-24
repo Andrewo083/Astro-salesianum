@@ -150,7 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
 
                         </div>
+                        <a href="./Registro.html">
                         <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
+                        </a>
                     </a>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 lg:w-1/4"></span>
