@@ -7,9 +7,11 @@ if (!$conexion) {
     die("Error en la conexion" . mysqli_connect_error());
 }
 
-$sql = "SELECT * FROM `reporter`";
-
 $ID=$_GET['ID'];
+
+$sql = "SELECT * FROM `reporter` WHERE Email = '$ID' ";
+
+
 
 $query = mysqli_query($conexion, $sql);
 ?>
@@ -80,7 +82,7 @@ $query = mysqli_query($conexion, $sql);
                             <span>Inicio</span>
                         </a>
 
-                        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                        <a href="./tableusu.php" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                             <span class="text-2xl"><i class="bx bx-cart"></i></span>
                             <span>Reporteros</span>
                         </a>
@@ -95,7 +97,7 @@ $query = mysqli_query($conexion, $sql);
                     <div class="w-full p-4">
 
                         <form action="./PHP/UpdateReportero.php" method="post">
-                            <h1 class="text-center">Formulario para ingreso de Reporteros</h1>
+                            <h1 class="text-center">Formulario para Actualizacion de reporteros</h1>
 
                             <!--DIV PARA INOT-->
                             <?php
