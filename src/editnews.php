@@ -82,15 +82,16 @@ while($row = mysqli_fetch_array($result)){
 
 
               <div>
-                <label for="title" class="text-2lx font-bold text-gray-500"></label>
+                <label for="title" class="text-2lx font-bold text-gray-500">Imagen Actual</label>
                 <input  type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input  type="hidden" value="<?php echo $row['id_news']; ?>" id="reporter" name="id_news" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
               <div class="shrink-0 mt-5">
 
 
-                <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['mina_image']; ?>" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
+                <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['main_image']; ?>" alt="Current profile photo" id="preview1" height="700px" width="700px"/>
 
 
               </div> 
@@ -115,19 +116,19 @@ while($row = mysqli_fetch_array($result)){
               </label>
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input  type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
-                <input  type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $row['headline']; ?>"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
-                <input  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $row['drophead']; ?>" id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input  type="date"  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input value="<?php echo $row['date']; ?>" type="date"  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
 
 
@@ -138,13 +139,14 @@ while($row = mysqli_fetch_array($result)){
               <div>
 
                 <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
-                <textarea id="description" cols="30" rows="10" name="body" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                <textarea value="" id="description" cols="30" rows="10" name="body" maxlength="50" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['body']; ?></textarea>
               </div>
               <div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
                     <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="school">
+                      <option value="<?php echo $row['school']; ?>"><?php echo $row['school']; ?> (Actual)</option>
                         <option value="Colegio Don Bosco">Colegio Don Bosco</option>
                         <option value="Instituto Ricaldone">Instituto Ricaldone</option>
                         <option value="Colegio Santa Cecilia">Colegio Santa Cecilia especiales</option>
@@ -157,15 +159,16 @@ while($row = mysqli_fetch_array($result)){
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
                     <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="category">
-                        <option value="Deportes">Deportes</option>
+                    <option value="<?php echo $row['Category']; ?>"><?php echo $row['Category']; ?> (Actual)</option>
+                    <option value="Deportes">Deportes</option>
                         <option value="Cultura">Cultura</option>
                         <option value="Eventos Especiales">Eventos Especiales</option>
                         
                     </select>
                 </div>    
               </div>
-           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="SUBIR" name="submit">
-              <button  name="insert">Subir</button>
+           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="ACTUALIZAR" name="edit">
+              
             </div>
           </div>
         </div>
