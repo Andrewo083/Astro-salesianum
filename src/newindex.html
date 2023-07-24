@@ -8,7 +8,7 @@
 </head>
 <body>
           <div class="flex w-full">
-                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white" id="puta">
+                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white transition-all ease-in duration-300" id="puta">
                       <div class="mx-auto py-10">
                         <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">Astrum Salesianum</h1>
                         <ul>
@@ -285,7 +285,7 @@
                     let mimami = document.getElementById('mimami')
                     let mequieromatar = document.getElementById('mequieromatar')
                     puta.addEventListener('click', () => {
-                      puta.classList.add("translate-x-[-100%]")
+                      puta.classList.add("left-[-500px]")
                       puta.classList.add("absolute")
                       mimami.classList.remove('hidden')
                       mequieromatar.classList.remove('justify-center')
@@ -293,9 +293,10 @@
                     })
 
                     mimami.addEventListener('click', () => {
-                      mimami.classList.add('hidden')
+                      puta.classList.remove("left-[-500px]")
                       puta.classList.remove("absolute")
-                      puta.classList.remove("translate-x-[-100%]")
+                      mimami.classList.add('hidden')
+                      
                       mequieromatar.classList.add('justify-center')
                       mequieromatar.classList.remove('justify-between')
                     })
