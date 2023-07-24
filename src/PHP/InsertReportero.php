@@ -7,12 +7,12 @@ if(!$conexion){
     die("Error en la conexion" .mysqli_connect_error());
 } 
 
-$Name = $_POST['Name'];
-$LastName = $_POST['LastName'];
-$Email = $_POST['Email'];
-$PhoneNumber = $_POST['PhoneNumber'];
-$Contrasena = $_POST['password'];
-$Rol = 3;
+$Email=$_POST['Email'];
+$Contraseña=$_POST['Password'];
+$Name=$_POST['Name'];
+$LastName=$_POST['LastName'];
+$PhoneNumber=$_POST['PhoneNumber'];
+$Rol=2;
 
 // Consulta SQL para buscar el correo en ambas tablas
 $consultaEmail = "SELECT Email FROM user WHERE Email = '$Email'
@@ -24,15 +24,15 @@ $resultadoEmail = $conexion->query($consultaEmail);
 
 // Verificar si el correo ya fue utilizado
 if ($resultadoEmail->num_rows > 0) {
-    echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Registro.html";</script>';
+    echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Administrador.php";</script>';
 } else {
     // Insertar los datos en la tabla correspondiente
-    $sql = "INSERT INTO `user`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$Email','$Contrasena','$Name','$LastName','$PhoneNumber','$Rol')";
+    $sql = "INSERT INTO `reporter`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$Email','$Contraseña','$Name','$LastName','$PhoneNumber','$Rol')";
 
 
     if ($conexion->query($sql)) {
         echo "Datos insertados correctamente";
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
+        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Administrador.php');
     } else {
         echo "Error en la inserción";
     }
