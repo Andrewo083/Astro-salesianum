@@ -118,7 +118,7 @@ $result = mysqli_query($conexion, $query);
 ?>
         <!--INCIO DE NOTICIA-->
        
-        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  hover:bg-gray-400 ease-in duration-200"> 
+        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  "> 
           <a href="./News.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
