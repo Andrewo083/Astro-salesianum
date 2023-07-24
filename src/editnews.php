@@ -1,3 +1,20 @@
+<?php 
+
+$new= $_GET['new'];
+
+$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+$carpet_images = "../img/";
+$query = "SELECT * FROM `news` WHERE `id_news` = '$new'";
+$result = mysqli_query($conexion, $query);
+while($row = mysqli_fetch_array($result)){
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +22,7 @@
     
 <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>¡Editalo!</title>
 </head>
 <body>
     <div>
@@ -15,7 +32,7 @@
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                 <a class="text-3xl font-bold font-heading" href="#">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro
+                Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
@@ -60,20 +77,20 @@
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
-            <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Subir Noticia</h1>
+            <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Edita Tu Noticia</h1>
             <div class="space-y-4">
 
 
               <div>
-                <label for="title" class="text-2lx font-bold text-gray-500">Reportero</label>
-                <input  type="text"  id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <label for="title" class="text-2lx font-bold text-gray-500"></label>
+                <input  type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
               <div class="shrink-0 mt-5">
 
 
-                <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
+                <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['mina_image']; ?>" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
 
 
               </div> 
@@ -177,3 +194,5 @@
     }
   });
 </script>
+
+<?php } ?>
