@@ -15,7 +15,7 @@ function difference($conexion){
 
 function submit($conexion){
     //Carpeta   
-    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
+    $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
     echo $carpet_images;
     $id_reporter = $_POST['id_reporter'];
 
@@ -49,7 +49,7 @@ function submit($conexion){
 function edit($conexion){
    
     //Carpeta   
-    $carpet_images = "C:/xampp/htdocs/ASTRO SALES/img/";
+    $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
     echo $carpet_images;
     $id_news = $_POST['id_news'];
     $id_reporter = $_POST['id_reporter'];
