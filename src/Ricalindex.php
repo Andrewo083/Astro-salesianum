@@ -90,7 +90,10 @@ $result = mysqli_query($conexion, $query);
                     1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
                     0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </p>
-              <p class="inline text-xs font-medium">COLEGIO RICALDONE/p>
+
+              <p class="inline text-xs font-medium">COLEGIO RICALDONE </p>
+
+
             </div>
             <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Rical</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
@@ -118,7 +121,7 @@ $result = mysqli_query($conexion, $query);
 ?>
         <!--INCIO DE NOTICIA-->
        
-        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  hover:bg-gray-400 ease-in duration-200"> 
+        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  "> 
           <a href="./News.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>

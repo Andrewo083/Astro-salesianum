@@ -74,14 +74,14 @@ $result = mysqli_query($conexion, $query);
         </section>
         </div>
    <!-- component -->
-<div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
+   <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16
         max-w-7xl">
       <div class="flex flex-col items-center sm:px-5 md:flex-row">
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
-            <div class="bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+            <div class=" flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
@@ -118,7 +118,7 @@ $result = mysqli_query($conexion, $query);
 ?>
         <!--INCIO DE NOTICIA-->
        
-        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  hover:bg-gray-400 ease-in duration-200"> 
+        <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  "> 
           <a href="./News.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
