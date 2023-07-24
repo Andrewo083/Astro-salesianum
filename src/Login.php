@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 1
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./pagina_rol_1.php");
+        header("Location: ./Administrador.php");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
@@ -42,14 +42,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 3
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./newindex.html");
-        exit();
+        
+        // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
+        $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+        $resultadoRol = $conexion->query($rolConsulta);
+        if ($resultadoRol->num_rows === 1) {
+            $row = $resultadoRol->fetch_assoc();
+            $rolUsuario = $row['rol'];
+            if ($rolUsuario == 1) {
+                header("Location: ./Administrador.php"); // Redirección para el rol 1
+            } elseif ($rolUsuario == 2) {
+                header("Location: /formnews.html"); // Redirección para el rol 2
+            } elseif ($rolUsuario == 3) {
+                header("Location: ./newindex.html"); // Redirección para el rol 3
+            } else {
+                echo "Rol no válido.";
+                exit();
+            }
+            exit();
+        } else {
+            echo "Error al obtener el rol del usuario.";
+            exit();
+        }
     } else {
         // Inicio de sesión fallido
         echo '<script>alert("Credenciales incorrectas");</script>';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
