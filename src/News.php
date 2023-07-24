@@ -87,15 +87,14 @@ while($row = mysqli_fetch_array($result)){
                
                $body = $row['body'] ;
 
-               $longitudTotal = strlen($body);
-               $mitad = $longitudTotal / 2;
-               $parte1 = substr($body, 0, $mitad);
-               $parte2 = substr($body, $mitad);
-               
-               // Imprimir o utilizar las partes como desees
-               echo $parte1;
-               echo "HOLA";
-               echo $parte2;
+               $posicionPunto = strpos($body, '.');
+
+// Dividir el texto hasta el primer punto en dos partes
+$parte1 = substr($body, 0, $posicionPunto + 1); // Agregamos 1 para incluir el punto en la primera parte
+$parte2 = substr($body, $posicionPunto + 1);
+
+// Imprimir o utilizar las partes como desees
+
 
                
                
@@ -103,9 +102,7 @@ while($row = mysqli_fetch_array($result)){
                ?>
                </p>
            
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-           extender texto
-            </a> 
+           
         </div>
         
         
@@ -132,16 +129,22 @@ while($row = mysqli_fetch_array($result)){
         <div class="absolute inset-0 w-full h-full bg-indigo-900 opacity-75"></div>
         <div class="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white text-2xl">
           <p>
-            Comentarios o lo que quieran mas noticias 
+          <?php
+        echo $parte1;
+         
+          ?>
           </p>
         </div>
       </div>
       <div class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
         <div class="p-12 md:pr-24 md:pl-16 md:py-12">
-          <p class="text-gray-600"><span class="text-gray-900">Missguided</span> is a UK-based fashion retailer that has nearly doubled in size since last year. They integrated Stripe to deliver seamless checkout across mobile and web for customers in 100+ countries, all while automatically combating fraud.</p>
+          <p class="text-gray-600"><span class="text-gray-900">[<?php echo $row['date']; ?>] </span><?php
+        echo $parte2;
+         
+          ?></p>
           <a class="flex items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900" href="">
-            <span>Learn more about our users</span>
-            <span class="text-xs ml-1">&#x279c;</span>
+           
+           
           </a>
         </div>
         <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
