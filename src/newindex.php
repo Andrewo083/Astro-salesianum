@@ -81,48 +81,117 @@
                           </ul>
                         </div>
 
+                        
                   
                       </nav>
+                      <form action="" method="post">
+                      <?php 
+$everything = true;
+
+if(isset($_POST['Special'])){
+  //INICIALIZACION DE VARIABLES
+  $special = true;
+  $everything = false;
+  $sports = false;
+  $culture = false;
+echo "ESPECIAL";
+?>
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+                                      <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                                          <div class="px-10 max-w-xl">
+                                              <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
+                                              <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
+                                              <a class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                                  <span>Ver noticias</span>
+                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <?php
+}else if(isset($_POST['Sports'])){
+  $sports = true;
+  
+  $special = false;
+  $everything = false;
+ 
+  $culture = false;
+  echo "SPORTS";
+}else if(isset($_POST['Culture'])){
+  $sports = false;
+  
+  $special = false;
+  $everything = false;
+ 
+  $culture = true;
+  echo "CULUTRA";
+}else if(isset($_POST['Everything'])){
+  $sports = false;
+  
+  $special = false;
+  $everything = true;
+ 
+  $culture = false;
+  echo "TODO";
+?>
+
+
+?>
                       <section class="my-8">
                               <div class="container mx-auto px-6">
+                              <button name="Special">
                                   <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
-                                              <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                              <a class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                   <span>Ver noticias</span>
                                                   <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                              </button>
+                                              </a>
                                           </div>
                                       </div>
                                   </div>
+                                  </button>
                                   <div class="md:flex mt-8 md:-mx-4">
+                                  <button name="Sports">
                                       <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/solo.jpeg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                                                   <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                                                  <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                                  <a class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                     <span>Ver noticias</span>
                                                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                                </button>
+</a>
                                               </div>
                                           </div>
                                       </div>
+                                  </button>
+                                  <button name="Culture">
                                       <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/ricaldepo.jpeg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Cultura</h2>
                                                   <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
-                                                  <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                                  <a class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                     <span>Ver noticias</span>
                                                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                                </button>
+</a>
                                               </div>
                                           </div>
                                       </div>
+                                  </button>
                                   </div>
+                                  
+                          </form>
+                          <?php } ?>
+
+
+<!--AQUI ESTA EL PHP DE LOS BOTNOES-->
+
+
+
                                   <div class="min-h-screen flex justify-center items-center py-20">
                                     <div class="container bg-gray-100 mx-auto p-12  rounded-xl">
                                       <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-7 space-y-4  sm:space-y-0">
