@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             } elseif ($rolUsuario == 2) {
                 header("Location: /formnews.html"); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
-                header("Location: ./newindex.html"); // Redirección para el rol 3
+                header("Location: ./newindex.php"); // Redirección para el rol 3
             } else {
                 echo "Rol no válido.";
                 exit();
