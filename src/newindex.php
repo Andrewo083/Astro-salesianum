@@ -106,7 +106,7 @@ echo "ESPECIAL";
 
 //BARRA DE ESPECIAL
 ?>
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SpecialEvents.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
@@ -136,7 +136,7 @@ echo "ESPECIAL";
 
 //BANNER
 ?>
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/Sports.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Deportes</h2>
@@ -168,7 +168,8 @@ echo "ESPECIAL";
 
   //BANNER
 ?>
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img//Culture.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Cultura</h2>
@@ -197,7 +198,7 @@ echo "ESPECIAL";
                       <section class="my-8">
                               <div class="container mx-auto px-6">
                               <button name="Special">
-                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SpecialEvents.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
@@ -212,7 +213,7 @@ echo "ESPECIAL";
                                   </button>
                                   <div class="md:flex mt-8 md:-mx-4">
                                   <button name="Sports">
-                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/solo.jpeg')">
+                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/Sports.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
@@ -226,7 +227,7 @@ echo "ESPECIAL";
                                       </div>
                                   </button>
                                   <button name="Culture">
-                                      <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/ricaldepo.jpeg')">
+                                      <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/Culture.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Cultura</h2>
@@ -269,6 +270,10 @@ if($sql_all == true){
 
 $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
+
+  $contenido = $row['body']; // Supongamos que aquí tienes el contenido de la base de datos
+  $numero_caracteres = 300;
+  $contenido_recortado = substr($contenido, 0, $numero_caracteres);
    
 
 
@@ -282,14 +287,27 @@ while($row = mysqli_fetch_array($result)){
                                           <div>
                                             <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
                                               <div>
-                                                <img class="w-full" src="../img/rical.jpeg" />
+                                                <img class="w-full" style="height: 225px;" src="../img/<?php echo $row['main_image']; ?>" />
                                                 <div class="px-4 py-2">
-                                                  <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
+                                                  <h1 class="text-xl font-gray-800 font-bold"><?php echo $row['headline']; ?></h1>
                                                   <div class="flex space-x-2 mt-2">
                                              
-                                                    <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
+                                                    <h3 class="text-lg text-gray-600 font-semibold mb-2">
+                                                    <?php 
+                                                    //query para sacar el nombre del reportero
+                                                  $id_reporter = $row['id_reporter'];
+                                                    $query_reporter = "SELECT * FROM `reporter` WHERE `Email` = '$id_reporter'";
+                                                    $result_reporter = mysqli_query($conexion, $query_reporter);
+                                                    while($row_reporter = mysqli_fetch_array($result_reporter)){
+                                                      
+                                                   echo $row_reporter['Name']." ".$row_reporter['LastName'];
+                                                    }
+
+                                                    ?>
+
+                                                    </h3>
                                                   </div>
-                                                  <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
+                                                  <p class="text-sm tracking-normal"><?php echo $contenido_recortado."..."; ?></p>
                                                   <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
                                                 </div>
                                               </div>
