@@ -85,31 +85,47 @@
                   
                       </nav>
                       <form action="" method="post">
+                        <button name="Culture">CULTURA</button>
+                        <button name="Sports">SPORTS</button>
+                        <button name="Special">Special</button>
+                        <button name="Everything">TODO</button>
                       <?php 
 $everything = true;
-
+//SI ES ESPECIAL
 if(isset($_POST['Special'])){
+
+
   //INICIALIZACION DE VARIABLES
+  $sql_all = false;
+  $category = "Eventos Especiales";
   $special = true;
   $everything = false;
   $sports = false;
   $culture = false;
 echo "ESPECIAL";
+
+//BARRA DE ESPECIAL
 ?>
 <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
-                                              <a class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                                  <span>Ver noticias</span>
+                                              <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
+                                                  <span>Regresar</span>
                                                   <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                              </a>
+                                              </button>
                                           </div>
                                       </div>
                                   </div>
                                   <?php
+
+                                  //NOTICIAS ESPECIALES
 }else if(isset($_POST['Sports'])){
+  //DEPORTES
+
+  $sql_all = false;
+  $category = "Deportes";
   $sports = true;
   
   $special = false;
@@ -117,7 +133,31 @@ echo "ESPECIAL";
  
   $culture = false;
   echo "SPORTS";
+
+//BANNER
+?>
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+                                      <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                                          <div class="px-10 max-w-xl">
+                                              <h2 class="text-2xl text-white font-semibold">Deportes</h2>
+                                              <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
+                                              <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
+                                                  <span>Regresar</span>
+                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                              </button>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <?php
+
+                                  
+
+
 }else if(isset($_POST['Culture'])){
+
+  $sql_all = false;
+
+  $cartegory = "Cultura";
   $sports = false;
   
   $special = false;
@@ -125,7 +165,24 @@ echo "ESPECIAL";
  
   $culture = true;
   echo "CULUTRA";
+
+  //BANNER
+?>
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/tiger.jpeg')">
+                                      <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                                          <div class="px-10 max-w-xl">
+                                              <h2 class="text-2xl text-white font-semibold">Cultura</h2>
+                                              <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
+                                              <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
+                                                  <span>Regresar</span>
+                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                              </button>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <?php
 }else if(isset($_POST['Everything'])){
+  $sql_all = true;
   $sports = false;
   
   $special = false;
@@ -136,7 +193,7 @@ echo "ESPECIAL";
 ?>
 
 
-?>
+
                       <section class="my-8">
                               <div class="container mx-auto px-6">
                               <button name="Special">
@@ -196,6 +253,31 @@ echo "ESPECIAL";
                                     <div class="container bg-gray-100 mx-auto p-12  rounded-xl">
                                       <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-7 space-y-4  sm:space-y-0">
                                            <!-- Box-1 -->
+                                           <?php
+
+$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+$carpet_images = "../img/";
+
+
+//if para ver si el query tiene restriccion o no
+if($sql_all == true){
+  $query = "SELECT * FROM `news` ORDER BY `date` DESC";
+}else{
+  //estoy seleccionando las noticias por categoria y ordeno por la fecha.
+  $query = "SELECT * FROM `news` WHERE `Category` = '$category' ORDER BY `date` DESC";
+}
+
+$result = mysqli_query($conexion, $query);
+while($row = mysqli_fetch_array($result)){
+   
+
+
+?>
+
+
+
+
+
                                         <div class="bg-white">
                                           <div>
                                             <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
@@ -215,96 +297,8 @@ echo "ESPECIAL";
                                           </div>
                                         </div>
                                       <!--end Box-1 -->
-                                      <div class="bg-white">
-                                        <div>
-                                          <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                            <div>
-                                              <img class="w-full" src="../img/rical.jpeg" />
-                                              <div class="px-4 py-2">
-                                                <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
-                                                <div class="flex space-x-2 mt-2">
-                                           
-                                                  <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
-                                                </div>
-                                                <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
-                                                <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="bg-white">
-                                        <div>
-                                          <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                            <div>
-                                              <img class="w-full" src="../img/rical.jpeg" />
-                                              <div class="px-4 py-2">
-                                                <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
-                                                <div class="flex space-x-2 mt-2">
-                                           
-                                                  <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
-                                                </div>
-                                                <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
-                                                <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="bg-white">
-                                        <div>
-                                          <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                            <div>
-                                              <img class="w-full" src="../img/rical.jpeg" />
-                                              <div class="px-4 py-2">
-                                                <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
-                                                <div class="flex space-x-2 mt-2">
-                                           
-                                                  <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
-                                                </div>
-                                                <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
-                                                <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="bg-white">
-                                        <div>
-                                          <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                            <div>
-                                              <img class="w-full" src="../img/rical.jpeg" />
-                                              <div class="px-4 py-2">
-                                                <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
-                                                <div class="flex space-x-2 mt-2">
-                                           
-                                                  <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
-                                                </div>
-                                                <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
-                                                <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="bg-white">
-                                        <div>
-                                          <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                            <div>
-                                              <img class="w-full" src="../img/rical.jpeg" />
-                                              <div class="px-4 py-2">
-                                                <h1 class="text-xl font-gray-800 font-bold">Titulo de la noticia</h1>
-                                                <div class="flex space-x-2 mt-2">
-                                           
-                                                  <h3 class="text-lg text-gray-600 font-semibold mb-2">Periodista</h3>
-                                                </div>
-                                                <p class="text-sm tracking-normal">Częstochowski pomnik Jana Pawła II wyjątkowo interesująco wpisuje się w poprzemysłowy krajobraz tego miasta o mocnych lewicowych, robotniczych i socjalistycznych tradycjach. Powstały w 2013 roku, uchodzi za najwyższego Karola Wojtyłę w Polsce.</p>
-                                                <button class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                                     
+                                      <?php } ?>
                                       
                                       </div>
                                       
