@@ -21,17 +21,29 @@ function diference($conexion){
 
 function insertar($conexion){
     if(!empty($_POST["btnregistrar"])){
+        $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
+    echo $carpet_images;
+
 
        
         $Email=$_POST['Email'];
         $Password=$_POST['Password'];
+        $imagen = $_FILES['imagen']['name'];
+        $imagen_tmp = $_FILES['imagen']['tmp_name'];
+
         $Name= $_POST['Name'];
         $LastName=$_POST['LastName'];
         $PhoneNumber=$_POST['PhoneNumber'];
+
         $ROL= "2";
+        
+    //nuevo nommbre
+    $imagen =  "$Email-$Name.png";
+    $url_main = $carpet_images.$imagen;
+    move_uploaded_file($imagen_tmp, $url_main);
        
     
-        $sql=$conexion->query(" insert into reporter(Email,Password,Name,LastName,PhoneNumber,ROL)values('$Email','$Password','$Name','$LastName','$PhoneNumber','$ROL') ");
+        $sql=$conexion->query(" insert into reporter(Email,ProfileImage,Password,Name,LastName,PhoneNumber,ROL)values('$Email', '$imagen','$Password','$Name','$LastName','$PhoneNumber','$ROL') ");
         if ($sql ==1) {
             echo"bien";
         } else {
