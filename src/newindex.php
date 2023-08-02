@@ -71,15 +71,19 @@ $sql_all = true;
                             </li>
               
                                    <li class="relative">
+                                    <a href="./ChalecoIndex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
                                 <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Cecilia.jpg" alt="" aria-hidden="true">
                               </button>
+                              </a>
                             </li>
               
                                    <li class="relative">
+                                    <a href="./MariaIndex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
                                 <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Maria.jpg" alt="" aria-hidden="true">
                               </button>
+                              </a>
                             </li>
               
                                

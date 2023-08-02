@@ -38,14 +38,14 @@ function insertar($conexion){
         $ROL= "2";
         
     //nuevo nommbre
-    $imagen =  "$Email-$Name.png";
+    $imagen =  "$Email.png";
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
        
     
         $sql=$conexion->query(" insert into reporter(Email,ProfileImage,Password,Name,LastName,PhoneNumber,ROL)values('$Email', '$imagen','$Password','$Name','$LastName','$PhoneNumber','$ROL') ");
         if ($sql ==1) {
-            echo"bien";
+            //echo"bien";
         } else {
                         echo"<div class='alert alert-danger'>BIEN</div>";
     

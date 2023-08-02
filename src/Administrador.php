@@ -75,7 +75,7 @@
                     <!-- main content page -->
                     <div class="w-full p-4">
 
-                        <form action="./PHP/InsertReportero.php" method="post">
+                        <form action="./PHP/InsertReportero.php" method="post" enctype="multipart/form-data">
                             <h1 class="text-center">Formulario para ingreso de Reporteros</h1>
 
                             <!--DIV PARA INOT-->

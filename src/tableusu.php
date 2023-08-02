@@ -72,7 +72,7 @@ $query = mysqli_query($conexion, $sql);
                 <div class="pt-5 pr-0 pb-0 pl-0 mt-5 mr-0 mb-0 ml-0">
                   <div class="sm:flex sm:items-center sm:justify-between sm:space-x-5">
                     <div class="flex items-center flex-1 min-w-0">
-                      <img src="../img/sara.png" class="flex-shrink-0 object-cover rounded-full btn- w-10 h-10" />
+                      <img src="../img/<?php echo $row['ProfileImage']?>" class="flex-shrink-0 object-cover rounded-full btn- w-10 h-10" />
 
 
                       <div class="mt-0 mr-0 mb-0 ml-4 flex-1 min-w-0">

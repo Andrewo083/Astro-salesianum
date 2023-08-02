@@ -2,7 +2,7 @@
  $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Santa Cecilia'";
+$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Santa Cecilia' ORDER BY 'date' DESC";
 $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";

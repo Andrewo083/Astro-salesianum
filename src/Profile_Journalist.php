@@ -100,7 +100,7 @@ while($row = mysqli_fetch_array($result)){
           <div class="flex flex-wrap justify-center">
             <div class="w-full  px-4 lg:order-2 flex items-center justify-center">
               <div class="relative">
-                <img alt="..." class=" rounded-full   h-32  w-32  p-2" src="../img/user.jpg">
+                <img alt="..." class=" rounded-full   h-32  w-32  p-2" src="../img/<?php echo $row['ProfileImage']?>">
               </div>
             </div>
             <div class="w-full  px-4 lg:order-3 lg:text-right lg:self-center">

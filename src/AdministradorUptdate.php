@@ -96,7 +96,7 @@ $query = mysqli_query($conexion, $sql);
                     <!-- main content page -->
                     <div class="w-full p-4">
 
-                        <form action="./PHP/UpdateReportero.php" method="post">
+                        <form action="./PHP/UpdateReportero.php" method="post" enctype="multipart/form-data">
                             <h1 class="text-center">Formulario para Actualizacion de reporteros</h1>
 
                             <!--DIV PARA INOT-->
@@ -104,6 +104,7 @@ $query = mysqli_query($conexion, $sql);
                             while ($row = mysqli_fetch_array($query)) {
                                 echo '<input type="hidden" name="ID" value="' . $ID . '">';
                             ?>
+
 
         
 
@@ -114,6 +115,22 @@ $query = mysqli_query($conexion, $sql);
                                     <input type="email" value="<?php echo $row['Email'] ?>" name="Email" id="name" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                     
                                 </div>
+                                <div class="my-5">
+                                <label for="imagen" class="mb-3 block text-base font-medium text-[#07074D]">Foto de Perfil</label>
+                                <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['ProfileImage']?>" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
+                            <span class="sr-only t-2">Choose profile photo</span>
+
+
+                                    <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
+  file:mr-4 file:py-2 file:px-4
+  file:rounded-full file:border-0
+  file:text-sm file:font-semibold
+  border-green-300
+  file:bg-green file:text-zinc-900
+  hover:file:bg-rose-300
+"/>
+
+                            </div>
 
                                 <div class="my-5">
                                     <label for="password" class="mb-3 block text-base font-medium text-[#07074D]"> Contraseña
@@ -175,3 +192,24 @@ $query = mysqli_query($conexion, $sql);
     </nav>
     </div>
     </aside>
+    <script>
+  const imagde1 = document.getElementById('imagde1');
+  const preview1 = document.getElementById('preview1');
+
+  imagde1.addEventListener('change', function() {
+    const archivo = imagde1.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+
+      lector.addEventListener('load', function() {
+        preview1.src = lector.result;
+        preview1.style.display = 'block';
+      });
+
+      lector.readAsDataURL(archivo);
+    } else {
+      preview1.src = '#';
+      preview1.style.display = 'none';
+    }
+  });
+</script>

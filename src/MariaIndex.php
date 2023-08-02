@@ -2,7 +2,7 @@
  $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Maria Auxiliadora'";
+$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Maria Auxiliadora' ORDER BY 'date' DESC";
 $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";
