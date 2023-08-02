@@ -95,16 +95,19 @@ $result = mysqli_query($conexion, $query);
             <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Don Bosco</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
               <p class="text-sm font-medium inline">Ubicación: Km 1 1/2 Calle a Plan del Pino, Ciudadela Don Bosco, 884204 Soyapango</p>
-              <a class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </a>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </p>
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">reservados por</p>
-              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p>
+              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p><br>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografias son cortesia de</p>
+             
+              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1"><a href="https://www.instagram.com/epicyears/">@epicyears!</a></p>
             </div>
           </div>
         </div>
         <div class="w-full md:w-1/2">
           <div class="block">
             <img
-                src="../img/rical.jpeg" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
+                src="../img/BoscoBkg.jpg" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
           </div>
         </div>
       </div>

@@ -91,23 +91,26 @@ $result = mysqli_query($conexion, $query);
                     0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </p>
 
-              <p class="inline text-xs font-medium">COLEGIO RICALDONE </p>
+              <p class="inline text-xs font-medium">INTITUTO TECNICO RICALDONE </p>
 
 
             </div>
             <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Rical</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
               <p class="text-sm font-medium inline">Ubicación: Avenida Aguilares 218 San Salvador CP, San Salvador 1101</p>
-              <a class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </a>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </p>
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">reservados por</p>
-              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p>
+              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p><br>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografias son cortesia de</p>
+             
+              <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1"><a href="https://www.instagram.com/epicyears/">@epicyears!</a></p>
             </div>
           </div>
         </div>
         <div class="w-full md:w-1/2">
           <div class="block">
             <img
-                src="../img/rical.jpeg" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
+                src="../img/RicalBkg.png" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
           </div>
         </div>
       </div>
