@@ -95,10 +95,10 @@ $sql_all = true;
                   
                       </nav>
                       <form action="" method="post">
-                        <button name="Culture">CULTURA</button>
+                       <!-- <button name="Culture">CULTURA</button>
                         <button name="Sports">SPORTS</button>
                         <button name="Special">Special</button>
-                        <button name="Everything">TODO</button>
+                        <button name="Everything">TODO</button> -->
                       <?php 
 $everything = true;
 //SI ES ESPECIAL
@@ -112,7 +112,7 @@ if(isset($_POST['Special'])){
   $everything = false;
   $sports = false;
   $culture = false;
-echo "ESPECIAL";
+
 
 //BARRA DE ESPECIAL
 ?>
@@ -123,7 +123,7 @@ echo "ESPECIAL";
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
-                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M100 25L0 25M0 25L10 15M0 25L10 35"></path></svg>
                                               </button>
                                           </div>
                                       </div>
@@ -142,7 +142,7 @@ echo "ESPECIAL";
   $everything = false;
  
   $culture = false;
-  echo "SPORTS";
+  
 
 //BANNER
 ?>
@@ -167,14 +167,14 @@ echo "ESPECIAL";
 
   $sql_all = false;
 
-  $cartegory = "Cultura";
+  $category = "Cultura";
   $sports = false;
   
   $special = false;
   $everything = false;
  
   $culture = true;
-  echo "CULUTRA";
+  
 
   //BANNER
 ?>
@@ -200,7 +200,7 @@ echo "ESPECIAL";
   $everything = true;
  
   $culture = false;
-  echo "TODO";
+  
 ?>
 
 
