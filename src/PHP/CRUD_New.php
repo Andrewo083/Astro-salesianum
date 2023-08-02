@@ -42,7 +42,7 @@ function submit($conexion){
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
-    header("Location: ./Profile_Journalist.php");
+    header("Location: ../Profile_journalist.php ");
    
 }
 

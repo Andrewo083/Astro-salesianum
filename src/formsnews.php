@@ -1,3 +1,15 @@
+<?php 
+
+
+$Email = $_GET['jour'];
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +78,7 @@
 
               <div>
                 <label for="title" class="text-2lx font-bold text-gray-500">Reportero</label>
-                <input  type="text"  id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
@@ -121,7 +133,7 @@
               <div>
 
                 <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
-                <textarea id="description" cols="30" rows="10" name="body"  maxlength="10" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                <textarea id="description" cols="30" rows="10" name="body"  maxlength="500" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
               </div>
               <div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>

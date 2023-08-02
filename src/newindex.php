@@ -1,3 +1,9 @@
+<?php 
+
+$sql_all = true;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
