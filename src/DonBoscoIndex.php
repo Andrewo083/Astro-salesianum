@@ -107,7 +107,7 @@ $result = mysqli_query($conexion, $query);
         <div class="w-full md:w-1/2">
           <div class="block">
             <img
-                src="../img/BoscoBkg.jpg" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
+                src="../img/CDBBKG.png" class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"/>
           </div>
         </div>
       </div>

@@ -95,10 +95,10 @@ $sql_all = true;
                   
                       </nav>
                       <form action="" method="post">
-                       <!-- <button name="Culture">CULTURA</button>
+                       <button name="Culture">CULTURA</button>
                         <button name="Sports">SPORTS</button>
                         <button name="Special">Special</button>
-                        <button name="Everything">TODO</button> -->
+                        <button name="Everything">TODO</button> 
                       <?php 
 $everything = true;
 //SI ES ESPECIAL
@@ -208,7 +208,7 @@ if(isset($_POST['Special'])){
                       <section class="my-8">
                               <div class="container mx-auto px-6">
                               <button name="Special">
-                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SpecialEvents.jpg')">
+                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
@@ -223,7 +223,7 @@ if(isset($_POST['Special'])){
                                   </button>
                                   <div class="md:flex mt-8 md:-mx-4">
                                   <button name="Sports">
-                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/Sports.jpg')">
+                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/cdbbkg1.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
@@ -237,7 +237,7 @@ if(isset($_POST['Special'])){
                                       </div>
                                   </button>
                                   <button name="Culture">
-                                      <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/Culture.jpg')">
+                                      <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/mariaculture.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Cultura</h2>
