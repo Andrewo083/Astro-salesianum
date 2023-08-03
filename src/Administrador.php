@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+if (isset($_SESSION['Email'])) {
+    include('./PHP/conexion.php');
+
+    $conexion = new mysqli($host, $user, $password, $bd);
+
+    if (!$conexion) {
+        die("Error a la hora de hacer la conexon" . mysqli_connect_errno());
+    }
+} else{
+    header("Location: ./Login.php");
+
+}
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,6 +93,16 @@
                             <span class="text-2xl"><i class="bx bx-shopping-bag"></i></span>
                             <span>Noticias</span>
                         </a>
+                        <?php
+                        if(isset($_SESSION['Email'])){
+                            echo '<a href="./PHP/Logout.php" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                            <span class="text-2xl"><i class="bx bx-shopping-bag"></i></span>
+                            <span>Logout</span>
+                            </a>';
+                        } 
+                        
+                        ?>
+                        
                     </aside>
 
                     <!-- main content page -->
@@ -82,30 +115,30 @@
 
                             <div class="my-5">
                                 <label for="imagen" class="mb-3 block text-base font-medium text-[#07074D]">Foto de Perfil</label>
-                                <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
-                            <span class="sr-only t-2">Choose profile photo</span>
+                                <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px" />
+                                <span class="sr-only t-2">Choose profile photo</span>
 
 
-                                    <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
+                                <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
   file:mr-4 file:py-2 file:px-4
   file:rounded-full file:border-0
   file:text-sm file:font-semibold
   border-green-300
   file:bg-green file:text-zinc-900
   hover:file:bg-rose-300
-"/>
+" />
 
                             </div>
                             <div class="my-5">
                                 <label for="email" class="mb-3 block text-base font-medium text-[#07074D]"> Correo Electronico [ID]*
                                 </label>
-                                <input  type="email" name="Email" id="name" placeholder="Correo Electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                <input type="email" name="Email" id="name" placeholder="Correo Electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
 
                             <div class="my-5">
                                 <label for="password" class="mb-3 block text-base font-medium text-[#07074D]"> Contraseña
                                 </label>
-                                <input  type="password" name="Password" id="name" placeholder="Contraseña" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                <input type="password" name="Password" id="name" placeholder="Contraseña" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
                             <div class="shrink-0 mt-5">
 
@@ -113,19 +146,19 @@
 
 
 
-</div> 
-                            
+                            </div>
+
 
                             <div class="my-5">
                                 <label for="name" class="mb-3 block text-base font-medium text-[#07074D]"> Nombres
                                 </label>
-                                <input  type="text" name="Name" id="name" placeholder="Nombre Completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                <input type="text" name="Name" id="name" placeholder="Nombre Completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
 
                             <div class="my-5">
                                 <label for="lastnames" class="mb-3 block text-base font-medium text-[#07074D]"> Apellidos
                                 </label>
-                                <input  type="text" name="LastName" id="name" placeholder="Apellidos" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                <input type="text" name="LastName" id="name" placeholder="Apellidos" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                             </div>
 
 
@@ -133,7 +166,7 @@
                             <div class="my-5">
                                 <label for="phonenumber" class="mb-3 block text-base font-medium text-[#07074D]"> Numero Telefonico
                                 </label>
-                                <input  type="text" name="PhoneNumber" id="email" placeholder="Correo electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" min="8" max="8" />
+                                <input type="text" name="PhoneNumber" id="email" placeholder="Correo electronico" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" min="8" max="8" />
                             </div>
 
                             <input type="submit" name="Enviar" value="ENVIAR">
@@ -158,23 +191,23 @@
     </div>
     </aside>
     <script>
-  const imagde1 = document.getElementById('imagde1');
-  const preview1 = document.getElementById('preview1');
+        const imagde1 = document.getElementById('imagde1');
+        const preview1 = document.getElementById('preview1');
 
-  imagde1.addEventListener('change', function() {
-    const archivo = imagde1.files[0];
-    if (archivo) {
-      const lector = new FileReader();
+        imagde1.addEventListener('change', function() {
+            const archivo = imagde1.files[0];
+            if (archivo) {
+                const lector = new FileReader();
 
-      lector.addEventListener('load', function() {
-        preview1.src = lector.result;
-        preview1.style.display = 'block';
-      });
+                lector.addEventListener('load', function() {
+                    preview1.src = lector.result;
+                    preview1.style.display = 'block';
+                });
 
-      lector.readAsDataURL(archivo);
-    } else {
-      preview1.src = '#';
-      preview1.style.display = 'none';
-    }
-  });
-</script>
+                lector.readAsDataURL(archivo);
+            } else {
+                preview1.src = '#';
+                preview1.style.display = 'none';
+            }
+        });
+    </script>

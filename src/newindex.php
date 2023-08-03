@@ -1,8 +1,42 @@
-<?php 
+<?php
+session_start(); 
+
+if (isset($_SESSION["Email"])) {
+    include('./PHP/conexion.php');
+
+    $conexion = new mysqli($host,$user,$password,$bd);
+    if(!$conexion){
+      die("Error en la conexion". mysqli_connect_error());
+    }
+    $Email = $_SESSION["Email"];
+
+
+} else {
+
+    header("Location: ./Login.php");
+    exit();
+}
+
 
 $sql_all = true;
 
+
+if (isset($_SESSION["Email"])) {
+  echo "Bienvenido" . " " . $_SESSION['Email'];
+
+   echo '<a href="./PHP/Logout.php"><button>Salir</button></a>' ;
+} else{
+  
+}
+
 ?>
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +78,7 @@ $sql_all = true;
 
                        
                         <div class="flex items-center ">
-                         
-                         
+                        
                           <a href="#">
                             <img class="w-auto h-24 hidden" src="../img/logis.png" alt="" id="mimami">
                         </a>

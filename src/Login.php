@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     //Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
-     $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 header("Location: ./Profile_Journalist.php?jour=".$Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
                 header("Location: ./newindex.php"); // Redirección para el rol 3
+                
             } else {
                 echo "Rol no válido.";
                 exit();
