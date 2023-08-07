@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 1
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./Administrador.php");
+        header("Location: ./WelcomeAdmin.html");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $row = $resultadoRol->fetch_assoc();
             $rolUsuario = $row['rol'];
             if ($rolUsuario == 1) {
-                header("Location: ./Administrador.php"); // Redirección para el rol 1
+                header("Location: ./WelcomeAdmin.html"); // Redirección para el rol 1
             } elseif ($rolUsuario == 2) {
                 header("Location: ./Profile_Journalist.php?jour=".$Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
