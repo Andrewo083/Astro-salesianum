@@ -13,8 +13,8 @@ $conexion = new mysqli($host, $user, $password, $bd);
 if (!$conexion) {
   die("Error en la conedxion" . mysqli_connect_error());
 }
-
-$email = $_GET['jour'];
+$email = $_SESSION['Email'];
+//$email = $_GET['jour'];
 
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
