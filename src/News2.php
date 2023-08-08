@@ -1,3 +1,23 @@
+<?php 
+
+$id_news = $_GET['new'];
+//conexion a la bd
+$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+
+//directorio de las img
+$carpet_images = "../img/";
+
+//consulta con el id
+$query = "SELECT * FROM `news` WHERE `id_news` = '$id_news'";
+
+//sacar datos y repeticion 
+$result = mysqli_query($conexion, $query);
+while($row = mysqli_fetch_array($result)){
+   
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,3 +198,4 @@
 </div>
 </body>
 </html>
+<?php } ?>
