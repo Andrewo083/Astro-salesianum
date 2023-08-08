@@ -52,16 +52,19 @@ while ($row = mysqli_fetch_array($result)) {
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="#">
+            <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="50px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro
+                Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -74,14 +77,14 @@ while ($row = mysqli_fetch_array($result)) {
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="#">
+                <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
                 <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
-        <img src="ruta-de-la-imagen.jpg" alt="Imagen Circular">
+        <img src="../img/<?php echo $row['ProfileImage'] ?>" alt="Imagen Circular">
     </div>
                 </a>
-                <img src="" alt="">
-                </div>
+                
+                
             </div>
             <!-- Responsive navbar -->
             <a class="xl:hidden flex mr-6 items-center" href="#">

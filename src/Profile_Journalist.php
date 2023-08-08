@@ -50,16 +50,21 @@ while ($row = mysqli_fetch_array($result)) {
         <!-- navbar -->
         <nav class="flex justify-between bg-gray-900 text-white ">
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a class="text-3xl font-bold font-heading" href="#">
-              <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-              Astro
-            </a>
+          <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="50px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
+                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+                Astro Salesianum
+                </a>
             <!-- Nav Links -->
+           
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-              <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-              <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
+                </ul>
               <?php
 
               if(isset($_SESSION['Email'])){
