@@ -39,7 +39,7 @@ $query = mysqli_query($conexion, $sql);
       <div id="menu" class="lg:flex hidden flex-grow justify-between items-center absolute lg:relative lg:top-0 top-20 ">
         <div>
           <a href="./Administrador.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Creacion de Reporteros</a>
-          <a href="../src/tablemain.html" class="text-white hover:text-black lg:mr-7 font-semibold ">Publicaciones</a>
+          <a href="../src/AdminNewsTable.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Publicaciones</a>
           <a href="#" class="text-white  hover:text-black lg:mr-7 font-semibold ">mision</a>
           <a href="#" class="text-white hover:text-black font-semibold ">other</a>
         </div>

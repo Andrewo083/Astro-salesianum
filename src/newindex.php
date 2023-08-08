@@ -4,10 +4,10 @@ session_start();
 if (isset($_SESSION["Email"])) {
     include('./PHP/conexion.php');
 
-    $conexion = new mysqli($host,$user,$password,$bd);
-    if(!$conexion){
-      die("Error en la conexion". mysqli_connect_error());
-    }
+      $conexion = new mysqli($host,$user,$password,$bd);
+        if(!$conexion){
+          die("Error en la conexion". mysqli_connect_error());
+        }
     $Email = $_SESSION["Email"];
 
 
@@ -233,7 +233,7 @@ if(isset($_POST['Special'])){
   $everything = true;
  
   $culture = false;
-  
+ 
 ?>
 
 
@@ -286,14 +286,15 @@ if(isset($_POST['Special'])){
                                   </div>
                                   
                           </form>
-                          <?php }else{
+                          <?php }else{  
+                            echo "-";
                               $sql_all = true;
                               $sports = false;
                               
                               $special = false;
                               $everything = true;
                              
-                              $culture = false;/*
+                              $culture = false;
 ?> 
 <section class="my-8">
                               <div class="container mx-auto px-6">
@@ -344,7 +345,7 @@ if(isset($_POST['Special'])){
                                   
                           </form>
 
-<?php*/
+<?php
 
 
 

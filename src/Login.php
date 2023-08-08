@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 2
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./Profile_Journalist.php?jour=".$Email); //Cambiarle a la parte de reportero
+        header("Location: ./Profile_Journalist.php"); //Cambiarle a la parte de reportero
         exit();
     } elseif ($resultadoRol3->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 3

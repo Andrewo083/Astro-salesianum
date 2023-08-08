@@ -1,8 +1,17 @@
 <?php 
+session_start();
 
-$new= $_GET['new'];
+
 
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+
+$email = $_SESSION['Email'];
+$QueryJournalist = "SELECT * FROM reporter WHERE Email = '$email'";
+$ResultJournalist = mysqli_query($conexion, $QueryJournalist);
+while($RowQuery = mysqli_fetch_array($ResultJournalist)){
+  $ProfileImage = $RowQuery['ProfileImage'];
+}
+$new= $_GET['new'];
 $carpet_images = "../img/";
 $query = "SELECT * FROM `news` WHERE `id_news` = '$new'";
 $result = mysqli_query($conexion, $query);
@@ -18,6 +27,21 @@ while($row = mysqli_fetch_array($result)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+        /* Estilos para hacer la imagen redonda */
+        .imagen-circular {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        /* Estilos para asegurar que la imagen ocupe todo el espacio del contenedor circular */
+        .imagen-circular img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
     <meta charset="UTF-8">
     
 <link rel="stylesheet" href="../Public/tailwind.css">
@@ -30,16 +54,19 @@ while($row = mysqli_fetch_array($result)){
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="#">
+            <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="50px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
                 Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
+                <li>.</li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -52,10 +79,11 @@ while($row = mysqli_fetch_array($result)){
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
+                <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+        <img src="../img/<?php echo $ProfileImage ?>" alt="Imagen Circular">
+    </div>
                 </a>
                 
                 </div>
