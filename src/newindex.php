@@ -9,6 +9,7 @@ if (isset($_SESSION["Email"])) {
           die("Error en la conexion". mysqli_connect_error());
         }
     $Email = $_SESSION["Email"];
+    $Nombre = $_SESSION["Name"];
 
 
 } else {
