@@ -125,7 +125,7 @@ $result = mysqli_query($conexion, $query);
         <!--INCIO DE NOTICIA-->
        
         <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  "> 
-          <a href="./News.php?new=<?php echo $row['id_news']?>"> 
+          <a href="./NewsMain.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
           <p class="bg-red-800  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3

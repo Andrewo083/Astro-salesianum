@@ -415,7 +415,7 @@ while($row = mysqli_fetch_array($result)){
                                                     </h3>
                                                   </div>
                                                   <p class="text-sm tracking-normal"><?php echo $contenido_recortado."..."; ?></p>
-                                                  <a href="./News.php?new=<?php echo $row['id_news']?>" class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</a>
+                                                  <a href="./NewsMain.php?new=<?php echo $row['id_news']?>" class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</a>
                                                 </div>
                                               </div>
                                             </div>

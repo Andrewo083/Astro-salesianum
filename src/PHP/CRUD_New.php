@@ -42,14 +42,14 @@ function submit($conexion){
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
-    header("Location: ../Profile_journalist.php ");
+    header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
    
 }
 
 function edit($conexion){
    
     //Carpeta   
-    $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
+    /*$carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
     echo $carpet_images;
     $id_news = $_POST['id_news'];
     $id_reporter = $_POST['id_reporter'];
@@ -71,12 +71,42 @@ function edit($conexion){
     $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
     echo $imagen;
     $url_main = $carpet_images.$imagen;
-    move_uploaded_file($imagen_tmp, $url_main);
+    move_uploaded_file($imagen_tmp, $url_main);*/
 
-    $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`headline`='$headline',`drophead`='$drophead',`date`='$date',`body`='$body',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
+    //$query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`headline`='$headline',`drophead`='$drophead',`date`='$date',`body`='$body',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
+
+
+
+
+   
+    $id_news = $_POST['id_news'];
+    $id_reporter = $_POST['id_reporter'];
+
+    //Nombre y propiedad de la imagen
+    $imagen = $_POST['imagen'];
+    //$imagen = $_FILES['imagen']['name'];
+    //$imagen_tmp = $_FILES['imagen']['tmp_name'];
+
+    //Info de la noticia
+    $headline = $_POST['headline'];
+    $drophead = $_POST['drophead'];
+    $date = $_POST['date'];
+    $body = $_POST['body'];
+    $school = $_POST['school'];
+    $category = $_POST['category'];
+    $photographer = $_POST['photographer'];
+    
+    //nuevo nommbre
+    /*$imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
+    echo $imagen;
+    $url_main = $carpet_images.$imagen;
+    move_uploaded_file($imagen_tmp, $url_main);*/
+
+        $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`photographer`='$photographer',`headline`='$headline',`drophead`='$drophead',`date`='$date',`body`='$body',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
 
     mysqli_query($conexion, $query);
-    //header('location: ../DonBoscoIndex.php');
+    echo "Si se hixo";
+    header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
 
 }
 

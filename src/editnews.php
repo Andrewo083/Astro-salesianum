@@ -124,24 +124,7 @@ while($row = mysqli_fetch_array($result)){
 
               </div> 
 
-
-              <label class="block pt-2">
-                <span class="sr-only t-2">Choose profile photo</span>
-
-
-                <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
-                  file:mr-4 file:py-2 file:px-4
-                  file:rounded-full file:border-0
-                  file:text-sm file:font-semibold
-                  border-green-300
-                  file:bg-green file:text-zinc-900
-                  hover:file:bg-rose-300
-                "/> <br><br>
-               
-                
-                
-
-              </label>
+            <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
                 <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />

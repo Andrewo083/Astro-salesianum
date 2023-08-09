@@ -55,8 +55,8 @@ while($row = mysqli_fetch_array($result)){
 
 <div class="container mx-auto px-6 py-16 text-center">
         <div class="mx-44">
-        <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Building Your Next App with our Awesome components</h1>
-        <p class="mt-6 text-gray-500 dark:text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero similique obcaecati illum mollitia.quam totam sapiente commodi dicta, odio quaerat sint eos nobis numquam, sit pariatur labore tempore nihil! Voluptatibus modi veniam mollitia in dolorem praesentium harum earum fugiat quibusdam. Et eius, doloremque optio, eveniet quo repellendus veritatis in sunt sapiente unde commodi laudantium error. Ex commodi maiores ipsa similique necessitatibus</p>
+        <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
+        <p class="mt-6 text-gray-500 dark:text-gray-300"><?php echo $row['drophead']?></p>
         <button class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto">Start 14-Day free trial</button>
         </div>
 
@@ -88,16 +88,16 @@ while($row = mysqli_fetch_array($result)){
     <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
       <div class="h-1/2 flex-1"><img src="../img/meri.jpeg" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
       <div class="p-10">
-        <h3 class="text-xl font-medium text-gray-700">Omnichannel support center</h3>
+        
         <p class="mt-2 text-slate-500">Chatwoot connects with popular customer communication channels like Email, Website live-chat, Facebook, Twitter, WhatsApp, Instagram, Line, etc., and helps you deliver a consistent customer experience across channels.</p>
-        <a href="" class="mt-2 inline-flex text-sky-500">Read More →</a>
+        
       </div>
     </div>
     <div class="flex rounded-md border border-slate-200">
       <div class="flex-1 p-10">
-        <h3 class="text-xl font-medium text-gray-700">A live-chat that fits your brand</h3>
+       
         <p class="mt-2 text-slate-500">Connect with your website visitors, communicate with them in realtime and give them quality support with a live-chat widget that fits your brand.</p>
-        <a href="" class="mt-2 inline-flex text-sky-500">Read More →</a>
+        
       </div>
 
       <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
@@ -108,9 +108,9 @@ while($row = mysqli_fetch_array($result)){
     </div>
     <div class="flex rounded-md border border-slate-200">
       <div class="flex-1 p-10">
-        <h3 class="text-xl font-medium text-gray-700">Respond faster, with automated chatbots</h3>
+       
         <p class="mt-2 text-slate-500">Integrate with chatbots using Rasa or Dialogflow to automate conversations. Qualify using chatbots and seamlessly handoff to human agents.</p>
-        <a href="" class="mt-2 inline-flex text-sky-500">Read More →</a>
+        
       </div>
 
       <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
