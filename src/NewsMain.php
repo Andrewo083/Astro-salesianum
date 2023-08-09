@@ -18,6 +18,8 @@ if (isset($_SESSION["Email"])) {
 }
 
 
+
+
 $id_news = $_GET['new'];
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
@@ -224,7 +226,14 @@ while ($row = mysqli_fetch_array($result)) {
                     <div class="px-4 py-2 flex  justify-between">
                       <span class="text-sm font-semibold text-gray-900">
 
-                     HOLA
+                     <?php
+                     if(isset($_SESSION['Name'])){
+                      echo "Aqui se da validez de que esta la session name";
+                     } else{
+                      echo "No hay sesion name activa";
+                     }
+                     
+                     ?>
 
 
                       </span>

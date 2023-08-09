@@ -16,33 +16,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Error en la conexión" . mysqli_connect_error());
     }
 
-    //Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
-    $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
+   // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
-    // $resultadoRol1 = $conexion->query($consultaRol1);
+    //$resultadoRol1 = $conexion->query($consultaRol1);
     $resultadoRol2 = $conexion->query($consultaRol2);
     $resultadoRol3 = $conexion->query($consultaRol3);
 
     // Verificamos si se encontró una fila coincidente en alguna de las tablas
     if ($resultadoRol1->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 1
+        $row = $resultadoRol1->fetch_assoc();
         session_start();
         $_SESSION["Email"] = $Email;
+        $_SESSION["Name"] = $row["Name"];
         header("Location: ./WelcomeAdmin.html");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
+        $row = $resultadoRol2->fetch_assoc();
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./Profile_Journalist.php"); //Cambiarle a la parte de reportero
+        $_SESSION["Name"] = $row["Name"];
+        header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
         exit();
     } elseif ($resultadoRol3->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 3
+        $row = $resultadoRol3->fetch_assoc();
         session_start();
         $_SESSION["Email"] = $Email;
-        
+        $_SESSION["Name"] = $row["Name"];
+
         // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
         $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
         $resultadoRol = $conexion->query($rolConsulta);
@@ -55,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 header("Location: ./Profile_Journalist.php?jour=".$Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
                 header("Location: ./newindex.php"); // Redirección para el rol 3
-                
             } else {
                 echo "Rol no válido.";
                 exit();
@@ -72,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>

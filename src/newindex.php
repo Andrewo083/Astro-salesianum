@@ -9,7 +9,7 @@ if (isset($_SESSION["Email"])) {
           die("Error en la conexion". mysqli_connect_error());
         }
     $Email = $_SESSION["Email"];
-    $Nombre = $_SESSION["Name"];
+
 
 
 } else {
@@ -23,7 +23,7 @@ $sql_all = true;
 
 
 if (isset($_SESSION["Email"])) {
-  echo "Bienvenido" . " " . $_SESSION['Email'];
+  echo "Bienvenido" . " " . $_SESSION['Name'];
 
    echo '<a href="./PHP/Logout.php"><button>Salir</button></a>' ;
 } else{
