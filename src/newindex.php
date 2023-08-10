@@ -57,7 +57,7 @@ $name = $_SESSION['Name'];
 </head>
 <body>
           <div class="flex w-full">
-                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white transition-all ease-in duration-300" id="puta">
+                    <div class="flex w-2/5 md:w-1/4 h-screen bg-white transition-all ease-in duration-300" id="slide">
                       <div class="mx-auto py-10">
                         <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">Astrum Salesianum</h1>
                         <ul>
@@ -83,13 +83,13 @@ $name = $_SESSION['Name'];
 
 
                     <main class=" min-h-screen w-full">
-                      <nav class="flex justify-center px-10 bg-white py-6" id="mequieromatar">
+                      <nav class="flex justify-center px-10 bg-white py-6" id="menuu">
 
                        
                         <div class="flex items-center ">
                         
                           <a href="#">
-                            <img class="w-auto h-24 hidden" src="../img/logis.png" alt="" id="mimami">
+                            <img class="w-auto h-24 hidden" src="../img/logis.png" alt="" id="img">
                         </a>
             
                         </div>
@@ -459,24 +459,24 @@ while($row = mysqli_fetch_array($result)){
                   
                   
                   <script>
-                    let puta = document.getElementById("puta")
-                    let mimami = document.getElementById('mimami')
-                    let mequieromatar = document.getElementById('mequieromatar')
-                    puta.addEventListener('click', () => {
-                      puta.classList.add("left-[-500px]")
-                      puta.classList.add("absolute")
-                      mimami.classList.remove('hidden')
-                      mequieromatar.classList.remove('justify-center')
-                      mequieromatar.classList.add('justify-between')
+                    let slide = document.getElementById("slide")
+                    let img = document.getElementById('img')
+                    let menuu = document.getElementById('menuu')
+                    slide.addEventListener('click', () => {
+                      slide.classList.add("left-[-500px]")
+                      slide.classList.add("absolute")
+                      img.classList.remove('hidden')
+                      menuu.classList.remove('justify-center')
+                      menuu.classList.add('justify-between')
                     })
 
-                    mimami.addEventListener('click', () => {
-                      puta.classList.remove("left-[-500px]")
-                      puta.classList.remove("absolute")
-                      mimami.classList.add('hidden')
+                    img.addEventListener('click', () => {
+                      slide.classList.remove("left-[-500px]")
+                      slide.classList.remove("absolute")
+                      img.classList.add('hidden')
                       
-                      mequieromatar.classList.add('justify-center')
-                      mequieromatar.classList.remove('justify-between')
+                      menuu.classList.add('justify-center')
+                      menuu.classList.remove('justify-between')
                     })
 
 
