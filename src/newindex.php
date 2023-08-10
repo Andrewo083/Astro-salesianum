@@ -75,7 +75,7 @@ $name = $_SESSION['Name'];
                             <span class="font-semibold"><?php echo $name; ?></span>
                           </li>
                          
-                          <button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white"><a href="./PHP/Logout.php">Salir</a></button>
+                          <a href="./PHP/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
                         </ul>
                       </div>
                     </div>

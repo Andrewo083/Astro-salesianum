@@ -31,7 +31,7 @@ style="background-image: url('../img/bg_4.jpg');">
             <div>
         
               <a
-                href="../src/login.html"
+                href="./PHP/Logout.php"
                 class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
                 >Log out</a
               >
@@ -104,7 +104,7 @@ while ($row = mysqli_fetch_array($result)) {
                           </div>
                           <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Editar</a>
                           <form action="./php/CRUD_New.php" method="post">
-                          <input  type="submit"  name="delete" class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300" value="Eliminar">
+                          <a  href="./php/deletenews.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300" >Eliminar</a>
                           </form>
                       </div>
                   </div>

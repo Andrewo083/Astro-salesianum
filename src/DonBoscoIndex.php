@@ -29,7 +29,7 @@ $result = mysqli_query($conexion, $query);
             <!-- navbar -->
             <nav class="flex justify-between bg-blue-950 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
+                <a class="text-3xl font-bold font-heading" href="../src/newindex.php">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
               Astro Salesianum
                 </a>
@@ -81,7 +81,17 @@ $result = mysqli_query($conexion, $query);
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
+<<<<<<< Updated upstream
             <div class=" bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+=======
+            <div class
+            
+            
+            
+            
+            
+            flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+>>>>>>> Stashed changes
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"

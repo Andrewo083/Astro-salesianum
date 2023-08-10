@@ -29,7 +29,7 @@ $result = mysqli_query($conexion, $query);
             <!-- navbar -->
             <nav class="flex justify-between bg-black text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
+            <a class="text-3xl font-bold font-heading" href="../src/newindex.php">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
               Astro Salesianum
                 </a>
