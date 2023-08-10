@@ -98,19 +98,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-gray-900 text-white w-screen">
+            <nav class="flex justify-between bg-gray-900 text-white ">
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                    <a class="text-3xl font-bold font-heading" href="#">
+                    <a class="text-3xl font-bold font-heading" href="./start.html">
                         <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                        Astro
-                    </a>
-                    <!-- Nav Links -->
-                    <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                        <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                        <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                        <li><a class="hover:text-gray-200" href="#">Notroso</a></li>
-                        <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
-                    </ul>
+                     Astro Salesianum
+                </a>
+                <!-- Nav Links -->
+                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                
+                </ul>
                     <!-- Header Icons -->
                     <div class="hidden xl:flex items-center space-x-5 items-center">
                         <a class="hover:text-gray-200" href="#">
@@ -123,9 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </a>
                         <!-- Sign In / Register      -->
                         <a class="flex items-center hover:text-gray-200" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                           
                         </a>
 
                     </div>
@@ -185,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </form>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 md:w-1/4"></span>
-                        <a href="#" class="text-xs text-gray-500 uppercase">Volver</a>
+                        <a href="./start.html" class="text-xs text-gray-500 uppercase">Volver</a>
                         <span class="border-b w-1/5 md:w-1/4"></span>
                     </div>
                 </div>
