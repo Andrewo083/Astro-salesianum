@@ -41,7 +41,7 @@ function submit($conexion){
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`, `school`, `Category`, `BodyTwo`, `BodyThree`, `BodyFour`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category')";
+        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`,`BodyTwo`, `BodyThree`, `BodyFour`,`school`, `Category`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
