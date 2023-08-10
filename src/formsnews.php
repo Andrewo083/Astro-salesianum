@@ -1,7 +1,19 @@
 <?php 
+session_start();
 
 
-$Email = $_GET['jour'];
+$email = $_SESSION['Email'];
+$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+$carpet_images = "../img/";
+$query = "SELECT * FROM `reporter` WHERE `email` = '$email'";
+$result = mysqli_query($conexion, $query);
+
+
+
+while ($row = mysqli_fetch_array($result)) {
+
+
+
 
 
 
@@ -14,10 +26,25 @@ $Email = $_GET['jour'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+   
 <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>¡Publica tu noticia!</title>
+    <style>
+        /* Estilos para hacer la imagen redonda */
+        .imagen-circular {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        /* Estilos para asegurar que la imagen ocupe todo el espacio del contenedor circular */
+        .imagen-circular img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -25,16 +52,20 @@ $Email = $_GET['jour'];
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="#">
+            <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="50px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro
+             Astro Salesianum
                 </a>
                 <!-- Nav Links -->
-                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -47,20 +78,21 @@ $Email = $_GET['jour'];
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
+                <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+        <img src="../img/<?php echo $row['ProfileImage'] ?>" alt="Imagen Circular">
+    </div>
                 </a>
                 
-                </div>
+                
             </div>
             <!-- Responsive navbar -->
             <a class="xl:hidden flex mr-6 items-center" href="#">
                 
                 
             </a>
-            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+            <a class="navbar-burger self-center mr-12 xl:hidden" href="2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     
                 </svg>
@@ -77,7 +109,7 @@ $Email = $_GET['jour'];
 
 
               <div>
-                <label for="title" class="text-2lx font-bold text-gray-500">Reportero</label>
+                <label for="title" class="text-2lx font-bold text-gray-500"></label>
                 <input  type="text" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
@@ -110,7 +142,7 @@ $Email = $_GET['jour'];
               </label>
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input  type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
@@ -132,9 +164,25 @@ $Email = $_GET['jour'];
 
               <div>
 
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
-                <textarea id="description" cols="30" rows="10" name="body"  maxlength="500" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (200 caracteres)</label>
+                <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
               </div>
+              <div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+</div>
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+</div>
+
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+</div>
               <div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
@@ -142,7 +190,7 @@ $Email = $_GET['jour'];
                     <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="school">
                         <option value="Colegio Don Bosco">Colegio Don Bosco</option>
                         <option value="Instituto Ricaldone">Instituto Ricaldone</option>
-                        <option value="Colegio Santa Cecilia">Colegio Santa Cecilia especiales</option>
+                        <option value="Colegio Santa Cecilia">Colegio Santa Cecilia </option>
                         <option value="Colegio Maria Auxiliadora">Colegio Maria Auxiliadora</option>
                     </select>
                 </div>    
@@ -160,7 +208,7 @@ $Email = $_GET['jour'];
                 </div>    
               </div>
            <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="SUBIR" name="submit">
-              <button  name="insert">Subir</button>
+             
             </div>
           </div>
         </div>
@@ -189,3 +237,4 @@ $Email = $_GET['jour'];
     }
   });
 </script>
+<?php } ?>

@@ -16,33 +16,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Error en la conexión" . mysqli_connect_error());
     }
 
-    //Consulta para seleccionar el correo y contraseña que coincidan con los ingresados para el rol 1 (otra tabla)
-    $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
+   // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
-    // $resultadoRol1 = $conexion->query($consultaRol1);
+    //$resultadoRol1 = $conexion->query($consultaRol1);
     $resultadoRol2 = $conexion->query($consultaRol2);
     $resultadoRol3 = $conexion->query($consultaRol3);
 
     // Verificamos si se encontró una fila coincidente en alguna de las tablas
     if ($resultadoRol1->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 1
+        $row = $resultadoRol1->fetch_assoc();
         session_start();
-        $_SESSION["Email"] = $Email;
-        header("Location: ./Administrador.php");
+        $_SESSION['Email'] = $Email;
+        $_SESSION["Name"] = $row["Name"];
+        header("Location: ./WelcomeAdmin.html");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
+        $row = $resultadoRol2->fetch_assoc();
         session_start();
         $_SESSION["Email"] = $Email;
-        header("Location: ./Profile_Journalist.php?jour=".$Email); //Cambiarle a la parte de reportero
+        $_SESSION["Name"] = $row["Name"];
+        header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
         exit();
     } elseif ($resultadoRol3->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 3
+        $row = $resultadoRol3->fetch_assoc();
         session_start();
         $_SESSION["Email"] = $Email;
-        
+        $_SESSION["Name"] = $row["Name"];
+
         // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
         $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
         $resultadoRol = $conexion->query($rolConsulta);
@@ -50,12 +56,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $row = $resultadoRol->fetch_assoc();
             $rolUsuario = $row['rol'];
             if ($rolUsuario == 1) {
-                header("Location: ./Administrador.php"); // Redirección para el rol 1
+                header("Location: ./WelcomeAdmin.html"); // Redirección para el rol 1
             } elseif ($rolUsuario == 2) {
                 header("Location: ./Profile_Journalist.php?jour=".$Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
                 header("Location: ./newindex.php"); // Redirección para el rol 3
-                
             } else {
                 echo "Rol no válido.";
                 exit();
@@ -67,11 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else {
         // Inicio de sesión fallido
-        echo '<script>alert("Credenciales incorrectas");
+         echo '<script>alert("Credenciales incorrectas");
          window.location.href = "./Login.php";</script>';
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -185,70 +191,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
         </div>
-        <footer class="bg-neutral-800 dark:bg-gray-900 flex pt-10">
-            <div class="container p-6 mx-auto">
-                <div class="lg:flex">
-                    <div class="w-full -mx-6 lg:w-2/5">
-                        <div class="flex mt-6 -mx-2">
-                            <div class="px-6">
-                                <a href="#">
+       <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/logis.png" alt="">
+          </a>
 
-                                    <h1 class="w-auto h-7 text-white font-semibold">Person Specter</h1>
-                                </a>
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
 
-                                <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never
-                                    miss out on new tips, tutorials, and more.</p>
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
 
+              
+          </div>
+      </div>
 
+      <hr class="my-10 border-gray-200" />
 
-                            </div>
-                        </div>
-                    </div>
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
 
-                    <div class="mt-6 lg:mt-0 lg:flex-1">
-                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">About</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                            </div>
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
 
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Blog</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
-                            </div>
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
 
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Products</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega
-                                    cloud</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion
-                                    UI</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki
-                                    UI</a>
-                            </div>
-
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Contact</h3>
-                                <span class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">+1 526
-                                    654 8965</span>
-                                <span class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">example@email.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-
-                <div>
-                    <p class="text-center text-white dark:text-gray-400">© spectre 2023 - All rights reserved</p>
-                </div>
-            </div>
-        </footer>
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+          </div>
+      </div>
+  </div>
+</footer>
 </body>
 
 </html>

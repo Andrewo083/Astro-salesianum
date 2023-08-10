@@ -1,8 +1,17 @@
 <?php 
+session_start();
 
-$new= $_GET['new'];
+
 
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+
+$email = $_SESSION['Email'];
+$QueryJournalist = "SELECT * FROM reporter WHERE Email = '$email'";
+$ResultJournalist = mysqli_query($conexion, $QueryJournalist);
+while($RowQuery = mysqli_fetch_array($ResultJournalist)){
+  $ProfileImage = $RowQuery['ProfileImage'];
+}
+$new= $_GET['new'];
 $carpet_images = "../img/";
 $query = "SELECT * FROM `news` WHERE `id_news` = '$new'";
 $result = mysqli_query($conexion, $query);
@@ -18,6 +27,21 @@ while($row = mysqli_fetch_array($result)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+        /* Estilos para hacer la imagen redonda */
+        .imagen-circular {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        /* Estilos para asegurar que la imagen ocupe todo el espacio del contenedor circular */
+        .imagen-circular img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
     <meta charset="UTF-8">
     
 <link rel="stylesheet" href="../Public/tailwind.css">
@@ -30,16 +54,20 @@ while($row = mysqli_fetch_array($result)){
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="#">
+            <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="50px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro Salesianum
+          Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -52,10 +80,11 @@ while($row = mysqli_fetch_array($result)){
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
+                <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+        <img src="../img/<?php echo $ProfileImage ?>" alt="Imagen Circular">
+    </div>
                 </a>
                 
                 </div>
@@ -96,24 +125,7 @@ while($row = mysqli_fetch_array($result)){
 
               </div> 
 
-
-              <label class="block pt-2">
-                <span class="sr-only t-2">Choose profile photo</span>
-
-
-                <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
-                  file:mr-4 file:py-2 file:px-4
-                  file:rounded-full file:border-0
-                  file:text-sm file:font-semibold
-                  border-green-300
-                  file:bg-green file:text-zinc-900
-                  hover:file:bg-rose-300
-                "/> <br><br>
-               
-                
-                
-
-              </label>
+            <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
                 <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
@@ -138,10 +150,25 @@ while($row = mysqli_fetch_array($result)){
 
               <div>
 
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
-                <textarea value="" id="description" cols="30" rows="10" name="body" maxlength="750" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['body']; ?></textarea>
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (200 caracteres)</label>
+                <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyOne']?></textarea>
               </div>
               <div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyTwo']?></textarea>
+</div>
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyThree']?></textarea>
+</div>
+
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyFour']?></textarea>
+</div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 

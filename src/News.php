@@ -85,7 +85,7 @@ while($row = mysqli_fetch_array($result)){
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                <?php 
                
-               $body = $row['body'] ;
+               $body = $row['BodyOne'] ;
 
                $posicionPunto = strpos($body, '.');
 
@@ -324,6 +324,37 @@ $parte2 = substr($body, $posicionPunto + 1);
       </div>
    </div>
 </section>
+  <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/logis.png" alt="">
+          </a>
+
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
+
+              
+          </div>
+      </div>
+
+      <hr class="my-10 border-gray-200" />
+
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+          </div>
+      </div>
+  </div>
+</footer>
 </body>
 </html>
 <?php

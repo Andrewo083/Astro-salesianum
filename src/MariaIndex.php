@@ -21,24 +21,27 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
-    <title>Document</title>
+    <title> News Maria axuliadora </title>
+       <link rel="icon" href="../img/logis.png"/>
+
 </head>
 <body>
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-black text-white w-screen">
+            <nav class="flex justify-between bg-sky-500 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                 <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro
+              Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -81,7 +84,7 @@ $result = mysqli_query($conexion, $query);
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
-            <div class="bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+            <div class="bg-sky-300 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
@@ -118,17 +121,17 @@ $result = mysqli_query($conexion, $query);
 
 
 <?php while($row = mysqli_fetch_array($result)){
-  $contenido = $row['body']; // Supongamos que aquí tienes el contenido de la base de datos
+  $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
   $numero_caracteres = 300;
   $contenido_recortado = substr($contenido, 0, $numero_caracteres);
 ?>
         <!--INCIO DE NOTICIA-->
        
         <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4  "> 
-          <a href="./News.php?new=<?php echo $row['id_news']?>"> 
+          <a href="./NewsMain.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
-          <p class="bg-red-800  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
+          <p class="bg-fuchsia-300  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
               rounded-full uppercase inline-block"><?php echo $row['Category'];?></p>
               
           <p class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></p>
@@ -153,6 +156,36 @@ $result = mysqli_query($conexion, $query);
       </div>
     </div>
   </div> 
-  
+    <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/logis.png" alt="">
+          </a>
+
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
+
+              
+          </div>
+      </div>
+
+      <hr class="my-10 border-gray-200" />
+
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+          </div>
+      </div>
+  </div>
+</footer>
 </body>
 </html>
