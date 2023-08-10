@@ -1,19 +1,28 @@
 <?php
-include('./PHP/conexion.php');
+    
 
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
-if (!$conexion) {
-    die("Error en la conexión: " . mysqli_connect_error());
-}
 
-$query = "SELECT * FROM `comments`";
-$result = mysqli_query($conexion, $query);
+    include('./PHP/conexion.php');
 
-if (!$result) {
-    die("Error en la consulta: " . mysqli_error($conexion));
-}
+    $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
+    if (!$conexion) {
+        die("Error en la conexión: " . mysqli_connect_error());
+    }
+
+    $query = "SELECT * FROM `comments`";
+    $result = mysqli_query($conexion, $query);
+
+    if ($result) {
+      if (mysqli_num_rows($result) > 0) {
+          // Resto del código para mostrar los comentarios
+      } else {
+          echo "No hay comentarios.";
+      }
+  } else {
+      echo "Error en la consulta: " . mysqli_error($conexion);
+  }
 
 
 
@@ -64,23 +73,21 @@ style="background-image: url('../img/bg_4.jpg');">
 
     <!-- tabla-->
 
-    <?php
-    while ($row = mysqli_fetch_array($result)) {
-      $id_comment = $row['id_comment'];
-      $id_user = $row['id_user'];
-      $id_new = $row['id_new'];
-      $comment = $row['comment'];
-      $date = $row['date'];
-  
-
- 
-  ?>
+      <?php
+          while ($row = mysqli_fetch_array($result)) {
+            $id_comment = $row['id_comment'];
+            $id_user = $row['id_user'];
+            $comment = $row['comment'];
+            $date = $row['date'];
+     
+      ?>
+        
     <div class=" pt-12 pr-0 pb-12 pl-0 mt-0 mr-auto mb-0 ml-auto sm:py-16 lg:py-20">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
             <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
               <div>
-                <p class="text-xl font-bold text-gray-700">Administracion de Comentarios</p>
+                <p class="text-xl font-bold text-gray-700">Aqui podras ver los comentarios</p>
                 <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras llevar un control de los comentarios</p>
               </div> 
             </div>
@@ -99,7 +106,7 @@ style="background-image: url('../img/bg_4.jpg');">
                   <div class="flex items-center justify-between sm:mt-2">
                       <div class="flex items-center">
                           <div class="flex flex-col">
-                              <div class="w-full flex-none text-lg text-gray-700 font-bold leading-none"><?php echo   $id_user = $row['id_user'];  ?></div>
+                              <div class="w-full flex-none text-lg text-gray-700 font-bold leading-none"> <?php  echo   $id_user = $row['id_user'];  ?></div>
                               <div class="flex-auto text-gray-700 my-1">
                                   <span class="mr-3 ">Comentario</span><span class="mr-3 border-r border-gray-600  max-h-0"></span><span> <?php echo      $comment = $row['comment']; ?> </span>
                               </div>
@@ -124,11 +131,11 @@ style="background-image: url('../img/bg_4.jpg');">
                                       d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
                                       clip-rule="evenodd"></path>
                               </svg>
-                              <p class="">Fecha/<?php echo      $date = $row['date']; ?></p>
+                              <p class="">Fecha/<?php  echo      $date = $row['date']; ?></p>
                           </div>
                           
                   
-                        <a href="./PHP/DeleteComments.php?ID=<?php echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
+                        <a href="./PHP/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
                       </div>
                   </div>
 
@@ -138,16 +145,17 @@ style="background-image: url('../img/bg_4.jpg');">
             </div>
           </div>
                     <!-- finperiodistas-->
-                    <?php
-                           }
-  
-                           mysqli_close($conexion);
-                          ?>
+            
 
               </div>
             </div>
           </div>
         </div>
+        <?php
+      
+          }
+          mysqli_close($conexion);
+        ?>
       </div>
 </body>
 </html>

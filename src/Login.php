@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else {
         // Inicio de sesión fallido
-        echo '<script>alert("Credenciales incorrectas");
+         echo '<script>alert("Credenciales incorrectas");
          window.location.href = "./Login.php";</script>';
     }
 }

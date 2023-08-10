@@ -1,5 +1,5 @@
 <?PHP
- $carpet_images = "../img/";
+$carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
 $query = "SELECT * FROM `news` WHERE `school` = 'Colegio Don Bosco' ORDER BY 'date' DESC";
