@@ -12,15 +12,16 @@ while ($row = mysqli_fetch_array($result)) {
   $content = $row['body'];
 
  
-// Dividir la noticia en párrafos y eliminar espacios en blanco adicionales
-$parrafos = array_map('trim', explode("\n\n", $content));
+  $noticia =  $content;
 
-// Asignar cada párrafo a una variable separada (si existen suficientes párrafos)
-$parrafo1 = isset($parrafos[0]) ? $parrafos[0] : "";
-$parrafo2 = isset($parrafos[1]) ? $parrafos[1] : "";
-$parrafo3 = isset($parrafos[2]) ? $parrafos[2] : "";
-$parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
-
+  // Dividir la noticia en párrafos y eliminar espacios en blanco adicionales
+  $parrafos = array_map('trim', explode("\n\n", $noticia));
+  
+  // Asignar cada párrafo a una variable separada (si existen suficientes párrafos)
+  $parrafo1 = isset($parrafos[0]) ? $parrafos[0] : "";
+  $parrafo2 = isset($parrafos[1]) ? $parrafos[1] : "";
+  $parrafo3 = isset($parrafos[2]) ? $parrafos[2] : "";
+  $parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
 
 
 ?>
@@ -70,11 +71,12 @@ $parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
 
 
         <div class="container mx-auto px-6 py-16 text-center">
-          <div class="mx-44">
-            <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline'] ?></h1>
-            <p class="mt-6 text-gray-500 dark:text-gray-300"><?php echo $row['drophead'] ?></p><br>
-            <a href="https://www.instagram.com/epicyears/" class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto"><b>Fotografo:</b> <?php echo $row['photographer']?></a>
-          </div>
+        <div class="mx-44">
+        <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
+        <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $parrafo1 ?></p><br>
+        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto"><b>Fotografo:</b> <?php echo $row['photographer']; ?>
+        </a>
+        </div>
 
           <div class="mt-10 flex justify-center">
             <img class="h-96 w-full rounded-xl object-cover lg:w-4/5" src="../img/<?php echo $row['main_image']?>" />
@@ -102,36 +104,36 @@ $parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
         <div class="flex min-h-screen items-center justify-center p-10 bg-white">
           <div class="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
             <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
-              <div class="h-1/2 flex-1"><img src="../img/<?php $row['main_image'];?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
+              <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
               <div class="p-10">
 
-                <p class="mt-2 text-slate-500">Chatwoot connects with popular customer communication channels like Email, Website live-chat, Facebook, Twitter, WhatsApp, Instagram, Line, etc., and helps you deliver a consistent customer experience across channels.</p>
+                <p class="mt-2 text-slate-500"><?php echo $parrafo2?></p>
 
               </div>
             </div>
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500">Connect with your website visitors, communicate with them in realtime and give them quality support with a live-chat widget that fits your brand.</p>
+                <p class="mt-2 text-slate-500"><?php echo $parrafo3 ?></p>
 
               </div>
 
               <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
                 <div class="absolute inset-0">
-                  <img src="../img/chele.jpeg" class="h-full w-full object-cover object-left-top" alt="" />
+                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover object-left-top" alt="" />
                 </div>
               </div>
             </div>
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500">Integrate with chatbots using Rasa or Dialogflow to automate conversations. Qualify using chatbots and seamlessly handoff to human agents.</p>
+                <p class="mt-2 text-slate-500"><?php echo $parrafo4?></p>
 
               </div>
 
               <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
                 <div class="absolute inset-0">
-                  <img src="../img/serg.jpeg" class="h-full w-full object-cover object-left-top" alt="" />
+                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover object-left-top" alt="" />
                 </div>
               </div>
 
