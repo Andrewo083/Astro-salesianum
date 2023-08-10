@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-08-2023 a las 07:20:14
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 10-08-2023 a las 21:39:09
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,24 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `comments` (
   `id_comment` int(11) NOT NULL,
   `id_user` varchar(100) NOT NULL,
-  `id_new` int(100) NOT NULL,
+  `id_new` varchar(100) NOT NULL,
   `comment` text NOT NULL,
   `date` date NOT NULL DEFAULT current_timestamp(),
   `State` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `comments`
---
-
-INSERT INTO `comments` (`id_comment`, `id_user`, `id_new`, `comment`, `date`, `State`) VALUES
-(6, 'rubencitonieto005@gmail.com', 113, 'bnm,.nbnkl', '2023-08-10', ''),
-(7, 'rubencitonieto005@gmail.com', 113, 'jkhjkgdktug', '2023-08-10', ''),
-(8, 'rubencitonieto005@gmail.com', 113, 'cvbn,./', '2023-08-10', ''),
-(9, 'rubencitonieto005@gmail.com', 113, 'cvbn,./k', '2023-08-10', ''),
-(10, 'rubencitonieto005@gmail.com', 113, 'b n,', '2023-08-10', ''),
-(11, 'elias@gmail.com', 113, 'fghgfds', '2023-08-10', ''),
-(12, 'elias@gmail.com', 113, 'mnnm\r\n', '2023-08-10', 'active');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -64,19 +51,20 @@ CREATE TABLE `news` (
   `drophead` text NOT NULL,
   `date` date NOT NULL,
   `BodyOne` text NOT NULL,
-  `school` text NOT NULL,
-  `Category` text NOT NULL,
   `BodyTwo` text NOT NULL,
   `BodyThree` text NOT NULL,
-  `BodyFour` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `BodyFour` text NOT NULL,
+  `school` text NOT NULL,
+  `Category` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `news`
 --
 
-INSERT INTO `news` (`id_news`, `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`, `school`, `Category`, `BodyTwo`, `BodyThree`, `BodyFour`) VALUES
-(113, 'Ketut@astro.sv', 'Chaleco celebra sus Intramuros 2023!-Ketut@astro.sv-fotografo-@epicyears!.png', '@epicyears!', 'Chaleco celebra sus Intramuros 2023!', 'Santa Cecilia celebra a lo grande sus intramuros 2023', '2023-07-26', 'En un avance sorprendente, científicos hallan pruebas de cambio climático en deshielos árticos. Datos satelitales revelan reducción drástica de hielo, confirmando tendencias alarmantes. Experto climático advierte riesgos para ecosistemas y nivel del mar.1', 'Colegio Santa Cecilia', 'Eventos Especiales', 'Comunidades costeras en alerta ante inminente aumento del nivel del mar. Investigadores instan a medidas globales inmediatas para frenar impacto. Gobiernos debaten políticas ambientales mientras activistas exigen acciones concretas.2', 'Debido a drásticos cambios, animales árticos enfrentan pérdida de hábitat y recursos. Esfuerzos por preservar ecosistemas se intensifican; biólogos preocupados por futuro de especies en peligro. Turismo sustentable se plantea como vía para concienciar y financiar conservación.3', 'Debido a drásticos cambios, animales árticos enfrentan pérdida de hábitat y recursos. Esfuerzos por preservar ecosistemas se intensifican; biólogos preocupados por futuro de especies en peligro. Turismo sustentable se plantea como vía para concienciar y financiar conservación.4');
+INSERT INTO `news` (`id_news`, `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`, `BodyTwo`, `BodyThree`, `BodyFour`, `school`, `Category`) VALUES
+(113, 'Ketut@astro.sv', 'Chaleco celebra sus Intramuros 2023!-Ketut@astro.sv-fotografo-@epicyears!.png', '@epicyears!', 'Chaleco celebra sus Intramuros 2023!', 'Santa Cecilia celebra a lo grande sus intramuros 2023', '2023-07-26', 'Chaleco, la vibrante comunidad cultural, celebró con entusiasmo su evento anual, los Intramuros 2023. Durante cuatro emocionantes días, las calles se llenaron de música, arte y diversión para toda la familia. Los residentes disfrutaron de conciertos, exposiciones de artistas locales y una gran variedad de actividades', 'Los talentosos artistas de Chaleco exhibieron sus obras en una galería al aire libre, convirtiendo la ciudad en un lienzo gigante. Los asistentes apreciaron la diversidad de estilos y técnicas, desde pinturas vibrantes hasta instalaciones impactantes. La cultura floreció en cada esquina, inspirando a jóvenes y mayores por igual.', ' La música llenó el aire con una mezcla de géneros, desde bandas indie emergentes hasta artistas consolidados. Los escenarios improvisados en plazas y parques reunieron a multitudes entusiastas que bailaron al ritmo de las melodías. Los Intramuros 2023 se convirtieron en un festival de sonidos, uniéndolos en un abrazo colectivo de alegría.', ' Los Intramuros no solo brindaron entretenimiento, sino que también fortalecieron los lazos comunitarios. Los negocios locales prosperaron con el aumento de visitantes, y la energía positiva continuará inspirando a Chaleco durante todo el año. Los residentes ya esperan ansiosos los Intramuros 2024, una tradición que celebra la vitalidad de su amada ciudad.', 'Colegio Santa Cecilia', 'Eventos Especiales'),
+(114, 'Ketut@astro.sv', 'Maria Auxiliadora celebra sus Intramuros 2023-Ketut@astro.sv-fotografo-@Epicyears!.png', '@Epicyears!', 'Maria Auxiliadora celebra sus Intramuros 2023', 'Las jovenes Marianas celebran su fiesta despues de la pandemia', '2023-08-02', 'Las Marianas, llenas de alegría, finalmente se reunieron para celebrar tras tiempos difíciles. Con sonrisas radiantes, compartieron abrazos y risas, reafirmando su vínculo. La fiesta, llena de esperan', ' La fiesta marcó un hito en la recuperación de la normalidad. Las Marianas miran hacia el futuro con esperanza, decididas a reconstruir y fortalecer su comunidad. Esta celebración es un testimonio de ', ' Después de largos meses de distanciamiento, la emoción era palpable. Amigos y familiares se abrazaron con ternura, valorando cada momento. Las jóvenes Marianas compartieron historias de superación y ', 'La fiesta fue un festín culinario y musical. Sabores locales deleitaron los paladares, mientras que la música en vivo animaba la noche. Bailes y risas resonaron en todos los rincones, recordando la vi ', 'Colegio Maria Auxiliadora', 'Eventos Especiales');
 
 -- --------------------------------------------------------
 
@@ -92,7 +80,7 @@ CREATE TABLE `reporter` (
   `LastName` varchar(110) NOT NULL,
   `PhoneNumber` char(14) NOT NULL,
   `ROL` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `reporter`
@@ -110,23 +98,22 @@ INSERT INTO `reporter` (`Email`, `ProfileImage`, `Password`, `Name`, `LastName`,
 CREATE TABLE `user` (
   `Email` varchar(100) NOT NULL,
   `Name` text NOT NULL,
-  `ProfileImage` text NOT NULL,
   `LastName` text NOT NULL,
   `Password` varchar(100) NOT NULL,
   `PhoneNumber` char(14) NOT NULL,
-  `ROL` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `ROL` int(11) NOT NULL,
+  `ProfileImage` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`Email`, `Name`, `ProfileImage`, `LastName`, `Password`, `PhoneNumber`, `ROL`) VALUES
-('ediwn.platero@gmail.com', 'Edwin', '', 'Platero Platero', '123', '+503 7849-6354', 3),
-('elias@gmail.com', 'Elias', 'lawyer2.png', 'Giron', '123', '+503 7898-6542', 3),
-('rubencitonieto005@gmail.com', 'Rubén Alexander', '', 'Nieto', '123', '+503 7763-565', 3),
-('Salesiano@astro.sv', 'Astro ', '', 'Salesianum Administration', '123', '-', 1),
-('w', 'Rubén Alexander', '', 'Nieto', '123', '7763', 3);
+INSERT INTO `user` (`Email`, `Name`, `LastName`, `Password`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES
+('ediwn.platero@gmail.com', 'Edwin', 'Platero Platero', '123', '+503 7849-6354', 3, ''),
+('rubencitonieto005@gmail.com', 'Rubén Alexander', 'Nieto', '123', '+503 7763-565', 3, ''),
+('Salesiano@astro.sv', 'Astro ', 'Salesianum Administration', '123', '-', 1, ''),
+('w', 'Rubén Alexander', 'Nieto', '123', '7763', 3, '');
 
 --
 -- Índices para tablas volcadas
@@ -167,13 +154,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `news`
 --
 ALTER TABLE `news`
-  MODIFY `id_news` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id_news` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- Restricciones para tablas volcadas
@@ -183,7 +170,7 @@ ALTER TABLE `news`
 -- Filtros para la tabla `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comment-new` FOREIGN KEY (`id_new`) REFERENCES `news` (`id_news`),
+  ADD CONSTRAINT `comment-new` FOREIGN KEY (`id_comment`) REFERENCES `news` (`id_news`),
   ADD CONSTRAINT `comment-user` FOREIGN KEY (`id_user`) REFERENCES `user` (`Email`);
 
 --
