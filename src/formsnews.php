@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_array($result)) {
               </label>
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input  type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>

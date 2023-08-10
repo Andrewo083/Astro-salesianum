@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Inicio de sesión exitoso para el rol 1
         $row = $resultadoRol1->fetch_assoc();
         session_start();
-        $_SESSION["Email"] = $Email;
+        $_SESSION['Email'] = $Email;
         $_SESSION["Name"] = $row["Name"];
         header("Location: ./WelcomeAdmin.html");
         exit();

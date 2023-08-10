@@ -31,9 +31,9 @@ $sql_all = true;
 
 
 if (isset($_SESSION["Email"])) {
-  echo "Bienvenido" . " " . $_SESSION['Name'];
+$name = $_SESSION['Name'];
 
-   echo '<a href="./PHP/Logout.php"><button>Salir</button></a>' ;
+  
 } else{
   
 }
@@ -72,10 +72,10 @@ if (isset($_SESSION["Email"])) {
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
-                            <span class="font-semibold">Profile</span>
+                            <span class="font-semibold"><?php echo $name; ?></span>
                           </li>
-                     
-                          <button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Learn</button>
+                         
+                          <button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white"><a href="./PHP/Logout.php">Salir</a></button>
                         </ul>
                       </div>
                     </div>
@@ -137,10 +137,7 @@ if (isset($_SESSION["Email"])) {
                   
                       </nav>
                       <form action="" method="post">
-                       <button name="Culture">CULTURA</button>
-                        <button name="Sports">SPORTS</button>
-                        <button name="Special">Special</button>
-                        <button name="Everything">TODO</button> 
+                       
                       <?php 
 $everything = true;
 //SI ES ESPECIAL
@@ -160,14 +157,14 @@ if(isset($_POST['Special'])){
 ?>
 <section class="my-8">
                               <div class="container mx-auto px-6">
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SpecialEvents.jpg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
-                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M100 25L0 25M0 25L10 15M0 25L10 35"></path></svg>
+                                                 
                                               </button>
                                           </div>
                                       </div>
@@ -194,14 +191,14 @@ if(isset($_POST['Special'])){
 ?>
 <section class="my-8">
                               <div class="container mx-auto px-6">
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/Sports.jpg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/cdbbkg1.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
-                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                                  
                                               </button>
                                           </div>
                                       </div>
@@ -230,14 +227,14 @@ if(isset($_POST['Special'])){
 ?>
 <section class="my-8">
                               <div class="container mx-auto px-6">
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img//Culture.jpg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/mariaculture.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Cultura</h2>
                                               <p class="mt-2 text-gray-400">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
-                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                                  
                                               </button>
                                           </div>
                                       </div>

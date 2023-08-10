@@ -27,7 +27,10 @@ function submit($conexion){
     $headline = $_POST['headline'];
     $drophead = $_POST['drophead'];
     $date = $_POST['date'];
-    $body = $_POST['body'];
+    $BodyOne = $_POST['BodyOne'];
+    $BodyTwo = $_POST['BodyTwo'];
+    $BodyThree = $_POST['BodyThree'];
+    $BodyFour = $_POST['BodyFour'];
     $school = $_POST['school'];
     $category = $_POST['category'];
     $photographer = $_POST['photographer'];
@@ -38,7 +41,7 @@ function submit($conexion){
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `headline`, `drophead`, `date`, `body`, `school`, `category`,`photographer`) VALUES ('$id_reporter','$imagen','$headline','$drophead','$date','$body','$school', '$category', '$photographer')";
+        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`, `school`, `Category`, `BodyTwo`, `BodyThree`, `BodyFour`) VALUES (,'$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
