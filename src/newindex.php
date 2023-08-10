@@ -399,7 +399,7 @@ if($sql_all == true){
 $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
 
-  $contenido = $row['body']; // Supongamos que aquí tienes el contenido de la base de datos
+  $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
   $numero_caracteres = 300;
   $contenido_recortado = substr($contenido, 0, $numero_caracteres);
    
