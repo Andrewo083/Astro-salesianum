@@ -95,14 +95,24 @@ while ($row = mysqli_fetch_array($result)) {
               <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
               <div class="p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $row['BodyTwo'] ?></p>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyFour'] ?><br><br><b>Escrito por</b>
+              
+              <?php
+              $email = $row['id_reporter'];
+              $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
+              $ResultReport = mysqli_query($conexion, $QueryReport);
+              while ($RowReport = mysqli_fetch_array($ResultReport)) {
+                echo "@".$RowReport['Name']." ".$RowReport['LastName'];
+              }
+              
+              ?></p>
 
               </div>
             </div>
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $row['BodyThree'] ?></p>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyTwo'] ?></p>
 
               </div>
 
@@ -115,17 +125,7 @@ while ($row = mysqli_fetch_array($result)) {
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $row['BodyFour']?><br><br><b>Escrito por</b>
-              
-              <?php
-              $email = $row['id_reporter'];
-              $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
-              $ResultReport = mysqli_query($conexion, $QueryReport);
-              while ($RowReport = mysqli_fetch_array($ResultReport)) {
-                echo "@".$RowReport['Name']." ".$RowReport['LastName'];
-              }
-              
-              ?>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyThree'] ?>
               
               
               
@@ -198,6 +198,9 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
             </div>
             <div class="mx-44">
               <form action="./PHP/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+
+               
+
                 <label for="chat" class="sr-only">Your message</label>
                 <div class="flex items-center py-2 px-3 rounded-lg">
                   <div class="flex">
