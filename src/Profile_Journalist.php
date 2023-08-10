@@ -238,17 +238,37 @@ while ($row = mysqli_fetch_array($result)) {
             </div>
           </div>
         </div>
-        <footer class="relative bg-blueGray-200 pt-8 pb-6 mt-8">
-          <div class="container mx-auto px-4">
-            <div class="flex flex-wrap items-center md:justify-between justify-center">
-              <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-                <div class="text-sm text-blueGray-500 font-semibold py-1">
-                  Made with <a href="#" class="text-blueGray-500 hover:text-gray-800" target="_blank">Creado</a> por <a href="#" class="text-blueGray-500 hover:text-blueGray-800" target="_blank"> ASTRO</a>.
-                </div>
-              </div>
-            </div>
+         <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/logis.png" alt="">
+          </a>
+
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
+
+              
           </div>
-        </footer>
+      </div>
+
+      <hr class="my-10 border-gray-200" />
+
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+          </div>
+      </div>
+  </div>
+</footer>
       </section>
     </main>
 
