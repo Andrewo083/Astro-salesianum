@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+if(isset($_SESSION['Name']))
+
+
 if(isset($_SESSION['Email'])){
     include('conexion.php');
 
@@ -11,7 +14,7 @@ if(isset($_SESSION['Email'])){
         die("Error en la conexion" . mysqli_connect_errno());
     }
 
-    $_SESSION['Email'];
+    $_SESSION['Name'];
     $Comment = $_POST['Comment'];
     $id_user = $_SESSION['Email'];  // Asegúrate de obtener el valor correcto del usuario
     $id_new = $_GET['new'];    // Asegúrate de obtener el valor correcto de la noticia
@@ -37,6 +40,6 @@ if(isset($_SESSION['Email'])){
 
     $conexion->close();
 }
-?>
+// ?>
 
-?>
+
