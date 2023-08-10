@@ -7,9 +7,6 @@ $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";
 
-
-
-
 ?>
 
 <!-- Luego, en tu código HTML -->
