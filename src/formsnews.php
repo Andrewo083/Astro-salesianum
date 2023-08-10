@@ -110,7 +110,7 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div>
                 <label for="title" class="text-2lx font-bold text-gray-500"></label>
-                <input  type="hidden" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
