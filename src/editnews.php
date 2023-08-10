@@ -59,14 +59,15 @@ while($row = mysqli_fetch_array($result)){
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro Salesianum
+          Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li>.</li>
-                <li>.</li>
-                <li>.</li>
-                <li>.</li>
+                <li><a  href=".//newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">

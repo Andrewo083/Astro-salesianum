@@ -43,15 +43,16 @@ $parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <a class="text-3xl font-bold font-heading" href="#">
               <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-              Astro
-            </a>
-            <!-- Nav Links -->
-            <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-              <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-              <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
-            </ul>
+          Astro Salesianum
+                </a>
+                <!-- Nav Links -->
+                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <li><a  href=".//newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
+                </ul>
             <!-- Header Icons -->
             <div class="hidden xl:flex items-center space-x-5 items-center">
               <a class="hover:text-gray-200" href="#">
