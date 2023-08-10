@@ -256,12 +256,13 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                     <p class="px-4 py-2 text-sm font-semibold text-gray-700"><?php echo  $comment = $row['comment'];?> </p>
                   </a>
                 </div>
+                </div>
                 <?php }
             
             mysqli_close($conexion);
-            
+           
             } ?>
-              </div>
+              
             </div>
             </main>
           </div>
