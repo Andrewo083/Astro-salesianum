@@ -191,70 +191,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
         </div>
-        <footer class="bg-neutral-800 dark:bg-gray-900 flex pt-10">
-            <div class="container p-6 mx-auto">
-                <div class="lg:flex">
-                    <div class="w-full -mx-6 lg:w-2/5">
-                        <div class="flex mt-6 -mx-2">
-                            <div class="px-6">
-                                <a href="#">
+       <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/logis.png" alt="">
+          </a>
 
-                                    <h1 class="w-auto h-7 text-white font-semibold">Person Specter</h1>
-                                </a>
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
 
-                                <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never
-                                    miss out on new tips, tutorials, and more.</p>
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
 
+              
+          </div>
+      </div>
 
+      <hr class="my-10 border-gray-200" />
 
-                            </div>
-                        </div>
-                    </div>
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
 
-                    <div class="mt-6 lg:mt-0 lg:flex-1">
-                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">About</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                            </div>
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
 
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Blog</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
-                            </div>
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
 
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Products</h3>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega
-                                    cloud</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion
-                                    UI</a>
-                                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki
-                                    UI</a>
-                            </div>
-
-                            <div>
-                                <h3 class="text-white uppercase dark:text-white">Contact</h3>
-                                <span class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">+1 526
-                                    654 8965</span>
-                                <span class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">example@email.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-
-                <div>
-                    <p class="text-center text-white dark:text-gray-400">© spectre 2023 - All rights reserved</p>
-                </div>
-            </div>
-        </footer>
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+          </div>
+      </div>
+  </div>
+</footer>
 </body>
 
 </html>
