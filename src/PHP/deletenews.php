@@ -3,7 +3,7 @@
 $conexion = mysqli_connect('localhost', 'root', '','astrodb')or die(mysqli_error($mysqli));
 
           $id_news = $_GET['new'];
-    echo $id_news;
+    echo "DATOS BORRADOS CORRECTAMENTE";
     $query = " DELETE FROM `news` WHERE `id_news`= '$id_news' ";
 
     mysqli_query($conexion, $query);
