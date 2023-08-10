@@ -1,11 +1,12 @@
 <?php 
 session_start();
 
-
-$email = $_SESSION['Email'];
+if(isset($_SESSION['Email'])){
+  
+$Email = $_SESSION['Email'];
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
-$query = "SELECT * FROM `reporter` WHERE `email` = '$email'";
+$query = "SELECT * FROM `reporter` WHERE `email` = '$Email'";
 $result = mysqli_query($conexion, $query);
 
 
@@ -15,6 +16,8 @@ while ($row = mysqli_fetch_array($result)) {
 
 
 
+
+}
 
 
 
