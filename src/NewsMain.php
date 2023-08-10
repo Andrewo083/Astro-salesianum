@@ -249,7 +249,15 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                     <div class="px-4 py-2 flex  justify-between">
                       <span class="text-sm font-semibold text-gray-900"><?php echo  $date = $row['date'];?></span>
                       <div class="flex">
-                        <span class="px-4 text-sm font-semibold text-gray-600"> <?php echo  $id_user = $row['id_user']; ?></span>
+                        <span class="px-4 text-sm font-semibold text-gray-600"><?php 
+$email = $row['id_user'];
+$QueryUser = "SELECT * FROM `user` WHERE `Email` = '$email' ";
+$ResultUser = mysqli_query($conexion, $QueryUser);
+while ($RowUser = mysqli_fetch_array($ResultUser)) {
+
+                        echo "@".$RowUser['Name']." ".$RowUser['LastName'];
+}
+                        ?></span>
                         <img class="h-6 w-6 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80" alt="">
                       </div>
                     </div>
