@@ -156,7 +156,7 @@ while ($row = mysqli_fetch_array($result)) {
 <?php 
 $Category = $row['Category'];
 $id_news = $row['id_news'];
-                $QueryRecom = "SELECT * FROM `news` WHERE `Category` = '$Category' /*AND `id_news` != '$id_news'*/";
+                $QueryRecom = "SELECT * FROM `news` WHERE `Category` = '$Category' AND `id_news` != '$id_news'";
 $ResultRecom = mysqli_query($conexion, $QueryRecom);
 while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
@@ -257,9 +257,10 @@ $ResultUser = mysqli_query($conexion, $QueryUser);
 while ($RowUser = mysqli_fetch_array($ResultUser)) {
 
                         echo "@".$RowUser['Name']." ".$RowUser['LastName'];
-}
+
                         ?></span>
-                        <img class="h-6 w-6 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80" alt="">
+                        
+                        <img class="h-6 w-6 rounded-full object-cover" src="../img/<?php echo $RowUser['ProfileImage'] ?>" alt=""><?php }?>
                       </div>
                     </div>
                     <p class="px-4 py-2 text-sm font-semibold text-gray-700"><?php echo  $comment = $row['comment'];?> </p>
