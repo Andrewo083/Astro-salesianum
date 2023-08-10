@@ -9,20 +9,7 @@ $query = "SELECT * FROM `news` WHERE `id_news` = '$id_news'";
 $result = mysqli_query($conexion, $query);
 while ($row = mysqli_fetch_array($result)) {
 
-  $content = $row['body'];
-
  
-  $noticia =  $content;
-
-  // Dividir la noticia en párrafos y eliminar espacios en blanco adicionales
-  $parrafos = array_map('trim', explode("\n\n", $noticia));
-  
-  // Asignar cada párrafo a una variable separada (si existen suficientes párrafos)
-  $parrafo1 = isset($parrafos[0]) ? $parrafos[0] : "";
-  $parrafo2 = isset($parrafos[1]) ? $parrafos[1] : "";
-  $parrafo3 = isset($parrafos[2]) ? $parrafos[2] : "";
-  $parrafo4 = isset($parrafos[3]) ? $parrafos[3] : "";
-
 
 ?>
   <!DOCTYPE html>
@@ -73,7 +60,7 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="container mx-auto px-6 py-16 text-center">
         <div class="mx-44">
         <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
-        <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $parrafo1 ?></p><br>
+        <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $row['BodyOne'] ?></p><br>
         <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto"><b>Fotografo:</b> <?php echo $row['photographer']; ?>
         </a>
         </div>
@@ -107,14 +94,14 @@ while ($row = mysqli_fetch_array($result)) {
               <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
               <div class="p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $parrafo2?></p>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyTwo'] ?></p>
 
               </div>
             </div>
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $parrafo3 ?></p>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyThree'] ?></p>
 
               </div>
 
@@ -127,7 +114,7 @@ while ($row = mysqli_fetch_array($result)) {
             <div class="flex rounded-md border border-slate-200">
               <div class="flex-1 p-10">
 
-                <p class="mt-2 text-slate-500"><?php echo $parrafo4?></p>
+                <p class="mt-2 text-slate-500"><?php echo $row['BodyFour']?></p>
 
               </div>
 

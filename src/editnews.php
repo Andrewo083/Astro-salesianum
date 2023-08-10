@@ -149,10 +149,25 @@ while($row = mysqli_fetch_array($result)){
 
               <div>
 
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe la noticia:</label>
-                <textarea value="" id="description" cols="30" rows="10" name="body" maxlength="750" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['body']; ?></textarea>
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (200 caracteres)</label>
+                <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyOne']?></textarea>
               </div>
               <div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyTwo']?></textarea>
+</div>
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyThree']?></textarea>
+</div>
+
+<div>
+
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (200 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyFour']?></textarea>
+</div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
