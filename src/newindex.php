@@ -410,7 +410,7 @@ while($row = mysqli_fetch_array($result)){
 
 
 
-
+<a href="./NewsMain.php?new=<?php echo $row['id_news']?>" >
                                         <div class="bg-white">
                                           <div>
                                             <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
@@ -435,13 +435,14 @@ while($row = mysqli_fetch_array($result)){
 
                                                     </h3>
                                                   </div>
-                                                  <p class="text-sm tracking-normal"><?php echo $contenido_recortado."..."; ?></p>
-                                                  <a href="./NewsMain.php?new=<?php echo $row['id_news']?>" class="mt-12 w-full text-center bg-gray-700 text-white py-2 rounded-lg">Read more</a>
+                                                  <p class="text-sm tracking-normal"><?php echo $contenido_recortado."Leer mas..."; ?></p>
+                                                 
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
+                                        </a>
                                       <!--end Box-1 -->
                                      
                                       <?php } ?>

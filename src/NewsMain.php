@@ -221,7 +221,8 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
 
             <?php
-            $query1 = "SELECT * FROM `comments` WHERE `id_new` = '$id_news'";
+            $state = "active";
+            $query1 = "SELECT * FROM `comments` WHERE `id_new` = '$id_news' AND `State` = '$state' ORDER BY `date` DESC";
             $result = mysqli_query($conexion, $query1);
             
             if (!$result) {
