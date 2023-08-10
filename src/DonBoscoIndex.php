@@ -21,7 +21,7 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
-    <title>Document</title>
+    <title>News Don bosco </title>
 </head>
 <body>
     <div>
@@ -31,14 +31,15 @@ $result = mysqli_query($conexion, $query);
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                 <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                Astro
+              Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-                <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-                <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
+                <li><a  href=".//newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -70,7 +71,6 @@ $result = mysqli_query($conexion, $query);
                 </svg>
             </a>
             </nav>
-            
         </section>
         </div>
    <!-- component -->
@@ -81,7 +81,7 @@ $result = mysqli_query($conexion, $query);
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
-            <div class=" flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+            <div class=" bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
