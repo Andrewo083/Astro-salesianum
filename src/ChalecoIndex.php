@@ -34,8 +34,8 @@ $result = mysqli_query($conexion, $query);
                 Astro Salesianum
                 </a>
                 <!-- Nav Links -->
-                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href=".//newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                  <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
