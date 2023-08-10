@@ -73,14 +73,7 @@ style="background-image: url('../img/bg_4.jpg');">
 
     <!-- tabla-->
 
-      <?php
-          while ($row = mysqli_fetch_array($result)) {
-            $id_comment = $row['id_comment'];
-            $id_user = $row['id_user'];
-            $comment = $row['comment'];
-            $date = $row['date'];
      
-      ?>
         
     <div class=" pt-12 pr-0 pb-12 pl-0 mt-0 mr-auto mb-0 ml-auto sm:py-16 lg:py-20">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-7xl sm:px-6 lg:px-8">
@@ -102,6 +95,14 @@ style="background-image: url('../img/bg_4.jpg');">
                                   <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
                               
                               </div>
+                              <?php
+          while ($row = mysqli_fetch_array($result)) {
+            $id_comment = $row['id_comment'];
+            $id_user = $row['id_user'];
+            $comment = $row['comment'];
+            $date = $row['date'];
+     
+      ?>
               <div class="flex-auto sm:ml-5 justify-evenly">
                   <div class="flex items-center justify-between sm:mt-2">
                       <div class="flex items-center">
@@ -137,6 +138,11 @@ style="background-image: url('../img/bg_4.jpg');">
                   
                         <a href="./PHP/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
                       </div>
+                      <?php
+      
+    }
+    mysqli_close($conexion);
+  ?>
                   </div>
 
 
@@ -151,11 +157,7 @@ style="background-image: url('../img/bg_4.jpg');">
             </div>
           </div>
         </div>
-        <?php
-      
-          }
-          mysqli_close($conexion);
-        ?>
+       
       </div>
 </body>
 </html>
