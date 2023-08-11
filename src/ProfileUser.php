@@ -22,9 +22,9 @@
         <!-- Nav Links -->
          <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
         <!-- Header Icons -->
@@ -105,7 +105,7 @@
                   <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Comentarios</span>
                 </div>
                 <div class="lg:mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Don bosco</span>
+                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Don Bosco</span>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@
               Norberto rey de los elementos 
             </h3>
             <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
-              <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>Colegio don bosco 
+              <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>Colegio Don Bosco 
             </div>
             <div class="mb-2 text-blueGray-600 mt-10">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sit, debitis nobis enim nemo blanditiis delectus totam ducimus sint fuga, earum labore vel, eligendi consequatur ad magni neque facilis eius.

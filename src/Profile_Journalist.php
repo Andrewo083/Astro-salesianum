@@ -6,7 +6,7 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
-include('./PHP/conexion.php');
+include('./funciones/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -60,15 +60,15 @@ while ($row = mysqli_fetch_array($result)) {
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
               <?php
 
               if(isset($_SESSION['Email'])){
-                echo '<a href="./PHP/Logout.php"><button>Logout</button></a>' ;
+                echo '<a href="./funciones/Logout.php"><button>Logout</button></a>' ;
               }
 
              
@@ -218,7 +218,7 @@ while ($row = mysqli_fetch_array($result)) {
                                     <p class=""><?php echo $new_row['date'] ?></p>
                                   </div><a href=""></a>
                                   <a href="./editnews.php?new=<?php echo $new_row['id_news'] ?>" class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">Editar</a>
-                                  <a href="./PHP/deletenews.php?new=<?php echo $new_row['id_news']; ?>" class="flex-no-shrink bg-red-400 hover:bg-red-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-300 hover:border-red-500 text-white rounded-full transition ease-in duration-300">Eliminar</a>
+                                  <a href="./funciones/deletenews.php?new=<?php echo $new_row['id_news']; ?>" class="flex-no-shrink bg-red-400 hover:bg-red-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-300 hover:border-red-500 text-white rounded-full transition ease-in duration-300">Eliminar</a>
                                 </div>
                               </div>
                             </div>

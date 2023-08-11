@@ -10,7 +10,7 @@ session_start();
 
 
 if (isset($_SESSION["Email"])) {
-    include('./PHP/conexion.php');
+    include('./funciones/conexion.php');
 
       $conexion = new mysqli($host,$user,$password,$bd);
         if(!$conexion){
@@ -61,21 +61,22 @@ $name = $_SESSION['Name'];
                       <div class="mx-auto py-10">
                         <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">Astrum Salesianum</h1>
                         <ul>
+                        <li class="flex space-x-2 mt-10 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            <span class="font-semibold">¡Bienvenido <b><?php echo $name; ?></b>!</span>
+                          </li>
                           <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
-                            <span class="font-semibold">Home</span>
+                            <span class="font-semibold"><a href="./"></a> Ver perfil</span>
                           </li>
                        
-                          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                            <span class="font-semibold"><?php echo $name; ?></span>
-                          </li>
+                        
                          
-                          <a href="./PHP/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
+                          <a href="./funciones/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
                         </ul>
                       </div>
                     </div>
@@ -384,13 +385,13 @@ if(isset($_POST['Special'])){
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
 
-
+$State = "Active";
 //if para ver si el query tiene restriccion o no
 if($sql_all == true){
-  $query = "SELECT * FROM `news` ORDER BY `date` DESC";
+  $query = "SELECT * FROM `news` WHERE `State` = '$State' ORDER BY `date` DESC";
 }else{
   //estoy seleccionando las noticias por categoria y ordeno por la fecha.
-  $query = "SELECT * FROM `news` WHERE `Category` = '$category' ORDER BY `date` DESC";
+  $query = "SELECT * FROM `news` WHERE `Category` = '$category' AND `State` = '$State' ORDER BY `date` DESC";
 }
 
 $result = mysqli_query($conexion, $query);

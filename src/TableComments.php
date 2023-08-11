@@ -3,7 +3,7 @@
 
 
 
-    include('./PHP/conexion.php');
+    include('./funciones/conexion.php');
 
     $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
@@ -51,9 +51,9 @@ style="background-image: url('../img/bg_4.jpg');">
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
@@ -155,7 +155,7 @@ style="background-image: url('../img/bg_4.jpg');">
                           </div>
                           
                   
-                        <a href="./PHP/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
+                        <a href="./funciones/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
                       </div>
                       <?php
       

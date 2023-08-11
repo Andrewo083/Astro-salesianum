@@ -36,9 +36,9 @@ while ($row = mysqli_fetch_array($result)) {
                 <!-- Nav Links -->
                   <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
             <!-- Header Icons -->
@@ -155,8 +155,9 @@ while ($row = mysqli_fetch_array($result)) {
                 <div class="p-4 md:w-1/3">
 <?php 
 $Category = $row['Category'];
+$State = "Active";
 $id_news = $row['id_news'];
-                $QueryRecom = "SELECT * FROM `news` WHERE `Category` = '$Category' AND `id_news` != '$id_news'";
+                $QueryRecom = "SELECT * FROM `news` WHERE `Category` = '$Category' AND `id_news` != '$id_news' AND `State` = '$State'";
 $ResultRecom = mysqli_query($conexion, $QueryRecom);
 while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
@@ -197,7 +198,7 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
             <div class="mx-44">
-              <form action="./PHP/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+              <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
 
                
 

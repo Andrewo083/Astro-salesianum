@@ -1,8 +1,8 @@
 <?PHP
 $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Don Bosco' ORDER BY 'date' DESC";
+$State = "Active";
+$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Don Bosco' AND `State` = '$State' ORDER BY 'date' DESC";
 $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";
@@ -21,7 +21,7 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
-    <title>News Don bosco </title>
+    <title>News Don Bosco </title>
 </head>
 <body>
     <div>
@@ -36,9 +36,9 @@ $result = mysqli_query($conexion, $query);
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" href="#">Chaleco</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldonde</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don bosco</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
@@ -81,7 +81,6 @@ $result = mysqli_query($conexion, $query);
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
-<<<<<<< Updated upstream
             <div class=" bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
 =======
             <div class
@@ -91,7 +90,6 @@ $result = mysqli_query($conexion, $query);
             
             
             flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
->>>>>>> Stashed changes
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
@@ -100,7 +98,7 @@ $result = mysqli_query($conexion, $query);
                     1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
                     0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </p>
-              <p class="inline text-xs font-medium">COLEGIO DON BOSCO</p>
+              <p class="inline text-xs font-medium">COLEGIO Don Bosco</p>
             </div>
             <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Don Bosco</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
