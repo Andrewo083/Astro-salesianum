@@ -11,8 +11,9 @@ if(!$conexion){
 }
 
 $ID=$_GET['ID'];
+$State = "Inactive";
 
-$sql="DELETE FROM `comments` WHERE id_comment = $ID";
+$sql="UPDATE `comments` SET `State`='$State' WHERE id_comment = $ID";
 
 if(mysqli_query($conexion,$sql)){
     echo "Registro eliminado exitosamente";

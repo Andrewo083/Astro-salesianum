@@ -34,6 +34,7 @@ function submit($conexion){
     $school = $_POST['school'];
     $category = $_POST['category'];
     $photographer = $_POST['photographer'];
+    $State = "Active";
     
     //nuevo nommbre
     $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
@@ -41,7 +42,7 @@ function submit($conexion){
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`,`BodyTwo`, `BodyThree`, `BodyFour`,`school`, `Category`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category')";
+        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`,`BodyTwo`, `BodyThree`, `BodyFour`,`school`, `Category`, `State`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category', '$State')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
@@ -74,6 +75,7 @@ function edit($conexion){
     $school = $_POST['school'];
     $category = $_POST['category'];
     $photographer = $_POST['photographer'];
+    $State = "Active";
     
     //nuevo nommbre
     /*$imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
@@ -81,7 +83,7 @@ function edit($conexion){
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);*/
 
-        $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`photographer`='$photographer',`headline`='$headline',`drophead`='$drophead',`date`='$date',`BodyOne`='$BodyOne',`BodyTwo`='$BodyTwo',`BodyThree`='$BodyThree',`BodyFour`='$BodyFour',`school`='$school',`Category`='$category' WHERE `id_news`='$id_news'";
+        $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`photographer`='$photographer',`headline`='$headline',`drophead`='$drophead',`date`='$date',`BodyOne`='$BodyOne',`BodyTwo`='$BodyTwo',`BodyThree`='$BodyThree',`BodyFour`='$BodyFour',`school`='$school',`Category`='$category',`State`='$State' WHERE `id_news`='$id_news'";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
@@ -92,7 +94,8 @@ function edit($conexion){
 function delete($conexion){
     $id_news = $_POST['id_news'];
     echo $id_news;
-    $query = " DELETE FROM `news` WHERE `id_news` = '$id_news' ";
+    $State = "Inactive";
+    $query = " UPDATE `news`SET `State`='$State' WHERE `id_news` = '$id_news' ";
 
     mysqli_query($conexion, $query);
     header('location: ./index.php');

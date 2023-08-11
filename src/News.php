@@ -3,7 +3,7 @@
 $id_news = $_GET['new'];
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
-$query = "SELECT * FROM `news` WHERE `id_news` = '$id_news'";
+$query = "SELECT * FROM `news` WHERE `id_news` = '$id_news' ";
 $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
    
