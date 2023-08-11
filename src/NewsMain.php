@@ -197,7 +197,7 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
             <div class="mx-44">
-              <form action="./PHP/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+              <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
 
                
 

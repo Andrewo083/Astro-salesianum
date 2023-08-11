@@ -1,5 +1,5 @@
 <?php
-include('./PHP/conexion.php');
+include('./funciones/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -96,7 +96,7 @@ $query = mysqli_query($conexion, $sql);
                     <!-- main content page -->
                     <div class="w-full p-4">
 
-                        <form action="./PHP/UpdateReportero.php" method="post" enctype="multipart/form-data">
+                        <form action="./funciones/UpdateReportero.php" method="post" enctype="multipart/form-data">
                             <h1 class="text-center">Formulario para Actualizacion de reporteros</h1>
 
                             <!--DIV PARA INOT-->

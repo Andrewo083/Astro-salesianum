@@ -3,7 +3,7 @@
 
 
 
-    include('./PHP/conexion.php');
+    include('./funciones/conexion.php');
 
     $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
@@ -155,7 +155,7 @@ style="background-image: url('../img/bg_4.jpg');">
                           </div>
                           
                   
-                        <a href="./PHP/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
+                        <a href="./funciones/DeleteComments.php?ID=<?php  echo $row['id_comment'] ?>".><button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Delete</button></a> 
                       </div>
                       <?php
       

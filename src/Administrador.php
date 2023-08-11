@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['Email'])) {
-    include('./PHP/conexion.php');
+    include('./funciones/conexion.php');
 
     $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -95,7 +95,7 @@ if (isset($_SESSION['Email'])) {
                         </a>
                         <?php
                         if(isset($_SESSION['Email'])){
-                            echo '<a href="./PHP/Logout.php" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
+                            echo '<a href="./funciones/Logout.php" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-100 hover:text-blue-600">
                             <span class="text-2xl"><i class="bx bx-shopping-bag"></i></span>
                             <span>Logout</span>
                             </a>';
@@ -108,7 +108,7 @@ if (isset($_SESSION['Email'])) {
                     <!-- main content page -->
                     <div class="w-full p-4">
 
-                        <form action="./PHP/InsertReportero.php" method="post" enctype="multipart/form-data">
+                        <form action="./funciones/InsertReportero.php" method="post" enctype="multipart/form-data">
                             <h1 class="text-center">Formulario para ingreso de Reporteros</h1>
 
                             <!--DIV PARA INOT-->

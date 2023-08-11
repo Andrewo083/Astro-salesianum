@@ -10,7 +10,7 @@ session_start();
 
 
 if (isset($_SESSION["Email"])) {
-    include('./PHP/conexion.php');
+    include('./funciones/conexion.php');
 
       $conexion = new mysqli($host,$user,$password,$bd);
         if(!$conexion){
@@ -75,7 +75,7 @@ $name = $_SESSION['Name'];
                             <span class="font-semibold"><?php echo $name; ?></span>
                           </li>
                          
-                          <a href="./PHP/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
+                          <a href="./funciones/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
                         </ul>
                       </div>
                     </div>
