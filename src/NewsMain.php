@@ -145,14 +145,16 @@ while ($row = mysqli_fetch_array($result)) {
 
         </div>
         <!-- component -->
+        
         <div class="container mx-auto px-6 py-6 text-center">
           <div class="mx-44  py-10 ">
             <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Noticias relacionadas</h1>
           </div>
+          
           <section class="text-gray-600 body-font">
             <div class="container px-5  mx-auto">
               <div class="flex flex-wrap -m-4">
-                <div class="p-4 md:w-1/3">
+                
 <?php 
 $Category = $row['Category'];
 $State = "Active";
@@ -170,6 +172,8 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
 ?>
                 <!--INICIO RECOMENDACION-->
+                <a href="./NewsMain.php?new=<?php echo $RowQuery['id_news'];?>">
+                <div class="p-4 md:w-1/3">
                   <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
                     <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $RowQuery['main_image'] ?>" alt="blog">
                     <div class="p-6">
@@ -183,6 +187,7 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                     </div>
                   </div>
                 </div>
+                </a>
                   <!--FIN RECOMENDACION-->
                <?php } ?>
 

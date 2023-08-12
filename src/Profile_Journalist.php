@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array($result)) {
         <nav class="flex justify-between bg-gray-900 text-white ">
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
           <a href="./newindex.php">
-            <img src="../img/logis.png" alt="" width="50px"></a>
+            <img src="../img/logis.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
