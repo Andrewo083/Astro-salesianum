@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+    <script src="./Funciones (Js)/LoginEye.js"></script>
 </head>
 
 <body>
@@ -102,16 +103,16 @@
                                 type="text" name="Email">
                         </div>
                         <div class="mt-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
-                            <input required maxlength="14"
+                            <label for="PhoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
+                            <input id="PhoneNumber" required maxlength="14"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="text" name="PhoneNumber" value="+503 ">
                         </div>
                         <div class="mt-4">
                             <div class="flex justify-between">
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
+                                <p><label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label><img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1"></p>
                             </div>
-                            <input required
+                            <input required id="contraseña"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="password" name="password">
                         </div>

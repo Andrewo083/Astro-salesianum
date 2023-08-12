@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect('localhost', 'root', '','astrodb')or die(mysqli_error($mysqli));
+$conexion = mysqli_connect('localhost', 'root', '','astrodb') ;
 
 difference($conexion);
 

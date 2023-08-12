@@ -12,12 +12,7 @@ if (!$conexion) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener el ID del reportero desde el formulario
 
-    $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
-echo $carpet_images;
-
-$imagen = $_FILES['imagen']['name'];
-$imagen_tmp = $_FILES['imagen']['tmp_name'];
-
+   
 
     $reportero_id = $_POST['ID'];
 
@@ -27,8 +22,7 @@ $imagen_tmp = $_FILES['imagen']['tmp_name'];
     $name = $_POST['Name'];
     $lastName = $_POST['LastName'];
     $phoneNumber = $_POST['PhoneNumber'];
-    $url_main = $carpet_images.$imagen;
-    move_uploaded_file($imagen_tmp, $url_main);
+    $imagen = $_POST['Imagen'];
 
     // Consulta SQL para verificar si el correo electrónico ya está registrado en la tabla reporter
     $sql_check_reporter = "SELECT COUNT(*) AS count FROM `reporter` WHERE Email='$email' AND Email != '$reportero_id'";

@@ -1,6 +1,6 @@
 <?php 
 
-$conexion = new mysqli("localhost", "root","","astrodb");
+$conexion = new mysqli("localhost", "root","","astrodb")or die(mysqli_error($mysqli));
 
 
 diference($conexion);
@@ -10,7 +10,8 @@ function diference($conexion){
     if(isset($_POST['Enviar'])){
         insertar($conexion);
     }
-    if(isset($_POST['Editar'])){
+    if(isset($_POST['editar'])){
+        echo "EDIAT";
         editar($conexion);
     }
     if(isset($_POST['Eliminar'])){
@@ -54,31 +55,39 @@ function insertar($conexion){
     }
 }
 
-function editar($conexion){
+function editar($conexion) {
+    // Recuperar datos del formulario usando filtrado para evitar SQL injection
+    $ID = mysqli_real_escape_string($conexion, $_POST['ID']);
+    echo $ID;
+    $Email = mysqli_real_escape_string($conexion, $_POST['Email']);
+    echo $Email;
+    $Password = mysqli_real_escape_string($conexion, $_POST['Password']);
+    echo $Password;
+    $Name = mysqli_real_escape_string($conexion, $_POST['Name']);
+    echo $Name;
+    $LastName = mysqli_real_escape_string($conexion, $_POST['LastName']);
+     echo $LastName;
+    $PhoneNumber = mysqli_real_escape_string($conexion, $_POST['PhoneNumber']);
+    echo $PhoneNumber;
+    $ProfileImage = mysqli_real_escape_string($conexion, $_POST['Imagen']);
+    echo $ProfileImage;
+    $ROL = "2"; 
 
-    if(!empty($_POST["Edit"])){
-       
-        $Email=$_POST['Email'];
-        $Password=$_POST['Password'];
-        $Name= $_POST['Name'];
-        $LastName=$_POST['LastName'];
-        $PhoneNumber=$_POST['PhoneNumber'];
-        $ROL= "2";
+    $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
 
-            $sql=$conexion->query("update reporter set Email='$Email', Password='$Password', Name='$Name', LastName='$LastName', PhoneNumber='$PhoneNumber', ROL='$ROL'");
-    
-            if($sql==1){
-    
-                header("location:../HTML/Admin.php");
-    
-            }else{
-                echo"<div class='alert alert-danger'>ERROR</div>";
-            }
-    
-        
-    }
+    mysqli_query($conexion, $query);
+  
 
+    // Verificar si la consulta se realizó correctamente
+   
+        // Redirigir después de 2 segundos
+        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/tableusu.php');
+        echo "Usuario actualizado correctamente. Redireccionando...";
+    
 }
+
+
+
 
 function delete($conexion){
     
