@@ -23,24 +23,24 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">
-
+<script src="./Funciones (Js)/LoginEye.js"></script>
 </head>
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/cdbevents.jpg');">
     <section class="relative mx-auto">
             <!-- navbar -->
             <nav class="flex justify-between  bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="../src/maindex.html">
+                <a class="text-3xl font-bold font-heading" href="./welcomeAdmin.html">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-              Astro Salesianum
+              Astro Administrador
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
-                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
+                <li><a   class="hover:text-gray-200" href="./welcomeAdmin.html">Home</a></li>
+                <li><a href="./tableusu.php" class="hover:text-gray-200" >Periodistas</a></li>
+                <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
+                <li><a href="./" class="hover:text-gray-200" href="#">Comentarios</a></li>
+              
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
@@ -78,6 +78,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 
 <!-- component -->
 <!-- component -->
+<form action="./Funciones/CRUD_journalist.php" method="POST">
 <div class="relative flex  justify-center bg-center  py-12  items-center"
 	>
 	<div class="absolute  opacity-60 inset-0 z-0"></div>
@@ -93,8 +94,8 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 					<div class="md:space-y-2 mb-3">
 						<label class="text-xs font-semibold text-gray-600 py-2">La foto predeterminada del periodista<abbr class="hidden" title="required"></abbr></label>
 						<div class="flex items-center py-6">
-							<div class="w-12 h-12 mr-4 flex-none rounded-xl border overflow-hidden">
-								<img class="w-12 h-12 mr-4 object-cover" src="https://images.unsplash.com/photo-1611867967135-0faab97d1530?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1352&amp;q=80" alt="Avatar Upload">
+							<div class=" mr-4 flex-none rounded-xl border overflow-hidden">
+                            <img class=" object-cover rounded-3xl" src="../img/<?php echo $RowReporter['ProfileImage'] ?>" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
                 </div>
 								
 							</div>
@@ -102,42 +103,55 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Nombre del periodista<abbr title="required"></abbr></label>
-								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
+								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="Name" id="integration_shop_name" value="<?php echo $RowReporter['Name'] ?>">
 								<p class="text-red text-xs hidden">Please fill out this field.</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
-								<label class="font-semibold text-gray-600 py-2">Emial del periodista<abbr title="required"></abbr></label>
-								<input placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
+								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required"></abbr></label>
+								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="Email" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Please fill out this field.</p>
 							</div>
 						</div>
 						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Apellido<abbr title="required"></abbr></label>
-								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
+								<input value="<?php echo $RowReporter['LastName'] ?>" placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="LastName" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Please fill out this field.</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Numero de telefono<abbr title="required"></abbr></label>
-								<input placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
+								<input value="<?php echo $RowReporter['PhoneNumber'] ?>" maxlength="14" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="PhoneNumber" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Please fill out this field.</p>
 							</div>
 						</div>
+
+
+
+
+                        <input type="hidden" name="Imagen" value="<?php echo $RowReporter['ProfileImage'] ?>">
+
+                        <input type="hidden" name="ID" value="<?php echo $RowReporter['Email'] ?>" >
 							</div>
 							<div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
 								<div class="w-full flex flex-col mb-3">
 									<label class="font-semibold text-gray-600 py-2">Contraseña</label>
-									<input placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" name="integration[street_address]" id="integration_street_address">
+
+									<input value="<?php echo $RowReporter['Password'] ?>" placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="Password" 
+
+                                    name="Password" 
+                                    
+                                    id="contraseña"><img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
               </div>
 								
 								</div>
 								
 						
 								<div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
-									<button class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"> Cancel </button>
-									<button class="mb-2 md:mb-0 bg-yellow-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-yellow-500">Enviar</button>
+									
+									<input type="submit" 
+                                    name="editar" class="mb-2 md:mb-0 bg-yellow-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-yellow-500" value="ENVIAR">
 								</div>
 							</div>
 						</div>
@@ -145,7 +159,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 				</div>
 			</div>
             </div>
-            
+            </form>
             <!-- End componen -->
 
             <footer class="bg-gray-800">

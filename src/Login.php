@@ -87,6 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script src="./Funciones (Js)/LoginEye.js"></script>
     <link rel="stylesheet" href="../Public/tailwind.css">
 </head>
 
@@ -109,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 
                 </ul>
                     <!-- Header Icons -->
-                    <div class="hidden xl:flex items-center space-x-5 items-center">
+                    <div class="hidden xl:flex items-center space-x-5 ">
                         <a class="hover:text-gray-200" href="#">
 
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -172,7 +173,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
                                 <a href="#" class="text-xs text-gray-500">Olvidaste tu contraseña?(ni modo)</a>
                             </div>
-                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" name="Password">
+                            <p>
+                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                
+                                <img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
+                        
+                            </p>
                         </div>
                         <div class="mt-8">
                             <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>

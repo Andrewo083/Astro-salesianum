@@ -11,22 +11,22 @@ style="background-image: url('../img/bg_4.jpg');">
     <nav class=" py-6 relative items-center ">
         <div class="container mx-auto flex px-8 xl:px-0 ">
           <div class="flex flex-grow">
-            <a href="">
-       
-            </a>
+            <a href="./welcomeAdmin.html">
             <h1 class="flex items-center m-2 font-bold text-3xl font-heading  text-gray-500">
-              Astro alesianum
+              Astro Administrador
             </h1>
+            </a>
+            
           </div>
           <div class="flex lg:hidden">
           <img src="../img/menu.png" onclick="openMenu();">
       </div>
           <div id="menu" class="lg:flex hidden flex-grow justify-between items-center absolute lg:relative lg:top-0 top-20 ">
             <div>
-              <a href="#" class="text-white hover:text-black lg:mr-7 font-semibold ">Periodistas</a>
-              <a href="#" class="text-white hover:text-black lg:mr-7 font-semibold ">services</a>
-              <a href="#" class="text-white  hover:text-black lg:mr-7 font-semibold ">mision</a>
-              <a href="#" class="text-white hover:text-black font-semibold ">other</a>
+              <a href="./tableusu.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Periodistas</a>
+              <a href="./AdminNewsTable.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Noticias</a>
+              <a href="#" class="text-white  hover:text-black lg:mr-7 font-semibold ">Comentarios</a>
+           
             </div>
             <div>
         
