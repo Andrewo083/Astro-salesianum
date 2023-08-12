@@ -89,7 +89,7 @@ while ($row = mysqli_fetch_array($result)) {
 
 
 
-        <div class="flex min-h-screen items-center justify-center p-10 bg-white">
+        <div class="flex min-h-screen items-center justify-center p-7 bg-white">
           <div class="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
             <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
               <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
@@ -145,8 +145,8 @@ while ($row = mysqli_fetch_array($result)) {
 
         </div>
         <!-- component -->
-        <div class="container mx-auto px-6 py-16 text-center">
-          <div class="mx-44">
+        <div class="container mx-auto px-6 py-6 text-center">
+          <div class="mx-44  py-10 ">
             <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Noticias relacionadas</h1>
           </div>
           <section class="text-gray-600 body-font">
@@ -176,8 +176,8 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                       <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><?php echo $RowQuery['Category']?></h2>
                       <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $RowQuery['headline']?></h1>
                       <p class="leading-relaxed mb-3"><?php echo $contenido_recortado; ?>...</p>
-                      <div class="flex items-center flex-wrap ">
-                        <a href="./NewsMain.php?new=<?php echo $RowQuery['id_news'];?>" class="bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">leer mas</a>
+                      <div class=" ">
+                        <a href="./NewsMain.php?new=<?php echo $RowQuery['id_news'];?>" class=" bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">leer mas</a>
 
                       </div>
                     </div>
@@ -192,32 +192,50 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
               </div>
             </div>
+            
+            </div>
           </section>
-          <div class="container  px-6 py-16 items-center text-center">
-            <div class="mx-44">
+         
+            <div class="mx-44  py-10 ">
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
-            <div class="mx-44">
-              <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
-
-               
-
-                <label for="chat" class="sr-only">Your message</label>
-                <div class="flex items-center py-2 px-3 rounded-lg">
-                  <div class="flex">
-                    <img class="h-9 w-9 rounded-full object-cover" src="../img/user.jpg" alt="">
-                  </div>
-                  <textarea id="chat" name="Comment" rows="1" class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-                  <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
-                    <svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-                    </svg>
-                  </button>
-                </div>
+          
+                <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+                		<!-- Chat content -->
+							<div class="flex-1 flex flex-col bg-gray-100 overflow-hidden container mx-auto px-6 shadow-xl  pl-10 flow-root rounded-lg sm:py-2">
+								<!-- Top bar -->
+                
+								<div class="pb-6 px-4 flex-none">
+									<div class="flex rounded-lg overflow-hidden">
+										
+										<input type="text" class="w-full px-4 border-none bg-gray-300 font-semibold" placeholder="Comentar" />
+										<button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100">
+											<svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+											  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+											</svg>
+										  </button>
+            </div>
+									</div>
+								<!-- Chat messages -->
+								<div class="px-6 py-4 flex-1 overflow-y-scroll">
+									<!-- A message -->
+									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
+										<img src="../img/user.jpg" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<div class="flex-1 overflow-hidden">
+											<div>
+												<span class="font-bold text-red-300 cursor-pointer hover:underline">User</span>
+												<span class="font-bold text-gray-400 text-xs">09:23</span>
+											</div>
+											<p class="text-black font-semibold">Discord is awesome!</p>
+										</div>
+									</div>
+								</div>
+                	<!-- message finish -->
+							</div>
               </form>
 
-            </div>
-            <div class="h-screen flex flex-col">
+          
+            <div class=" py-10  flex flex-col">
 
 
 
