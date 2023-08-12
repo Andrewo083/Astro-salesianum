@@ -140,9 +140,14 @@ $result = mysqli_query($conexion, $query);
           <p class="text-sm text-black" data-originallength="100" ><?php echo $contenido_recortado."..."; ?></p>
         
           <div class="pt-2 pr-0 pb-0 pl-0">
-            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"><?php echo $row['id_reporter']; ?></p>
+            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
+              <?php
+              include( "./Funciones/PrintJournalist.php");
+              echo "@".$Name.$LastName;
+              ?>
+            </p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>
-            <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1"><?php echo $row['photographer']; ?> </p>
+            <a href="" class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1"><?php echo $row['photographer']; ?> </a>
           </div>
           </a>
         </div>

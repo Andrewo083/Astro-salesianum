@@ -168,23 +168,23 @@ while ($row = mysqli_fetch_array($result)) {
               <div>
 
                 <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (200 caracteres)</label>
-                <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
               </div>
               <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (200 caracteres)</label>
-<textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (400 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (200 caracteres)</label>
-<textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (400 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
 
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (200 caracteres)</label>
-<textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="200" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (400 caracteres)</label>
+<textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
               <div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
