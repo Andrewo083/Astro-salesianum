@@ -148,15 +148,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <h2 class="text-2xl font-semibold text-gray-700 text-center">Login</h2>
                     <p class="text-xl text-gray-600 text-center">Bienvenido de vuelta!</p>
                     <a href="#" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
-                        <div class="px-4 py-3">
-
-                            <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
-
-                        </div>
-                        <a href="./Registro.html">
-                        <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
-                        </a>
-                    </a>
+                    <div class="px-4 py-3">
+                
+                <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
+            
+        </div>
+        <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
+    </a>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                         <a href="#" class="text-xs text-center text-gray-500 uppercase"> Ingresa tus datos</a>
@@ -171,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div class="mt-4">
                             <div class="flex justify-between">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
-                                <a href="#" class="text-xs text-gray-500">Olvidaste tu contraseña?(ni modo)</a>
+           
                             </div>
                             <p>
                                 <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
