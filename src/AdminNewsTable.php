@@ -53,6 +53,7 @@ style="background-image: url('../img/bg_4.jpg');">
             <div class="shadow-xl mt-8 mr-0 mb-0 ml-0 pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
             <?php $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
+$State = "Active";
 $query = "SELECT * FROM `news`WHERE `State` = '$State' ";
 $result = mysqli_query($conexion, $query);
 
