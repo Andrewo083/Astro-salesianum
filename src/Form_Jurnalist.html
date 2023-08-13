@@ -7,6 +7,7 @@
     <title>Register jur</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
 <script src="./Funciones (Js)/LoginEye.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/cdbevents.jpg');">
@@ -117,14 +118,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
+                            <div class="md:flex md:flex-row md:space-x-4 w-full text-xs relative">
+
                                 <div class="w-full flex flex-col mb-3">
                                     <label class="font-semibold text-gray-600 py-2">Contraseña</label>
-                                    <input placeholder="Address" id="contraseña"
+                                    <input placeholder="Contraseña" id="contraseña"
                                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                        type="text" name="Password"> <img alt="Mirar COntraseña" src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
+                                        type="password" name="Password"> 
                                 </div>
-
+                                <div class=" flex justify-end relative">
+                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                            </div>
                             </div>
 
 

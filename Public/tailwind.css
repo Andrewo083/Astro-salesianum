@@ -663,6 +663,14 @@ video {
   bottom: 1rem;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }
