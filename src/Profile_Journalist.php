@@ -40,6 +40,23 @@ while ($row = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+    <style>
+        /* Estilos para hacer la imagen redonda */
+        .imagen-circular {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+           
+        }
+        /* Estilos para asegurar que la imagen ocupe todo el espacio del contenedor circular */
+        .imagen-circular img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+    </style>
   </head>
 
   <body>
@@ -74,17 +91,10 @@ while ($row = mysqli_fetch_array($result)) {
              
               
               ?>
-            </ul>
+           
             <!-- Header Icons -->
-            <div class="hidden xl:flex items-center space-x-5 items-center">
-              <a class="hover:text-gray-200" href="#">
-
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </a>
-              <a class="flex items-center hover:text-gray-200" href="#">
-
-              </a>
+            <div class="hidden xl:flex items-center space-x-5 ">
+           
               <!-- Sign In / Register      -->
               <a class="flex items-center hover:text-gray-200" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,11 +141,13 @@ while ($row = mysqli_fetch_array($result)) {
           <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
             <div class="px-6">
               <div class="flex flex-wrap justify-center">
-                <div class="w-full  px-4 lg:order-2 flex items-center justify-center">
-                  <div class="relative">
-                    <img alt="..." class=" rounded-full   h-32  w-32  p-2" src="../img/<?php echo $row['ProfileImage'] ?>">
-                  </div>
-                </div>
+                
+                <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+        <img src="../img/<?php echo $row['ProfileImage'] ?>" alt="Imagen Circular">
+    </div>
+            </div>
                 <div class="w-full  px-4 lg:order-3 lg:text-right lg:self-center">
                   <div class="py-6 px-3 mt-32 sm:mt-0">
                     <a href="./formsnews.php?jour=<?php echo $email; ?>" class="bg-blue-950 active:bg-blue-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150">
@@ -145,6 +157,17 @@ while ($row = mysqli_fetch_array($result)) {
                 </div>
 
               </div>
+              <div class="w-full lg:w-4/12 px-4 lg:order-1">
+              <div class="flex justify-center py-4 lg:pt-4 pt-8">
+                <div class="mr-4 p-3 text-center">
+                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Noticias</span>
+                </div>
+                <div class="mr-4 p-3 text-center">
+                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Comentarios</span>
+                </div>
+              
+              </div>
+            </div>
               <div class="text-center mt-12">
                 <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
                   <?php echo $row['Name'] ?>

@@ -1,3 +1,15 @@
+<?php
+session_start();
+$email = $_SESSION['Email'];
+if (!isset($_SESSION['Email'])) {
+  header("Location: ./Login.php");
+  exit();
+}else{
+  
+include("./Funciones/PrintUser.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,20 +111,18 @@
             <div class="w-full lg:w-4/12 px-4 lg:order-1">
               <div class="flex justify-center py-4 lg:pt-4 pt-8">
                 <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Likes</span>
+                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Noticias</span>
                 </div>
                 <div class="mr-4 p-3 text-center">
                   <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Comentarios</span>
                 </div>
-                <div class="lg:mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Don Bosco</span>
-                </div>
+              
               </div>
             </div>
           </div>
           <div class="text-center mt-12">
             <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-              Norberto rey de los elementos 
+              <?php echo $Name; ?>
             </h3>
             <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
               <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>Colegio Don Bosco 
@@ -243,3 +253,5 @@
 	
 </body>
 </html>
+<?php
+ }?>
