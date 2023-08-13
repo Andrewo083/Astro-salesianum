@@ -89,6 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Login</title>
     <script src="./Funciones (Js)/LoginEye.js"></script>
     <link rel="stylesheet" href="../Public/tailwind.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 
 <body>
@@ -166,17 +167,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
                             <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email">
                         </div>
-                        <div class="mt-4">
+                        <div class="mt-4 relative">
                             <div class="flex justify-between">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
            
                             </div>
                             <p>
-                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
-                                
-                                <img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
+                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2  px-4 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                             
                         
                             </p>
+                            <div class=" flex justify-end relative">
+                            <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                    </div>
                         </div>
                         <div class="mt-8">
                             <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
