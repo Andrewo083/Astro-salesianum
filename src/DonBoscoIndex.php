@@ -29,9 +29,12 @@ $result = mysqli_query($conexion, $query);
             <!-- navbar -->
             <nav class="flex justify-between bg-blue-950 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                <a class="text-3xl font-bold font-heading" href="../src/newindex.php">
+                <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-              Astro Salesianum
+               Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">

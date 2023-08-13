@@ -30,9 +30,12 @@ $result = mysqli_query($conexion, $query);
             <!-- navbar -->
             <nav class="flex justify-between bg-black text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a class="text-3xl font-bold font-heading" href="../src/newindex.php">
+            <a href="./newindex.php">
+            <img src="../img/logis.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-              Astro Salesianum
+               Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
@@ -83,7 +86,7 @@ $result = mysqli_query($conexion, $query);
         <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
-            <div class="bg-yellow-400 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+            <div class="bg-red-600 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
                 uppercase inline-block">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
@@ -130,16 +133,21 @@ $result = mysqli_query($conexion, $query);
           <a href="./NewsMain.php?new=<?php echo $row['id_news']?>"> 
           <img
               src="<?php echo $carpet_images.$row['main_image']; ?>" class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56 btn-"/>
-          <p class="bg-red-800  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
+          <p class="bg-yellow-400  items-center leading-none text-sm font-medium text-gray-50 pt-1.5 pr-3 pb-1.5 pl-3
               rounded-full uppercase inline-block"><?php echo $row['Category'];?></p>
               
           <p class="text-lg font-bold sm:text-xl md:text-2xl"><?php echo $row['headline']; ?></p>
           <p class="text-sm text-black" data-originallength="100" ><?php echo $contenido_recortado."..."; ?></p>
         
           <div class="pt-2 pr-0 pb-0 pl-0">
-            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"><?php echo $row['id_reporter']; ?></p>
+           <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
+              <?php
+              include( "./Funciones/PrintJournalist.php");
+              echo "@".$Name.$LastName;
+              ?>
+            </p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>
-            <p class="inline text-xs font-medium text-gray-300 mt-0 mr-1 mb-0 ml-1"><?php echo $row['photographer']; ?> </p>
+            <a href="" class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1"><?php echo $row['photographer']; ?> </a>
           </div>
           </a>
         </div>

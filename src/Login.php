@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="w-full p-8 lg:w-1/2">
                     <h2 class="text-2xl font-semibold text-gray-700 text-center">Login</h2>
                     <p class="text-xl text-gray-600 text-center">Bienvenido de vuelta!</p>
-                    <a href="#" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+                    <a href="./Registro.html" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                     <div class="px-4 py-3">
                 
                 <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
@@ -173,8 +173,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
            
                             </div>
                             <p>
-                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2  px-4 w-full relative appearance-none" id="contraseña" type="password" name="Password">
-                             
+                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                
+                                <img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
                         
                             </p>
                             <div class=" flex justify-end relative">
