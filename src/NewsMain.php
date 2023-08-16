@@ -2,6 +2,9 @@
 
 session_start();
 
+$email = $_SESSION['Email'];
+echo $_SESSION['ROL'];
+
 $id_news = $_GET['new']; //Estandar para trabajo con las news
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
@@ -67,7 +70,8 @@ while ($row = mysqli_fetch_array($result)) {
         </div>
 
           <div class="mt-10 flex justify-center">
-            <img class="h-96 w-full rounded-xl object-cover lg:w-4/5" src="../img/<?php echo $row['main_image']?>" />
+            <!--IMAGEN PRINCIPAL-->
+            <img class="h-96 w-full rounded-xl  object-cover lg:w-4/5" src="../img/<?php echo $row['main_image']?>" alt="Imagen Banner" />
           </div>
         </div>
 
@@ -92,7 +96,8 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="flex min-h-screen items-center justify-center p-7 bg-white">
           <div class="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
             <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
-              <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
+              <!--IMAGEN GRANDE 2-->
+              <div class="h-1/2 flex-1"><img src="../img/<?php echo $row['main_image']?>" class="w-full object-cover  object-center" alt="Imagen Completa" /></div>
               <div class="p-10">
 
                 <p class="mt-2 text-slate-500"><?php echo $row['BodyFour'] ?><br><br><b>Escrito por</b>
@@ -118,7 +123,7 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
                 <div class="absolute inset-0">
-                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover object-left-top" alt="" />
+                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover object-left-top" alt="Imagen izquierda" />
                 </div>
               </div>
             </div>
@@ -136,7 +141,7 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
                 <div class="absolute inset-0">
-                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover object-left-top" alt="" />
+                  <img src="../img/<?php echo $row['main_image']?>" class="h-full w-full object-cover  object-right-bottom" alt="Imagen derecha" />
                 </div>
               </div>
 
@@ -205,39 +210,63 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
           
-                <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+                
                 		<!-- Chat content -->
 							<div class="flex-1 flex flex-col bg-gray-100 overflow-hidden container mx-auto px-6 shadow-xl  pl-10 flow-root rounded-lg sm:py-2">
 								<!-- Top bar -->
                 
-								<div class="pb-6 px-4 flex-none">
-									<div class="flex rounded-lg overflow-hidden">
+
+
+
+
+                <!-- FORMULARIO-->
+                <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+								  <div class="pb-6 px-4 flex-none">
+									  <div class="flex rounded-lg overflow-hidden">
 										
-										<input type="text" class="w-full px-4 border-none bg-gray-300 font-semibold" placeholder="Comentar" />
-										<button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100">
-											<svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-											  <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
-											</svg>
+										  <input type="text" class="w-full px-4 border-none bg-gray-300 font-semibold" placeholder="Comentar" name="Comment" />
+
+										  <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100">
+											  <svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+											    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z">
+                          </path>
+											  </svg>
 										  </button>
-            </div>
+
+                    </div>
 									</div>
+                </form>    
+                     <!-- FORMULARIO-->
+                  
 								<!-- Chat messages -->
-								<div class="px-6 py-4 flex-1 overflow-y-scroll">
+                <?php 
+                 $new = $_GET['new'];
+                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State'  ORDER BY `date`AND `hour` DESC";
+                 $ResultComment = mysqli_query($conexion, $QueryComment);
+                 while ($RowComment = mysqli_fetch_array($ResultComment)) {
+
+                  include "./Funciones/PrintVarComments.php"
+
+                ?>
+								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-										<img src="../img/user.jpg" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
 										<div class="flex-1 overflow-hidden">
 											<div>
-												<span class="font-bold text-red-300 cursor-pointer hover:underline">User</span>
-												<span class="font-bold text-gray-400 text-xs">09:23</span>
+                        <?php $email = $id_user;  include("./Funciones/PrintUser.php"); ?>
+												<span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $UserName ?></span>
+												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>
-											<p class="text-black font-semibold">Discord is awesome!</p>
+											<p class="text-black "><?php  echo $comment; ?>. <br><b><?php echo $date?></b></p>
 										</div>
 									</div>
 								</div>
+                <?php } ?>
+                
                 	<!-- message finish -->
 							</div>
-              </form>
+             
 
           
             <div class=" py-10  flex flex-col">

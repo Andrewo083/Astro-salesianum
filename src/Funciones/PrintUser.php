@@ -2,21 +2,19 @@
 
  $conexion = new mysqli("localhost", "root","","astrodb")or die(mysqli_error($mysqli));
 
-
- $QueryReport = "SELECT * FROM `user` WHERE `Email` = '$email'";
- $ResultReport = mysqli_query($conexion, $QueryReport);
- while ($RowReport = mysqli_fetch_array($ResultReport)) {
+ $QueryUser = "SELECT * FROM `user` WHERE `Email` = '$email'";
+ $ResultUser = mysqli_query($conexion, $QueryUser);
+ while ($RowUser = mysqli_fetch_array($ResultUser)) {
   
-    $Email = $RowReport['Email'];
-    $ProfileImage = $RowReport['ProfileImage'];
-    $Password = $RowReport['Password'];
-    $Name = $RowReport['Name'];
-    $LastName = $RowReport['LastName'];
-    $PhoneNumber = $RowReport['PhoneNumber'];
-    $ROL = $RowReport['ROL'];
+    $UserEmail = $RowUser['Email'];
+    $UserProfileImage = $RowUser['ProfileImage'];
+    $UserPassword = $RowUser['Password'];
+    $UserName = $RowUser['Name'];
+    $UserLastName = $RowUser['LastName'];
+    $UserPhoneNumber = $RowUser['PhoneNumber'];
+    $UserROL = $RowUser['ROL'];
 
  }
-
 
 
 
