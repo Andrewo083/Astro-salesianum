@@ -11,7 +11,7 @@ style="background-image: url('../img/bg_4.jpg');">
     <nav class=" py-6 relative items-center ">
         <div class="container mx-auto flex px-8 xl:px-0 ">
           <div class="flex flex-grow">
-            <a href="./welcomeAdmin.html">
+            <a href="./welcomeAdmin.php">
             <h1 class="flex items-center m-2 font-bold text-3xl font-heading  text-gray-500">
               Astro Administrador
             </h1>

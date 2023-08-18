@@ -28,13 +28,13 @@ $query = mysqli_query($conexion, $sql);
             <!-- navbar -->
             <nav class="flex justify-between bg-black text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a class="text-3xl font-bold font-heading" href="./welcomeAdmin.html">
+            <a class="text-3xl font-bold font-heading" href="./welcomeAdmin.php">
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
               Astro Administrador
                 </a>
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a   class="hover:text-gray-200" href="./welcomeAdmin.html">Home</a></li>
+                <li><a class="hover:text-gray-200" href="./newindex.php">Home</a></li>
                 <li><a href="./tableusu.php" class="hover:text-gray-200" >Periodistas</a></li>
                 <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
                 <li><a href="./" class="hover:text-gray-200" href="#">Comentarios</a></li>
