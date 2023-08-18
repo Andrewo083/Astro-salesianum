@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -157,17 +158,7 @@ while ($row = mysqli_fetch_array($result)) {
                 </div>
 
               </div>
-              <div class="w-full lg:w-4/12 px-4 lg:order-1">
-              <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Noticias</span>
-                </div>
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Comentarios</span>
-                </div>
-              
-              </div>
-            </div>
+       
               <div class="text-center mt-12">
                 <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
                   <?php echo $row['Name'] ?>

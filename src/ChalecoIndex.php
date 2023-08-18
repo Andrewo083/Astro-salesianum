@@ -24,7 +24,7 @@ $result = mysqli_query($conexion, $query);
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-yellow-400 text-white w-screen">
+            <nav class="flex justify-between bg-yellow-500 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <a href="./newindex.php">
             <img src="../img/logis.png" alt="" width="45px"></a>
@@ -159,7 +159,7 @@ $result = mysqli_query($conexion, $query);
       </div>
     </div>
   </div> 
-    <footer class="bg-gray-800">
+    <footer class="bg-yellow-800">
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">

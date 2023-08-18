@@ -176,9 +176,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
            
                             </div>
                             <p>
-                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 w-full relative appearance-none" id="contraseña" type="password" name="Password">
                                 
-                                <img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
+                            
                         
                             </p>
                             <div class=" flex justify-end relative">
