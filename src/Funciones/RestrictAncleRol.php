@@ -1,10 +1,10 @@
 <?php
 
-if($ROL == 1){
+if($_SESSION['ROL'] == 1){
     echo "welcomeAdmin.html";
-  }else if($ROL == 2){
+  }else if($_SESSION['ROL'] == 2){
     echo "Profile_Journalist.php";
-  }else if($ROL == 3){
+  }else if($_SESSION['ROL'] == 3){
     echo "ProfileUser.php";
   }else{
     echo "error.html";
