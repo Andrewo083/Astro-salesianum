@@ -1,10 +1,6 @@
 <?php
 session_start(); 
 
-$ROL = $_SESSION['ROL'];
-
-
-echo $ROL;
 
 
 

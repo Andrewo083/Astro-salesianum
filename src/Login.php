@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['Email'] = $Email;
         $_SESSION["Name"] = $row["Name"];
         $_SESSION['ROL'] = $row['ROL'];
+        $_SESSION['ProfileImage'] = $row['ProfileImage'];
         header("Location: ./WelcomeAdmin.html");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
@@ -42,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["Email"] = $Email;
         $_SESSION["Name"] = $row["Name"];
         $_SESSION['ROL'] = $row['ROL'];
+        $_SESSION['ProfileImage'] = $row['ProfileImage'];
         header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
         exit();
     } elseif ($resultadoRol3->num_rows === 1) {
@@ -51,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["Email"] = $Email;
         $_SESSION["Name"] = $row["Name"];
         $_SESSION['ROL'] = $row['ROL'];
+        $_SESSION['ProfileImage'] = $row['ProfileImage'];
 
         // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
         $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
