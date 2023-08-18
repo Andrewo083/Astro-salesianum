@@ -25,7 +25,7 @@ style="background-image: url('../img/bg_4.jpg');">
             <div>
               <a href="./tableusu.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Periodistas</a>
               <a href="./AdminNewsTable.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Noticias</a>
-              <a href="#" class="text-white  hover:text-black lg:mr-7 font-semibold ">Comentarios</a>
+              <a href="./TableComments.php" class="text-white  hover:text-black lg:mr-7 font-semibold ">Comentarios</a>
            
             </div>
             <div>

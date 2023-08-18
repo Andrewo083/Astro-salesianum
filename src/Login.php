@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
-   // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($rolUsuario == 1) {
                 header("Location: ./WelcomeAdmin.html"); // Redirección para el rol 1
             } elseif ($rolUsuario == 2) {
-                header("Location: ./Profile_Journalist.php?jour=".$Email); // Redirección para el rol 2
+                header("Location: ./Profile_Journalist.php?jour=" . $Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
                 header("Location: ./newindex.php"); // Redirección para el rol 3
             } else {
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else {
         // Inicio de sesión fallido
-         echo '<script>alert("Credenciales incorrectas");
+        echo '<script>alert("Credenciales incorrectas");
          window.location.href = "./Login.php";</script>';
     }
 }
@@ -107,12 +107,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                     <a class="text-3xl font-bold font-heading" href="./start.html">
                         <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                     Astro Salesianum
-                </a>
-                <!-- Nav Links -->
-                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                
-                </ul>
+                        Astro Salesianum
+                    </a>
+                    <!-- Nav Links -->
+                    <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+
+                    </ul>
                     <!-- Header Icons -->
                     <div class="hidden xl:flex items-center space-x-5 ">
                         <a class="hover:text-gray-200" href="#">
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </a>
                         <!-- Sign In / Register      -->
                         <a class="flex items-center hover:text-gray-200" href="#">
-                           
+
                         </a>
 
                     </div>
@@ -152,13 +152,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <h2 class="text-2xl font-semibold text-gray-700 text-center">Login</h2>
                     <p class="text-xl text-gray-600 text-center">Bienvenido de vuelta!</p>
                     <a href="./Registro.html" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
-                    <div class="px-4 py-3">
-                
-                <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
-            
-        </div>
-        <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
-    </a>
+                        <div class="px-4 py-3">
+
+                            <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
+
+                        </div>
+                        <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
+                    </a>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                         <a href="#" class="text-xs text-center text-gray-500 uppercase"> Ingresa tus datos</a>
@@ -173,17 +173,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div class="mt-4 relative">
                             <div class="flex justify-between">
                                 <label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
-           
+
                             </div>
                             <p>
                                 <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 w-full relative appearance-none" id="contraseña" type="password" name="Password">
-                                
-                            
-                        
+
+
+
                             </p>
                             <div class=" flex justify-end relative">
-                            <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
-                    </div>
+                                <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true" onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>
+                            </div>
                         </div>
                         <div class="mt-8">
                             <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
@@ -197,37 +197,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
         </div>
-       <footer class="bg-gray-800">
-  <div class="container px-3 py-5 mx-auto">
-      <div class="flex flex-col items-center text-center">
-          <a href="#">
-              <img class="w-auto h-14" src="../img/logis.png" alt="">
-          </a>
+        <footer class="bg-gray-800">
+            <div class="container px-3 py-5 mx-auto">
+                <div class="flex flex-col items-center text-center">
+                    <a href="#">
+                        <img class="w-auto h-14" src="../img/logis.png" alt="">
+                    </a>
 
-          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+                    <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
 
-          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
-             
+                    <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
 
-              
-          </div>
-      </div>
 
-      <hr class="my-10 border-gray-200" />
 
-      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+                    </div>
+                </div>
 
-          <div class="flex mt-3 -mx-2 sm:mt-0">
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+                <hr class="my-10 border-gray-200" />
 
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+                <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+                    <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
 
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
-          </div>
-      </div>
-  </div>
-</footer>
+                    <div class="flex mt-3 -mx-2 sm:mt-0">
+                        <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+
+                        <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+                        <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>
