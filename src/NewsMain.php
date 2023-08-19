@@ -19,10 +19,12 @@ while ($row = mysqli_fetch_array($result)) {
 
   <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $row['headline'] ?></title>
     <link rel="stylesheet" href="../Public/tailwind.css">
-
+     <link rel="stylesheet" href="./css/ProfileImage.css">
+     
   </head>
 
   <body>
@@ -46,7 +48,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
             <!-- Header Icons -->
-            <div class="hidden xl:flex  space-x-5 items-center">
+            <div class=" xl:flex  space-x-5 items-center">
             <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
                   <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
@@ -252,7 +254,15 @@ $i++;
                   include "./Funciones/PrintVarComments.php"
 
                 ?>
-                 <?php $email = $id_user;  include("./Funciones/PrintUser.php"); ?>
+                 <?php 
+                 if($row['id_user' == NULL]){
+                  $email = $row['id_reporter'];  
+                  
+                 }else  if($row['id_reporter'] == NULL){
+                  $email = $row['id_user'];  
+                 }
+                   include("./Funciones/PrintUser.php"); 
+                  ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">

@@ -46,7 +46,7 @@ $name = $_SESSION['Name'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <meta charset="UTF-8">
+          <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>AstroSalesianum News</title>
           <link rel="stylesheet" href="../Public/tailwind.css">
@@ -425,13 +425,13 @@ while($row = mysqli_fetch_array($result)){
 <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>">
                 <div class="p-4 md:w-1/3">
                   <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-orange-200 to-amber-300 overflow-hidden">
-                    <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="blog">
-                    <div class="p-6">
+                    <img class="lg:h-48 md:h-36 w-full h-60 object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="blog">
+                    <div class=" p-3">
                       <h2 class="tracking-widest text-xs title-font font-medium text-amber-500 mb-1"><?php echo $row['Category']?></h2>
                       <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $row['headline']?></h1>
                       <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
                       <div class=" ">
-                        <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>" class=" bg-gradient-to-r from-amber-200 to-orange-300 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más</a>
+                        <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>" class=" bg-gradient-to-r from-amber-200 to-orange-300 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más -></a>
 
                       </div>
                     </div>
@@ -439,41 +439,6 @@ while($row = mysqli_fetch_array($result)){
                 </div>
                 </a>
 
-
-<!--<a href="./NewsMain.php?new=<?php //echo $row['id_news']?>" >
-                                        <div class="bg-white">
-                                          <div>
-                                            <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
-                                              <div>
-                                                <img class="w-full" style="height: 225px;" src="../img/<?php //echo $row['main_image']; ?>" />
-                                                <div class="px-4 py-2">
-                                                  <h1 class="text-xl font-gray-800 font-bold"><?php //echo $row['headline']; ?></h1>
-                                                  <div class="flex space-x-2 mt-2">
-                                             
-                                                    <h3 class="text-lg text-gray-600 font-semibold mb-2">
-                                                    <?php /*
-                                                    //query para sacar el nombre del reportero
-                                                  $id_reporter = $row['id_reporter'];
-                                                    $query_reporter = "SELECT * FROM `reporter` WHERE `Email` = '$id_reporter'";
-                                                    $result_reporter = mysqli_query($conexion, $query_reporter);
-                                                    while($row_reporter = mysqli_fetch_array($result_reporter)){
-                                                      
-                                                   echo $row_reporter['Name']." ".$row_reporter['LastName'];
-                                                    }*/
-
-                                                    ?>
-
-                                                    </h3>
-                                                  </div>
-                                                  <p class="text-sm tracking-normal"><?php //echo $contenido_recortado."Leer mas..."; ?></p>
-                                                 
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        </a>-->
-                                      <!--end Box-1 -->
                                      
                                       <?php } ?>
                                       

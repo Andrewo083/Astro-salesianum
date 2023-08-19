@@ -1,4 +1,5 @@
 <?php
+session_start();
 $conexion = mysqli_connect('localhost', 'root', '','astrodb') ;
 
 difference($conexion);
@@ -46,6 +47,7 @@ function submit($conexion){
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
+    
     header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
    
 }
@@ -77,17 +79,23 @@ function edit($conexion){
     $photographer = $_POST['photographer'];
     $State = "Active";
     
-    //nuevo nommbre
-    /*$imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
-    echo $imagen;
-    $url_main = $carpet_images.$imagen;
-    move_uploaded_file($imagen_tmp, $url_main);*/
+   
 
         $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`photographer`='$photographer',`headline`='$headline',`drophead`='$drophead',`date`='$date',`BodyOne`='$BodyOne',`BodyTwo`='$BodyTwo',`BodyThree`='$BodyThree',`BodyFour`='$BodyFour',`school`='$school',`Category`='$category',`State`='$State' WHERE `id_news`='$id_news'";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
-    header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+    if($_SESSION['ROL'] == 1){
+        
+         header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
+      }else if($_SESSION['ROL'] == 2){
+        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+      }else{
+        echo "error.html";
+      }
+    
+    
+   
 
 }
 
@@ -95,7 +103,7 @@ function delete($conexion){
     $id_news = $_POST['id_news'];
     echo $id_news;
     $State = "Inactive";
-    $query = " UPDATE `news`SET `State`='$State' WHERE `id_news` = '$id_news' ";
+    $query = " DELETE FROM `news` WHERE `id_news` =z '$id_news' ";
 
     mysqli_query($conexion, $query);
     header('location: ./index.php');
