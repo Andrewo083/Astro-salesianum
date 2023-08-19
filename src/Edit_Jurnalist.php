@@ -23,7 +23,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">
-<script src="./Funciones (Js)/LoginEye.js"></script>
+<script src="./ JS/LoginEye.js"></script>
 </head>
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/cdbevents.jpg');">
     <section class="relative mx-auto">
@@ -103,27 +103,27 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Nombre del periodista<abbr title="required"></abbr></label>
-								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="Name" id="integration_shop_name" value="<?php echo $RowReporter['Name'] ?>">
-								<p class="text-red text-xs hidden">Please fill out this field.</p>
+								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="Name" id="integration_shop_name" value="<?php echo $RowReporter['Name'] ?>">
+								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required"></abbr></label>
-								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="Email" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Please fill out this field.</p>
+								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="Email" id="integration_shop_name">
+								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
 						</div>
 						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Apellido<abbr title="required"></abbr></label>
-								<input value="<?php echo $RowReporter['LastName'] ?>" placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="LastName" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Please fill out this field.</p>
+								<input value="<?php echo $RowReporter['LastName'] ?>" placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="LastName" id="integration_shop_name">
+								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Numero de telefono<abbr title="required"></abbr></label>
-								<input value="<?php echo $RowReporter['PhoneNumber'] ?>" maxlength="14" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="PhoneNumber" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Please fill out this field.</p>
+								<input value="<?php echo $RowReporter['PhoneNumber'] ?>" maxlength="14" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="PhoneNumber" id="integration_shop_name">
+								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
 						</div>
 

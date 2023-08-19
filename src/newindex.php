@@ -48,7 +48,7 @@ $name = $_SESSION['Name'];
 <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
+          <title>AstroSalesianum News</title>
           <link rel="stylesheet" href="../Public/tailwind.css">
 </head>
 <body>
@@ -390,9 +390,12 @@ if(isset($_POST['Special'])){
 
 
 
-                                  <div class="min-h-screen flex justify-center items-center py-20">
+                                  <!--<div class="min-h-screen flex justify-center items-center py-20">
                                     <div class="container bg-gray-100 mx-auto p-12  rounded-xl">
-                                      <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-7 space-y-4  sm:space-y-0">
+                                      <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-7 space-y-4  sm:space-y-0">-->
+                                     <br><br> <section class="text-gray-600 body-font">
+            <div class="container  bg-gray-100 px-5  mx-auto">
+              <div class="flex flex-wrap -m-4">
                                            <!-- Box-1 -->
                                            <?php
 
@@ -412,28 +415,43 @@ $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
 
   $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
-  $numero_caracteres = 300;
+  $numero_caracteres = 150;
   $contenido_recortado = substr($contenido, 0, $numero_caracteres);
    
 
 
 ?>
 
+<a href="./NewsMain.php?new=<?php echo $row['id_news'];?>">
+                <div class="p-4 md:w-1/3">
+                  <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-orange-200 to-amber-300 overflow-hidden">
+                    <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="blog">
+                    <div class="p-6">
+                      <h2 class="tracking-widest text-xs title-font font-medium text-amber-500 mb-1"><?php echo $row['Category']?></h2>
+                      <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $row['headline']?></h1>
+                      <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
+                      <div class=" ">
+                        <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>" class=" bg-gradient-to-r from-amber-200 to-orange-300 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más</a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </a>
 
 
-
-<a href="./NewsMain.php?new=<?php echo $row['id_news']?>" >
+<!--<a href="./NewsMain.php?new=<?php //echo $row['id_news']?>" >
                                         <div class="bg-white">
                                           <div>
                                             <div class="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
                                               <div>
-                                                <img class="w-full" style="height: 225px;" src="../img/<?php echo $row['main_image']; ?>" />
+                                                <img class="w-full" style="height: 225px;" src="../img/<?php //echo $row['main_image']; ?>" />
                                                 <div class="px-4 py-2">
-                                                  <h1 class="text-xl font-gray-800 font-bold"><?php echo $row['headline']; ?></h1>
+                                                  <h1 class="text-xl font-gray-800 font-bold"><?php //echo $row['headline']; ?></h1>
                                                   <div class="flex space-x-2 mt-2">
                                              
                                                     <h3 class="text-lg text-gray-600 font-semibold mb-2">
-                                                    <?php 
+                                                    <?php /*
                                                     //query para sacar el nombre del reportero
                                                   $id_reporter = $row['id_reporter'];
                                                     $query_reporter = "SELECT * FROM `reporter` WHERE `Email` = '$id_reporter'";
@@ -441,20 +459,20 @@ while($row = mysqli_fetch_array($result)){
                                                     while($row_reporter = mysqli_fetch_array($result_reporter)){
                                                       
                                                    echo $row_reporter['Name']." ".$row_reporter['LastName'];
-                                                    }
+                                                    }*/
 
                                                     ?>
 
                                                     </h3>
                                                   </div>
-                                                  <p class="text-sm tracking-normal"><?php echo $contenido_recortado."Leer mas..."; ?></p>
+                                                  <p class="text-sm tracking-normal"><?php //echo $contenido_recortado."Leer mas..."; ?></p>
                                                  
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                        </a>
+                                        </a>-->
                                       <!--end Box-1 -->
                                      
                                       <?php } ?>
@@ -463,8 +481,9 @@ while($row = mysqli_fetch_array($result)){
                                       
                                          
                                     </div>
+                                    </section>
                                   </div>
-                              </section>
+                             
                     </main>
                     
                   </div>

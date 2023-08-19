@@ -179,12 +179,12 @@ if (isset($_SESSION['Email'])) {
     </div>
     </main>
 
-    <script src="./Funciones (Js)/AdmJsOne.js">
+    <script src="./ JS/AdmJsOne.js">
         
     </script>
     </nav>
     </div>
     </aside>
-    <script src="./Funciones (Js)/AdmJsTwo.js">
+    <script src="./ JS/AdmJsTwo.js">
        
     </script>

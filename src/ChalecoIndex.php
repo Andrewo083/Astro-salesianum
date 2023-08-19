@@ -81,7 +81,7 @@ $result = mysqli_query($conexion, $query);
           <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
               md:space-y-5">
             <div class="bg-black flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
-                uppercase inline-block">
+                uppercase ">
               <p class="inline">
                 <svg class="w-3.5 h-3.5 mr-1" fill="currentColor" viewbox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0
@@ -135,9 +135,13 @@ $result = mysqli_query($conexion, $query);
         
           <div class="pt-2 pr-0 pb-0 pl-0">
            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
-              <?php
+               <?php
               include( "./Funciones/PrintJournalist.php");
+              if($email == NULL){
+                echo "@Astro Salesianum";
+              }else{
               echo "@".$Name.$LastName;
+              }
               ?>
             </p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>

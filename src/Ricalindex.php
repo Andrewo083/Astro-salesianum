@@ -137,9 +137,13 @@ $result = mysqli_query($conexion, $query);
         
           <div class="pt-2 pr-0 pb-0 pl-0">
            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
-              <?php
+               <?php
               include( "./Funciones/PrintJournalist.php");
+              if($email == NULL){
+                echo "@Astro Salesianum";
+              }else{
               echo "@".$Name.$LastName;
+              }
               ?>
             </p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>

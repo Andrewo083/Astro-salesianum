@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
             <!-- Header Icons -->
-            <div class="hidden xl:flex items-center space-x-5 items-center">
+            <div class="hidden xl:flex  space-x-5 items-center">
             <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
                   <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="mx-44">
         <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
         <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $row['BodyOne'] ?></p><br>
-        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto"><b>Fotografo:</b> <?php echo $row['photographer']; ?>
+        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto "><b>Fotografo:</b> <?php echo $row['photographer']; ?>
         </a>
         </div>
 
@@ -104,12 +104,15 @@ while ($row = mysqli_fetch_array($result)) {
               
               <?php
               $email = $row['id_reporter'];
+              if($email == NULL){
+                echo "@Astro Salesianum";
+              }else{
               $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
               $ResultReport = mysqli_query($conexion, $QueryReport);
               while ($RowReport = mysqli_fetch_array($ResultReport)) {
                 echo "@".$RowReport['Name']." ".$RowReport['LastName'];
               }
-              
+            }
               ?></p>
 
               </div>
@@ -161,17 +164,18 @@ while ($row = mysqli_fetch_array($result)) {
               <div class="flex flex-wrap -m-4">
                 
 <?php 
+$i = 0;
 $Category = $row['Category'];
 $State = "Active";
 $id_news = $row['id_news'];
-                $QueryRecom = "SELECT * FROM `news` WHERE `Category` = '$Category' AND `id_news` != '$id_news' AND `State` = '$State'";
+                $QueryRecom = "SELECT * FROM `news` WHERE  `id_news` != '$id_news' AND `State` = '$State' ORDER BY `date` DESC";
 $ResultRecom = mysqli_query($conexion, $QueryRecom);
-while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
-
+while (($RowQuery = mysqli_fetch_array($ResultRecom))&&($i < 3)) {
+$i++;
 
 
   $contenido = $RowQuery['BodyOne']; //  aquí tienes el contenido de la base de datos
-  $numero_caracteres = 150;
+  $numero_caracteres = 250;
   $contenido_recortado = substr($contenido, 0, $numero_caracteres);
 
 
@@ -184,9 +188,9 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                     <div class="p-6">
                       <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><?php echo $RowQuery['Category']?></h2>
                       <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $RowQuery['headline']?></h1>
-                      <p class="leading-relaxed mb-3"><?php echo $contenido_recortado; ?>...</p>
+                      <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
                       <div class=" ">
-                        <a href="./NewsMain.php?new=<?php echo $RowQuery['id_news'];?>" class=" bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">leer mas</a>
+                        <a href="./NewsMain.php?new=<?php echo $RowQuery['id_news'];?>" class=" bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más</a>
 
                       </div>
                     </div>
