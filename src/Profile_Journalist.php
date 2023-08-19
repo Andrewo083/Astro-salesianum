@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($result)) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Perfil Reportero</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
     <style>
         /* Estilos para hacer la imagen redonda */
@@ -83,25 +83,17 @@ while ($row = mysqli_fetch_array($result)) {
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
-              <?php
-
-              if(isset($_SESSION['Email'])){
-                echo '<a href="./funciones/Logout.php"><button>Logout</button></a>' ;
-              }
-
-             
               
-              ?>
            
             <!-- Header Icons -->
-            <div class="hidden xl:flex items-center space-x-5 ">
+            <div class=" xl:flex items-center space-x-3 ">
            
               <!-- Sign In / Register      -->
-              <a class="flex items-center hover:text-gray-200" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </a>
+              <a
+                href="./funciones/Logout.php"
+                class="bg-black text-white p-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
+                >Cerrar Sesion</a
+              >
 
             </div>
           </div>
@@ -121,13 +113,14 @@ while ($row = mysqli_fetch_array($result)) {
     </div>
 
     <!-- component -->
+  
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
     <main class="profile-page">
       <section class="relative block h-500-px">
-        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
-            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
+        <div class="absolute top-0 w-full h-full bg-center bg-cover " style="
+            background-image: '../img/BkgProfile.jpg' );
           ">
           <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
         </div>

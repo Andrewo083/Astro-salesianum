@@ -31,9 +31,11 @@ while ($row = mysqli_fetch_array($result)) {
         <!-- navbar -->
         <nav class="flex justify-between bg-gray-900 text-white">
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-          <a class="text-3xl font-bold font-heading" href="../src/newindex.php">
-              <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-          Astro Salesianum
+          <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
+                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+               Astro Salesianum
                 </a>
                 <!-- Nav Links -->
                   <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
@@ -45,14 +47,13 @@ while ($row = mysqli_fetch_array($result)) {
                 </ul>
             <!-- Header Icons -->
             <div class="hidden xl:flex items-center space-x-5 items-center">
-              <a class="hover:text-gray-200" href="#">
-
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </a>
-              <a class="flex items-center hover:text-gray-200" href="#">
-
-              </a>
+            <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                  <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
+                  </div>
+                
+                </a>
             </div>
         </nav>
         <!-- END NAV-->
@@ -247,13 +248,14 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
                   include "./Funciones/PrintVarComments.php"
 
                 ?>
+                 <?php $email = $id_user;  include("./Funciones/PrintUser.php"); ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
 										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
 										<div class="flex-1 overflow-hidden">
 											<div>
-                        <?php $email = $id_user;  include("./Funciones/PrintUser.php"); ?>
+                       
 												<span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $UserName ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>
@@ -261,7 +263,7 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 										</div>
 									</div>
 								</div>
-                <?php } ?>
+                <?php } }?>
                 
                 	<!-- message finish -->
 							</div>
@@ -272,58 +274,9 @@ while ($RowQuery = mysqli_fetch_array($ResultRecom)) {
 
 
 
-            <?php
-            $state = "active";
-            $query1 = "SELECT * FROM `comments` WHERE `id_new` = '$id_news' AND `State` = '$state' ORDER BY `date` DESC";
-            $result = mysqli_query($conexion, $query1);
             
-            if (!$result) {
-                die("Error en la consulta: " . mysqli_error($conexion));
-            }
-            
-            while ($row = mysqli_fetch_array($result)) {
-                $id_comment = $row['id_comment'];
-                $id_user = $row['id_user'];
-                $comment = $row['comment'];
-                $date = $row['date'];
-            
-                // Resto de tus acciones con los datos del comentario
-                // ...
+              
                 
-               
-                // ...
-           
-            
-            
-            ?>
-              <div>
-                <div class="shadow-lg pt-4 ml-2 mr-2 rounded-lg">
-                  <a href="#" class="block bg-white py-3 border-t pb-4">
-                    <div class="px-4 py-2 flex  justify-between">
-                      <span class="text-sm font-semibold text-gray-900"><?php echo  $date = $row['date'];?></span>
-                      <div class="flex">
-                        <span class="px-4 text-sm font-semibold text-gray-600"><?php 
-$email = $row['id_user'];
-$QueryUser = "SELECT * FROM `user` WHERE `Email` = '$email' ";
-$ResultUser = mysqli_query($conexion, $QueryUser);
-while ($RowUser = mysqli_fetch_array($ResultUser)) {
-
-                        echo "@".$RowUser['Name']." ".$RowUser['LastName'];
-
-                        ?></span>
-                        
-                        <img class="h-6 w-6 rounded-full object-cover" src="../img/<?php echo $RowUser['ProfileImage'] ?>" alt=""><?php }?>
-                      </div>
-                    </div>
-                    <p class="px-4 py-2 text-sm font-semibold text-gray-700"><?php echo  $comment = $row['comment'];?> </p>
-                  </a>
-                </div>
-                </div>
-                <?php }
-            
-            mysqli_close($conexion);
-           
-            } ?>
               
             </div>
             </main>

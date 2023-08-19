@@ -140,7 +140,7 @@ while($row = mysqli_fetch_array($result)){
               </div>
               <div>
                 <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input value="<?php echo $row['date']; ?>" type="date"  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
 
 
