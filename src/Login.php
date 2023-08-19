@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["Name"] = $row["Name"];
         $_SESSION['ROL'] = $row['ROL'];
         $_SESSION['ProfileImage'] = $row['ProfileImage'];
-        header("Location: ./WelcomeAdmin.html");
+        header("Location: ./WelcomeAdmin.php");
         exit();
     } elseif ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $row = $resultadoRol->fetch_assoc();
             $rolUsuario = $row['rol'];
             if ($rolUsuario == 1) {
-                header("Location: ./WelcomeAdmin.html"); // Redirección para el rol 1
+                header("Location: ./WelcomeAdmin.php"); // Redirección para el rol 1
             } elseif ($rolUsuario == 2) {
                 header("Location: ./Profile_Journalist.php?jour=" . $Email); // Redirección para el rol 2
             } elseif ($rolUsuario == 3) {
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <a href="./Registro.html" class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                         <div class="px-4 py-3">
 
-                            <img src="../img/logis.png" class="h-10 w-10" viewBox="0 0 40 40">
+                            <img src="../img/AstroFavicon.png" class="h-10 w-10" viewBox="0 0 40 40">
 
                         </div>
                         <h1 class="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">No tengo cuenta! </h1>
@@ -204,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="container px-3 py-5 mx-auto">
                 <div class="flex flex-col items-center text-center">
                     <a href="#">
-                        <img class="w-auto h-14" src="../img/logis.png" alt="">
+                        <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
                     </a>
 
                     <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

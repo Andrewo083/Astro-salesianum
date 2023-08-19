@@ -37,7 +37,7 @@
                 <a
                 href="./funciones/Logout.php"
                 class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
-                >Log out</a
+                >Cerrar Sesion</a
               >
                 
                 </div>

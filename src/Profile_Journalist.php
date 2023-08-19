@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_array($result)) {
         <nav class="flex justify-between bg-gray-900 text-white ">
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
           <a href="./newindex.php">
-            <img src="../img/logis.png" alt="" width="45px"></a>
+            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -256,7 +256,7 @@ while ($row = mysqli_fetch_array($result)) {
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/logis.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

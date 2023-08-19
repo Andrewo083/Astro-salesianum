@@ -20,7 +20,8 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
-    <title>News Chaleco</title>
+    <title>Noticias Chaleco</title>
+    <link rel="stylesheet" href="./css/ProfileImage.css">
 </head>
 <body>
     <div>
@@ -29,7 +30,7 @@ $result = mysqli_query($conexion, $query);
             <nav class="flex justify-between bg-yellow-500 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <a href="./newindex.php">
-            <img src="../img/logis.png" alt="" width="45px"></a>
+            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -45,17 +46,14 @@ $result = mysqli_query($conexion, $query);
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
-                <a class="hover:text-gray-200" href="#">
-                    
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-<a>
-                <a class="flex items-center hover:text-gray-200" href="#">
-                    
-                </a>
+                
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="./<?php  include"./Funciones/RestrictAncleRol.php";?>">
-                <img src="../img/<?php echo $_SESSION['ProfileImage']?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3"><br><?php echo $_SESSION['Name']?>
+                <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                  <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
+                  </div>
+                
                 </a>
                 
                 </div>
@@ -158,12 +156,12 @@ $result = mysqli_query($conexion, $query);
        
       </div>
     </div>
-  </div> 
+  </div> <br><br><br><br><br>
     <footer class="bg-yellow-800">
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/logis.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

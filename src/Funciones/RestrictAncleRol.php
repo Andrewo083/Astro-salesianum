@@ -1,7 +1,7 @@
 <?php
 
 if($_SESSION['ROL'] == 1){
-    echo "welcomeAdmin.html";
+    echo "WelcomeAdmin.php";
   }else if($_SESSION['ROL'] == 2){
     echo "Profile_Journalist.php";
   }else if($_SESSION['ROL'] == 3){

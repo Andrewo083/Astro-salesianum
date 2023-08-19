@@ -166,7 +166,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/logis.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

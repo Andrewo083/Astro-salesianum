@@ -55,7 +55,15 @@ $name = $_SESSION['Name'];
           <div class="flex w-full">
                     <div class="flex w-2/5 md:w-1/4 h-screen bg-white transition-all ease-in duration-300" id="slide">
                       <div class="mx-auto py-10">
-                        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">Astrum Salesianum</h1>
+                       
+                       
+              
+                <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">
+                  
+                  Astro Salesianum
+                </h1>
+               
+                       
                         <ul>
                         <li class="flex space-x-2 mt-10 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +103,8 @@ $name = $_SESSION['Name'];
                         <div class="flex items-center ">
                         
                           <a href="#">
-                            <img class="w-auto h-24 hidden" src="../img/logis.png" alt="" id="img">
+                            <img class="w-auto h-24 hidden" src="../img/AstroFavicon.png" alt="" id="img">
+                            
                         </a>
             
                         </div>
@@ -492,7 +501,7 @@ while($row = mysqli_fetch_array($result)){
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/logis.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
