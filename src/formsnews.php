@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div>
                 <label for="title" class="text-2lx font-bold text-gray-500"></label>
-                <input  type="text" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input  type="hidden" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
@@ -156,8 +156,8 @@ while ($row = mysqli_fetch_array($result)) {
                 <input  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
-                <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input  type="date"  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <label for="date" class="text-2lx font-bold text-gray-500" >Fecha</label>
+                <input  type="date"  id="date" name="date" max="<?php echo date('Y-m-d'); ?>" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
 
 
