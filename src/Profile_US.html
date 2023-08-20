@@ -10,52 +10,54 @@
 <body>
     <!-- navbar -->
 
-       <div>
-<section class="relative mx-auto">
-    <nav class="flex justify-between bg-gray-900 text-white">
-    <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <a class="text-3xl font-bold font-heading" href="#">
-        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-        Astro
-        </a>
-        <!-- Nav Links -->
-        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-        <li><a class="hover:text-gray-200" href="#">Home</a></li>
-        <li><a class="hover:text-gray-200" href="#">Casas</a></li>
-        <li><a class="hover:text-gray-200" href="#">Nosotros</a></li>
-        <li><a class="hover:text-gray-200" href="#">Categorias</a></li>
-        </ul>
-        <!-- Header Icons -->
-        <div class="hidden xl:flex items-center space-x-5 items-center">
-        <a class="hover:text-gray-200" href="#">
+         <div>
+        <section class="relative mx-auto">
+            <!-- navbar -->
+            <nav class="flex justify-between bg-gray-900 text-white ">
+            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+            <a href="./newindex.php">
+            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
+                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+               Astro Salesianum
+                </a>
+                <!-- Nav Links -->
+                  <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
+                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
+                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
+                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
+                </ul>
+                <!-- Header Icons -->
+                <div class="hidden xl:flex items-center space-x-5 ">
+                
+                <!-- Sign In / Register      -->
+                <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                  <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
+                  </div>
+                
+                </a>
+                
+                </div>
+            </div>
+            <!-- Responsive navbar -->
+            <a class="xl:hidden flex mr-6 items-center" href="#">
+                
+                
+            </a>
+            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    
+                </svg>
+            </a>
+            </nav>
             
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        
-        </a>
-        <a class="flex items-center hover:text-gray-200" href="#">
-            
-        </a>
-        <!-- Sign In / Register      -->
-        <a class="flex items-center hover:text-gray-200" href="#">
-            
-        </a>
-        
+        </section>
         </div>
-    </div>
-    <!-- Responsive navbar -->
-    <a class="xl:hidden flex mr-6 items-center" href="#">
-        
-        
-    </a>
-    <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            
-        </svg>
-    </a>
-    </nav>
-    
-</section>
-</div>
     <!-- end navbar -->
 
 <!-- component -->
