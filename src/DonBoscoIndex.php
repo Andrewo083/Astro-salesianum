@@ -96,6 +96,7 @@ $result = mysqli_query($conexion, $query);
               </p>
               <p class="inline text-xs font-medium">COLEGIO Don Bosco</p>
             </div>
+            </div>
             <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">Bienvenidos Don Bosco</a>
             <div class="pt-2 pr-0 pb-0 pl-0">
               <p class="text-sm font-medium inline">Ubicación: Km 1 1/2 Calle a Plan del Pino, Ciudadela Don Bosco, 884204 Soyapango</p>

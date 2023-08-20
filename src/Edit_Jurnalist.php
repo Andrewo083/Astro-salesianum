@@ -19,7 +19,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">

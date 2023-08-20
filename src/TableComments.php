@@ -31,7 +31,7 @@ if ($result) {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../Public/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
@@ -92,7 +92,7 @@ if ($result) {
       <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
           <div>
-            <p class="text-xl font-bold text-gray-700">Aqui podras ver los comentarios</p>
+            <p class="text-xl font-bold text-gray-700">Toddos Los Comentarios!</p>
             <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras llevar un control de los comentarios</p>
           </div>
         </div>
@@ -106,15 +106,25 @@ if ($result) {
             <?php
                   while ($row = mysqli_fetch_array($result)) {
                   ?>
+                   <?php 
+                   if($row['id_user']== NULL){
+                    $email = $row['id_reporter'];  
+
+                   }else  if($row['id_reporter'] == NULL){
+                    $email = $row['id_user'];  
+                   }
+                  
+                   include("./Funciones/PrintUser.php");
+                    ?>
             <!-- Chat messages -->
             <div class="px-6 py-4 flex-1">
               <!-- A message -->
               <div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-                <img src="../img/user.jpg" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
                 <div class="flex-1 overflow-hidden">
                   <div>
                     <span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $row['id_user'] ?></span>
-                    <span class="font-bold text-gray-400 text-xs"><?php echo $row['hour'] ?></span>
+                    <span class="font-bold text-gray-400 text-xs"><?php echo $row['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo $row['id_new'] ?></b></span> 
                   </div>
                   <p class="text-black font-semibold  "><?php echo $row['comment'] ?></p>
 
