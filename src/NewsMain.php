@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="mx-44">
         <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
         <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $row['BodyOne'] ?></p><br>
-        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto "><b>Fotografo:</b> <?php echo $row['photographer']; ?>
+        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto " href="https://www.instagram.com/epicyears/"><b>Fotografo:</b> <?php echo $row['photographer']; ?>✅
         </a>
         </div>
 
@@ -112,7 +112,7 @@ while ($row = mysqli_fetch_array($result)) {
               $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
               $ResultReport = mysqli_query($conexion, $QueryReport);
               while ($RowReport = mysqli_fetch_array($ResultReport)) {
-                echo "@".$RowReport['Name']." ".$RowReport['LastName'];
+                echo "@".$RowReport['Name']." ".$RowReport['LastName']."✅";
               }
             }
               ?></p>
@@ -247,7 +247,9 @@ $i++;
 								<!-- Chat messages -->
                 <?php 
                  $new = $_GET['new'];
-                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State'  ORDER BY `date`AND `hour` DESC";
+                 
+                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `hour`AND `date` ASC";
+
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
 
@@ -255,11 +257,14 @@ $i++;
 
                 ?>
                  <?php 
-                 if($row['id_user' == NULL]){
-                  $email = $row['id_reporter'];  
+                 $verificacion = False;
+                 if($RowComment['id_user']== NULL){
+                  $email = $RowComment['id_reporter']; 
+                  $verificacion =true; 
                   
-                 }else  if($row['id_reporter'] == NULL){
-                  $email = $row['id_user'];  
+                 }else  if($RowComment['id_reporter'] == NULL){
+                  $email = $RowComment['id_user']; 
+                  $verificacion = false; 
                  }
                    include("./Funciones/PrintUser.php"); 
                   ?>
@@ -270,7 +275,15 @@ $i++;
 										<div class="flex-1 overflow-hidden">
 											<div>
                        
-												<span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $UserName ?></span>
+												<span class="font-bold text-red-300 cursor-pointer hover:underline">
+                          <?php 
+                          $verificacion =  false;
+                          if($verificacion == true){
+                            echo $UserName."✅"; 
+                          }else{
+                            echo $UserName;
+                          }
+                         ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>
 											<p class="text-black "><?php  echo $comment; ?>. <br><b><?php echo $date?></b></p>
