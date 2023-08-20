@@ -37,7 +37,7 @@ while ($row = mysqli_fetch_array($result)) {
   <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Reportero</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
@@ -120,7 +120,7 @@ while ($row = mysqli_fetch_array($result)) {
     <main class="profile-page">
       <section class="relative block h-500-px">
         <div class="absolute top-0 w-full h-full bg-center bg-cover " style="
-            background-image: '../img/BkgProfile.jpg' );
+            background-image: '../img/BkgProfile.jpg'
           ">
           <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
         </div>
@@ -153,7 +153,7 @@ while ($row = mysqli_fetch_array($result)) {
               </div>
        
               <div class="text-center mt-12">
-                <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+                <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 ">
                   <?php echo $row['Name'] ?>
                 </h3>
                 <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
@@ -205,7 +205,7 @@ while ($row = mysqli_fetch_array($result)) {
                                   <div class="flex pb-4">
                                     <?php echo $new_row['drophead'] ?>
                                   </div>
-                                  <div class="flex-1 inline-flex  hidden items-center">
+                                  <div class="flex-1 inline-flex   items-center">
                                     k
 
                                   </div>

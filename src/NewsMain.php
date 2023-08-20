@@ -19,10 +19,12 @@ while ($row = mysqli_fetch_array($result)) {
 
   <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $row['headline'] ?></title>
     <link rel="stylesheet" href="../Public/tailwind.css">
-
+     <link rel="stylesheet" href="./css/ProfileImage.css">
+     
   </head>
 
   <body>
@@ -46,7 +48,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
             <!-- Header Icons -->
-            <div class="hidden xl:flex  space-x-5 items-center">
+            <div class=" xl:flex  space-x-5 items-center">
             <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
                   <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
@@ -65,7 +67,7 @@ while ($row = mysqli_fetch_array($result)) {
         <div class="mx-44">
         <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
         <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $row['BodyOne'] ?></p><br>
-        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto "><b>Fotografo:</b> <?php echo $row['photographer']; ?>
+        <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto " href="https://www.instagram.com/epicyears/"><b>Fotografo:</b> <?php echo $row['photographer']; ?>✅
         </a>
         </div>
 
@@ -110,7 +112,7 @@ while ($row = mysqli_fetch_array($result)) {
               $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
               $ResultReport = mysqli_query($conexion, $QueryReport);
               while ($RowReport = mysqli_fetch_array($ResultReport)) {
-                echo "@".$RowReport['Name']." ".$RowReport['LastName'];
+                echo "@".$RowReport['Name']." ".$RowReport['LastName']."✅";
               }
             }
               ?></p>
@@ -245,22 +247,34 @@ $i++;
 								<!-- Chat messages -->
                 <?php 
                  $new = $_GET['new'];
-                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State'  ORDER BY `date`AND `hour` DESC";
+                 
+                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `hour`AND `date` DESC";
+
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
 
                   include "./Funciones/PrintVarComments.php"
 
                 ?>
-                 <?php $email = $id_user;  include("./Funciones/PrintUser.php"); ?>
+                 <?php 
+                 include "./Funciones/PrintImageNameForComments.php"
+                  ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $ProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
 										<div class="flex-1 overflow-hidden">
 											<div>
                        
-												<span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $UserName ?></span>
+												<span class="font-bold text-red-300 cursor-pointer hover:underline">
+                          <?php 
+                          $verificacion =  false;
+                          if($verificacion == true){
+                            echo $UserName."✅"; 
+                          }else{
+                            echo $UserName;
+                          }
+                         ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>
 											<p class="text-black "><?php  echo $comment; ?>. <br><b><?php echo $date?></b></p>

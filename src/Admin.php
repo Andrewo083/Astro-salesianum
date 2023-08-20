@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=h, initial-scale=1.0" />
     <title>Document</title>
@@ -18,15 +18,15 @@
   <body>
     <h1 class="text-center p-3">Administracion de cuentas</h1>
     <?php 
-        include "../PHP/Conexion.php";
-        include "../PHP/Delet.php";
+        include "../Funciones/Conexion.php";
+        include "../Funciones/Delet.php";
     ?>
     <div class="container-fluid row">
       <form class="col-3  p-3" method="post" >
         <h3 class="text-center text-secondary p-2" >Registro de periodista</h3>
 
           <?php 
-        include "../PHP/RegisterJou.php";
+        include "../Funciones/RegisterJou.php";
 
         ?>
         <input type="hidden" name="rol" value="3" />
@@ -142,7 +142,7 @@
   </thead>
   <tbody>
     <?php 
-    include "../PHP/Conexion.php";
+    include "../Funciones/Conexion.php";
     $sql=$conexion->query(" select * from user");
     while($datos = $sql->fetch_object()) {?>
         <tr>
@@ -160,7 +160,7 @@
 
 
       <td>
-        <a href="../PHP/Edit.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a href="../Funciones/Edit.php?id=<?= $datos->id?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
         <a href="./Admin.php?id=<?= $datos->id?>" class="btn btn-small btn-danger"><i class="fa-solid fa-square-minus"></i></a>
       </td>
     </tr>
