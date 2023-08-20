@@ -248,7 +248,7 @@ $i++;
                 <?php 
                  $new = $_GET['new'];
                  
-                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `hour`AND `date` ASC";
+                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `hour`AND `date` DESC";
 
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
@@ -257,21 +257,12 @@ $i++;
 
                 ?>
                  <?php 
-                 $verificacion = False;
-                 if($RowComment['id_user']== NULL){
-                  $email = $RowComment['id_reporter']; 
-                  $verificacion =true; 
-                  
-                 }else  if($RowComment['id_reporter'] == NULL){
-                  $email = $RowComment['id_user']; 
-                  $verificacion = false; 
-                 }
-                   include("./Funciones/PrintUser.php"); 
+                 include "./Funciones/PrintImageNameForComments.php"
                   ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $ProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
 										<div class="flex-1 overflow-hidden">
 											<div>
                        
