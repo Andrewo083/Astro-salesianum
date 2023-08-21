@@ -34,7 +34,7 @@ if ($result) {
   <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../Public/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Astro Salesianum</title>
 </head>
 
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/bg_4.jpg');">
