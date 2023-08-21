@@ -41,6 +41,7 @@ while ($row = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Reportero</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+      <link rel="stylesheet" href="./css/Translate.css">
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -245,7 +246,7 @@ while ($row = mysqli_fetch_array($result)) {
             </div>
           </div>
         </div>
-         <footer class="bg-gray-800">
+           <footer class="bg-gray-800">
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
@@ -275,11 +276,23 @@ while ($row = mysqli_fetch_array($result)) {
           </div>
       </div>
   </div>
+
+  <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+
 </footer>
-      </section>
-    </main>
 
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
 
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+ 
 
   </body>
 

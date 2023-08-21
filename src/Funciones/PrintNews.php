@@ -1,6 +1,6 @@
 <?php 
 
-$new = $row['new'];
+
 
 $conexion = new mysqli("localhost", "root","","astrodb")or die(mysqli_error($mysqli));
 

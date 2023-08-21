@@ -17,6 +17,7 @@ if(isset($_SESSION['Email'])){
     $_SESSION['Name'];
 
     $Comment = $_POST['Comment'];
+    echo "COMENTARIO:";
     echo $Comment;
 
     if($_SESSION['ROL']== 3){
@@ -25,23 +26,30 @@ if(isset($_SESSION['Email'])){
     }else if($_SESSION['ROL']== 2){
         $id_reporter = $_SESSION['Email'];
         echo $id_reporter;
+    }else if ($_SESSION['ROL']== 1){
+        $id_user = $_SESSION['Email'];
+        echo $id_user;
     }
 
-
      // Asegúrate de obtener el valor correcto del usuario
+     echo "NOTICIA:";
     $id_new = $_GET['new']; 
     echo $id_new;   // Asegúrate de obtener el valor correcto de la noticia
+    echo "FECHA:";
     $date = date('Y-m-d'); 
 
     //HORA GTM-6
     date_default_timezone_set('America/Mexico_City');
     echo $date;
     $hour = date("H:i:");
+    echo "HORA:";
     echo $hour;
     $state = "active";        // Obtén la fecha actual
 
     // Realiza una consulta para verificar la existencia del valor en la tabla news
     $checkNewsQuery = "SELECT id_news FROM news WHERE id_news = $id_new";
+
+
     $result = $conexion->query($checkNewsQuery);
 
     if ($result->num_rows === 0) {
@@ -49,7 +57,7 @@ if(isset($_SESSION['Email'])){
         // Puedes decidir si detener aquí la ejecución o manejar el error de otra manera.
     } else {
         // Continuar con la inserción del comentario
-        if(($_SESSION['ROL']== 3) || ($_SESSION['ROL']==1) ){
+        if(($_SESSION['ROL']== 3) || ($_SESSION['ROL']== 1)){
             $sql = "INSERT INTO `comments`(`id_user`, `id_new`, `comment`, `date`, `State`, `hour`) VALUES ('$id_user','$id_new','$Comment','$date', '$state', '$hour')";
         }else if($_SESSION['ROL']== 2){
             $sql = "INSERT INTO `comments`(`id_reporter`, `id_new`, `comment`, `date`, `State`, `hour`) VALUES ('$id_reporter','$id_new','$Comment','$date', '$state', '$hour')";

@@ -24,7 +24,7 @@ while ($row = mysqli_fetch_array($result)) {
     <title><?php echo $row['headline'] ?></title>
     <link rel="stylesheet" href="../Public/tailwind.css">
      <link rel="stylesheet" href="./css/ProfileImage.css">
-     
+     <link rel="stylesheet" href="./css/Translate.css">
   </head>
 
   <body>
@@ -269,11 +269,10 @@ $i++;
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
 
-                  include "./Funciones/PrintVarComments.php"
+                  include "./Funciones/PrintVarComments.php";
 
-                ?>
-                 <?php 
-                 include "./Funciones/PrintImageNameForComments.php"
+                 
+                 include "./Funciones/PrintImageNameForComments.php";
                   ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
@@ -284,12 +283,8 @@ $i++;
                        
 												<span class="font-bold text-red-300 cursor-pointer hover:underline">
                           <?php 
-                          $verificacion =  false;
-                          if($verificacion == true){
-                            echo $UserName."✅"; 
-                          }else{
-                            echo $UserName;
-                          }
+                           include "./Funciones/PrintCheckComments.php"
+                          
                          ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>
@@ -348,7 +343,21 @@ $i++;
           </div>
       </div>
   </div>
+
+  <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+
 </footer>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   </body>
 
   </html>

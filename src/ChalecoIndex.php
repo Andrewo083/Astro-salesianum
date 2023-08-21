@@ -22,6 +22,7 @@ $result = mysqli_query($conexion, $query);
     <link rel="stylesheet" href="../Public/tailwind.css" />
     <title>Noticias Chaleco</title>
     <link rel="stylesheet" href="./css/ProfileImage.css">
+      <link rel="stylesheet" href="./css/Translate.css">
 </head>
 <body>
     <div>
@@ -189,8 +190,22 @@ $result = mysqli_query($conexion, $query);
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
           </div>
+
+          <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
       </div>
   </div>
+
+   <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </footer>
 </body>
 </html>

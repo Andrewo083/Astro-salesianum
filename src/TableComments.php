@@ -34,6 +34,7 @@ if ($result) {
   <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../Public/tailwind.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/Translate.css">
   <title>Astro Salesianum</title>
 </head>
 
@@ -92,7 +93,7 @@ if ($result) {
       <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
           <div>
-            <p class="text-xl font-bold text-gray-700">Toddos Los Comentarios!</p>
+            <p class="text-xl font-bold text-gray-700">Todos Los Comentarios!</p>
             <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras llevar un control de los comentarios</p>
           </div>
         </div>
@@ -147,6 +148,18 @@ if ($result) {
           </div>
 
         </div>
+        <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+
+         <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
