@@ -181,16 +181,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             </div>
                             <p>
-<<<<<<< Updated upstream
-                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 w-full relative appearance-none" id="contraseña" type="password" name="Password">
-
-
-
-=======
                                 <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
                                 
                              
->>>>>>> Stashed changes
                             </p>
                             <div class=" flex justify-end relative">
                                 <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true" onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>
