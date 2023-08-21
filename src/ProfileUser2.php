@@ -34,6 +34,7 @@ if (!$conexion) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -109,9 +110,97 @@ if (!$conexion) {
         <div class="px-6">
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-              <div class="relative">
+            <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
+            <button @click="open = true">
                 <img alt="..." class=" rounded-full   h-32  w-32  p-4" src="../img/juca.jpeg
                 ">
+                </button>
+        <div
+        x-show="open"
+        x-transition:enter="ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        x-description="Background backdrop, show/hide based on modal state."
+        class="fixed inset-0 flex justify-center item  bg-gray-600 bg-opacity-75 transition-opacity"
+      >
+
+      <div class="fixed overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            x-show="open"
+            x-transition:enter="ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave="ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            x-description="Modal panel, show/hide based on modal state."
+            class="relative transform  overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            @click.away="open = true"
+          >
+            <div
+              class="relative  flex items-center justify-center py-2 px-4 sm:px-6 lg:px-8"
+            >
+              <div class="absolute opacity-60 inset-0 z-0"></div>
+              <div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+                <div class="text-center">
+                  <h2 class="mt-5 text-3xl font-bold text-gray-900">
+                    Edición de perfil
+                  </h2>
+                  <p class="mt-2 text-sm text-gray-400">
+                    ¿Que te gustaria cambiar?
+                  </p>
+                </div>
+                <form class="mt-8 space-y-3" action="#" method="POST">
+                  <div class="grid grid-cols-1 space-y-2">
+                    <label class="text-sm font-bold text-gray-500 tracking-wide"
+                      >Nombre de usuario</label
+                    >
+                    <input
+                      class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                      type="name"
+                      placeholder="Juancito"
+                    />
+                  </div>
+                  <div class="md:space-y-2 mb-3">
+                    <label class="text-xs font-semibold text-gray-600 py-2">Elegir foto del
+                        periodista<abbr class="hidden" title="required"></abbr></label>
+                    <div class="flex items-center py-6">
+                        <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
+                             <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="100px" width="100px"/>
+                        </div>
+                        <label class="cursor-pointer ">
+                            <span
+                                class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Browse</span>
+                            <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
+                        </label>
+                    </div>
+                </div>
+                
+                  <div>
+                    <button
+                      type="submit"
+                      class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+                    >
+                      Upload
+                    </button>
+                    <button @click="open = false" type="button" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm">
+                        Cancel
+                    </button>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
