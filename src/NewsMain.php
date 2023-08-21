@@ -269,11 +269,10 @@ $i++;
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
 
-                  include "./Funciones/PrintVarComments.php"
+                  include "./Funciones/PrintVarComments.php";
 
-                ?>
-                 <?php 
-                 include "./Funciones/PrintImageNameForComments.php"
+                 
+                 include "./Funciones/PrintImageNameForComments.php";
                   ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
@@ -284,12 +283,8 @@ $i++;
                        
 												<span class="font-bold text-red-300 cursor-pointer hover:underline">
                           <?php 
-                          $verificacion =  false;
-                          if($verificacion == true){
-                            echo $UserName."✅"; 
-                          }else{
-                            echo $UserName;
-                          }
+                           include "./Funciones/PrintCheckComments.php"
+                          
                          ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>
 											</div>

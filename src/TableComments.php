@@ -92,7 +92,7 @@ if ($result) {
       <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
           <div>
-            <p class="text-xl font-bold text-gray-700">Toddos Los Comentarios!</p>
+            <p class="text-xl font-bold text-gray-700">Todos Los Comentarios!</p>
             <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras llevar un control de los comentarios</p>
           </div>
         </div>

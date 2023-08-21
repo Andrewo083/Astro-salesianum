@@ -36,6 +36,8 @@ if (!$conexion) {
     <link rel="stylesheet" href="../Public/tailwind.css">
         <link rel="stylesheet" href="./css/ProfileImage.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 </head>
 <body>
     <!-- navbar -->
@@ -61,18 +63,16 @@ if (!$conexion) {
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
                 <!-- Header Icons -->
-                <div class="hidden xl:flex items-center space-x-5 ">
-                
-                <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
-                  <div class="imagen-circular">
-        <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
-                  </div>
-                
-                </a>
-                
-                </div>
+                <div class=" xl:flex items-center space-x-3 ">
+           
+              <!-- Sign In / Register      -->
+              <a
+                href="./funciones/Logout.php"
+                class="bg-black text-white p-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
+                >Cerrar Sesion</a
+              >
+
+            </div>
             </div>
             <!-- Responsive navbar -->
             <a class="xl:hidden flex mr-6 items-center" href="#">
@@ -224,62 +224,72 @@ if (!$conexion) {
             <div class="w-full flex flex-col 2xl:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
+                    <form action="./Funciones/" method="post">
                     <ul class="mt-2 text-gray-700">
                         <li class="flex border-y py-2">
                             <span class="font-bold w-24">Nombre:</span>
-                            <span class="text-gray-700">Amanda S. Ross</span>
-                            <input type="text" class="text-gray-700" value>
+                           
+                           <input  class="text-gray-700" id="name" name="Name" type="text" value="<?php echo $row['Name']?>"
+                           ><label for="name">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </label>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Apellido</span>
+                            <input  class="text-gray-700" name="LastName" id="LastName" value="<?php echo $row['LastName']?>" 
+                           ><label for="LastName">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Correo electronico:</span>
-                            <span class="text-gray-700">@pepe.com</span>
+                            <input name="PhoneNumber" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
+                           ><label for="email">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                            </label>
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Numero de telefono:</span>
-                            <span class="text-gray-700">777 123 456(503)</span>
+                            <input  class="text-gray-700" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
+                           ><label for="PhoneNumber">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
+                        </li>
+                        
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Contraseña</span>
+                           
+                            <input  class="text-gray-700" name="Password" id="Password" type="password" value="<?php echo $row['Password']?>" 
+                           ><label for="Password">
+                              <span class="material-symbols-outlined">
+                                edit
+                              </span>
                         </li>
                         <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Mobile:</span>
-                            <span class="text-gray-700">(123) 123-1234</span>
+                          <button  type="submit" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm">
+                           Editar
+                            </button>
                         </li>
-                        <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Email:</span>
-                            <span class="text-gray-700">amandaross@example.com</span>
-                        </li>
-                        <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Location:</span>
-                            <span class="text-gray-700">New York, US</span>
-                        </li>
-                        <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Languages:</span>
-                            <span class="text-gray-700">English, Spanish</span>
-                        </li>
-                        <li class="flex items-center border-b py-2 space-x-2">
-                            <span class="font-bold w-24">Redes sociales:</span>
-                            <a href="#" title="Facebook">
-                                <svg class="w-5 h-5" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506.86 506.86"><defs><style>.cls-1{fill:#1877f2;}.cls-2{fill:#fff;}</style></defs><path class="cls-1" d="M506.86,253.43C506.86,113.46,393.39,0,253.43,0S0,113.46,0,253.43C0,379.92,92.68,484.77,213.83,503.78V326.69H149.48V253.43h64.35V197.6c0-63.52,37.84-98.6,95.72-98.6,27.73,0,56.73,5,56.73,5v62.36H334.33c-31.49,0-41.3,19.54-41.3,39.58v47.54h70.28l-11.23,73.26H293V503.78C414.18,484.77,506.86,379.92,506.86,253.43Z"></path><path class="cls-2" d="M352.08,326.69l11.23-73.26H293V205.89c0-20,9.81-39.58,41.3-39.58h31.95V104s-29-5-56.73-5c-57.88,0-95.72,35.08-95.72,98.6v55.83H149.48v73.26h64.35V503.78a256.11,256.11,0,0,0,79.2,0V326.69Z"></path></svg>
-                            </a>
-                            <a href="#" title="Twitter">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M166667 0c92048 0 166667 74619 166667 166667s-74619 166667-166667 166667S0 258715 0 166667 74619 0 166667 0zm90493 110539c-6654 2976-13822 4953-21307 5835 7669-4593 13533-11870 16333-20535-7168 4239-15133 7348-23574 9011-6787-7211-16426-11694-27105-11694-20504 0-37104 16610-37104 37101 0 2893 320 5722 949 8450-30852-1564-58204-16333-76513-38806-3285 5666-5022 12109-5022 18661v4c0 12866 6532 24246 16500 30882-6083-180-11804-1876-16828-4626v464c0 17993 12789 33007 29783 36400-3113 845-6400 1313-9786 1313-2398 0-4709-247-7007-665 4746 14736 18448 25478 34673 25791-12722 9967-28700 15902-46120 15902-3006 0-5935-184-8860-534 16466 10565 35972 16684 56928 16684 68271 0 105636-56577 105636-105632 0-1630-36-3209-104-4806 7251-5187 13538-11733 18514-19185l17-17-3 2z" fill="#1da1f2"></path></svg>
-                            </a>
-                          
-                        </li>
+                    
+                        
+                        
                     </ul>
+                    </form>
                 </div>
 
             </div>
-            <div class="flex flex-col w-full 2xl:w-2/3">
-                <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
-                    <h4 class="text-xl text-gray-900 font-bold">Información general a saber: </h4>
-                    <p class="mt-2 text-gray-700">En este apartado tu puedes ver toda tu información general que no has proporcionado, la puedes editar a tu placer si así lo deseas. <br>
-Puedes ver todos tus comentarios, con ciertas cosas a tomar en cuentan, si en algún comentario publicado visualiza un icon en rojo significa que su mensaje ha sido reportado. En el caso tu comentario no aparezca en este apartado, es administracion a decidido eliminarlo de la web, por diversos motivos, posible atentado a nuestra misión y valores. Para leer más sobre los motivos de la eliminación de su comentario leer nuestras normas y condiciones. 
-</p>
-                </div>
+            
                 <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
                     <h4 class="text-xl text-gray-900 font-bold">Comentarios</h4>
                     
                   
-<h1>aquí sampen los comentarios backend </h1>
+<h1>¡Tus Comentarios en Nuestras Noticia están Aquí!</h1>
                     
                 </div>
             </div>
