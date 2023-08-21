@@ -206,11 +206,11 @@ if(isset($_POST['Special'])){
 ?>
 <section class="my-8">
                               <div class="container mx-auto px-6">
-<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/cdbbkg1.jpg')">
+<div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SportsBKG.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Deportes</h2>
-                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@Rubén Nieto!✅</b></a></i>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
                                                   
@@ -288,12 +288,12 @@ if(isset($_POST['Special'])){
                            
                                   <div class="md:flex mt-8 md:-mx-4">
 
-                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/cdbbkg1.jpg')">
+                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/SportsBKG.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                                                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                                                  <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
+                                                  <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Rubén Nieto✅</b></a></i>
                                                   <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                     <span>Ver noticias</span>
                                                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -350,12 +350,12 @@ if(isset($_POST['Special'])){
                            
                                   <div class="md:flex mt-8 md:-mx-4">
 
-                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/cdbbkg1.jpg')">
+                                      <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/SportsBKG.jpg')">
                                           <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                               <div class="px-10 max-w-xl">
                                                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                                                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                                                  <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
+                                                  <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Rubén Nieto✅</b></a></i>
                                                   <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                     <span>Ver noticias</span>
                                                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>

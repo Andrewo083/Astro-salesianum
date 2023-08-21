@@ -127,11 +127,12 @@ if (!$conexion) {
         <div class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
             <div class="w-full flex flex-col 2xl:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
-                    <h4 class="text-xl text-gray-900 font-bold">Información personal</h4>
+                    <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
                     <ul class="mt-2 text-gray-700">
                         <li class="flex border-y py-2">
                             <span class="font-bold w-24">Nombre:</span>
                             <span class="text-gray-700">Amanda S. Ross</span>
+                            <input type="text" class="text-gray-700" value>
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Correo electronico:</span>
