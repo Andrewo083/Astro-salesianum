@@ -551,6 +551,16 @@ while($row = mysqli_fetch_array($result)){
 
                   <!--FOOTER-->
                     <footer class="bg-gray-800">
+                    <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
@@ -589,25 +599,5 @@ while($row = mysqli_fetch_array($result)){
 </footer>
                  
 </body>
-<script>
-let slide = document.getElementById("slide")
-                    let img = document.getElementById('img')
-                    let menuu = document.getElementById('menuu')
-                    slide.addEventListener('click', () => {
-                      slide.classList.add("left-[-500px]")
-                      slide.classList.add("absolute")
-                      img.classList.remove('hidden')
-                      menuu.classList.remove('justify-center')
-                      menuu.classList.add('justify-between')
-                    });
 
-                    img.addEventListener('click', () => {
-                      slide.classList.remove("left-[-500px]")
-                      slide.classList.remove("absolute")
-                      img.classList.add('hidden')
-                      
-                      menuu.classList.add('justify-center')
-                      menuu.classList.remove('justify-between')
-                    });
-                    </script>
 </html>
