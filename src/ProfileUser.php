@@ -34,25 +34,22 @@ if (!$conexion) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
-        <link rel="stylesheet" href="./css/ProfileImage.css">
 </head>
 <body>
     <!-- navbar -->
 
-         <div>
-        <section class="relative mx-auto">
-            <!-- navbar -->
-            <nav class="flex justify-between bg-gray-900 text-white ">
-            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a href="./newindex.php">
-            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
-                <a class="text-3xl font-bold font-heading" href="./newindex.php">
-               
-                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-               Astro Salesianum
-                </a>
-                <!-- Nav Links -->
-                  <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+      <!-- component -->
+<div>
+<section class="relative mx-auto">
+    <!-- navbar -->
+    <nav class="flex justify-between bg-gray-900 text-white w-screen">
+    <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+        <a class="text-3xl font-bold font-heading" href="#">
+        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+        Astro Salesianum
+        </a>
+        <!-- Nav Links -->
+         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
@@ -90,37 +87,39 @@ if (!$conexion) {
     <!-- end navbar -->
 
 <!-- component -->
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-    <div class="h-full bg-gray-200 p-8">
-        <div class="bg-white rounded-lg shadow-xl pb-8">
-         
-            <div class="w-full h-[250px]">
-                <img src="../img/FireRical.jpg" class="w-full h-full rounded-tl-lg rounded-tr-lg  bg-">
+<main class="profile-page">
+  <section class="relative block h-500-px">
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
+          ">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+    </div>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0px)">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="relative py-16 bg-blueGray-200">
+    <div class="container mx-auto px-4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="px-6">
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+              <div class="relative">
+                <img alt="..." class=" rounded-full   h-32  w-32  p-4" src="../img/juca.jpeg
+                ">
+              </div>
             </div>
-            <div class="flex flex-col items-center -mt-20">
-                <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" class="w-40 border-4 border-white rounded-full">
-                <div class="flex items-center space-x-2 mt-2">
-                    <p class="text-2xl"><?php  echo $_SESSION['Name'];?></p>
-                    
-                </div>
-                <p class="text-gray-700">Correo: <?php echo $row['Email']; ?> </p>
-                <p class="text-sm text-gray-500">Numero telefonico: <?php echo $row['PhoneNumber']?></p>
-            </div>
-            <div class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
-                <div class="flex items-center space-x-4 mt-2">
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
-                        </svg>
-                        <span title="Verified >Login out</span>
-                    </button>
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span>Comentarios</span>
-                    </button>
-                </div>
+            <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
+              <div class="py-6 px-3 mt-32 sm:mt-0">
+                <button class="bg-blue-950 active:bg-blue-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
+                  Login out
+                </button>
+              </div>
             </div>
         </div>
 
