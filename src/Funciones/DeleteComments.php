@@ -20,7 +20,7 @@ if ($conexion->query($SQL)) {
     if($_SESSION['ROL']== 1){
         header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/TableComments.php');
     }else{
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/');
+        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
     }
 
     
