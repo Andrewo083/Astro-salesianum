@@ -206,7 +206,7 @@ while ($row = mysqli_fetch_array($result)) {
                                     <?php echo $new_row['drophead'] ?>
                                   </div>
                                   <div class="flex-1 inline-flex   items-center">
-                                    k
+                                    
 
                                   </div>
                                 </div>
