@@ -290,6 +290,38 @@ if (!$conexion) {
                     
                   
 <h1>¡Tus Comentarios en Nuestras Noticia están Aquí!</h1>
+<?php 
+$email =  $row['Email'];
+
+ $queryCom = "SELECT * FROM `comments` WHERE `id_user` = '$email'";
+  $resultCom = mysqli_query($conexion, $queryCom);
+  while ($rowCom = mysqli_fetch_array($resultCom)) {
+    include("./Funciones/PrintUser.php");
+    ?>
+ <div class="px-6 py-4 flex-1">
+              <!-- A message -->
+              <div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
+										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+                <div class="flex-1 overflow-hidden">
+                  <div>
+                    <span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $row['Name'] ?></span>
+                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo $rowCom['id_new'] ?></b></span> 
+                  </div>
+                  <p class="text-black font-semibold  "><?php echo $rowCom['comment'] ?></p>
+
+                </div>
+                <div class="mt-4 mr-0 mb-0 ml-0 pt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 sm:pl-0 sm:mt-0">
+
+               
+               
+                    <a href="./Funciones/DeleteComments.php?ID=<?php echo $row['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          duration-200 hover:bg-red-700 rounded-lg">Delete</a>
+                  
+                </div>
+              </div>
+            </div><?php }
+
+?>
                     
                 </div>
             </div>
@@ -303,5 +335,5 @@ if (!$conexion) {
 </html>
 <?php
 
-    }
+  }
     ?>
