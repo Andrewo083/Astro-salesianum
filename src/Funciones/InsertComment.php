@@ -49,7 +49,7 @@ if(isset($_SESSION['Email'])){
         // Puedes decidir si detener aquí la ejecución o manejar el error de otra manera.
     } else {
         // Continuar con la inserción del comentario
-        if($_SESSION['ROL']== 3){
+        if(($_SESSION['ROL']== 3) || ($_SESSION['ROL']==1) ){
             $sql = "INSERT INTO `comments`(`id_user`, `id_new`, `comment`, `date`, `State`, `hour`) VALUES ('$id_user','$id_new','$Comment','$date', '$state', '$hour')";
         }else if($_SESSION['ROL']== 2){
             $sql = "INSERT INTO `comments`(`id_reporter`, `id_new`, `comment`, `date`, `State`, `hour`) VALUES ('$id_reporter','$id_new','$Comment','$date', '$state', '$hour')";
