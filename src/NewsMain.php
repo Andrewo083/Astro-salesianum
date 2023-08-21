@@ -225,6 +225,22 @@ $i++;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+ <!--COMENTARIOS-->
+
                 <!-- FORMULARIO-->
                 <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
 								  <div class="pb-6 px-4 flex-none">
@@ -243,7 +259,7 @@ $i++;
 									</div>
                 </form>    
                      <!-- FORMULARIO-->
-                  
+                 
 								<!-- Chat messages -->
                 <?php 
                  $new = $_GET['new'];

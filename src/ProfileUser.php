@@ -1,257 +1,200 @@
-<?php
+<?php 
+
 session_start();
-$email = $_SESSION['Email'];
+
 if (!isset($_SESSION['Email'])) {
-  header("Location: ./Login.php");
-  exit();
-}else{
-  
-include("./Funciones/PrintUser.php")
+    header("Location: ./Login.php");
+    exit();
+}
+
+include('./funciones/conexion.php');
+
+$conexion = new mysqli($host, $user, $password, $bd);
+
+if (!$conexion) {
+    die("Error en la conedxion" . mysqli_connect_error());
+  }
+
+  $email = $_SESSION['Email'];
+
+    $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
+    $carpet_images = "../img/";
+    $query = "SELECT * FROM `user` WHERE `email` = '$email'";
+    $result = mysqli_query($conexion, $query);
+
+    while ($row = mysqli_fetch_array($result)) {
+
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil periodista
-    </title>
+    <title>Profile</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+        <link rel="stylesheet" href="./css/ProfileImage.css">
 </head>
 <body>
-
-      <!-- component -->
-<div>
-<section class="relative mx-auto">
     <!-- navbar -->
-    <nav class="flex justify-between bg-gray-900 text-white w-screen">
-    <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <a class="text-3xl font-bold font-heading" href="#">
-        <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-        Astro Salesianum
-        </a>
-        <!-- Nav Links -->
-         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+
+         <div>
+        <section class="relative mx-auto">
+            <!-- navbar -->
+            <nav class="flex justify-between bg-gray-900 text-white ">
+            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+            <a href="./newindex.php">
+            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./newindex.php">
+               
+                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+               Astro Salesianum
+                </a>
+                <!-- Nav Links -->
+                  <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
                 <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
                 </ul>
-        <!-- Header Icons -->
-        <div class="hidden xl:flex items-center space-x-5 items-center">
-        <a class="hover:text-gray-200" href="#">
+                <!-- Header Icons -->
+                <div class="hidden xl:flex items-center space-x-5 ">
+                
+                <!-- Sign In / Register      -->
+                <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                  <div class="imagen-circular">
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
+                  </div>
+                
+                </a>
+                
+                </div>
+            </div>
+            <!-- Responsive navbar -->
+            <a class="xl:hidden flex mr-6 items-center" href="#">
+                
+                
+            </a>
+            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    
+                </svg>
+            </a>
+            </nav>
             
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-        </a>
-        <a class="flex items-center hover:text-gray-200" href="#">
-            
-        </a>
-        <!-- Sign In / Register      -->
-        <a class="flex items-center hover:text-gray-200" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        </a>
-        
+        </section>
         </div>
-    </div>
-    <!-- Responsive navbar -->
-    <a class="xl:hidden flex mr-6 items-center" href="#">
-        
-        
-    </a>
-    <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            
-        </svg>
-    </a>
-    </nav>
-    
-</section>
-</div>
+    <!-- end navbar -->
 
 <!-- component -->
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-<main class="profile-page">
-  <section class="relative block h-500-px">
-    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
-            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
-          ">
-      <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
-    </div>
-    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0px)">
-      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-        <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
-      </svg>
-    </div>
-  </section>
-  <section class="relative py-16 bg-blueGray-200">
-    <div class="container mx-auto px-4">
-      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
-        <div class="px-6">
-          <div class="flex flex-wrap justify-center">
-            <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-              <div class="relative">
-                <img alt="..." class=" rounded-full   h-32  w-32  p-4" src="../img/juca.jpeg
-                ">
-              </div>
+    <div class="h-full bg-gray-200 p-8">
+        <div class="bg-white rounded-lg shadow-xl pb-8">
+         
+            <div class="w-full h-[250px]">
+                <img src="../img/FireRical.jpg" class="w-full h-full rounded-tl-lg rounded-tr-lg  bg-">
             </div>
-            <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-              <div class="py-6 px-3 mt-32 sm:mt-0">
-                <button class="bg-blue-950 active:bg-blue-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
-                  Login out
-                </button>
-              </div>
-            </div>
-            <div class="w-full lg:w-4/12 px-4 lg:order-1">
-              <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Noticias</span>
+            <div class="flex flex-col items-center -mt-20">
+                <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" class="w-40 border-4 border-white rounded-full">
+                <div class="flex items-center space-x-2 mt-2">
+                    <p class="text-2xl"><?php  echo $_SESSION['Name'];?></p>
+                    
                 </div>
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">0</span><span class="text-sm text-blueGray-400">Comentarios</span>
+                <p class="text-gray-700">Correo: <?php echo $row['Email']; ?> </p>
+                <p class="text-sm text-gray-500">Numero telefonico: <?php echo $row['PhoneNumber']?></p>
+            </div>
+            <div class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
+                <div class="flex items-center space-x-4 mt-2">
+                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
+                        </svg>
+                        <span title="Verified >Login out</span>
+                    </button>
+                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Comentarios</span>
+                    </button>
                 </div>
-              
-              </div>
             </div>
-          </div>
-          <div class="text-center mt-12">
-            <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-              <?php echo $Name; ?>
-            </h3>
-            <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
-              <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>Colegio Don Bosco 
+        </div>
+
+        <div class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
+            <div class="w-full flex flex-col 2xl:w-1/3">
+                <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
+                    <h4 class="text-xl text-gray-900 font-bold">Información personal</h4>
+                    <ul class="mt-2 text-gray-700">
+                        <li class="flex border-y py-2">
+                            <span class="font-bold w-24">Nombre:</span>
+                            <span class="text-gray-700">Amanda S. Ross</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Correo electronico:</span>
+                            <span class="text-gray-700">@pepe.com</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Numero de telefono:</span>
+                            <span class="text-gray-700">777 123 456(503)</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Mobile:</span>
+                            <span class="text-gray-700">(123) 123-1234</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Email:</span>
+                            <span class="text-gray-700">amandaross@example.com</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Location:</span>
+                            <span class="text-gray-700">New York, US</span>
+                        </li>
+                        <li class="flex border-b py-2">
+                            <span class="font-bold w-24">Languages:</span>
+                            <span class="text-gray-700">English, Spanish</span>
+                        </li>
+                        <li class="flex items-center border-b py-2 space-x-2">
+                            <span class="font-bold w-24">Redes sociales:</span>
+                            <a href="#" title="Facebook">
+                                <svg class="w-5 h-5" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506.86 506.86"><defs><style>.cls-1{fill:#1877f2;}.cls-2{fill:#fff;}</style></defs><path class="cls-1" d="M506.86,253.43C506.86,113.46,393.39,0,253.43,0S0,113.46,0,253.43C0,379.92,92.68,484.77,213.83,503.78V326.69H149.48V253.43h64.35V197.6c0-63.52,37.84-98.6,95.72-98.6,27.73,0,56.73,5,56.73,5v62.36H334.33c-31.49,0-41.3,19.54-41.3,39.58v47.54h70.28l-11.23,73.26H293V503.78C414.18,484.77,506.86,379.92,506.86,253.43Z"></path><path class="cls-2" d="M352.08,326.69l11.23-73.26H293V205.89c0-20,9.81-39.58,41.3-39.58h31.95V104s-29-5-56.73-5c-57.88,0-95.72,35.08-95.72,98.6v55.83H149.48v73.26h64.35V503.78a256.11,256.11,0,0,0,79.2,0V326.69Z"></path></svg>
+                            </a>
+                            <a href="#" title="Twitter">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M166667 0c92048 0 166667 74619 166667 166667s-74619 166667-166667 166667S0 258715 0 166667 74619 0 166667 0zm90493 110539c-6654 2976-13822 4953-21307 5835 7669-4593 13533-11870 16333-20535-7168 4239-15133 7348-23574 9011-6787-7211-16426-11694-27105-11694-20504 0-37104 16610-37104 37101 0 2893 320 5722 949 8450-30852-1564-58204-16333-76513-38806-3285 5666-5022 12109-5022 18661v4c0 12866 6532 24246 16500 30882-6083-180-11804-1876-16828-4626v464c0 17993 12789 33007 29783 36400-3113 845-6400 1313-9786 1313-2398 0-4709-247-7007-665 4746 14736 18448 25478 34673 25791-12722 9967-28700 15902-46120 15902-3006 0-5935-184-8860-534 16466 10565 35972 16684 56928 16684 68271 0 105636-56577 105636-105632 0-1630-36-3209-104-4806 7251-5187 13538-11733 18514-19185l17-17-3 2z" fill="#1da1f2"></path></svg>
+                            </a>
+                          
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="mb-2 text-blueGray-600 mt-10">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sit, debitis nobis enim nemo blanditiis delectus totam ducimus sint fuga, earum labore vel, eligendi consequatur ad magni neque facilis eius.
+            <div class="flex flex-col w-full 2xl:w-2/3">
+                <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
+                    <h4 class="text-xl text-gray-900 font-bold">Información general a saber: </h4>
+                    <p class="mt-2 text-gray-700">En este apartado tu puedes ver toda tu información general que no has proporcionado, la puedes editar a tu placer si así lo deseas. <br>
+Puedes ver todos tus comentarios, con ciertas cosas a tomar en cuentan, si en algún comentario publicado visualiza un icon en rojo significa que su mensaje ha sido reportado. En el caso tu comentario no aparezca en este apartado, es administracion a decidido eliminarlo de la web, por diversos motivos, posible atentado a nuestra misión y valores. Para leer más sobre los motivos de la eliminación de su comentario leer nuestras normas y condiciones. 
+</p>
+                </div>
+                <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
+                    <h4 class="text-xl text-gray-900 font-bold">Comentarios</h4>
+                    
+                  
+<h1>aquí sampen los comentarios backend </h1>
+                    
+                </div>
             </div>
-            <div class="mb-2 text-blueGray-600">
-              texto de chill
-            </div>
-          </div>
-          <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-            <div class="flex flex-wrap justify-center">
-              <div class="w-full lg:w-9/12 px-4">
-                <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                <!-- dark theme -->
-	
-<!-- component -->
-<div class="h-screen flex flex-col">
+        </div>
   
-  <div>
-      <div class="shadow-lg pt-4 ml-2 mr-2 rounded-lg">
-          <a href="#" class="block bg-white py-3 border-t pb-4">
-              <div class="px-4 py-2 flex  justify-between">
-                  <span class="text-sm font-semibold text-gray-900">Gloria Roberston</span>
-                  <div class="flex">
-                      <span class="px-4 text-sm font-semibold text-gray-600"> yesterday</span>
-                      <img class="h-6 w-6 rounded-full object-cover"
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80"
-                          alt="">
-                  </div>
-              </div>
-              <p class="px-4 py-2 text-sm font-semibold text-gray-700"">Lorem mmmmm ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci laudantium <br> iste delectus explicabo id molestiae cupiditate corrupti distinctio alias. <br> Temporibus quae tenetur quod cupiditate, nostrum tempore inventore maxime ut! </p>
-          </a>
-      </div>
-      <div class="shadow-lg pt-4 ml-2 mr-2 rounded-lg">
-          <a href="#" class="block bg-white py-3 border-t pb-4">
-              <div class="px-4 py-2 flex  justify-between">
-                  <span class="text-sm font-semibold text-gray-900">Gloria Roberston</span>
-                  <div class="flex">
-                      <span class="px-4 text-sm font-semibold text-gray-600"> yesterday</span>
-                      <img class="h-6 w-6 rounded-full object-cover"
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80"
-                          alt="">
-                  </div>
-              </div>
-              <p class="px-4 py-2 text-sm font-semibold text-gray-700"">Lorem mmmmm ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci laudantium <br> iste delectus explicabo id molestiae cupiditate corrupti distinctio alias. <br> Temporibus quae tenetur quod cupiditate, nostrum tempore inventore maxime ut! </p>
-          </a>
-      </div>
-      <div class="shadow-lg pt-4 ml-2 mr-2 rounded-lg">
-          <a href="#" class="block bg-white py-3 border-t pb-4">
-              <div class="px-4 py-2 flex  justify-between">
-                  <span class="text-sm font-semibold text-gray-900">Gloria Roberston</span>
-                  <div class="flex">
-                      <span class="px-4 text-sm font-semibold text-gray-600"> yesterday</span>
-                      <img class="h-6 w-6 rounded-full object-cover"
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80"
-                          alt="">
-                  </div>
-              </div>
-              <p class="px-4 py-2 text-sm font-semibold text-gray-700"">Lorem mmmmm ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci laudantium <br> iste delectus explicabo id molestiae cupiditate corrupti distinctio alias. <br> Temporibus quae tenetur quod cupiditate, nostrum tempore inventore maxime ut! </p>
-          </a>
-      </div>
-      <div class="shadow-lg pt-4 ml-2 mr-2 rounded-lg">
-          <a href="#" class="block bg-white py-3 border-t pb-4">
-              <div class="px-4 py-2 flex  justify-between">
-                  <span class="text-sm font-semibold text-gray-900">Gloria Roberston</span>
-                  <div class="flex">
-                      <span class="px-4 text-sm font-semibold text-gray-600"> yesterday</span>
-                      <img class="h-6 w-6 rounded-full object-cover"
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=144&q=80"
-                          alt="">
-                  </div>
-              </div>
-              <p class="px-4 py-2 text-sm font-semibold text-gray-700"">Lorem mmmmm ipsum dolor sit amet consectetur adipisicing elit. Iusto adipisci laudantium <br> iste delectus explicabo id molestiae cupiditate corrupti distinctio alias. <br> Temporibus quae tenetur quod cupiditate, nostrum tempore inventore maxime ut! </p>
-          </a>
-      </div>
-  </div>
-</div>
-</main>
-</div>
-
-
-</div>
-        
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <footer class="bg-gray-800">
-  <div class="container px-3 py-5 mx-auto">
-      <div class="flex flex-col items-center text-center">
-          <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
-          </a>
 
-          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+  
 
-          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
-             
-
-              
-          </div>
-      </div>
-
-      <hr class="my-10 border-gray-200" />
-
-      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
-
-          <div class="flex mt-3 -mx-2 sm:mt-0">
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
-
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
-
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
-          </div>
-      </div>
-  </div>
-</footer>
-  </section>
-</main>
- 
-
-	
 </body>
 </html>
 <?php
- }?>
+
+    }
+    ?>

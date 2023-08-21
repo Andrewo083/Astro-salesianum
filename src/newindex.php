@@ -389,26 +389,97 @@ if(isset($_POST['Special'])){
 
 
                           } ?>
+                                     <br><br>
+                                     <div class="container mx-auto px-6 py-6 text-center">
+         
+          
+         <section class="text-gray-600 body-font">
+           <div class="container px-5 bg-gray-50 mx-auto  rounded-xl">
+             <div class="flex flex-wrap -m-4">
+               
+<?php 
 
-
-<!--AQUI ESTA EL PHP DE LOS BOTNOES-->
-
-
-
-                                  <!--<div class="min-h-screen flex justify-center items-center py-20">
-                                    <div class="container bg-gray-100 mx-auto p-12  rounded-xl">
-                                      <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-7 space-y-4  sm:space-y-0">-->
-                                     <br><br> <section class="text-gray-600 body-font">
-            <div class="container  bg-gray-100 px-5  mx-auto">
-              <div class="flex flex-wrap -m-4">
-                                           <!-- Box-1 -->
-                                           <?php
-
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-$carpet_images = "../img/";
 
 $State = "Active";
-//if para ver si el query tiene restriccion o no
+
+if($sql_all == true){
+ $query = "SELECT * FROM `news` WHERE `State` = '$State' ORDER BY `date` DESC";
+}else{
+ //estoy seleccionando las noticias por categoria y ordeno por la fecha.
+ $query = "SELECT * FROM `news` WHERE `Category` = '$category' AND `State` = '$State' ORDER BY `date` DESC";
+}
+
+$result = mysqli_query($conexion, $query);
+while($row = mysqli_fetch_array($result)){
+
+
+
+
+ $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
+ $numero_caracteres = 150;
+ $contenido_recortado = substr($contenido, 0, $numero_caracteres);
+
+
+?>
+               <!--INICIO RECOMENDACION-->
+               <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>">
+               <div class="p-4 md:w-1/3">
+                 <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
+                   <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="<?php echo $row['headline'] ?>">
+                   <div class="p-6">
+                     <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><?php echo $row['Category']?> - <?php  echo $row['school']?></h2>
+                     <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $row['headline']?></h1>
+                     <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
+                     <p class="leading-relaxed mb-3 text-jusitfy">Escrito por <b>
+                       <?php 
+                         include( "./Funciones/PrintJournalist.php");
+                         if($email == NULL){
+                           echo "@Astro Salesianum"."✅";
+                         }else{
+                          
+                         echo "@".$Name.$LastName."✅";
+                         }
+                         
+                          
+                       ?></b></p>
+                     <div class=" ">
+                       <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>" class=" bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más</a>
+
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               </a>
+                 <!--FIN RECOMENDACION-->
+              <?php } ?>
+
+
+
+
+
+             </div>
+           </div>
+           
+           </div>
+
+                                  </div>
+                             
+                    </main>
+                    
+                  </div>
+
+                  <div class="container mx-auto px-6 py-6 text-center">
+         
+          
+          <section class="text-gray-600 body-font">
+            <div class="container px-5 bg-gray-200 mx-auto  rounded-xl">
+              <div class="flex flex-wrap -m-4">
+                
+<?php 
+
+
+$State = "Active";
+
 if($sql_all == true){
   $query = "SELECT * FROM `news` WHERE `State` = '$State' ORDER BY `date` DESC";
 }else{
@@ -419,79 +490,59 @@ if($sql_all == true){
 $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
 
+
+
+
   $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
   $numero_caracteres = 150;
   $contenido_recortado = substr($contenido, 0, $numero_caracteres);
-   
 
 
 ?>
-
-<a href="./NewsMain.php?new=<?php echo $row['id_news'];?>">
+                <!--INICIO RECOMENDACION-->
+                <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>">
                 <div class="p-4 md:w-1/3">
-                  <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-orange-50 to-amber-100 overflow-hidden">
-                    <img class="lg:h-48 md:h-36 w-full h-60 object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="blog">
-                    <div class=" p-3">
-                      <h2 class="tracking-widest text-xs title-font font-medium text-amber-100 mb-1"><?php echo $row['Category']?> - <?php  echo $row['school']?></h2>
+                  <div class="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
+                    <img class="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100" src="../img/<?php echo $row['main_image'] ?>" alt="<?php echo $row['headline'] ?>">
+                    <div class="p-6">
+                      <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><?php echo $row['Category']?> - <?php  echo $row['school']?></h2>
                       <h1 class="title-font text-lg font-medium text-gray-600 mb-3"><?php echo $row['headline']?></h1>
                       <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
-                      <br>
                       <p class="leading-relaxed mb-3 text-jusitfy">Escrito por <b>
                         <?php 
                           include "./Funciones/PrintJournalist.php";
                           echo $Name." ".$LastName."✅"; 
                         ?></b></p>
-                      <div >
-
+                      <div class=" ">
+                        <a href="./NewsMain.php?new=<?php echo $row['id_news'];?>" class=" bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Leer más</a>
 
                       </div>
                     </div>
                   </div>
                 </div>
                 </a>
+                  <!--FIN RECOMENDACION-->
+               <?php } ?>
 
-                                     
-                                      <?php } ?>
-                                      
-                                      </div>
-                                      
-                                         
-                                    </div>
-                                    </section>
-                                  </div>
-                             
-                    </main>
+
+
+
+
+              </div>
+            </div>
+            
+            </div>
+
+                  
+                  
+                  <script src="./JS/indexscript.js">
                     
-                  </div>
-
-
-
-                  
-                  
-                  <script>
-                    let slide = document.getElementById("slide")
-                    let img = document.getElementById('img')
-                    let menuu = document.getElementById('menuu')
-                    slide.addEventListener('click', () => {
-                      slide.classList.add("left-[-500px]")
-                      slide.classList.add("absolute")
-                      img.classList.remove('hidden')
-                      menuu.classList.remove('justify-center')
-                      menuu.classList.add('justify-between')
-                    })
-
-                    img.addEventListener('click', () => {
-                      slide.classList.remove("left-[-500px]")
-                      slide.classList.remove("absolute")
-                      img.classList.add('hidden')
-                      
-                      menuu.classList.add('justify-center')
-                      menuu.classList.remove('justify-between')
-                    })
 
 
 
                   </script>
+
+                  <!--FOOTER-->
                     <footer class="bg-gray-800">
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
