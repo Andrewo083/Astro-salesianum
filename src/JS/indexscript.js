@@ -7,7 +7,7 @@ let slide = document.getElementById("slide")
                       img.classList.remove('hidden')
                       menuu.classList.remove('justify-center')
                       menuu.classList.add('justify-between')
-                    })
+                    });
 
                     img.addEventListener('click', () => {
                       slide.classList.remove("left-[-500px]")
@@ -16,4 +16,4 @@ let slide = document.getElementById("slide")
                       
                       menuu.classList.add('justify-center')
                       menuu.classList.remove('justify-between')
-                    })
+                    });

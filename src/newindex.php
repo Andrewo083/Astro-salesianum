@@ -540,15 +540,11 @@ while($row = mysqli_fetch_array($result)){
             </div>
             
             </div>
+            
 
                   
                   
-                  <script src="./JS/indexscript.js">
-                    
-
-
-
-  </script>
+                  <script src="./JS/indexscript.js"></script>
 
                   <!--FOOTER-->
                     <footer class="bg-gray-800">
@@ -591,15 +587,24 @@ while($row = mysqli_fetch_array($result)){
                  
 </body>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+let slide = document.getElementById("slide")
+                    let img = document.getElementById('img')
+                    let menuu = document.getElementById('menuu')
+                    slide.addEventListener('click', () => {
+                      slide.classList.add("left-[-500px]")
+                      slide.classList.add("absolute")
+                      img.classList.remove('hidden')
+                      menuu.classList.remove('justify-center')
+                      menuu.classList.add('justify-between')
+                    });
 
-
+                    img.addEventListener('click', () => {
+                      slide.classList.remove("left-[-500px]")
+                      slide.classList.remove("absolute")
+                      img.classList.add('hidden')
+                      
+                      menuu.classList.add('justify-center')
+                      menuu.classList.remove('justify-between')
+                    });
+                    </script>
 </html>
