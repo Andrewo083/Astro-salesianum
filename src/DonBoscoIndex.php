@@ -25,8 +25,19 @@ $result = mysqli_query($conexion, $query);
     <link rel="stylesheet" href="../Public/tailwind.css" />
     <title>Noticias Don Bosco </title>
     <link rel="stylesheet" href="./css/ProfileImage.css">
-</head>
+
+  </head>
+
 <body>
+   <style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
@@ -186,14 +197,30 @@ $result = mysqli_query($conexion, $query);
           <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
 
           <div class="flex mt-3 -mx-2 sm:mt-0">
-              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit">  
+                       <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+ </a>
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+         
           </div>
       </div>
   </div>
 </footer>
+  <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+     
 </body>
+
 </html>

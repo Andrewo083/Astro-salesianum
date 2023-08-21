@@ -22,6 +22,7 @@ if(isset($_SESSION['ROL'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Salesianum</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+     <link rel="stylesheet" href="./css/Translate.css">
 </head>
 <body>
     <div>
@@ -150,6 +151,50 @@ if(isset($_SESSION['ROL'])){
       </div>
       </div>
   
+      <footer class="bg-gray-800">
+  <div class="container px-3 py-5 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
+          </a>
+
+          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+
+          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+             
+
+              
+          </div>
+      </div>
+
+      <hr class="my-10 border-gray-200" />
+
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit">  
+                       <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+ </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+         
+          </div>
+      </div>
+  </div>
+</footer>
+  <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
