@@ -305,7 +305,13 @@ $email =  $row['Email'];
                 <div class="flex-1 overflow-hidden">
                   <div>
                     <span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $row['Name'] ?></span>
-                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo $rowCom['id_new'] ?></b></span> 
+
+                    <?php 
+                    $new = $rowCom['id_new'];
+                    include "./Funciones/PrintNews.php"
+                     ?>
+
+                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo  $NewHeadLine ?></b></span> 
                   </div>
                   <p class="text-black font-semibold  "><?php echo $rowCom['comment'] ?></p>
 
@@ -314,7 +320,7 @@ $email =  $row['Email'];
 
                
                
-                    <a href="./Funciones/DeleteComments.php?ID=<?php echo $row['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                    <a href="./Funciones/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
                   
                 </div>
