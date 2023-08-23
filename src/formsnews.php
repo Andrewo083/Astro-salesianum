@@ -149,11 +149,11 @@ while ($row = mysqli_fetch_array($result)) {
               </div>
               <div>
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
-                <input  type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
-                <input  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input maxlength="75"  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="date" class="text-2lx font-bold text-gray-500" >Fecha</label>
