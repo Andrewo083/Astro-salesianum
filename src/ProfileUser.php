@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
- echo $_SESSION['ProfileImage'];
+ 
 if (!isset($_SESSION['Email'])) {
     header("Location: ./Login.php");
     exit();
@@ -198,29 +198,14 @@ if (!$conexion) {
                 <p class="text-gray-700">Correo: <?php echo $row['Email']; ?> </p>
                 <p class="text-sm text-gray-500">Numero telefonico: <?php echo $row['PhoneNumber']?></p>
             </div>
-            <div class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
-                <div class="flex items-center space-x-4 mt-2">
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
-                        </svg>
-                        <span title="Verified >Login out</span>
-                    </button>
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span>Comentarios</span>
-                    </button>
-                </div>
-            </div>
+            
         </div>
 
         <div class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
             <div class="w-full flex flex-col 2xl:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
-                    <form action="./Funciones/" method="post">
+                    <form action="./Funciones/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
                     <ul class="mt-2 text-gray-700">
                         <li class="flex border-y py-2">
                             <span class="font-bold w-24">Nombre:</span>
@@ -242,7 +227,7 @@ if (!$conexion) {
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Correo electronico:</span>
-                            <input name="PhoneNumber" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
+                            <input name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
                            ><label for="email">
                               <span class="material-symbols-outlined">
                                 edit
@@ -307,7 +292,7 @@ $email =  $row['Email'];
                     include "./Funciones/PrintNews.php"
                      ?>
 
-                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo  $NewHeadLine ?></b></span> 
+                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <a href="./NewsMain.php?new=<?php echo $new ?>"><b><?php echo  $NewHeadLine ?></b></a></span> 
                   </div>
                   <p class="text-black font-semibold  "><?php echo $rowCom['comment'] ?></p>
 
