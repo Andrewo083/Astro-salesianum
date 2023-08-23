@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-
+ 
 if (!isset($_SESSION['Email'])) {
     header("Location: ./Login.php");
     exit();
@@ -30,9 +30,10 @@ if (!$conexion) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/ProfileImageUser.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Perfil Astro  usuario</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
         <link rel="stylesheet" href="./css/ProfileImage.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -103,7 +104,11 @@ if (!$conexion) {
 
             <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
             <button @click="open = true">
-        <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" class="w-40 border-4 border-white rounded-full">
+            <div class="imagen-circular">
+     
+     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
+
+ </a>
         </button>
         <div
         x-show="open"
@@ -146,7 +151,7 @@ if (!$conexion) {
                     Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form action=""  class="mt-8 space-y-3"  method="POST">
+                <form class="mt-8 space-y-3" action="./Funciones/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
                   
                   <div class="md:space-y-2 mb-3">
                     
@@ -158,7 +163,7 @@ if (!$conexion) {
                        
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                            <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
+                            <input required  name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                     </div>
                 </div>
@@ -193,22 +198,7 @@ if (!$conexion) {
                 <p class="text-gray-700">Correo: <?php echo $row['Email']; ?> </p>
                 <p class="text-sm text-gray-500">Numero telefonico: <?php echo $row['PhoneNumber']?></p>
             </div>
-            <div class="flex-1 flex flex-col items-center lg:items-end justify-end px-8 mt-2">
-                <div class="flex items-center space-x-4 mt-2">
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
-                        </svg>
-                        <span title="Verified >Login out</span>
-                    </button>
-                    <button class="flex items-center bg-gray-900 hover:bg-gray-800 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span>Comentarios</span>
-                    </button>
-                </div>
-            </div>
+            
         </div>
 
         <div class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
@@ -302,7 +292,7 @@ $email =  $row['Email'];
                     include "./Funciones/PrintNews.php"
                      ?>
 
-                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <b><?php echo  $NewHeadLine ?></b></span> 
+                    <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <a href="./NewsMain.php?new=<?php echo $new ?>"><b><?php echo  $NewHeadLine ?></b></a></span> 
                   </div>
                   <p class="text-black font-semibold  "><?php echo $rowCom['comment'] ?></p>
 
