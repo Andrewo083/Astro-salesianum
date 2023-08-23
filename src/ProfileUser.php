@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-
+ echo $_SESSION['ProfileImage'];
 if (!isset($_SESSION['Email'])) {
     header("Location: ./Login.php");
     exit();
@@ -30,9 +30,10 @@ if (!$conexion) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/ProfileImageUser.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Perfil Astro  usuario</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
         <link rel="stylesheet" href="./css/ProfileImage.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -103,7 +104,11 @@ if (!$conexion) {
 
             <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
             <button @click="open = true">
-        <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" class="w-40 border-4 border-white rounded-full">
+            <div class="imagen-circular">
+     
+     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
+
+ </a>
         </button>
         <div
         x-show="open"
@@ -146,7 +151,7 @@ if (!$conexion) {
                     Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="#" method="POST">
+                <form class="mt-8 space-y-3" action="./Funciones/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
                   
                   <div class="md:space-y-2 mb-3">
                     
@@ -158,7 +163,7 @@ if (!$conexion) {
                        
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                            <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
+                            <input required  name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                     </div>
                 </div>
