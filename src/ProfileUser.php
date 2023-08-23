@@ -146,7 +146,7 @@ if (!$conexion) {
                     Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="#" method="POST">
+                <form action=""  class="mt-8 space-y-3"  method="POST">
                   
                   <div class="md:space-y-2 mb-3">
                     
@@ -215,7 +215,7 @@ if (!$conexion) {
             <div class="w-full flex flex-col 2xl:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
-                    <form action="./Funciones/" method="post">
+                    <form action="./Funciones/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
                     <ul class="mt-2 text-gray-700">
                         <li class="flex border-y py-2">
                             <span class="font-bold w-24">Nombre:</span>
@@ -237,7 +237,7 @@ if (!$conexion) {
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Correo electronico:</span>
-                            <input name="PhoneNumber" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
+                            <input name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
                            ><label for="email">
                               <span class="material-symbols-outlined">
                                 edit
