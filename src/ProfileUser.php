@@ -38,6 +38,7 @@ if (!$conexion) {
         <link rel="stylesheet" href="./css/ProfileImage.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="./JS/Imageform.js"></script>
 
 </head>
 <body>
@@ -163,7 +164,7 @@ if (!$conexion) {
                        
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                            <input required  name="imagen" type="file" id="imagde1" accept="image/*" >
+                            <input required class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ $LastName=$_POST['LastName'];
 $PhoneNumber=$_POST['PhoneNumber'];
 $Rol=2;
 
-$imagen =  "$Email.png";
+$imagen =  $Email."-".$Name."-".$ROL.".png";
     $url_main = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 

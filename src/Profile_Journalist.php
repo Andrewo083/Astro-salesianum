@@ -43,6 +43,7 @@ while ($row = mysqli_fetch_array($result)) {
     <link rel="stylesheet" href="../Public/tailwind.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
       <link rel="stylesheet" href="./css/Translate.css">
+      <script src="./JS/Imageform.js"></script>
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -179,33 +180,23 @@ while ($row = mysqli_fetch_array($result)) {
               <div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
                 <div class="text-center">
                   <h2 class="mt-5 text-3xl font-bold text-gray-900">
-                    Edición de perfil
+                    Actualiza tu Foto de Perfil
                   </h2>
                   <p class="mt-2 text-sm text-gray-400">
-                    ¿Que te gustaria cambiar?
+                  Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="#" method="POST">
-                  <div class="grid grid-cols-1 space-y-2">
-                    <label class="text-sm font-bold text-gray-500 tracking-wide"
-                      >Nombre de usuario</label
-                    >
-                    <input
-                      class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                      type="name"
-                      placeholder="Juancito"
-                    />
-                  </div>
+                <form class="mt-8 space-y-3" action="./Funciones/EditReporterImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
+                  
                   <div class="md:space-y-2 mb-3">
-                    <label class="text-xs font-semibold text-gray-600 py-2">Elegir foto del
-                        periodista<abbr class="hidden" title="required"></abbr></label>
+                   
                     <div class="flex items-center py-6">
                         <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                             <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="100px" width="100px"/>
+                             <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="300px" width="300px"/>
                         </div>
                         <label class="cursor-pointer ">
                             <span
-                                class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Browse</span>
+                                class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Elegir</span>
                             <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
                         </label>
                     </div>
@@ -213,16 +204,19 @@ while ($row = mysqli_fetch_array($result)) {
                 
                   <div>
                     <button
-                      type="submit"
+                      type="submit" value="Actualizar"
                       class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
                     >
                       Upload
                     </button>
-                    <button @click="open = false" type="button" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm">
+                    </button> <center><p @click="open = false" type="button" class="hover:p-2.5 hover:px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold hover:text-red-500   focus:outline-none focus:ring-2 cursor-pointer focus:ring-red-500 focus:ring-offset-2 transition-all text-sm">
                         Cancel
-                    </button>
+    </p></center>
                     
                   </div>
+
+
+
                 </form>
               </div>
             </div>
@@ -388,3 +382,24 @@ while ($row = mysqli_fetch_array($result)) {
   </html>
 
 <?php } ?>
+<script >
+  const imagde1 = document.getElementById('imagde1');
+const preview1 = document.getElementById('preview1');
+
+imagde1.addEventListener('change', function() {
+  const archivo = imagde1.files[0];
+  if (archivo) {
+    const lector = new FileReader();
+
+    lector.addEventListener('load', function() {
+      preview1.src = lector.result;
+      preview1.style.display = 'block';
+    });
+
+    lector.readAsDataURL(archivo);
+  } else {
+    preview1.src = '#';
+    preview1.style.display = 'none';
+  }
+});
+</script>
