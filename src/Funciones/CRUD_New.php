@@ -1,20 +1,22 @@
 <?php
 session_start();
-$conexion = mysqli_connect('localhost', 'root', '','astrodb') ;
+$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
 difference($conexion);
 
-function difference($conexion){
-    if(isset($_POST['submit'])){
+function difference($conexion)
+{
+    if (isset($_POST['submit'])) {
         submit($conexion);
-    }else if(isset($_POST['edit'])){
+    } else if (isset($_POST['edit'])) {
         edit($conexion);
-    }else if(isset($_POST['delete'])){
+    } else if (isset($_POST['delete'])) {
         delete($conexion);
     }
 }
 
-function submit($conexion){
+function submit($conexion)
+{
     //Carpeta   
     $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
     echo $carpet_images;
@@ -36,32 +38,31 @@ function submit($conexion){
     $category = $_POST['category'];
     $photographer = $_POST['photographer'];
     $State = "Active";
-    
+
     //nuevo nommbre
     $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
     echo $imagen;
-    $url_main = $carpet_images.$imagen;
+    $url_main = $carpet_images . $imagen;
     move_uploaded_file($imagen_tmp, $url_main);
 
-        $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`,`BodyTwo`, `BodyThree`, `BodyFour`,`school`, `Category`, `State`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category', '$State')";
+    $query = "INSERT INTO `news`( `id_reporter`, `main_image`, `photographer`, `headline`, `drophead`, `date`, `BodyOne`,`BodyTwo`, `BodyThree`, `BodyFour`,`school`, `Category`, `State`) VALUES ('$id_reporter','$imagen','$photographer','$headline','$drophead','$date','$BodyOne','$BodyTwo','$BodyThree','$BodyFour','$school','$category', '$State')";
 
     mysqli_query($conexion, $query);
     echo "Si se hixo";
-    
+
     header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
-   
 }
 
-function edit($conexion){
-   
-   
+function edit($conexion)
+{
 
 
-   
+
     $id_news = $_POST['id_news'];
     $id_reporter = $_POST['id_reporter'];
 
-    //Nombre y propiedad de la imagen
+    // ... otras variables ...
+
     $imagen = $_POST['imagen'];
     //$imagen = $_FILES['imagen']['name'];
     //$imagen_tmp = $_FILES['imagen']['tmp_name'];
@@ -78,28 +79,54 @@ function edit($conexion){
     $category = $_POST['category'];
     $photographer = $_POST['photographer'];
     $State = "Active";
-    
-   
 
+    // Obtiene los datos actuales de la noticia de la base de datos
+    $existingQuery = "SELECT * FROM `news` WHERE `id_news`='$id_news'";
+    $existingResult = mysqli_query($conexion, $existingQuery);
+    $existingData = mysqli_fetch_assoc($existingResult);
+
+
+
+    // Compara los valores actuales con los nuevos
+    if (
+        $existingData['id_reporter'] == $id_reporter &&
+        $existingData['main_image'] == $imagen &&
+        $existingData['photographer'] == $photographer &&
+        $existingData['headline'] == $headline &&
+        $existingData['drophead'] == $drophead &&
+        $existingData['date'] == $date &&
+        $existingData['BodyOne'] == $BodyOne &&
+        $existingData['BodyTwo'] == $BodyTwo &&
+        $existingData['BodyThree'] == $BodyThree &&
+        $existingData['BodyFour'] == $BodyFour &&
+        $existingData['school'] == $school &&
+        $existingData['Category'] == $category
+    ) {
+        echo "<script>
+            alert('No se realizaron cambios en los datos.');
+            window.location.href = 'http://localhost/Astro-salesianum/src/Profile_Journalist.php';
+          </script>";
+    } else {
+        // Hay cambios, realiza la actualización
         $query = "UPDATE `news` SET `id_reporter`='$id_reporter',`main_image`='$imagen',`photographer`='$photographer',`headline`='$headline',`drophead`='$drophead',`date`='$date',`BodyOne`='$BodyOne',`BodyTwo`='$BodyTwo',`BodyThree`='$BodyThree',`BodyFour`='$BodyFour',`school`='$school',`Category`='$category',`State`='$State' WHERE `id_news`='$id_news'";
 
-    mysqli_query($conexion, $query);
-    echo "Si se hixo";
-    if($_SESSION['ROL'] == 1){
-        
-         header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
-      }else if($_SESSION['ROL'] == 2){
-        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
-      }else{
-        echo "error.html";
-      }
-    
-    
-   
-
+        if (mysqli_query($conexion, $query)) {
+            echo "Actualización exitosa";
+            if ($_SESSION['ROL'] == 1) {
+                header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
+            } else if ($_SESSION['ROL'] == 2) {
+                header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+            } else {
+                echo "error.html";
+            }
+        } else {
+            echo "Error al actualizar: " . mysqli_error($conexion);
+        }
+    }
 }
 
-function delete($conexion){
+function delete($conexion)
+{
     $id_news = $_POST['id_news'];
     echo $id_news;
     $State = "Inactive";
@@ -107,8 +134,4 @@ function delete($conexion){
 
     mysqli_query($conexion, $query);
     header('location: ./index.php');
-
-
 }
-
-

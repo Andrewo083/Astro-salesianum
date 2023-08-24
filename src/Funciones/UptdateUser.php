@@ -47,7 +47,7 @@ if ($updateNeeded) {
     }
 } else {
     echo "<script>
-            var noChanges = confirm('No hay cambios en los datos. ¿Deseas regresar a tu perfil?');
+            var noChanges = alert('No hay cambios en los datos');
             if (noChanges) {
                 window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
             } else {
