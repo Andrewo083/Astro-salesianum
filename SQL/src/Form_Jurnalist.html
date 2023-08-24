@@ -8,7 +8,17 @@
     <script src="./ JS/Imageform.js"></script>
 
     <link rel="stylesheet" href="../Public/tailwind.css">
-<script src="./ JS/LoginEye.js"></script>
+<script >
+    function mostrar(){
+    var tipo = document.getElementById("contraseña");
+
+    if(tipo.type == 'password'){
+      tipo.type = 'text';
+    }else{
+      tipo.type = 'password';
+    }
+  }
+</script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 

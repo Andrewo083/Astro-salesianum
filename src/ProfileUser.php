@@ -30,6 +30,7 @@ if (!$conexion) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/ProfileImageUser.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,13 +159,13 @@ if (!$conexion) {
                     
                     <div class="flex items-center py-6">
                         <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                             <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="300px" width="300px"/>
+                        <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
                         </div>
                         <label class="cursor-pointer ">
                        
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                            <input required class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
+                                <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                     </div>
                 </div>
@@ -228,7 +229,7 @@ if (!$conexion) {
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Correo electronico:</span>
-                            <input name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
+                            <input type="email" name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
                            ><label for="email">
                               <span class="material-symbols-outlined">
                                 edit
@@ -237,7 +238,7 @@ if (!$conexion) {
                         </li>
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Numero de telefono:</span>
-                            <input  class="text-gray-700" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
+                            <input type="tel"  class="text-gray-700" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
                            ><label for="PhoneNumber">
                               <span class="material-symbols-outlined">
                                 edit
@@ -358,3 +359,24 @@ $email =  $row['Email'];
 
   }
     ?>
+    <script>
+    const imagde1 = document.getElementById('imagde1');
+const preview1 = document.getElementById('preview1');
+
+imagde1.addEventListener('change', function() {
+  const archivo = imagde1.files[0];
+  if (archivo) {
+    const lector = new FileReader();
+
+    lector.addEventListener('load', function() {
+      preview1.src = lector.result;
+      preview1.style.display = 'block';
+    });
+
+    lector.readAsDataURL(archivo);
+  } else {
+    preview1.src = '#';
+    preview1.style.display = 'none';
+  }
+});
+  </script>

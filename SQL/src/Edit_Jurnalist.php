@@ -23,7 +23,17 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">
-<script src="./ JS/LoginEye.js"></script>
+<script>
+    function mostrar(){
+    var tipo = document.getElementById("contraseña");
+
+    if(tipo.type == 'password'){
+      tipo.type = 'text';
+    }else{
+      tipo.type = 'password';
+    }
+  }
+</script>
 </head>
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/cdbevents.jpg');">
     <section class="relative mx-auto">
