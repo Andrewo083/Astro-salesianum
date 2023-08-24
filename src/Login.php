@@ -95,6 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Login</title>
     <script src="./ JS/LoginEye.js"></script>
     <link rel="stylesheet" href="../Public/tailwind.css">
@@ -119,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <section class="relative mx-auto">
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
-                <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+                <div class="px-5 xl:px-12 py-6 flex w-full items-center ">
                 <a href="./start.html">
             <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                     <a class="text-3xl font-bold font-heading" href="./start.html">
@@ -162,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </section>
 
         <!-- component -->
-        <div class="p-44">
+        <div class="p-44  ">
             <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
                 <div class="hidden lg:block lg:w-1/2 bg-cover max-h-full" style=" background-image:url('../img/ricaldepo.jpeg') "></div>
                 <div class="w-full p-8 lg:w-1/2">
