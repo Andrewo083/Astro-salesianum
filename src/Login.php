@@ -97,7 +97,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Login</title>
-    <script src="./ JS/LoginEye.js"></script>
+    <script>
+        function mostrar(){
+    var tipo = document.getElementById("contraseña");
+
+    if(tipo.type == 'password'){
+      tipo.type = 'text';
+    }else{
+      tipo.type = 'password';
+    }
+  }
+    </script>
     <link rel="stylesheet" href="../Public/tailwind.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="./css/Translate.css">
@@ -186,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
-                            <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email">
+                            <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email">
                         </div>
                         <div class="mt-4 relative">
                             <div class="flex justify-between">
@@ -194,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             </div>
                             <p>
-                                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
                                 
                              
                             </p>
