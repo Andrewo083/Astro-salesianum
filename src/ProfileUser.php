@@ -165,7 +165,7 @@ if (!$conexion) {
                        
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                                <input name="imagen" type="file" id="imagde1" accept="image/*" >
+                                <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                     </div>
                 </div>
