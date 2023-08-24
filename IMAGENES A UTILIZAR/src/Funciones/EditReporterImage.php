@@ -1,0 +1,38 @@
+<?php 
+
+$conexion = mysqli_connect('localhost', 'root', '','astrodb') ;
+session_start();
+
+$Email = $_SESSION['Email'];
+$Name = $_SESSION['Name'];
+$ROL = $_SESSION['ROL'];
+
+//caarpeta donde se va guardar
+$carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
+
+//input del nombre y archivo de la imagen
+$imagen = $_FILES['imagen']['name'];
+    $imagen_tmp = $_FILES['imagen']['tmp_name'];
+
+    //cmabio de nombre
+    $imagen =  $Email."-".$Name."-".$ROL.".png";
+    echo $imagen."<br>";
+    echo $Email;
+
+    //url ocmpleta con la imagen y el traslado
+    $urlPlusImage = $carpet_images.$imagen;
+    move_uploaded_file($imagen_tmp, $urlPlusImage);
+
+    //INsert del nombre de la imagen
+    $query = "UPDATE `reporter` SET `ProfileImage`='$imagen' WHERE `Email` = '$Email'";
+
+    mysqli_query($conexion, $query);
+    echo "Si se hixo";
+
+    header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+   
+
+
+
+
+?>
