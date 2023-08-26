@@ -50,7 +50,7 @@ if (!$conexion) {
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a href="./newindex.php">
+            <a href="./newindex.php" class="p-4">
             <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
@@ -59,7 +59,7 @@ if (!$conexion) {
                 </a>
                 <!-- Nav Links -->
                   <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a  href="./newindex.php" class="hover:text-gray-200 " href="#">Home</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
@@ -98,19 +98,21 @@ if (!$conexion) {
     <div class="h-full bg-gray-200 p-8">
         <div class="bg-white rounded-lg shadow-xl pb-8">
          
-            <div class="w-full h-[250px]">
-                <img src="../img/FireRical.jpg" class="w-full h-full rounded-tl-lg rounded-tr-lg  bg-">
-            </div>
+            <div class=" w-full h-[250px] md:h-[550px]  ">
+                <img src="../img/Los reyes han vuelto-Ketut@astro.sv-fotografo-@Epicyears!.png" class="w-full h-full rounded-tl-lg rounded-tr-lg  ">
+            </div >
 
             <!-- modal/edicion -->
 
             <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
             <button @click="open = true">
+              <div>
+                <div class=" bg-white p-7 rounded-full" >
             <div class="imagen-circular">
      
      <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
 
- </a>
+              </div>
         </button>
         <div
         x-show="open"
@@ -203,8 +205,8 @@ if (!$conexion) {
             
         </div>
 
-        <div class="my-4 flex flex-col 2xl:flex-row space-y-4 2xl:space-y-0 2xl:space-x-4">
-            <div class="w-full flex flex-col 2xl:w-1/3">
+        <div class="my-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <div class="w-full flex flex-col md:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
                     <form action="./Funciones/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
@@ -303,11 +305,12 @@ $email =  $row['Email'];
 
                
                
-                    <a href="./Funciones/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
-                          duration-200 hover:bg-red-700 rounded-lg">Delete</a>
+                   
                   
                 </div>
               </div>
+               <a href="./Funciones/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          duration-200 hover:bg-red-700 rounded-lg">Delete</a>
             </div><?php }
 
 ?>

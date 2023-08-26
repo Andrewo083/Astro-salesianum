@@ -7,7 +7,7 @@
            <link rel="stylesheet" href="./css/Translate.css">
     <title>Astro Salesianum</title>
 </head>
-<body  class="w-full h-screen bg-no-repeat bg-cover"
+<body  class="w-full h-full bg-no-repeat bg-cover"
 style="background-image: url('../img/bg_4.jpg');">
     <nav class=" py-6 relative items-center ">
         <div class="container mx-auto flex px-8 xl:px-0 ">

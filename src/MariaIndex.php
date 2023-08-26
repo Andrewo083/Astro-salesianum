@@ -35,7 +35,7 @@ $result = mysqli_query($conexion, $query);
             <!-- navbar -->
             <nav class="flex justify-between bg-sky-500 text-white w-screen">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a href="./newindex.php">
+                       <a href="./newindex.php" class="p-4">
             <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
