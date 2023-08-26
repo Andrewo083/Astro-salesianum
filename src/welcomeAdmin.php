@@ -20,7 +20,7 @@ if(isset($_SESSION['ROL'])){
     <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro Salesianum</title>
+    <title>Astro Administrador </title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
      <link rel="stylesheet" href="./css/Translate.css">
 </head>
@@ -34,29 +34,28 @@ if(isset($_SESSION['ROL'])){
             <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./welcomeAdmin.php">
                     <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-                  Astro Administrador
+                  Astro <b>Administrador</b> 
                     </a>
                    
                 
                     <!-- Nav Links -->
                     <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                    <li><a   class="hover:text-gray-200" href="./newindex.php">Home</a></li>
-                    <li><a href="./tableusu.php" class="hover:text-gray-200" >Periodistas</a></li>
-                    <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
-                    <li><a href="./TableComments.php" class="hover:text-gray-200" href="#">Comentarios</a></li>
+                    <li><a href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+            <li><a href="./welcomeAdmin.php" class="hover:text-gray-200">Administracion</a></li>
+            <li><a href="./AdminJourTable.php" class="hover:text-gray-200" >Periodistas</a></li>
+            <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
+            <li><a href="./" class="hover:text-gray-200" href="#">Comentarios</a></li>
                   
                     </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
             
                     
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-  
+                    
                 
                 <!-- Sign In / Register      -->
                 <a
-                href="./funciones/Logout.php"
+                href="./PHP/Logout.php"
                 class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
                 >Cerrar Sesion</a
               >
@@ -65,11 +64,7 @@ if(isset($_SESSION['ROL'])){
             </div>
             <!-- Responsive navbar -->
             
-            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    
-                </svg>
-            </a>
+            
             </nav>
             
         </section>
@@ -90,7 +85,7 @@ if(isset($_SESSION['ROL'])){
               
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 ">
   
-        <a href="./tableusu.php">
+        <a href="./AdminJourTable.php">
           <div class="p-2 sm:p-10 text-center cursor-pointer">
               <div class="py-16 max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-gray-300 transition duration-500  ">
                   <div class="space-y-5">
@@ -128,7 +123,7 @@ if(isset($_SESSION['ROL'])){
           </div>
 
         </a>
-        <a href="TableComments.php">
+        <a href="AdminComTable.php">
   
           <div class="p-2 sm:p-10 text-center cursor-pointer ">
               <div class="py-16 max-w-sm rounded overflow-hidden shadow-lg hover:bg-gray-200 transition duration-500 bg-white ">

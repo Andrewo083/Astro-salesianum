@@ -7,7 +7,7 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
-include('./funciones/conexion.php');
+include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -61,7 +61,7 @@ if (!$conexion) {
                 <div class="hidden xl:flex items-center space-x-5 ">
                 
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                <a class="flex items-center hover:text-gray-200" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
                   <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">

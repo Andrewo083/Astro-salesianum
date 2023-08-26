@@ -7,7 +7,7 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
-include('./funciones/conexion.php');
+include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -43,7 +43,7 @@ while ($row = mysqli_fetch_array($result)) {
     <link rel="stylesheet" href="../Public/tailwind.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
       <link rel="stylesheet" href="./css/Translate.css">
-      <script src="./JS/Imageform.js"></script>
+     
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_array($result)) {
            
               <!-- Sign In / Register      -->
               <a
-                href="./funciones/Logout.php"
+                href="./PHP/Logout.php"
                 class="bg-black text-white p-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
                 >Cerrar Sesion</a
               >
@@ -123,7 +123,7 @@ while ($row = mysqli_fetch_array($result)) {
     <main class="profile-page">
       <section class="relative block h-500-px">
         <div class="absolute top-0 w-full h-full bg-center bg-cover " style="
-            background-image: '../img/BkgProfile.jpg'
+            background-image: url('../img/FireRical.jpg');
           ">
           <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
         </div>
@@ -186,13 +186,13 @@ while ($row = mysqli_fetch_array($result)) {
                   Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="./Funciones/EditReporterImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
+                <form class="mt-8 space-y-3" action="./PHP/EditReporterImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
                   
                   <div class="md:space-y-2 mb-3">
                    
                     <div class="flex items-center py-6">
                         <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                             <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="300px" width="300px"/>
+                             <img class=" rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
                         </div>
                         <label class="cursor-pointer ">
                             <span
@@ -309,7 +309,7 @@ while ($row = mysqli_fetch_array($result)) {
                                     <p class=""><?php echo $new_row['date'] ?></p>
                                   </div><a href=""></a>
                                   <a href="./editnews.php?new=<?php echo $new_row['id_news'] ?>" class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">Editar</a>
-                                  <a href="./funciones/deletenews.php?new=<?php echo $new_row['id_news']; ?>" class="flex-no-shrink bg-red-400 hover:bg-red-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-300 hover:border-red-500 text-white rounded-full transition ease-in duration-300">Eliminar</a>
+                                  <a href="./PHP/deletenews.php?new=<?php echo $new_row['id_news']; ?>" class="flex-no-shrink bg-red-400 hover:bg-red-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-300 hover:border-red-500 text-white rounded-full transition ease-in duration-300">Eliminar</a>
                                 </div>
                               </div>
                             </div>

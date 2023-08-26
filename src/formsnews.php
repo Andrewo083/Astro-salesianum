@@ -104,7 +104,7 @@ while ($row = mysqli_fetch_array($result)) {
             
         </section>
         </div>
-    <form method="post" enctype="multipart/form-data" action="./funciones/CRUD_New.php">
+    <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Subir Noticia</h1>
@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div>
                 <label for="title" class="text-2lx font-bold text-gray-500"></label>
-                <input  type="hidden" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input required type="hidden" value="<?php echo $Email; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 
 
@@ -130,7 +130,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <span class="sr-only t-2">Choose profile photo</span>
 
 
-                <input name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
+                <input required name="imagen" type="file" id="imagde1" accept="image/*" class="w-full text-sm text-slate-500
                   file:mr-4 file:py-2 file:px-4
                   file:rounded-full file:border-0
                   file:text-sm file:font-semibold
@@ -145,19 +145,19 @@ while ($row = mysqli_fetch_array($result)) {
               </label>
               <div>
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
-                <input maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
-                <input maxlength="75"  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required maxlength="75"  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
               <div>
                 <label for="date" class="text-2lx font-bold text-gray-500" >Fecha</label>
-                <input  type="date"  id="date" name="date" max="<?php echo date('Y-m-d'); ?>" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required  type="date"  id="date" name="date" max="<?php echo date('Y-m-d'); ?>" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
               </div>
 
 

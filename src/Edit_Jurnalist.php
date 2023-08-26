@@ -45,7 +45,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                 <!-- Nav Links -->
                 <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><a   class="hover:text-gray-200" href="./welcomeAdmin.php">Home</a></li>
-                <li><a href="./tableusu.php" class="hover:text-gray-200" >Periodistas</a></li>
+                <li><a href="./AdminJourTable.php" class="hover:text-gray-200" >Periodistas</a></li>
                 <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
                 <li><a href="./" class="hover:text-gray-200" href="#">Comentarios</a></li>
               
@@ -86,7 +86,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 
 <!-- component -->
 <!-- component -->
-<form action="./Funciones/CRUD_journalist.php" method="POST">
+<form action="./PHP/CRUD_journalist.php" method="POST">
 <div class="relative flex  justify-center bg-center  py-12  items-center"
 	>
 	<div class="absolute  opacity-60 inset-0 z-0"></div>
@@ -117,7 +117,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required"></abbr></label>
-								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="Email" id="integration_shop_name">
+								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="email" name="Email" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
 						</div>
@@ -150,8 +150,12 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 
                                     name="Password" 
                                     
-                                    id="contraseña"><img src="../img/EyePassword.png" onclick="mostrar()" class="icon" id="eye" class=" relative bottom-3 z-10 top-10 w-1 h-1">
+                                    id="contraseña">
+                                   
               </div>
+              <div class=" flex justify-end relative">
+                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                            </div>
 								
 								</div>
 								

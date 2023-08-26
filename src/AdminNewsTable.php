@@ -5,40 +5,48 @@
     <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <link rel="stylesheet" href="./css/Translate.css">
-    <title>Astro Salesianum</title>
+    <title>Astro Administrador </title>
 </head>
 <body  class="w-full h-full bg-no-repeat bg-cover"
 style="background-image: url('../img/bg_4.jpg');">
-    <nav class=" py-6 relative items-center ">
-        <div class="container mx-auto flex px-8 xl:px-0 ">
-          <div class="flex flex-grow">
-            <a href="./welcomeAdmin.php">
-            <h1 class="flex items-center m-2 font-bold text-3xl font-heading  text-gray-500">
-              Astro Administrador
-            </h1>
-            </a>
+<nav class="flex justify-between bg-black text-white ">
+            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+            <a href="./WelcomeAdmin.php">
+            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+                <a class="text-3xl font-bold font-heading" href="./welcomeAdmin.php">
+                    <!-- <img class="h-9" src="logo.png" alt="logo"> -->
+                  Astro <b>Administrador</b> 
+                    </a>
+                   
+                
+                    <!-- Nav Links -->
+                    <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+                    <li><a href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+            <li><a href="./welcomeAdmin.php" class="hover:text-gray-200">Administracion</a></li>
+            <li><a href="./AdminJourTable.php" class="hover:text-gray-200" >Periodistas</a></li>
+            <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
+            <li><a href="./AdminComTable.php" class="hover:text-gray-200" href="#">Comentarios</a></li>
+                  
+                    </ul>
+                <!-- Header Icons -->
+                <div class="hidden xl:flex items-center space-x-5 ">
             
-          </div>
-          <div class="flex lg:hidden">
-          <img src="../img/menu.png" onclick="openMenu();">
-      </div>
-          <div id="menu" class="lg:flex hidden flex-grow justify-between items-center absolute lg:relative lg:top-0 top-20 ">
-            <div>
-              <a href="./tableusu.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Periodistas</a>
-              <a href="./AdminNewsTable.php" class="text-white hover:text-black lg:mr-7 font-semibold ">Noticias</a>
-              <a href="./TableComments.php" class="text-white  hover:text-black lg:mr-7 font-semibold ">Comentarios</a>
-           
-            </div>
-            <div>
-        
-              <a
-                href="./funciones/Logout.php"
+                    
+                    
+                
+                <!-- Sign In / Register      -->
+                <a
+                href="./PHP/Logout.php"
                 class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
-                >Log out</a
+                >Cerrar Sesion</a
               >
+                
+                </div>
             </div>
-          </div>
-        </div>
+            <!-- Responsive navbar -->
+            
+            
+            </nav>
     <!-- finmenu-->
 
     <!-- tabla-->
@@ -105,8 +113,8 @@ while ($row = mysqli_fetch_array($result)) {
                               <p class="">Fecha: <?php echo $row['date']?></p>
                           </div>
                           <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Editar</a>
-                          <form action="./funciones/CRUD_New.php" method="post">
-                          <a  href="./funciones/deletenews.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300" >Eliminar</a>
+                          <form action="./PHP/CRUD_New.php" method="post">
+                          <a  href="./PHP/deletenews.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300" >Eliminar</a>
                           </form>
                       </div>
                   </div>

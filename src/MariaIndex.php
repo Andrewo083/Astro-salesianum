@@ -52,7 +52,7 @@ $result = mysqli_query($conexion, $query);
                 </ul>
                 <!-- Header Icons -->
                 <div class="hidden xl:flex items-center space-x-5 ">
-                  <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+                  <a class="flex items-center hover:text-gray-200" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
                     <div class="imagen-circular">
      
                       <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
@@ -139,7 +139,9 @@ $result = mysqli_query($conexion, $query);
           <div class="pt-2 pr-0 pb-0 pl-0">
            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
                <?php
-              include( "./Funciones/PrintJournalist.php");
+                $email = $row['id_reporter'];
+
+              include( "./PHP/PrintJournalist.php");
               if($email == NULL){
                 echo "@Astro Salesianum";
               }else{

@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_array($result)) {
                 </ul>
             <!-- Header Icons -->
             <div class=" xl:flex  space-x-5 items-center">
-            <a class="flex items-center hover:text-gray-200" href="./<?php include "./Funciones/RestrictAncleRol.php" ?>">
+            <a class="flex items-center hover:text-gray-200" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
                   <div class="imagen-circular">
         <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular">
@@ -105,16 +105,7 @@ while ($row = mysqli_fetch_array($result)) {
                 <p class="mt-2 text-slate-500"><?php echo $row['BodyFour'] ?><br><br><b>Escrito por</b>
               
               <?php
-              $email = $row['id_reporter'];
-              if($email == NULL){
-                echo "@Astro Salesianum";
-              }else{
-              $QueryReport = "SELECT * FROM `reporter` WHERE `Email` = '$email'";
-              $ResultReport = mysqli_query($conexion, $QueryReport);
-              while ($RowReport = mysqli_fetch_array($ResultReport)) {
-                echo "@".$RowReport['Name']." ".$RowReport['LastName']."✅";
-              }
-            }
+              include("./PHP/nameDeletedNew.php")
               ?></p>
 
               </div>
@@ -242,7 +233,7 @@ $i++;
  <!--COMENTARIOS-->
 
                 <!-- FORMULARIO-->
-                <form action="./funciones/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
+                <form action="./PHP/InsertComment.php?new=<?php echo $_GET['new'] ?>" method="POST">
 								  <div class="pb-6 px-4 flex-none">
 									  <div class="flex rounded-lg overflow-hidden">
 										
@@ -264,26 +255,23 @@ $i++;
                 <?php 
                  $new = $_GET['new'];
                  
-                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `hour`AND `date` DESC";
+                 $QueryComment = "SELECT * FROM `comments` WHERE `id_new` = '$new' AND `State` = '$State' ORDER BY `date` DESC";
 
                  $ResultComment = mysqli_query($conexion, $QueryComment);
                  while ($RowComment = mysqli_fetch_array($ResultComment)) {
 
-                  include "./Funciones/PrintVarComments.php";
-
-                 
-                 include "./Funciones/PrintImageNameForComments.php";
+                  include("./PHP/PrintNamesComments.php");
                   ?>
 								<div class="px-6 py-4 flex-1 ">
 									<!-- A message -->
 									<div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-										<img src="../img/<?php echo $ProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $ProfileImage;?>" class="object-cover cursor-pointer w-10 h-10 rounded-3xl mr-3">
 										<div class="flex-1 overflow-hidden">
 											<div>
                        
 												<span class="font-bold text-red-300 cursor-pointer hover:underline">
                           <?php 
-                           include "./Funciones/PrintCheckComments.php"
+                           include "./PHP/PrintCheckComments.php"
                           
                          ?></span>
 												<span class="font-bold text-gray-400 text-xs">&nbsp;<?php echo $hour ?></span>

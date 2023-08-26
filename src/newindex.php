@@ -6,7 +6,7 @@ session_start();
 
 
 if (isset($_SESSION["Email"])) {
-    include('./funciones/conexion.php');
+    include('./PHP/conexion.php');
 
       $conexion = new mysqli($host,$user,$password,$bd);
         if(!$conexion){
@@ -80,7 +80,7 @@ $name = $_SESSION['Name'];
             </svg>
             <a href="./<?php
 
-                        include "./Funciones/RestrictAncleRol.php"
+                        include "./PHP/RestrictAncleRol.php"
 
                         ?>
                             ">
@@ -92,7 +92,7 @@ $name = $_SESSION['Name'];
                        
                         
                          
-                          <a href="./funciones/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
+                          <a href="./PHP/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
                         </ul>
                       </div>
                     </div>
@@ -443,7 +443,8 @@ while($row = mysqli_fetch_array($result)){
                      <p class="leading-relaxed mb-3 text-jusitfy"><?php echo $contenido_recortado; ?>...</p>
                      <p class="leading-relaxed mb-3 text-jusitfy">Escrito por <b>
                        <?php 
-                         include( "./Funciones/PrintJournalist.php");
+                       $email = $row['id_reporter'];
+                         include( "./PHP/PrintJournalist.php");
                          if($email == NULL){
                            echo "@Astro Salesianum"."✅";
                          }else{

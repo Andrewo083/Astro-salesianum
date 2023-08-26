@@ -5,8 +5,7 @@
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registra Nuestro Reportero</title>
-    <script src="./ JS/Imageform.js"></script>
-
+  
     <link rel="stylesheet" href="../Public/tailwind.css">
 <script>
     function mostrar(){
@@ -37,7 +36,7 @@
                     <!-- Nav Links -->
                     <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                     <li><a   class="hover:text-gray-200" href="./welcomeAdmin.php">Home</a></li>
-                    <li><a href="./tableusu.php" class="hover:text-gray-200" >Periodistas</a></li>
+                    <li><a href="./AdminJourTable.php" class="hover:text-gray-200" >Periodistas</a></li>
                     <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
                     <li><a href="./" class="hover:text-gray-200" href="#">Comentarios</a></li>
                   
@@ -51,7 +50,7 @@
             <!-- Responsive navbar -->
             
             <a
-            href="./funciones/Logout.php"
+            href="./PHP/Logout.php"
             class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
             >Cerrar Sesion</a
           >
@@ -71,7 +70,7 @@
                         <h2 class="font-semibold text-lg mr-auto">Registrar periodista</h2>
                         <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                     </div>
-                    <form action="./funciones/InsertReportero.php" method="post"enctype="multipart/form-data">
+                    <form action="./PHP/InsertReportero.php" method="post"enctype="multipart/form-data">
                         <div class="mt-5">
                             <div class="form">
                                 <div class="md:space-y-2 mb-3">
@@ -104,7 +103,7 @@
                                                 title="required"></abbr></label>
                                         <input required placeholder="Email ID"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                             type="text" name="Email"
+                                             type="email" name="Email"
                                             id="integration_shop_name">
                                         <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
                                     </div>

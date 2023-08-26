@@ -7,7 +7,7 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
-include('./funciones/conexion.php');
+include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
 
@@ -36,10 +36,10 @@ if (!$conexion) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Astro  usuario</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
-        <link rel="stylesheet" href="./css/ProfileImage.css">
+        <link rel="stylesheet" href="./css/ProfileImageUser.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <script src="./JS/Imageform.js"></script>
+       
 
 </head>
 <body>
@@ -70,7 +70,7 @@ if (!$conexion) {
            
               <!-- Sign In / Register      -->
               <a
-                href="./funciones/Logout.php"
+                href="./PHP/Logout.php"
                 class="bg-black text-white p-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
                 >Cerrar Sesion</a
               >
@@ -99,7 +99,7 @@ if (!$conexion) {
         <div class="bg-white rounded-lg shadow-xl pb-8">
          
             <div class=" w-full h-[250px] md:h-[550px]  ">
-                <img src="../img/Los reyes han vuelto-Ketut@astro.sv-fotografo-@Epicyears!.png" class="w-full h-full rounded-tl-lg rounded-tr-lg  ">
+                <img src="../IMAGENES A UTILIZAR/197415563_151826883657521_6274128977836131058_n.jpg" class=" object-cover w-full h-full rounded-tl-lg rounded-tr-lg  ">
             </div >
 
             <!-- modal/edicion -->
@@ -155,7 +155,7 @@ if (!$conexion) {
                     Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="./Funciones/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
+                <form class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
                   
                   <div class="md:space-y-2 mb-3">
                     
@@ -164,7 +164,7 @@ if (!$conexion) {
                         <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
                         </div>
                         <label class="cursor-pointer ">
-                       
+                              
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
                                 <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
@@ -173,6 +173,7 @@ if (!$conexion) {
                 </div>
                 
                   <div>
+                  <h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6>
                     <button
                       type="submit"
                       class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
@@ -209,7 +210,7 @@ if (!$conexion) {
             <div class="w-full flex flex-col md:w-1/3">
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
-                    <form action="./Funciones/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
+                    <form action="./PHP/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
                     <ul class="mt-2 text-gray-700">
                         <li class="flex border-y py-2">
                             <span class="font-bold w-24">Nombre:</span>
@@ -281,19 +282,19 @@ $email =  $row['Email'];
  $queryCom = "SELECT * FROM `comments` WHERE `id_user` = '$email'";
   $resultCom = mysqli_query($conexion, $queryCom);
   while ($rowCom = mysqli_fetch_array($resultCom)) {
-    include("./Funciones/PrintUser.php");
+    include("./PHP/PrintUser.php");
     ?>
  <div class="px-6 py-4 flex-1">
               <!-- A message -->
               <div class="border-b border-gray-600 py-3 flex items-start mb-4 text-sm">
-										<img src="../img/<?php echo $UserProfileImage;?>" class="cursor-pointer w-10 h-10 rounded-3xl mr-3">
+										<img src="../img/<?php echo $UserProfileImage;?>" class=" object-cover cursor-pointer w-10 h-10 rounded-3xl mr-3">
                 <div class="flex-1 overflow-hidden">
                   <div>
                     <span class="font-bold text-red-300 cursor-pointer hover:underline"><?php echo $row['Name'] ?></span>
 
                     <?php 
                     $new = $rowCom['id_new'];
-                    include "./Funciones/PrintNews.php"
+                    include "./PHP/PrintNews.php"
                      ?>
 
                     <span class="font-bold text-gray-400 text-xs"><?php echo $rowCom['hour'] ?></span>&nbsp;&nbsp;<span>de <a href="./NewsMain.php?new=<?php echo $new ?>"><b><?php echo  $NewHeadLine ?></b></a></span> 
@@ -309,7 +310,7 @@ $email =  $row['Email'];
                   
                 </div>
               </div>
-               <a href="./Funciones/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+               <a href="./PHP/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
             </div><?php }
 
