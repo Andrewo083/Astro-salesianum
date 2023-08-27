@@ -2,6 +2,13 @@
 
 session_start();
 
+if($_SESSION['ROL'] = 2 ||
+    $_SESSION['ROL'] = 3 ){
+
+    header("Location: ./Error.html");
+
+}else{
+
 if(isset($_SESSION['ROL'])){
     if($_SESSION['ROL'] == 2){
         header("Location: ./Profile_Journalist.php");
@@ -192,4 +199,4 @@ if(isset($_SESSION['ROL'])){
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-</html>
+</html><?php } ?>
