@@ -7,7 +7,11 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
-if($_SESION['ROL'] != 2){}
+if($_SESION['ROL'] != 2){
+
+header("Location: ./Error.html");
+
+}else{
 include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
@@ -404,3 +408,4 @@ imagde1.addEventListener('change', function() {
   }
 });
 </script>
+<?php }?>
