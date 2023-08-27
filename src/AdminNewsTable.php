@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if($_SESSION['ROL'] != 1){  
   header("Location: ./Error.html");  
   
