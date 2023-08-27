@@ -1,7 +1,12 @@
 <?php 
 session_start();
 
+if($_SESSION['ROL'] != 2 ||
+    $_SESSION['ROL'] != 1 ){
 
+    header("Location: ./Error.html");
+
+}else{
 
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 
@@ -293,4 +298,4 @@ imagde1.addEventListener('change', function() {
 </body>
 </html>
 
-<?php } ?>
+<?php } } ?>
