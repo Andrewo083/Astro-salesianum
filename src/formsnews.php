@@ -1,6 +1,12 @@
 <?php 
 session_start();
 
+if($_SESSION['ROL'] ==){
+
+  header("Location: ./Error.html");
+
+}else{
+
 if(isset($_SESSION['Email'])){
   
 $Email = $_SESSION['Email'];
@@ -240,4 +246,4 @@ while ($row = mysqli_fetch_array($result)) {
     }
   });
 </script>
-<?php } ?>
+<?php } }?>
