@@ -1,6 +1,10 @@
 <?php 
 session_start();
 
+if($_SESSION['ROL'] != 1){  
+  header("Location: ./Error.html");  
+  
+  }else{
 
 
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
@@ -204,4 +208,4 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 </footer>
 </body>
 </html>
-<?php } ?>
+<?php } } ?>
