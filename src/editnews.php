@@ -102,12 +102,31 @@ imagde1.addEventListener('change', function() {
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
-                <div class="imagen-circular">
+               
+             
         <!-- Aquí colocas la URL de la imagen -->
-        <img src="../img/<?php echo $ProfileImage ?>" alt="Imagen Circular">
-    </div>
-                </a>
+        <?php 
+        
+        if($_SESSION['ROL'] == 2){
+          ?>
+           <a class="flex items-center hover:text-gray-200" href="./Profile_Journalist.php">
+             <div class="imagen-circular">
+ <img src="../img/<?php echo $ProfileImage ?>" alt="Imagen Circular"></div>
+ </a>
+          <?php
+
+        }else if($_SESSION['ROL'] == 1){
+          ?>
+          <a
+          href="./PHP/Logout.php"
+          class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
+          >Cerrar Sesion</a
+        ><?php
+        }
+
+        ?>
+       
+                 
                 
                 </div>
             </div>

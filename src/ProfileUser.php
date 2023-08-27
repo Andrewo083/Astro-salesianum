@@ -169,6 +169,9 @@ if (!$conexion) {
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
                                 <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
+                        <div class=" flex justify-end relative">
+                                    <i class="fa fa-eye-slash relative bottom-6 right-6  z-10 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                            </div>
                     </div>
                 </div>
                 

@@ -61,11 +61,11 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                     
                 </a>
                 <!-- Sign In / Register      -->
-                <a class="flex items-center hover:text-gray-200" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                </a>
+                <a
+            href="./PHP/Logout.php"
+            class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
+            >Cerrar Sesion</a
+          >
                 
                 </div>
             </div>
@@ -74,11 +74,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                 
                 
             </a>
-            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    
-                </svg>
-            </a>
+            
             </nav>
         </section>
             <!-- component -->
@@ -154,8 +150,9 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                                    
               </div>
               <div class=" flex justify-end relative">
-                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32">Ver</i>    
                             </div>
+             
 								
 								</div>
 								
