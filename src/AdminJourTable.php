@@ -1,4 +1,10 @@
 <?php
+session_start();
+if($_SESSION['ROL'] != 1){ 
+ header("Location: ./Error.html"); 
+  
+ }else{
+
 include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
@@ -138,3 +144,4 @@ $query = mysqli_query($conexion, $sql);
 </body>
 
 </html>
+<?php } ?>
