@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if($_SESSION['ROL'] ==){
+if($_SESSION['ROL'] == 2){
 
   header("Location: ./Error.html");
 
