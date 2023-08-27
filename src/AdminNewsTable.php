@@ -1,3 +1,14 @@
+<?php
+
+if($_SESSION['ROL'] != 1){  
+  header("Location: ./Error.html");  
+  
+  }else{
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,3 +155,4 @@ while ($row = mysqli_fetch_array($result)) {
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+<?php } ?>
