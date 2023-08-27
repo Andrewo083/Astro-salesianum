@@ -7,6 +7,7 @@ if (!isset($_SESSION['Email'])) {
     exit();
 }
 
+if($_SESION['ROL'] != 2){}
 include('./PHP/conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
