@@ -189,7 +189,7 @@ if (!$conexion) {
                       class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
                     >
                       Upload
-                    </button> <center><p @click="open = false" type="button" class="hover:p-2.5 hover:px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold hover:text-red-500   focus:outline-none focus:ring-2 cursor-pointer focus:ring-red-500 focus:ring-offset-2 transition-all text-sm">
+                    </button> <center><p @click="open = false" type="button" class="  hover:p-2.5 hover:px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold hover:text-red-500   focus:outline-none focus:ring-2 cursor-pointer focus:ring-red-500 focus:ring-offset-2 transition-all text-sm">
                         Cancel
     </p></center>
                     
@@ -221,8 +221,8 @@ if (!$conexion) {
                 <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
                     <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
                     <form action="./PHP/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
-                    <ul class="mt-2 text-gray-700">
-                        <li class="flex border-y py-2">
+                    <ul class="mt-2 text-gray-700 " >
+                        <li class="flex border-y py-2 ">
                             <span class="font-bold w-24">Nombre:</span>
                            
                            <input  class="text-gray-700 appearance-none " id="name" name="Name" type="text" value="<?php echo $row['Name']?>"

@@ -145,9 +145,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <!-- navbar -->
             <nav class="flex justify-between bg-gray-900 text-white ">
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center ">
-                <a href="./start.html">
+                <a href="./index.php">
             <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
-                    <a class="text-3xl font-bold font-heading" href="./start.html">
+                    <a class="text-3xl font-bold font-heading" href="./index.php">
                         <!-- <img class="h-9" src="logo.png" alt="logo"> -->
                         Astro Salesianum
                     </a>
@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </form>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 md:w-1/4"></span>
-                        <a href="./start.html" class="text-xs text-gray-500 uppercase">Volver</a>
+                        <a href="./index.php" class="text-xs text-gray-500 uppercase">Volver</a>
                         <span class="border-b w-1/5 md:w-1/4"></span>
                     </div>
                 </div>
