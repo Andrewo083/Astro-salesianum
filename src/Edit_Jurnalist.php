@@ -26,8 +26,9 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
-        <link rel="stylesheet" href="../Public/tailwind.css">
+        <link rel="stylesheet" href="../Public/tailwind.css">    
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="../Public/boton.css">
 <script>function mostrar(){
     var tipo = document.getElementById("contraseña");
 
@@ -189,7 +190,7 @@ visibility
 
           <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
              
-
+          <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
               
           </div>
       </div>
@@ -209,6 +210,10 @@ visibility
       </div>
   </div>
 </footer>
+
+    <script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
 <?php } } ?>
