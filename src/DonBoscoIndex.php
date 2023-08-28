@@ -23,6 +23,33 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+        function toggleElement() {
+            var screenWidth = window.innerWidth;
+
+            // Cambia este valor a la resolución en la que deseas mostrar u ocultar el elemento
+            var breakpoint = 768; // Por ejemplo, 768px
+
+            var element = document.getElementById("elementToToggle");
+            
+            var element2 = document.getElementById("elementToToggle2");
+
+            if (screenWidth <= breakpoint) {
+                element.style.display = "none";
+                element2.style.display = "block";  // Oculta el elemento
+            } else {
+                element.style.display = "block";
+                element2.style.display = "none"; // Muestra el elemento
+            }
+        }
+
+        // Ejecuta la función al cargar la página y cuando la ventana cambia de tamaño
+        window.onload = toggleElement;
+        window.onresize = toggleElement;
+    </script>
+
     <title>Noticias Don Bosco </title>
     <link rel="stylesheet" href="./css/ProfileImage.css">
 
@@ -41,7 +68,7 @@ $result = mysqli_query($conexion, $query);
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-blue-900 text-white w-screen">
+            <nav class="flex justify-between bg-blue-900 text-white w-screen" id="elementToToggle">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
                       <a href="./newindex.php" class="p-4">
             <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
@@ -83,11 +110,47 @@ $result = mysqli_query($conexion, $query);
                     
                 </svg>
             </a>
+  
             </nav>
+            <nav class="p-5 hidden bg-white shadow md:flex md:items-center md:justify-between" id="elementToToggle2">
+    <div class="flex justify-between items-center ">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+        <img class="h-10 inline"
+          src="../img/AstroFavicon.png" alt="" width="45px">
+        Astrum Salesianum 
+      </span>
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+    
+    <ul class=" md:flex md:items-center font-semibold  z-1 md:z-1 md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-200px] transition-all ease-in duration-500" id="lean:D" style="z-index: 100; " >
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-lg hover:text-cyan-500 duration-500">Home</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-lg hover:text-cyan-500 duration-500">SERVICE</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-lg hover:text-cyan-500 duration-500">ABOUT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-lg hover:text-cyan-500 duration-500">CONTACT</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="#" class="text-lg hover:text-cyan-500 duration-500">BLOG'S</a>
+      </li>
+
+      <button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Log out</button>
+<h2 class=""></h2>
+    </ul>
+  </nav>
+
         </section>
         </div>
    <!-- component -->
-   <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
+   <div class=" text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16
         max-w-7xl">
       <div class="flex flex-col items-center sm:px-5 md:flex-row">
@@ -224,5 +287,11 @@ $result = mysqli_query($conexion, $query);
 
      
 </body>
-
+<script>
+    function Menu(e){
+      let list = document.getElementById("lean:D");
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+  </script>
+</body>
 </html>
