@@ -52,6 +52,8 @@ $name = $_SESSION['Name'];
   <title>AstroSalesianum News</title>
   <link rel="stylesheet" href="../Public/tailwind.css">
   <link rel="stylesheet" href="./css/Translate.css">
+  
+  <link rel="stylesheet" href="../Public/boton.css">
 </head>
 <body>
   
@@ -509,15 +511,8 @@ while($row = mysqli_fetch_array($result)){
 
                   <!--FOOTER-->
                     <footer class="bg-gray-800">
-                    <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
+                    <script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
