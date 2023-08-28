@@ -57,7 +57,7 @@ if (!$conexion) {
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <a href="./newindex.php" class="p-4">
-            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -113,7 +113,7 @@ if (!$conexion) {
             <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
             <button @click="open = true">
               <div>
-                <div class=" bg-white p-7 rounded-full" >
+                <div class=" bg-white p-2 rounded-full md:p-4; " >
             <div class="imagen-circular">
      
      <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
@@ -161,7 +161,7 @@ if (!$conexion) {
                     Selecciona una imagen para cambiar tu foto de perfil
                   </p>
                 </div>
-                <form class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
+                <form  class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
                   
                   <div class="md:space-y-2 mb-3">
                     
@@ -173,7 +173,7 @@ if (!$conexion) {
                               
                             <span
                                 class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                                <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
+                                <input required class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
                         </label>
                         <div class=" flex justify-end relative">
                                     <i class="fa fa-eye-slash relative bottom-6 right-6  z-10 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
@@ -239,15 +239,10 @@ if (!$conexion) {
                                 edit
                               </span>
                         </li>
-                        <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Correo electronico:</span>
-                            <input type="email" name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
-                           ><label for="email">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
-                            </label>
-                        </li>
+                       
+                            <input type="hidden" name="Email" class="text-gray-700" id="email" value="<?php echo $row['Email']?>" 
+                           >
+                        
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Numero de telefono:</span>
                             <input type="tel"  class="text-gray-700" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
@@ -260,11 +255,12 @@ if (!$conexion) {
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Contraseña</span>
                            
-                            <input  class="text-gray-700" name="Password" id="Password" type="password" value="<?php echo $row['Password']?>" 
-                           ><label for="Password">
-                              <span class="material-symbols-outlined">
-                                edit
-                              </span>
+                            <input  class="text-gray-700" name="Password" id="contraseña"  type="password" value="<?php echo $row['Password']?>" 
+                           ><div class=" flex justify-end relative">
+                           <span onclick="mostrar()" id="eye" class="cursor-pointer material-symbols-outlined">
+visibility
+</span>
+                            </div>
                         </li>
                         <li class="flex border-b py-2">
                           <button  type="submit" class="py-2.5 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm">
@@ -336,7 +332,7 @@ $email =  $row['Email'];
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
@@ -392,6 +388,17 @@ imagde1.addEventListener('change', function() {
     preview1.style.display = 'none';
   }
 });
+  </script>
+  <script>
+    function mostrar(){
+    var tipo = document.getElementById("contraseña");
+
+    if(tipo.type == 'password'){
+      tipo.type = 'text';
+    }else{
+      tipo.type = 'password';
+    }
+  }
   </script>
 
 <?php } ?>

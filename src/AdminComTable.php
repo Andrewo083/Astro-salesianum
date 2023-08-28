@@ -53,7 +53,7 @@ if ($result) {
       <nav class="flex justify-between bg-black text-white ">
         <div class="px-5 xl:px-12 py-6 flex w-full items-center">
         <a href="./WelcomeAdmin.php">
-            <img src="../img/AstroFavicon.png" alt="" width="45px"></a>
+            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
 
           <a class="text-3xl font-bold font-heading" href="../src/welcomeAdmin.php">
             <!-- <img class="h-9" src="logo.png" alt="logo"> -->

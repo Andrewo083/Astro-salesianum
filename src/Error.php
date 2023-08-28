@@ -122,7 +122,7 @@ echo $_SESSION['ROL'];
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

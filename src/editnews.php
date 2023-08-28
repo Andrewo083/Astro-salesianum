@@ -148,6 +148,7 @@ imagde1.addEventListener('change', function() {
             
         </section>
         </div>
+        
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
@@ -295,6 +296,26 @@ imagde1.addEventListener('change', function() {
  
 
 </body>
-</html>
+</html><script>
+    const imagde1 = document.getElementById('imagde1');
+const preview1 = document.getElementById('preview1');
+
+imagde1.addEventListener('change', function() {
+  const archivo = imagde1.files[0];
+  if (archivo) {
+    const lector = new FileReader();
+
+    lector.addEventListener('load', function() {
+      preview1.src = lector.result;
+      preview1.style.display = 'block';
+    });
+
+    lector.readAsDataURL(archivo);
+  } else {
+    preview1.src = '#';
+    preview1.style.display = 'none';
+  }
+});
+  </script>
 
 <?php } } ?>
