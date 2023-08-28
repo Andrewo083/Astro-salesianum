@@ -2714,6 +2714,22 @@ video {
     padding-left: 0px;
   }
 
+  .sm\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .sm\:pr-0 {
+    padding-right: 0px;
+  }
+
+  .sm\:pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .sm\:pl-14 {
+    padding-left: 3.5rem;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
