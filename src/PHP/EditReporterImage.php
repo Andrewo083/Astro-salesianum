@@ -16,8 +16,7 @@ $imagen = $_FILES['imagen']['name'];
 
     //cmabio de nombre
     $imagen =  $Email."-".$Name."-".$ROL.".png";
-    echo $imagen."<br>";
-    echo $Email;
+   
 
     //url ocmpleta con la imagen y el traslado
     $urlPlusImage = $carpet_images.$imagen;
@@ -27,9 +26,8 @@ $imagen = $_FILES['imagen']['name'];
     $query = "UPDATE `reporter` SET `ProfileImage`='$imagen' WHERE `Email` = '$Email'";
 
     mysqli_query($conexion, $query);
-    echo "Si se hixo";
-
-    header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+    include("./Wait.html");
+    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
    
 
 

@@ -40,10 +40,11 @@ if ($updateNeeded) {
                   `PhoneNumber`='$PhoneNumber',`ROL`='$Rol',`ProfileImage`='[value-7]' WHERE Email = '$ID'";
     
     if (mysqli_query($conexion, $updateSQL)) {
-        echo "Datos actualizados exitosamente";
+        include("./Wait.html");
         header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
     } else {
-        echo "Error al actualizar el registro";
+        include("./Error.php");
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
     }
 } else {
     echo "<script>

@@ -33,10 +33,11 @@ if ($resultadoEmail->num_rows > 0) {
 
 
     if ($conexion->query($sql)) {
-        echo "Datos insertados correctamente";
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
+        include("./Wait.html");
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
     } else {
-        echo "Error en la inserción";
+        include("./Error.php");
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
     }
 }
 

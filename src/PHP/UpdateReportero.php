@@ -76,10 +76,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "UPDATE `reporter` SET ProfileImage='$imagen', Email='$email', Password='$password', Name='$name', LastName='$lastName', PhoneNumber='$phoneNumber' WHERE Email='$reportero_id'";
 
             if ($conexion->query($sql) === TRUE) {
-                echo "Datos registrados exitosamente";
+                include("./Wait.html");
                 header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
             } else {
-                echo "Error al actualizar el registro: " . $conexion->error;
+                include("./Error.php");
+                header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
             }
         }
     }

@@ -7,7 +7,7 @@ if(!$conexion){
     die("Error en la conexion" .mysqli_connect_error());
 } 
 $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
-echo $carpet_images;
+
 
 $imagen = $_FILES['imagen']['name'];
 $imagen_tmp = $_FILES['imagen']['tmp_name'];
@@ -40,10 +40,11 @@ if ($resultadoEmail->num_rows > 0) {
 
 
     if ($conexion->query($sql)) {
-        echo "Datos insertados correctamente";
-        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Form_Jurnalist.php');
+        include("./Wait.html");
+        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
     } else {
-        echo "Error en la inserción";
+        include("./Error.php");
+        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
     }
 }
 

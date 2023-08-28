@@ -19,12 +19,15 @@ $imagen = $_FILES['imagen']['name'];
     $imagen_tmp = $_FILES['imagen']['tmp_name'];
 
     $imagen =  $Email."-".$Name."-".$ROL.".png";
-    echo $imagen."<br>";
+
 
     $urlPlusImage = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $urlPlusImage);
 
-    echo $imagen;
+ 
     $query = "UPDATE `news` SET `main_image`='$imagen' WHERE `id_news` = '$id_news'";
+
+    include("./Wait.html");
+    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
 }
 ?>

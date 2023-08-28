@@ -13,10 +13,11 @@ $sql = "DELETE FROM `reporter` WHERE Email='$ID'"; // Encerramos $ID entre comil
 $resultado = mysqli_query($conexion, $sql);
 
 if (mysqli_affected_rows($conexion) > 0) {
-    echo "Se eliminó el registro correctamente.";
+    include("./Wait.html");
     header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
 } else {
-    echo "No se pudo eliminar el registro o el registro no existe.";
+    include("./Error.php");
+    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
 }
 
 mysqli_close($conexion);

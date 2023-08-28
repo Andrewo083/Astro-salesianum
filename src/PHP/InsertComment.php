@@ -63,10 +63,11 @@ if(isset($_SESSION['Email'])){
        
         if ($conexion->query($sql)) {
             //pagina wait
-          include("../wait.html");
+            include("./Wait.html");
          header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
         } else {
-            header("Location: ./Error.html");
+            include("./Error.php");
+            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
         }
     }
 

@@ -22,8 +22,6 @@ $result = mysqli_query($conexion, $query);
 while($row = mysqli_fetch_array($result)){
 
 
-
-
 ?>
 
 
@@ -158,7 +156,7 @@ imagde1.addEventListener('change', function() {
 
               <div>
                 <label for="title" class="text-2lx font-bold text-gray-500">Imagen Actual</label>
-                <input  type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <input readonly type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
                 <input  type="hidden" value="<?php echo $row['id_news']; ?>" id="reporter" name="id_news" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
               </div>
 

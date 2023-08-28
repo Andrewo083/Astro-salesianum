@@ -15,7 +15,7 @@ $ID = $_GET['ID'];
 $SQL = "DELETE FROM `comments` WHERE id_comment = $ID";
 
 if ($conexion->query($SQL)) {
-    echo "Comentario Eliminado Exitosamente";
+    include("./Wait.html");
     
     if($_SESSION['ROL']== 1){
         header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
@@ -25,7 +25,8 @@ if ($conexion->query($SQL)) {
 
     
 } else {
-    echo "Ha ocurrido un error al eliminar el comentario: " . $conexion->error;
+    include("./Error.php");
+
     header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
 }
 

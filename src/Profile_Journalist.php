@@ -200,16 +200,15 @@ while ($row = mysqli_fetch_array($result)) {
                   
                   <div class="md:space-y-2 mb-3">
                    
-                    <div class="flex items-center py-6">
-                        <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                             <img class=" rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
-                        </div>
-                        <label class="cursor-pointer ">
-                            <span
-                                class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Elegir</span>
-                            <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
-                        </label>
-                    </div>
+                  <div class="flex items-center py-6">
+    <div class="mr-4 flex-none rounded-xl border overflow-hidden w-52">
+        <img class="rounded-3xl" src="../img/subir.jpg" alt="Imagen actual" id="preview1" style="width: 200px; height: 200px;"/>
+    </div>
+    <label class="cursor-pointer">
+        <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900 hover:bg-blue-950 hover:shadow-lg">Elegir</span>
+        <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
+    </label>
+</div>
                 </div>
                 
                   <div>
