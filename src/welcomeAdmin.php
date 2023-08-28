@@ -22,7 +22,7 @@ if(isset($_SESSION['ROL'])){
     <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Administrador </title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  <link rel="stylesheet" href="../Public/boton.css">
      <link rel="stylesheet" href="./css/Translate.css">
 </head>
 <body>
@@ -181,15 +181,9 @@ if(isset($_SESSION['ROL'])){
       </div>
   </div>
 </footer>
-  <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>

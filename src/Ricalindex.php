@@ -28,6 +28,7 @@ $result = mysqli_query($conexion, $query);
     <link rel="stylesheet" href="./css/ProfileImage.css">
     <link rel="stylesheet" href="./css/Translate.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="../Public/boton.css">
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
         function toggleElement() {
@@ -271,15 +272,8 @@ $result = mysqli_query($conexion, $query);
       </div>
   </div>
 </footer>
-  <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>

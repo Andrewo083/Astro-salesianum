@@ -27,6 +27,7 @@ $result = mysqli_query($conexion, $query);
        <link rel="icon" href="../img/AstroFavicon.png"/>
        <link rel="stylesheet" href="./css/ProfileImage.css">
        <link rel="stylesheet" href="./css/Translate.css">
+       <link rel="stylesheet" href="../Public/boton.css">
        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
@@ -271,17 +272,7 @@ $result = mysqli_query($conexion, $query);
       </div>
   </div>
 </footer>
-  <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+ 
 </body>
 </html>
 
@@ -290,4 +281,8 @@ $result = mysqli_query($conexion, $query);
       let list = document.getElementById("lean:D");
       e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
     }
-  </script>
+  </script><script> 
+    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    

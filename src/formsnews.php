@@ -39,6 +39,7 @@ while ($row = mysqli_fetch_array($result)) {
 <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Publica tu noticia!</title>
+    <link rel="stylesheet" href="../Public/boton.css">
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -247,3 +248,8 @@ while ($row = mysqli_fetch_array($result)) {
   });
 </script>
 <?php } }?>
+<script> 
+    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    
