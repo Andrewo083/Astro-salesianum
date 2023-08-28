@@ -12,7 +12,7 @@ if (!$conexion) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener el ID del reportero desde el formulario
 
-   
+   include("./VerifReporterByAdmin.php");
 
     $reportero_id = $_POST['ID'];
 
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Error al actualizar el registro: " . $conexion->error;
             }
         }
+    }
     }
 }
 ?>
