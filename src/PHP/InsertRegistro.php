@@ -30,20 +30,25 @@ if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@"))
     if ($resultadoEmail->num_rows > 0) {
         echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Registro.html";</script>';
     } else {
-        // Insertar los datos en la tabla correspondiente
-        $sql = "INSERT INTO `user`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES ('$Email','$Contrasena','$Name','$LastName','$PhoneNumber','$Rol','$imagen')";
+        // Verificar si la contraseña cumple con los requisitos
+        if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) && preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $Contrasena)) {
+            // Insertar los datos en la tabla correspondiente
+            $sql = "INSERT INTO `user`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES ('$Email','$Contrasena','$Name','$LastName','$PhoneNumber','$Rol','$imagen')";
 
-        if ($conexion->query($sql)) {
-            include("./Wait.html");
-            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
+            if ($conexion->query($sql)) {
+                include("./Wait.html");
+                header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
+            } else {
+                include("./Error.php");
+                header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
+            }
         } else {
-            include("./Error.php");
-            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
+            header("Location: ../Error.php");
         }
     }
 } else {
     header("Location: ../Error.php");
-            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Registro.html');
+
 }
 
 // Cerrar la conexión

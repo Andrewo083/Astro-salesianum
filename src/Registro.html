@@ -7,19 +7,7 @@
     <title>Registro</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
     <link rel="stylesheet" href="../Public/boton.css">
-    <script>
-        function validarEmail() {
-            var emailInput = document.getElementById("email");
-            var email = emailInput.value;
-
-            // Verificar si el correo electrónico contiene un punto en el dominio
-            if (email.includes(".") && email.lastIndexOf(".") > email.lastIndexOf("@")) {
-                alert("Correo electrónico válido");
-            } else {
-                alert("Correo electrónico inválido");
-            }
-        }
-    </script>
+ 
     <script>
         function mostrar(){
     var tipo = document.getElementById("contraseña");
@@ -138,15 +126,19 @@
                                 type="tel" name="PhoneNumber" value="+503 ">
                         </div>
                         <div class="pb-10 mt-4 relative">
+                            
                             <div class="flex justify-between">
                                 <p><label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label></p>
+                               <br> 
                             </div>
+                            <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
                             <input required id="contraseña"
                             
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none absolute"
-                                type="password" name="password"/>
+                                type="password" name="password" minlength="8"/>
                                 
                         </div>
+                    
                         <div class=" flex justify-end relative">
                             <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
                     </div>

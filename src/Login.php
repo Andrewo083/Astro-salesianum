@@ -218,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             </div>
                             <p>
-                                <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                <input minlength="8" required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
                                 
                              
                             </p>
