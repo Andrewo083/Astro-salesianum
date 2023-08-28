@@ -10,6 +10,7 @@ echo $_SESSION['ROL'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
+    <link rel="stylesheet" href="../Public/boton.css">
 </head>
 <link rel="stylesheet" href="../Public/tailwind.css">
 <body>
@@ -151,3 +152,7 @@ echo $_SESSION['ROL'];
 </footer>
 </body>
 </html>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
