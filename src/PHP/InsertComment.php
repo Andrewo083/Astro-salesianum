@@ -17,33 +17,30 @@ if(isset($_SESSION['Email'])){
     $_SESSION['Name'];
 
     $Comment = $_POST['Comment'];
-    echo "COMENTARIO:";
-    echo $Comment;
+    
 
     if($_SESSION['ROL']== 3){
         $id_user = $_SESSION['Email'];
-        echo $id_user;
+      
     }else if($_SESSION['ROL']== 2){
         $id_reporter = $_SESSION['Email'];
-        echo $id_reporter;
+       
     }else if ($_SESSION['ROL']== 1){
         $id_user = $_SESSION['Email'];
-        echo $id_user;
+      
     }
 
      // Asegúrate de obtener el valor correcto del usuario
-     echo "NOTICIA:";
+  
     $id_new = $_GET['new']; 
-    echo $id_new;   // Asegúrate de obtener el valor correcto de la noticia
-    echo "FECHA:";
+    
     $date = date('Y-m-d'); 
 
     //HORA GTM-6
     date_default_timezone_set('America/Mexico_City');
-    echo $date;
+   
     $hour = date("H:i:");
-    echo "HORA:";
-    echo $hour;
+   
     $state = "active";        // Obtén la fecha actual
 
     // Realiza una consulta para verificar la existencia del valor en la tabla news
@@ -53,7 +50,7 @@ if(isset($_SESSION['Email'])){
     $result = $conexion->query($checkNewsQuery);
 
     if ($result->num_rows === 0) {
-        echo "Error: Valor de id_new no válido.";
+       header("Location: ./Error.html");
         // Puedes decidir si detener aquí la ejecución o manejar el error de otra manera.
     } else {
         // Continuar con la inserción del comentario
@@ -65,10 +62,11 @@ if(isset($_SESSION['Email'])){
 
        
         if ($conexion->query($sql)) {
-            echo "Datos insertados correctamente";
+            //pagina wait
+          include("../wait.html");
          header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
         } else {
-            echo "Error: " . $conexion->error;
+            header("Location: ./Error.html");
         }
     }
 

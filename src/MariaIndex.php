@@ -27,9 +27,45 @@ $result = mysqli_query($conexion, $query);
        <link rel="icon" href="../img/AstroFavicon.png"/>
        <link rel="stylesheet" href="./css/ProfileImage.css">
        <link rel="stylesheet" href="./css/Translate.css">
+       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+        function toggleElement() {
+            var screenWidth = window.innerWidth;
 
+            // Cambia este valor a la resolución en la que deseas mostrar u ocultar el elemento
+            var breakpoint = 768; // Por ejemplo, 768px
+
+            var element = document.getElementById("elementToToggle");
+            
+            var element2 = document.getElementById("elementToToggle2");
+
+            if (screenWidth <= breakpoint) {
+                element.style.display = "none";
+                element2.style.display = "block";  // Oculta el elemento
+            } else {
+                element.style.display = "block";
+                element2.style.display = "none"; // Muestra el elemento
+            }
+        }
+
+        // Ejecuta la función al cargar la página y cuando la ventana cambia de tamaño
+        window.onload = toggleElement;
+        window.onresize = toggleElement;
+    </script>
+       
+       <style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
 </head>
 <body>
+
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
@@ -72,6 +108,41 @@ $result = mysqli_query($conexion, $query);
                 </svg>
             </a>
             </nav>
+            <nav class="p-5 hidden bg-white shadow md:flex md:items-center md:justify-between" id="elementToToggle2">
+    <div class="flex justify-between items-center ">
+      <span class="text-2xl font-[Poppins] cursor-pointer">
+        <img class="h-10 inline"
+          src="../img/AstroFavicon.png" alt="Imagen Logo" width="45px">
+        Astrum Salesianum 
+      </span>
+
+      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+    
+    <ul class=" md:flex md:items-center font-semibold  z-1 md:z-1 md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-200px] transition-all ease-in duration-500" id="lean:D" style="z-index: 100; " >
+      <li class="mx-4 my-6 md:my-0">
+        <a href="./newindex.php" class="text-lg hover:text-cyan-500 duration-500">Home</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="./ChalecoIndex.php" class="text-lg hover:text-cyan-500 duration-500">Santa Cecilia</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="./Ricalindex.php" class="text-lg hover:text-cyan-500 duration-500">Ricaldone</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="./DonBoscoIndex.php" class="text-lg hover:text-cyan-500 duration-500">Don Bosco</a>
+      </li>
+      <li class="mx-4 my-6 md:my-0">
+        <a href="./MariaIndex.php" class="text-lg hover:text-cyan-500 duration-500">maria Auxiliadora</a>
+      </li>
+     
+      <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+      <button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Ver Perfil</button></a>
+
+    </ul>
+  </nav>
             
         </section>
         </div>
@@ -213,3 +284,10 @@ $result = mysqli_query($conexion, $query);
 
 </body>
 </html>
+
+<script>
+    function Menu(e){
+      let list = document.getElementById("lean:D");
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+  </script>
