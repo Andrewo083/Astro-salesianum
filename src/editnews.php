@@ -1,10 +1,9 @@
 <?php 
 session_start();
 
-if($_SESSION['ROL'] != 2 ||
-    $_SESSION['ROL'] != 1 ){
+if($_SESSION['ROL'] == 3){
 
-    header("Location: ./Error.html");
+    header("Location: ./Error.php");
 
 }else{
 

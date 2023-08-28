@@ -1,3 +1,9 @@
+<?php 
+session_start();
+echo $_SESSION['ROL'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">

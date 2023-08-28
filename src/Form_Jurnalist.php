@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+if($_SESSION['ROL'] != 1){
+    header("Location: ./Error.php");
+}else{
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,3 +230,4 @@ imagde1.addEventListener('change', function() {
   }
 });
 </script>
+<?php } ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['ROL'] != 1){ 
- header("Location: ./Error.html"); 
+ header("Location: ./Error.php"); 
   
  }else{
 
@@ -84,7 +84,7 @@ $query = mysqli_query($conexion, $sql);
                 <p class="sr-only">Search Position</p>
                 <div class="relative">
                 
-                  <a href="./Form_Jurnalist.html"class="bg-gray-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                  <a href="./Form_Jurnalist.php"class="bg-gray-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Agregar Reporteros</a>
                 </div>
               </div>

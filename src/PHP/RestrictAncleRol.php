@@ -7,7 +7,7 @@ if($_SESSION['ROL'] == 1){
   }else if($_SESSION['ROL'] == 3){
     echo "ProfileUser.php";
   }else{
-    echo "error.html";
+    echo "Error.php";
   }
 
 

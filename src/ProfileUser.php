@@ -9,7 +9,7 @@ if (!isset($_SESSION['Email'])) {
 
 if($_SESSION['ROL'] != 3){
  
-header("Location: ./Error.html");
+header("Location: ./Error.php");
 
 }else{
 

@@ -33,7 +33,7 @@ $resultadoEmail = $conexion->query($consultaEmail);
 
 // Verificar si el correo ya fue utilizado
 if ($resultadoEmail->num_rows > 0) {
-    echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Form_Jurnalist.html";</script>';
+    echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Form_Jurnalist.php";</script>';
 } else {
     // Insertar los datos en la tabla correspondiente
     $sql = "INSERT INTO `reporter`(`ProfileImage`,`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$imagen','$Email','$Contraseña','$Name','$LastName','$PhoneNumber','$Rol')";
@@ -41,7 +41,7 @@ if ($resultadoEmail->num_rows > 0) {
 
     if ($conexion->query($sql)) {
         echo "Datos insertados correctamente";
-        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Form_Jurnalist.html');
+        header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Form_Jurnalist.php');
     } else {
         echo "Error en la inserción";
     }

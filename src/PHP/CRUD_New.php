@@ -125,7 +125,7 @@ function edit($conexion)
             } else if ($_SESSION['ROL'] == 2) {
                 header('Refresh: 3; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
             } else {
-                echo "error.html";
+                echo "Error.php";
             }
         } else {
             echo "Error al actualizar: " . mysqli_error($conexion);
