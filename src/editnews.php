@@ -81,7 +81,7 @@ imagde1.addEventListener('change', function() {
             <nav class="flex justify-between bg-gray-900 text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <a href="./newindex.php">
-            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="50px"></a>
+            <img src="../img/AstroFavicon.png" alt="" width="50px"></a>
                 <a class="text-3xl font-bold font-heading" href="./newindex.php">
                
                 <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -148,97 +148,7 @@ imagde1.addEventListener('change', function() {
             
         </section>
         </div>
-        <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
-            <button @click="open = true">
-              <div>
-                <div class=" bg-white p-7 rounded-full" >
-            <div class="imagen-circular">
-     
-     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
-
-              </div>
-        </button>
-        <div
-        x-show="open"
-        x-transition:enter="ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        x-description="Background backdrop, show/hide based on modal state."
-        class="fixed inset-0 flex justify-center item  bg-gray-600 bg-opacity-75 transition-opacity"
-      >
-
-      <div class="fixed overflow-y-auto">
-        <div
-          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
-        >
-          <div
-            x-show="open"
-            x-transition:enter="ease-out duration-300"
-            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            x-description="Modal panel, show/hide based on modal state."
-            class="relative transform  overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
-            @click.away="open = true"
-          >
-            <div
-              class="relative  flex items-center justify-center py-2 px-4 sm:px-6 lg:px-8"
-            >
-              <div class="absolute opacity-60 inset-0 z-0"></div>
-              <div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
-                <div class="text-center">
-                  <h2 class="mt-5 text-3xl font-bold text-gray-900">
-                   ¡Edita tu Foto!
-                  </h2>
-                  <p class="mt-2 text-sm text-gray-400">
-                    Selecciona una imagen para cambiar tu foto de perfil
-                  </p>
-                </div>
-                <form  class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email']?>" method="POST" enctype="multipart/form-data">
-                  
-                  <div class="md:space-y-2 mb-3">
-                    
-                    <div class="flex items-center py-6">
-                        <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                        <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px"/>
-                        </div>
-                        <label class="cursor-pointer ">
-                              
-                            <span
-                                class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                                <input class="hidden" name="imagen" type="file" id="imagde1" accept="image/*" >
-                        </label>
-                        <div class=" flex justify-end relative">
-                                    <i class="fa fa-eye-slash relative bottom-6 right-6  z-10 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
-                            </div>
-                    </div>
-                </div>
-                
-                  <div>
-                  <h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6>
-                    <button
-                      type="submit"
-                      class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
-                    >
-                      Upload
-                    </button> <center><p @click="open = false" type="button" class="hover:p-2.5 hover:px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold hover:text-red-500   focus:outline-none focus:ring-2 cursor-pointer focus:ring-red-500 focus:ring-offset-2 transition-all text-sm">
-                        Cancel
-    </p></center>
-                    
-                    
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+        
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
         <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
@@ -341,7 +251,7 @@ imagde1.addEventListener('change', function() {
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
