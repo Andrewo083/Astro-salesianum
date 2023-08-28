@@ -27,6 +27,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <script>function mostrar(){
     var tipo = document.getElementById("contraseña");
 
@@ -153,8 +154,10 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                                     id="contraseña">
                                    
               </div>
-              <div class=" flex justify-end relative">
-                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32">Ver</i>    
+              <div class=" flex justify-end relative ">
+              <span onclick="mostrar()" id="eye" class=" cursor-pointer relative top-10 material-symbols-outlined">
+visibility
+</span>
                             </div>
              
 								
@@ -179,7 +182,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
           </a>
 
           <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>

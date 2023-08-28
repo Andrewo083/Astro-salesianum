@@ -106,7 +106,7 @@ $name = $_SESSION['Name'];
                         <div class="flex items-center ">
                         
                           <a href="#">
-                            <img class="w-auto h-24 hidden" src="../img/AstroFavicon.png" alt="" id="img">
+                            <img class="w-auto h-24 hidden" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" id="img">
                             
                         </a>
             
@@ -117,7 +117,7 @@ $name = $_SESSION['Name'];
                             <li class="relative ">
                               <a href="./DonBoscoIndex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Bosco.png" alt="" aria-hidden="true">
+                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Bosco.png" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
                               </button>
                             </a>
                             </li>
@@ -125,7 +125,7 @@ $name = $_SESSION['Name'];
                                    <li class="lative">
                                     <a href="./Ricalindex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Rical.jpg" alt="" aria-hidden="true">
+                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Rical.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
                               </button>
                             </a>
                             </li>
@@ -133,7 +133,7 @@ $name = $_SESSION['Name'];
                                    <li class="relative">
                                     <a href="./ChalecoIndex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Cecilia.jpg" alt="" aria-hidden="true">
+                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Cecilia.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
                               </button>
                               </a>
                             </li>
@@ -141,7 +141,7 @@ $name = $_SESSION['Name'];
                                    <li class="relative">
                                     <a href="./MariaIndex.php">
                               <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Maria.jpg" alt="" aria-hidden="true">
+                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Maria.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
                               </button>
                               </a>
                             </li>
@@ -522,7 +522,7 @@ while($row = mysqli_fetch_array($result)){
   <div class="container px-3 py-5 mx-auto">
       <div class="flex flex-col items-center text-center">
           <a href="#">
-              <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
           </a>
 
         <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
