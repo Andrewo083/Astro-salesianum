@@ -9,6 +9,8 @@ if($_SESSION['ROL'] == 1){
 
 $Email = $_SESSION['Email'];
 $Name = $_SESSION['Name'];
+$id_new = $_POST['id_new'];
+$headline =$_POST['headline'];
 
 $id_news = $_POST['id_news'];
 $ROL = $_SESSION['ROL'];
