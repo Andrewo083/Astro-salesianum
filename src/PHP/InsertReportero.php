@@ -8,7 +8,6 @@ if(!$conexion){
 } 
 $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
 
-
 $imagen = $_FILES['imagen']['name'];
 $imagen_tmp = $_FILES['imagen']['tmp_name'];
 
@@ -20,33 +19,39 @@ $PhoneNumber=$_POST['PhoneNumber'];
 $Rol=2;
 
 $imagen =  $Email."-".$Name."-".$Rol.".png";
-    $url_main = $carpet_images.$imagen;
-    move_uploaded_file($imagen_tmp, $url_main);
+$url_main = $carpet_images.$imagen;
+move_uploaded_file($imagen_tmp, $url_main);
 
-// Consulta SQL para buscar el correo en ambas tablas
-$consultaEmail = "SELECT Email FROM user WHERE Email = '$Email'
-                  UNION
-                  SELECT Email FROM reporter WHERE Email = '$Email'";
+// Verificar si el correo electrónico contiene un punto en el dominio
+if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
+    // Consulta SQL para buscar el correo en ambas tablas
+    $consultaEmail = "SELECT Email FROM user WHERE Email = '$Email'
+                      UNION
+                      SELECT Email FROM reporter WHERE Email = '$Email'";
 
-// Ejecutar la consulta
-$resultadoEmail = $conexion->query($consultaEmail);
+    // Ejecutar la consulta
+    $resultadoEmail = $conexion->query($consultaEmail);
 
-// Verificar si el correo ya fue utilizado
-if ($resultadoEmail->num_rows > 0) {
-    echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Form_Jurnalist.php";</script>';
-} else {
-    // Insertar los datos en la tabla correspondiente
-    $sql = "INSERT INTO `reporter`(`ProfileImage`,`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$imagen','$Email','$Contraseña','$Name','$LastName','$PhoneNumber','$Rol')";
-
-
-    if ($conexion->query($sql)) {
-        include("./Wait.html");
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+    // Verificar si el correo ya fue utilizado
+    if ($resultadoEmail->num_rows > 0) {
+        echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Form_Jurnalist.php";</script>';
     } else {
-        include("./Error.php");
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+        // Insertar los datos en la tabla correspondiente
+        $sql = "INSERT INTO `reporter`(`ProfileImage`,`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$imagen','$Email','$Contraseña','$Name','$LastName','$PhoneNumber','$Rol')";
+
+        if ($conexion->query($sql)) {
+            include("./Wait.html");
+            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+        } else {
+            include("./Error.php");
+            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+        }
     }
+} else {
+   
+    header('Location: ../Error.php');
 }
 
 // Cerrar la conexión
 $conexion->close();
+?>
