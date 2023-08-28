@@ -165,6 +165,15 @@ imagde1.addEventListener('change', function() {
 
 
 
+
+
+
+
+
+
+
+
+
 <!--Aqui debería estar el click de la ventana emergente -->
 
                 <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['main_image']; ?>" alt="Current profile photo" id="preview1" height="700px" width="700px"/>
