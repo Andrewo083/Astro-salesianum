@@ -113,7 +113,7 @@ if (!$conexion) {
             <div class="flex flex-col items-center -mt-20"  x-data="{ open: false }">
             <button @click="open = true">
               <div>
-                <div class=" bg-white p-2 rounded-full md:p-4; " >
+                <div class=" bg-white p-2 rounded-full md:p-7; " >
             <div class="imagen-circular">
      
      <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>

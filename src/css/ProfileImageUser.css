@@ -1,6 +1,6 @@
 .imagen-circular {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -9,4 +9,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+@media (min-width: 768px){
+
+.imagen-circular {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 }

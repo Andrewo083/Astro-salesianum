@@ -618,12 +618,12 @@ video {
   top: 0px;
 }
 
-.top-auto {
-  top: auto;
-}
-
 .top-10 {
   top: 2.5rem;
+}
+
+.top-auto {
+  top: auto;
 }
 
 .z-0 {
