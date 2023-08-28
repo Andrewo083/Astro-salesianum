@@ -26,6 +26,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
+    <link rel="stylesheet" href="../Public/boton.css">
         <link rel="stylesheet" href="../Public/tailwind.css">
 <script>function mostrar(){
     var tipo = document.getElementById("contraseña");
@@ -207,5 +208,8 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
   </div>
 </footer>
 </body>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 </html>
 <?php } } ?>

@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($result)) {
 <html lang="en">
 <head>
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
-   
+    <link rel="stylesheet" href="../Public/boton.css">
 <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Publica tu noticia!</title>
@@ -246,4 +246,7 @@ while ($row = mysqli_fetch_array($result)) {
     }
   });
 </script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 <?php } }?>

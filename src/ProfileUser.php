@@ -41,6 +41,7 @@ if (!$conexion) {
     <link rel="stylesheet" href="./css/ProfileImageUser.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Astro  usuario</title>
+    <link rel="stylesheet" href="../Public/boton.css">
     <link rel="stylesheet" href="../Public/tailwind.css">
         <link rel="stylesheet" href="./css/ProfileImageUser.css">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -393,5 +394,8 @@ imagde1.addEventListener('change', function() {
   }
 });
   </script>
+  <script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 
 <?php } ?>

@@ -2,14 +2,16 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     font-size: 0%;
     margin-left: 5%;
     margin-top: -2.5%;
-    background-size: cover;}
+    background-size: cover;
+ 
+}
 
     div .skiptranslate.goog-te-gadget span a{
          font-size: 0;} 
 
-         div .goog-te-combo{ background-color: #cccccca6;
-            color: #000000;
-             font-weight: bold; 
+         div .goog-te-combo{ 
+         
+         
              cursor: pointer; 
              -o-border-radius: 10px; 
              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -34,7 +36,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                                 color: #000000;
                                 -webkit-o-border-radius: 10px;
                                 -moz-o-border-radius: 10px; 
-                                -ms-o-border-radius: 10px;}
+                                -ms-o-border-radius: 10px;
+                              }
 
                            a img{ 
                               width: 0;}

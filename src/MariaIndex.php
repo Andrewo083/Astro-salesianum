@@ -23,6 +23,7 @@ $result = mysqli_query($conexion, $query);
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
+    <link rel="stylesheet" href="../Public/boton.css">
     <title>Noticias Maria</title>
        <link rel="icon" href="../img/AstroFavicon.png"/>
        <link rel="stylesheet" href="./css/ProfileImage.css">
@@ -200,16 +201,9 @@ $result = mysqli_query($conexion, $query);
       </div>
   </div>
 </footer>
-  <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 
 </body>
 </html>

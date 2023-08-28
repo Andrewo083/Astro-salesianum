@@ -34,6 +34,7 @@ if (!$conexion) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
+    <link rel="stylesheet" href="../Public/boton.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
@@ -282,6 +283,9 @@ Puedes ver todos tus comentarios, con ciertas cosas a tomar en cuentan, si en al
   
 
 </body>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 </html>
 <?php
 

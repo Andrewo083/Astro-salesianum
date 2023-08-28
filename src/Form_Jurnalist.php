@@ -15,7 +15,7 @@ if($_SESSION['ROL'] != 1){
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registra Nuestro Reportero</title>
-  
+    <link rel="stylesheet" href="../Public/boton.css">
     <link rel="stylesheet" href="../Public/tailwind.css">
 <script>
     function mostrar(){
@@ -230,4 +230,7 @@ imagde1.addEventListener('change', function() {
   }
 });
 </script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+
 <?php } ?>

@@ -27,6 +27,7 @@ if (isset($_SESSION['Email'])) {
 <head>
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Public/boton.css">
     <link rel="stylesheet" href="../Public/tailwind.css">
     <title>Adminsitrador</title>
 </head>
@@ -188,3 +189,5 @@ if (isset($_SESSION['Email'])) {
     <script src="./ JS/AdmJsTwo.js">
        
     </script>
+    <script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>

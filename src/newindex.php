@@ -51,6 +51,7 @@ $name = $_SESSION['Name'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroSalesianum News</title>
   <link rel="stylesheet" href="../Public/tailwind.css">
+  <link rel="stylesheet" href="../Public/boton.css">
   <link rel="stylesheet" href="./css/Translate.css">
 </head>
 <body>
@@ -557,5 +558,7 @@ while($row = mysqli_fetch_array($result)){
 </footer>
                  
 </body>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
 
 </html>
