@@ -7,6 +7,7 @@
     <title>Registro</title>
     <link rel="stylesheet" href="../Public/tailwind.css">
     <link rel="stylesheet" href="../Public/boton.css">
+ 
     <script>
         function mostrar(){
     var tipo = document.getElementById("contraseña");
@@ -116,7 +117,7 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
                             <input required
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                                type="email" name="Email">
+                                type="email" id="email" name="Email">
                         </div>
                         <div class="mt-4">
                             <label for="PhoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
@@ -125,20 +126,24 @@
                                 type="tel" name="PhoneNumber" value="+503 ">
                         </div>
                         <div class="pb-10 mt-4 relative">
+                            
                             <div class="flex justify-between">
                                 <p><label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label></p>
+                               <br> 
                             </div>
+                            <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
                             <input required id="contraseña"
                             
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none absolute"
-                                type="password" name="password"/>
+                                type="password" name="password" minlength="8"/>
                                 
                         </div>
+                    
                         <div class=" flex justify-end relative">
                             <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
                     </div>
                         <div class="mt-8">
-                            <button
+                            <button onclick="validarEmail()"
                                 class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Registrarse</button>
                         </div>
                     </form>

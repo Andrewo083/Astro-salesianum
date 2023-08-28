@@ -143,7 +143,9 @@ if($_SESSION['ROL'] != 1){
                             <div class="md:flex md:flex-row md:space-x-4 w-full text-xs relative">
 
                                 <div class="w-full flex flex-col mb-3">
+                                   
                                     <label class="font-semibold text-gray-600 py-2">Contraseña</label>
+                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
                                     <input required placeholder="Contraseña" id="contraseña"
                                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                         type="password" name="Password"> 

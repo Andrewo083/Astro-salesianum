@@ -17,66 +17,67 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
-    // $consultaRol1 = "SELECT * FROM `Administrador` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
     $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
 
-    //$resultadoRol1 = $conexion->query($consultaRol1);
     $resultadoRol2 = $conexion->query($consultaRol2);
     $resultadoRol3 = $conexion->query($consultaRol3);
 
     // Verificamos si se encontró una fila coincidente en alguna de las tablas
-    if ($resultadoRol1->num_rows === 1) {
-        // Inicio de sesión exitoso para el rol 1
-        $row = $resultadoRol1->fetch_assoc();
-        session_start();
-        $_SESSION['Email'] = $Email;
-        $_SESSION["Name"] = $row["Name"];
-        $_SESSION['ROL'] = $row['ROL'];
-        $_SESSION['ProfileImage'] = $row['ProfileImage'];
-        echo $_SESSION['ProfileImage'];
-        header("Location: ./WelcomeAdmin.php");
-        exit();
-    } elseif ($resultadoRol2->num_rows === 1) {
+    if ($resultadoRol2->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 2
         $row = $resultadoRol2->fetch_assoc();
-        session_start();
-        $_SESSION["Email"] = $Email;
-        $_SESSION["Name"] = $row["Name"];
-        $_SESSION['ROL'] = $row['ROL'];
-        $_SESSION['ProfileImage'] = $row['ProfileImage'];
-        echo $_SESSION['ProfileImage'];
-        header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
-        exit();
+        // Verificar si el correo electrónico contiene un punto en el dominio
+        if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
+            session_start();
+            $_SESSION["Email"] = $Email;
+            $_SESSION["Name"] = $row["Name"];
+            $_SESSION['ROL'] = $row['ROL'];
+            $_SESSION['ProfileImage'] = $row['ProfileImage'];
+            echo $_SESSION['ProfileImage'];
+            header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
+            exit();
+        } else {
+            include("./Error.php");
+            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/login.php');
+            exit();
+        }
     } elseif ($resultadoRol3->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 3
         $row = $resultadoRol3->fetch_assoc();
-        session_start();
-        $_SESSION["Email"] = $Email;
-        $_SESSION["Name"] = $row["Name"];
-        $_SESSION['ROL'] = $row['ROL'];
-        $_SESSION['ProfileImage'] = $row['ProfileImage'];
-        echo $_SESSION['ProfileImage'];
+        // Verificar si el correo electrónico contiene un punto en el dominio
+        if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
+            session_start();
+            $_SESSION["Email"] = $Email;
+            $_SESSION["Name"] = $row["Name"];
+            $_SESSION['ROL'] = $row['ROL'];
+            $_SESSION['ProfileImage'] = $row['ProfileImage'];
+            echo $_SESSION['ProfileImage'];
 
-        // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
-        $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
-        $resultadoRol = $conexion->query($rolConsulta);
-        if ($resultadoRol->num_rows === 1) {
-            $row = $resultadoRol->fetch_assoc();
-            $rolUsuario = $row['rol'];
-            if ($rolUsuario == 1) {
-                header("Location: ./WelcomeAdmin.php"); // Redirección para el rol 1
-            } elseif ($rolUsuario == 2) {
-                header("Location: ./Profile_Journalist.php?jour=" . $Email); // Redirección para el rol 2
-            } elseif ($rolUsuario == 3) {
-                header("Location: ./newindex.php"); // Redirección para el rol 3
+            // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
+            $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+            $resultadoRol = $conexion->query($rolConsulta);
+            if ($resultadoRol->num_rows === 1) {
+                $row = $resultadoRol->fetch_assoc();
+                $rolUsuario = $row['rol'];
+                if ($rolUsuario == 1) {
+                    header("Location: ./WelcomeAdmin.php"); // Redirección para el rol 1
+                } elseif ($rolUsuario == 2) {
+                    header("Location: ./Profile_Journalist.php?jour=" . $Email); // Redirección para el rol 2
+                } elseif ($rolUsuario == 3) {
+                    header("Location: ./newindex.php"); // Redirección para el rol 3
+                } else {
+                    echo "Rol no válido.";
+                    exit();
+                }
+                exit();
             } else {
-                echo "Rol no válido.";
+                echo "Error al obtener el rol del usuario.";
                 exit();
             }
-            exit();
         } else {
-            echo "Error al obtener el rol del usuario.";
+            include("./Error.php");
+            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/login.php');
             exit();
         }
     } else {
@@ -97,6 +98,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/boton.css">
     <title>Login</title>
+    <script>
+        function validarEmail() {
+            var emailInput = document.getElementById("email");
+            var email = emailInput.value;
+
+            // Verificar si el correo electrónico contiene un punto en el dominio
+            if (email.includes(".") && email.indexOf(".") < email.lastIndexOf("@")) {
+                alert("Correo electrónico válido");
+            } else {
+                alert("Correo electrónico inválido");
+            }
+        }
+    </script>
     <script>
         function mostrar(){
     var tipo = document.getElementById("contraseña");
@@ -196,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
-                            <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email">
+                            <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email" id="email">
                         </div>
                         <div class="mt-4 relative">
                             <div class="flex justify-between">
@@ -204,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                             </div>
                             <p>
-                                <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
+                                <input minlength="8" required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 w-full relative appearance-none" id="contraseña" type="password" name="Password">
                                 
                              
                             </p>
