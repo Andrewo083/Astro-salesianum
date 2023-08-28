@@ -73,6 +73,43 @@ function editar($conexion) {
     echo $ProfileImage;
     $ROL = "2"; 
 
+    $email = $_POST['Email'];
+$password = $_POST['Password'];
+$name = $_POST['Name'];
+$lastname = $_POST['LastName'];
+$phonenumber = $_POST['PhoneNumber'];
+
+
+
+$queryVerif = "SELECT * FROM `reporter` WHERE `Email`  = '$email'";
+$resultVerif = mysqli_query($conexion, $queryVerif);
+$row = mysqli_fetch_assoc($resultVerif);
+
+$updateNeeded = false;
+if(
+    $email != $row['Email'] ||
+$password != $row['Password'] ||
+$name != $row['Name'] ||
+$lastname != $row['LastName'] ||
+$phonenumber != $row['PhoneNumber'] 
+
+){
+    $updateNeeded = true;
+}else{
+    $updateNeeded = false;
+}
+
+if($updateNeeded == false){
+   echo" <script>
+    var noChanges = alert('No hay cambios en los datos');
+    if (noChanges) {
+        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
+    } else {
+        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email'; // Cambiar la URL según sea necesario
+    }
+  </script>";
+}else{
+
     $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
 
     mysqli_query($conexion, $query);
@@ -83,7 +120,7 @@ function editar($conexion) {
         // Redirigir después de 2 segundos
         header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
         echo "Usuario actualizado correctamente. Redireccionando...";
-    
+}
 }
 
 
