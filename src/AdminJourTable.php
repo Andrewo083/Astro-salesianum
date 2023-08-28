@@ -64,7 +64,7 @@ $query = mysqli_query($conexion, $sql);
             </div>
             <!-- Responsive navbar -->
             
-            <
+            
             </nav>
             
         </section>
