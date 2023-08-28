@@ -24,6 +24,7 @@ $query = mysqli_query($conexion, $sql);
 <head>
   <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../Public/tailwind.css">
+  <link rel="stylesheet" href="../Public/boton.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="./css/Translate.css">
   <title>Astro Administrador </title>
@@ -131,15 +132,8 @@ $query = mysqli_query($conexion, $sql);
 
     <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
 
-    <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'es,en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    }, 'google_translate_element');
-  }
-</script>
+    <script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
