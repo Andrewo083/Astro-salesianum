@@ -109,41 +109,7 @@ $result = mysqli_query($conexion, $query);
                 </svg>
             </a>
             </nav>
-            <nav class="p-5 hidden bg-white shadow md:flex md:items-center md:justify-between" id="elementToToggle2">
-    <div class="flex justify-between items-center ">
-      <span class="text-2xl font-[Poppins] cursor-pointer">
-        <img class="h-10 inline"
-          src="../img/AstroFavicon.png" alt="Imagen Logo" width="45px">
-        Astrum Salesianum 
-      </span>
-
-      <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-      </span>
-    </div>
-    
-    <ul class=" md:flex md:items-center font-semibold  z-1 md:z-1 md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-200px] transition-all ease-in duration-500" id="lean:D" style="z-index: 100; " >
-      <li class="mx-4 my-6 md:my-0">
-        <a href="./newindex.php" class="text-lg hover:text-cyan-500 duration-500">Home</a>
-      </li>
-      <li class="mx-4 my-6 md:my-0">
-        <a href="./ChalecoIndex.php" class="text-lg hover:text-cyan-500 duration-500">Santa Cecilia</a>
-      </li>
-      <li class="mx-4 my-6 md:my-0">
-        <a href="./Ricalindex.php" class="text-lg hover:text-cyan-500 duration-500">Ricaldone</a>
-      </li>
-      <li class="mx-4 my-6 md:my-0">
-        <a href="./DonBoscoIndex.php" class="text-lg hover:text-cyan-500 duration-500">Don Bosco</a>
-      </li>
-      <li class="mx-4 my-6 md:my-0">
-        <a href="./MariaIndex.php" class="text-lg hover:text-cyan-500 duration-500">maria Auxiliadora</a>
-      </li>
-     
-      <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
-      <button  class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Ver Perfil</button></a>
-
-    </ul>
-  </nav>
+            
             
         </section>
         </div>
