@@ -30,30 +30,7 @@ $result = mysqli_query($conexion, $query);
        <link rel="stylesheet" href="../Public/boton.css">
        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
-        function toggleElement() {
-            var screenWidth = window.innerWidth;
-
-            // Cambia este valor a la resolución en la que deseas mostrar u ocultar el elemento
-            var breakpoint = 768; // Por ejemplo, 768px
-
-            var element = document.getElementById("elementToToggle");
-            
-            var element2 = document.getElementById("elementToToggle2");
-
-            if (screenWidth <= breakpoint) {
-                element.style.display = "none";
-                element2.style.display = "block";  // Oculta el elemento
-            } else {
-                element.style.display = "block";
-                element2.style.display = "none"; // Muestra el elemento
-            }
-        }
-
-        // Ejecuta la función al cargar la página y cuando la ventana cambia de tamaño
-        window.onload = toggleElement;
-        window.onresize = toggleElement;
-    </script>
+>
        
        <style>
     div iframe {
@@ -67,52 +44,66 @@ $result = mysqli_query($conexion, $query);
 </head>
 <body>
 
-    <div>
-        <section class="relative mx-auto">
-            <!-- navbar -->
-            <nav class="flex justify-between bg-sky-500 text-white w-screen">
-            <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-                       <a href="./newindex.php" class="p-4">
-            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
-                <a class="text-3xl font-bold font-heading" href="./newindex.php">
-               
-                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-               Astro Salesianum
-                </a>
-                <!-- Nav Links -->
-                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
-                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
-                </ul>
-                <!-- Header Icons -->
-                <div class="hidden xl:flex items-center space-x-5 ">
-                  <a class="flex items-center hover:text-gray-200" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
-                    <div class="imagen-circular">
-     
-                      <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil"> </div>
-                
-                  </a>
-                
-                </div>
-            </div>
-            <!-- Responsive navbar -->
-            <a class="xl:hidden flex mr-6 items-center" href="#">
-                
-                
-            </a>
-            <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    
-                </svg>
-            </a>
-            </nav>
-            
-            
-        </section>
+<nav class="flex items-center   bg-gray-800 p-3 flex-wrap">
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astrum Salesianum</span
+        >
+      </a>
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class=" hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="flex justify-between items-center lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center lg:h-auto pr-12"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Home</span>
+          </a>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Chaleco</span>
+          </a>
+          <a
+            href="./Ricalindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Ricaldone</span>
+          </a>
+          <a
+            href="./DonBoscoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Don Bosco</span>
+          </a>
+          <a
+            href="./MariaIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Maria</span>
+          </a>
+       
         </div>
+       
+        <div class="imagen-circular hidden lg:block" >
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="">
+                  </div>
+                
+      </div>
+    </nav>
    <!-- component -->
 <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16
@@ -241,7 +232,20 @@ $result = mysqli_query($conexion, $query);
  
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+  $(".nav-toggler").each(function(_, navToggler) {
+    var target = $(navToggler).data("target");
+    $(navToggler).on("click", function() {
+      $(target).animate({
+        height: "toggle"
+      });
+    });
+  });
+});
 
+</script>
 <script>
     function Menu(e){
       let list = document.getElementById("lean:D");
