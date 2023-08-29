@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 if ($conexion->query($sql)) {
                     $exitoRegistro = 'Registro exitoso. Redireccionando...';
                     include("./PHP/Wait.html");
-                    header
+                  
                     header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
                 } else {
                     $esperaRegistro = 'Ha ocurrido un error. Por favor, inténtalo nuevamente.';
