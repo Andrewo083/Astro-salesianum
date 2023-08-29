@@ -147,7 +147,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 							<div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
 								<div class="w-full flex flex-col mb-3">
 									<label class="font-semibold text-gray-600 py-2">Contraseña</label>
-
+                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
 									<input value="<?php echo $RowReporter['Password'] ?>" placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="Password" 
 
                                     name="Password" 

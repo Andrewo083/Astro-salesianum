@@ -102,7 +102,7 @@ include("./PHP/InsertRegistro.php");?>
                         <a href="#" class="text-xs text-center text-gray-500 uppercase"> Ingresa tus datos</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <form action="./Registro.php" method="post">
+                    <form action="./PHP/InsertRegistro.php" method="post">
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
