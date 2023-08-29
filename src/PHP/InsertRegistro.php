@@ -1,9 +1,14 @@
 <?php
- $conexion = new mysqli("localhost", "root","","astrodb")or die(mysqli_error($mysqli));
+$conexion = new mysqli("localhost", "root", "", "astrodb") or die(mysqli_error($mysqli));
 
-if(!$conexion){
-    die("Error en la conexion" .mysqli_connect_error());
-} 
+if (!$conexion) {
+    die("Error en la conexion" . mysqli_connect_error());
+}
+
+$defaultName = isset($_POST['Name']) ? $_POST['Name'] : '';
+$defaultLastName = isset($_POST['LastName']) ? $_POST['LastName'] : '';
+$defaultEmail = isset($_POST['Email']) ? $_POST['Email'] : '';
+$defaultPhoneNumber = isset($_POST['PhoneNumber']) ? $_POST['PhoneNumber'] : '';
 
 $errorCorreo = ""; // Variable para almacenar mensaje de error
 $exitoRegistro = ""; // Variable para almacenar mensaje de éxito
@@ -34,26 +39,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $errorCorreo = '¡El correo electrónico ya está registrado!, por favor utiliza otro';
         } else {
             // Verificar si la contraseña cumple con los requisitos
-            if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) ) {
+            if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena)) {
                 // Insertar los datos en la tabla correspondiente
                 $sql = "INSERT INTO `user`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES ('$Email','$Contrasena','$Name','$LastName','$PhoneNumber','$Rol','$imagen')";
 
                 if ($conexion->query($sql)) {
                     $exitoRegistro = 'Registro exitoso. Redireccionando...';
-                   
+
                     include("./Wait.html");
-   
 
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
-   
-
+                    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
                 } else {
                     $esperaRegistro = 'Ha ocurrido un error. Por favor, inténtalo nuevamente.';
                     include("./Error.php");
                     header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
                 }
             } else {
-                $errorCorreo = 'La contraseña  no es válida';
+                $errorCorreo = 'La contraseña no es válida';
             }
         }
     } else {
