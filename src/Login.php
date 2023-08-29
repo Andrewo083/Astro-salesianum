@@ -1,20 +1,16 @@
 <?php
+$errorCorreo = ""; // Variable para almacenar mensaje de error de inicio de sesión
+$conexion = new mysqli("localhost", "root", "", "astrodb") or die(mysqli_error($mysqli));
+
+if (!$conexion) {
+    die("Error en la conexion" . mysqli_connect_error());
+}
+
 // Verificamos si el formulario de inicio de sesión fue enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener el correo y la contraseña ingresados en el formulario
     $Email = $_POST["Email"];
     $Password = $_POST["Password"];
-
-    // Conexión a la base de datos (debes reemplazar los valores por los de tu base de datos)
-    $host = "localhost";
-    $user = "root";
-    $password_db = "";
-    $bd = "astrodb";
-    $conexion = new mysqli($host, $user, $password_db, $bd);
-
-    if (!$conexion) {
-        die("Error en la conexión" . mysqli_connect_error());
-    }
 
     // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
     $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
@@ -34,13 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["Name"] = $row["Name"];
             $_SESSION['ROL'] = $row['ROL'];
             $_SESSION['ProfileImage'] = $row['ProfileImage'];
-            echo $_SESSION['ProfileImage'];
             header("Location: ./Profile_Journalist.php"); // Cambiarle a la parte de reportero
             exit();
         } else {
-            include("./Error.php");
-            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/login.php');
-            exit();
+            $errorLogin = 'Credenciales incorrectas';
         }
     } elseif ($resultadoRol3->num_rows === 1) {
         // Inicio de sesión exitoso para el rol 3
@@ -52,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["Name"] = $row["Name"];
             $_SESSION['ROL'] = $row['ROL'];
             $_SESSION['ProfileImage'] = $row['ProfileImage'];
-            echo $_SESSION['ProfileImage'];
 
             // Agregamos esta parte para verificar el rol del usuario en la tabla "user"
             $rolConsulta = "SELECT rol FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
@@ -62,31 +54,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $rolUsuario = $row['rol'];
                 if ($rolUsuario == 1) {
                     header("Location: ./WelcomeAdmin.php"); // Redirección para el rol 1
+                    exit();
                 } elseif ($rolUsuario == 2) {
                     header("Location: ./Profile_Journalist.php?jour=" . $Email); // Redirección para el rol 2
+                    exit();
                 } elseif ($rolUsuario == 3) {
                     header("Location: ./newindex.php"); // Redirección para el rol 3
-                } else {
-                    echo "Rol no válido.";
                     exit();
+                } else {
+                    $errorCorreo = 'Rol no válido.';
                 }
-                exit();
             } else {
-                echo "Error al obtener el rol del usuario.";
-                exit();
+                $errorCorreo = 'Error al obtener el rol del usuario.';
             }
-        } else {
-            include("./Error.php");
-            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/login.php');
-            exit();
         }
     } else {
         // Inicio de sesión fallido
-        echo '<script>alert("Credenciales incorrectas");
-         window.location.href = "./Login.php";</script>';
+        $errorCorreo = 'Credenciales incorrectas';
     }
 }
+
+// Cerrar la conexión
+$conexion->close();
 ?>
+
 
 
 
@@ -226,6 +217,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true" onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>
                             </div>
                         </div>
+                         <?php if (!empty($errorCorreo)) { ?>
+        <span class="text-red-500"><?= $errorCorreo ?></span>
+    <?php } ?>
+
+    <!-- Mostrar mensajes de éxito o espera -->
+    <?php if (!empty($exitoRegistro)) { ?>
+        <span class="text-green-500"><?= $exitoRegistro ?></span>
+    <?php } elseif (!empty($esperaRegistro)) { ?>
+        <span class="text-blue-500"><?= $esperaRegistro ?></span>
+    <?php } ?>
                         <div class="mt-8">
                             <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
                         </div>
