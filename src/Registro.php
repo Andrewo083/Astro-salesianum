@@ -102,31 +102,31 @@ include("./PHP/InsertRegistro.php");?>
                         <a href="#" class="text-xs text-center text-gray-500 uppercase"> Ingresa tus datos</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <form action="./PHP/InsertRegistro.php" method="post">
+                    <form action="./Registro.php" method="post">
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
-                            <input required
+                            <input required value="<?php echo $defaultName; ?>"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="text" name="Name">
                         </div>
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Apellido</label>
-                            <input required
+                            <input required value="<?php echo $defaultLastName; ?>"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="text" name="LastName">
                         </div>
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
-                            <input required
+                            <input required value="<?php echo $defaultEmail; ?>"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="email" id="email" name="Email">
                         </div>
                         <div class="mt-4">
                             <label for="PhoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
-                            <input id="PhoneNumber" required maxlength="14" minlength="13"
+                            <input id="PhoneNumber" required maxlength="14" minlength="13" value="<?php echo "+503 ".$defaultPhoneNumber; ?>"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                                type="tel" name="PhoneNumber" value="+503 ">
+                                type="tel" name="PhoneNumber" >
                         </div>
                         <div class="pb-10 mt-4 relative">
                             
