@@ -145,7 +145,7 @@ if ($result) {
 
                
                
-                    <a href="./PHP/DeleteComments.php?ID=<?php echo $row['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                    <a href="./PHP/ConfirmCombyAdmin.php?ID=<?php echo $row['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
                   
                 </div>

@@ -1,3 +1,6 @@
+<?php 
+include("./PHP/InsertRegistro.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +102,7 @@
                         <a href="#" class="text-xs text-center text-gray-500 uppercase"> Ingresa tus datos</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <form action="./PHP/InsertRegistro.php" method="post">
+                    <form action="./Registro.php" method="post">
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
@@ -121,7 +124,7 @@
                         </div>
                         <div class="mt-4">
                             <label for="PhoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
-                            <input id="PhoneNumber" required maxlength="14"
+                            <input id="PhoneNumber" required maxlength="14" minlength="13"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="tel" name="PhoneNumber" value="+503 ">
                         </div>
@@ -142,6 +145,20 @@
                         <div class=" flex justify-end relative">
                             <i class="fa fa-eye-slash absolute bottom-3 right-2 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
                     </div>
+
+
+                    <?php if (!empty($errorCorreo)) { ?>
+        <span class="text-red-500"><?= $errorCorreo ?></span>
+    <?php } ?>
+
+    <!-- Mostrar mensajes de éxito o espera -->
+    <?php if (!empty($exitoRegistro)) { ?>
+        <span class="text-green-500"><?= $exitoRegistro ?></span>
+    <?php } elseif (!empty($esperaRegistro)) { ?>
+        <span class="text-blue-500"><?= $esperaRegistro ?></span>
+    <?php } ?>
+
+
                         <div class="mt-8">
                             <button onclick="validarEmail()"
                                 class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Registrarse</button>

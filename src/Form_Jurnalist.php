@@ -134,7 +134,7 @@ if($_SESSION['ROL'] != 1){
                                                 title="required"></abbr></label>
                                         <input required placeholder="Numero de telefono"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                             type="text" name="PhoneNumber" value="+503 " maxlength="14"
+                                             type="text" name="PhoneNumber" value="+503 " minlength="13" maxlength="14"
                                             id="integration_shop_name">
                                         <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
                                     </div>
@@ -148,7 +148,7 @@ if($_SESSION['ROL'] != 1){
                                     <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
                                     <input required placeholder="Contraseña" id="contraseña"
                                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                        type="password" name="Password"> 
+                                        type="password" name="Password" minlength="8"> 
                                 </div>
                                 <div class=" flex justify-end relative">
                                     <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    

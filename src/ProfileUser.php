@@ -183,7 +183,7 @@ if (!$conexion) {
                 </div>
                 
                   <div>
-                  <h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6>
+                  <i><h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6></i>
                     <button
                       type="submit"
                       class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
@@ -246,7 +246,7 @@ if (!$conexion) {
                         
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Numero de telefono:</span>
-                            <input type="tel"  class="text-gray-700" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
+                            <input type="tel"  class="text-gray-700" minlength="13" maxlength="14" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
                            ><label for="PhoneNumber">
                               <span class="material-symbols-outlined">
                                 edit
@@ -256,7 +256,7 @@ if (!$conexion) {
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24">Contraseña</span>
                            
-                            <input  class="text-gray-700" name="Password" id="contraseña"  type="password" value="<?php echo $row['Password']?>" 
+                            <input  class="text-gray-700" name="Password" minlength="8" id="contraseña"  type="password" value="<?php echo $row['Password']?>" 
                            ><div class=" flex justify-end relative">
                            <span onclick="mostrar()" id="eye" class="cursor-pointer material-symbols-outlined">
 visibility

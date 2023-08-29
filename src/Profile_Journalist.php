@@ -208,9 +208,11 @@ while ($row = mysqli_fetch_array($result)) {
         <input required type="file" class="hidden" id="imagde1" accept="image/*" name="imagen">
     </label>
 </div>
+
                 </div>
                 
                   <div>
+                  <i><h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6></i>
                     <button
                       type="submit" value="Actualizar"
                       class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"

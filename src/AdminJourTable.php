@@ -112,7 +112,7 @@ $query = mysqli_query($conexion, $sql);
                     <div class="mt-4 mr-0 mb-0 ml-0 mdpt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 gap-2 sm:pl-0 sm:mt-0">
                       <a href="./Edit_Jurnalist.php?reporter=<?php echo $row['Email']; ?>" class="bg-gray-900 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Edit</a>
-                      <a href="./PHP/Confirmation.php?ID=<?php echo $row['Email'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                      <a href="./PHP/ConfirmDelJourbyAdmin.php?ID=<?php echo $row['Email'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
                     </div>
 
