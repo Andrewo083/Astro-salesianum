@@ -223,20 +223,20 @@ if (!$conexion) {
                     <form action="./PHP/UptdateUser.php?ID=<?php echo $_SESSION['Email']?>" method="post">
                     <ul class="mt-2 text-gray-700 " >
                         <li class="flex border-y py-2 ">
-                            <span class="font-bold w-24">Nombre:</span>
+                            <span class="font-bold w-24 pr-4">Nombre:</span>
                            
-                           <input  class="text-gray-700 appearance-none " id="name" name="Name" type="text" value="<?php echo $row['Name']?>"
+                           <input  class="text-gray-700 appearance-none w-full" id="name" name="Name" type="text" value="<?php echo $row['Name']?>"
                            ><label for="name">
-                              <span class="material-symbols-outlined">
+                              <span class="material-symbols-outlined w-full">
                                 edit
                               </span>
                             </label>
                         </li>
                         <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Apellido</span>
-                            <input  class="text-gray-700" name="LastName" id="LastName" value="<?php echo $row['LastName']?>" 
+                            <span class="font-bold w-24 pr-4 p">Apellido:</span>
+                            <input  class="text-gray-700 w-full"  name="LastName" id="LastName" value="<?php echo $row['LastName']?>" 
                            ><label for="LastName">
-                              <span class="material-symbols-outlined">
+                              <span class="material-symbols-outlined w-full">
                                 edit
                               </span>
                         </li>
@@ -245,20 +245,20 @@ if (!$conexion) {
                            >
                         
                         <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Numero de telefono:</span>
-                            <input type="tel"  class="text-gray-700" minlength="13" maxlength="14" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
+                            <span class="font-bold w-24 pr-4">Numero:</span>
+                            <input type="tel"  class="text-gray-700 w-full " minlength="13" maxlength="14" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
                            ><label for="PhoneNumber">
-                              <span class="material-symbols-outlined">
+                              <span class="material-symbols-outlined w-full">
                                 edit
                               </span>
                         </li>
                         
                         <li class="flex border-b py-2">
-                            <span class="font-bold w-24">Contraseña</span>
+                            <span class="font-bold w-24 pr-4">Contraseña:</span>
                            
-                            <input  class="text-gray-700" name="Password" minlength="8" id="contraseña"  type="password" value="<?php echo $row['Password']?>" 
+                            <input  class="text-gray-700 w-full" name="Password" minlength="8" id="contraseña"  type="password" value="<?php echo $row['Password']?>" 
                            ><div class=" flex justify-end relative">
-                           <span onclick="mostrar()" id="eye" class="cursor-pointer material-symbols-outlined">
+                           <span onclick="mostrar()" id="eye" class="cursor-pointer material-symbols-outlined w-full">
 visibility
 </span>
                             </div>
@@ -308,13 +308,7 @@ $email =  $row['Email'];
                   <p class="text-black font-semibold  "><?php echo $rowCom['comment'] ?></p>
 
                 </div>
-                <div class="mt-4 mr-0 mb-0 ml-0 pt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 sm:pl-0 sm:mt-0">
-
-               
-               
-                   
-                  
-                </div>
+                
               </div>
                <a href="./PHP/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>

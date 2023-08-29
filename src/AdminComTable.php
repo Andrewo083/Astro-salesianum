@@ -138,10 +138,10 @@ if ($result) {
                     ?>
                     <span class="font-bold text-gray-400 text-xs"><?php echo $row['hour'] ?></span>&nbsp;&nbsp;<span>de <a href="./NewsMain.php?new=<?php echo $new?>"><b><?php echo $NewHeadLine ?></b></a></span> 
                   </div>
-                  <p class="text-black font-semibold p-2 "><?php echo $row['comment'] ?></p>
+                  <p class="text-black font-semibold sm:p-4 p-2 "><?php echo $row['comment'] ?></p>
 
                 </div>
-                <div class="mt-4 mr-0 mb-0 ml-0 pt-0 pr-0 pb-0 pl-0 flex items-center gap-2 sm:space-x-6 sm:pl-14 sm:mt-0">
+                <div class="mt-4 mr-0 mb-0 ml-0 pt-0 pr-0 pb-0 pl-0 flex items-center gap-2 sm:space-x-6  sm:mt-0">
 
                
                
