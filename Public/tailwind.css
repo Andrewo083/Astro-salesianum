@@ -1645,10 +1645,6 @@ video {
   padding: 1rem;
 }
 
-.p-44 {
-  padding: 11rem;
-}
-
 .p-5 {
   padding: 1.25rem;
 }
@@ -2714,20 +2710,24 @@ video {
     padding-left: 0px;
   }
 
-  .sm\:pt-0 {
-    padding-top: 0px;
-  }
-
-  .sm\:pr-0 {
-    padding-right: 0px;
-  }
-
-  .sm\:pb-0 {
-    padding-bottom: 0px;
-  }
-
   .sm\:pl-14 {
     padding-left: 3.5rem;
+  }
+
+  .sm\:pb-2 {
+    padding-bottom: 0.5rem;
+  }
+
+  .sm\:pl-6 {
+    padding-left: 1.5rem;
+  }
+
+  .sm\:pr-6 {
+    padding-right: 1.5rem;
+  }
+
+  .sm\:pt-2 {
+    padding-top: 0.5rem;
   }
 
   .sm\:text-xl {
