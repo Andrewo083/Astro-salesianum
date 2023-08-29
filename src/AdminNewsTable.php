@@ -72,7 +72,7 @@ style="background-image: url('../img/bg_4.jpg');">
                 <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras editar las noticias o eliminarlas si lo deseas.</p>
               </div> 
             </div>
-            <div class="shadow-xl mt-8 mr-0 mb-0 ml-0 pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
+            <div class=" mt-8 mr-0 mb-0 ml-0 pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
             <?php $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $carpet_images = "../img/";
 $State = "Active";
@@ -86,9 +86,9 @@ while ($row = mysqli_fetch_array($result)) {
 
 
                 <!-- periodistas-->
-                <div class="max-w-2xl w-full mx-auto z-10">
+                <div class="max-w-2xl w-full mx-auto z-10 bg-transparent">
                   <div class="flex flex-col">
-                      <div class="shadow-lg  rounded-3xl p-4 m-4">
+                      <div class=" rounded-3xl p-4 m-4 bg-gray-950 text-slate-300">
                           <div class="flex-none sm:flex">
                               <div class=" relative h-32 w-32   sm:mb-0 mb-3">
                                   <img src="<?php echo $carpet_images.$row['main_image'] ?>" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
@@ -98,9 +98,12 @@ while ($row = mysqli_fetch_array($result)) {
                   <div class="flex items-center justify-between sm:mt-2">
                       <div class="flex items-center">
                           <div class="flex flex-col">
-                              <div class="w-full flex-none text-lg text-gray-700 font-bold leading-none"><?php echo $row['headline']?></div>
-                              <div class="flex-auto text-gray-700 my-1">
+                              <div class="w-full flex-none text-lg text-gray-100 font-bold leading-none"><?php echo $row['headline']?></div>
+                              <div class="flex-auto text-gray-100 my-1">
                                   <span class="mr-3 "><?php echo $row['Category']?></span><span class="mr-3 border-r border-gray-600  max-h-0"></span><span><?php echo $row['school']?></span>
+
+                              <p class="">Fecha: <?php echo $row['date']?></p>
+
                               </div>
                           </div>
                       </div>
@@ -117,36 +120,34 @@ while ($row = mysqli_fetch_array($result)) {
                       <div class="flex pt-2  text-sm text-gray-400">
                       
                           <div class="flex-1 inline-flex items-center">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
-                                  fill="currentColor">
-                                  <path fill-rule="evenodd"
-                                      d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
-                                      clip-rule="evenodd"></path>
-                              </svg>
-                              <p class="">Fecha: <?php echo $row['date']?></p>
-                          </div>
-                        <div class="mt-4 mr-0 mb-0 ml-0 mdpt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 gap-2 sm:pl-0 sm:mt-0">
-                          <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="bg-gray-900 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          
+   
+
+                              <div class="mt-4 mr-0 mb-0 ml-0 mdpt-0 pr-0 pb-0 sm:pl-14 flex items-center sm:space-x-6 gap-2 pl-0 sm:mt-0">
+                          <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="bg-gray-900 pt-1 pr-3 pb-1 pl-3 sm:pt-2 sm:pr-6 sm:pb-2 sm:pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Editar</a>
                           <form action="./PHP/CRUD_New.php" method="post">
-                          <a  href="./PHP/ConfirmNewsbyAdm.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          <a  href="./PHP/ConfirmNewsbyAdm.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="bg-red-800 pt-1 pr-3 pb-1 pl-3 sm:pt-2 sm:pr-6 sm:pb-2 sm:pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg" >Eliminar</a>
                           </form>
                           </div>
+                          </div>
+                      
                       </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+          
                     <!-- finperiodistas-->
 <?php } ?>
 
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
+</div>
 
         <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
         <script> 
