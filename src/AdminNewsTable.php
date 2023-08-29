@@ -20,7 +20,7 @@ if($_SESSION['ROL'] != 1){
            <link rel="stylesheet" href="./css/Translate.css">
     <title>Astro Administrador </title>
 </head>
-<body  class="w-full h-full bg-no-repeat bg-cover"
+<body  class="w-full h-full bg-cover"
 style="background-image: url('../img/bg_4.jpg');">
 <nav class="flex justify-between bg-black text-white ">
             <div class="px-5 xl:px-12 py-6 flex w-full items-center">
@@ -125,10 +125,14 @@ while ($row = mysqli_fetch_array($result)) {
                               </svg>
                               <p class="">Fecha: <?php echo $row['date']?></p>
                           </div>
-                          <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="flex-no-shrink bg-gray-600 hover:bg-gray-700 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300">Editar</a>
+                        <div class="mt-4 mr-0 mb-0 ml-0 mdpt-0 pr-0 pb-0 pl-14 flex items-center sm:space-x-6 gap-2 sm:pl-0 sm:mt-0">
+                          <a href="./editnews.php?new=<?php echo $row['id_news']?>" class="bg-gray-900 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          duration-200 hover:bg-gray-700 rounded-lg">Editar</a>
                           <form action="./PHP/CRUD_New.php" method="post">
-                          <a  href="./PHP/ConfirmNewsbyAdm.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="flex-no-shrink bg-gray-600 hover:bg-gray-700  px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-white text-white rounded-full transition ease-in duration-300" >Eliminar</a>
+                          <a  href="./PHP/ConfirmNewsbyAdm.php?new=<?php echo $row['id_news']?>" type="submit"  name="delete" class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                          duration-200 hover:bg-red-700 rounded-lg" >Eliminar</a>
                           </form>
+                          </div>
                       </div>
                   </div>
                 </div>
