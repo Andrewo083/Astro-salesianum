@@ -144,5 +144,5 @@ function delete($conexion)
 
     mysqli_query($conexion, $query);
     include("./Wait.html");
-    header('location: ./index.php');
+    header('location: ./index.html');
 }
