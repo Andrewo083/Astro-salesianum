@@ -149,7 +149,7 @@ while ($row = mysqli_fetch_array($result)) {
         <!-- component -->
         
         <div class="container mx-auto px-6 py-6 text-center">
-          <div class="mx-44  py-10 ">
+          <div class="p-6">
             <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Noticias relacionadas</h1>
           </div>
           
