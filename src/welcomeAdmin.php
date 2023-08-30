@@ -78,10 +78,11 @@ if(isset($_SESSION['ROL'])){
        
     
         </div>
-        <div class="imagen-circular hidden lg:block" >
-        <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
-                  </div>
+        <a
+            href="./PHP/Logout.php"
+            class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
+            >Cerrar Sesion</a
+          >
       </div>
     </nav>
 

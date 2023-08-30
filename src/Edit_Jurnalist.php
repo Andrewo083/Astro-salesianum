@@ -121,8 +121,8 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
-								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required" ></abbr></label>
-								<input value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="email" name="Email" id="integration_shop_name" readonly>
+								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required"></abbr></label>
+								<input readonly value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="email" name="Email" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
 						</div>
