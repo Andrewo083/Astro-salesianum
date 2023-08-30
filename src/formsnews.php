@@ -83,7 +83,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <p>Home</p>
+            <span  >Home</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -118,10 +118,7 @@ while ($row = mysqli_fetch_array($result)) {
                   </a>
     
         </div>
-        
-
-       
-      </div>
+         </div>
     </nav>
   
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
