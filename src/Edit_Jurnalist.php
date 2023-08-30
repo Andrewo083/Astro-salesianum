@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include("");
+
 
 if($_SESSION['ROL'] != 1){  
   header("Location: ./Error.php");  
