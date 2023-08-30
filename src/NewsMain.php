@@ -204,7 +204,7 @@ $i++;
             </div>
           </section>
          
-            <div class="mx-44  py-10 ">
+            <div class="p-6 ">
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
           
