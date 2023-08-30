@@ -46,44 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 if ($conexion->query($sql)) {
                     $exitoRegistro = 'Registro exitoso. Redireccionando...';
 
-                   ?><!DOCTYPE html>
-                   <html lang="en">
-                   <head>
-                       <meta charset="UTF-8">
-                       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                       <link rel="stylesheet" href="../Public/tailwind.css" />
-                       <title>Espera</title> <link rel="stylesheet" href="">
-                       <link rel="stylesheet" href="../Public/boton.css">
-                        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                   </head>
-                   <body><br><br><br><br><br><br>
-                       <!-- Contenido de la Landing Page -->
-                   <div class="bg-white">
-                       <div class="flex justify-between items-center py-28 px-5">
-                           <div class="w-1/2">
-                               <h2 class="text-5xl font-semibold text-gray-800">Por favor espere un momento.</h2>
-                               <h3 class="text-xl font-semibold text-gray-600 mt-4">¡Los datos se estan enviando por favor espero un momento!</h3>
-                               <p class="text-gray-600 mt-4">Estamos enviando sus datos en este momento. Si el proceso dura demasiado tiempo, por favor contactanos. Esperamos que disfrute su tiempo en nuestro periodico ¡Muchas Gracias! <br> &nbsp; <b><a href="../newindex.php">Ir a Home</a></b>
-                               </p>
-                           </div>
-                           <a href="../newindex.php">
-                           <div class="w-1/2">
-                               <img src="./PHP/AstroFavicon.png" alt="Imagen relacionada con el programa de fidelización" class="w-full h-auto">
-                           </div>
-                       </a>
-                       </div>
-                       <a href=""></a>
-                   </div>
-                   
-                   
-                   <br><br><br><br><br><br><br><br><br><br>
-                   </body>
-                   </html>
-                   <script> 
-                       function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
-                       <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                       
-                        <?php
+                    include("./Wait.html");
 
                     header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
                 } else {
