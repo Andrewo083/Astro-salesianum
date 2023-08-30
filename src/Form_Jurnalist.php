@@ -151,7 +151,7 @@ if($_SESSION['ROL'] != 1){
                                         type="password" name="Password" minlength="8"> 
                                 </div>
                                 <div class=" flex justify-end relative">
-                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>    
+                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class=""></i>    
                             </div>
                             </div>
 

@@ -29,6 +29,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Edita tu Reportero!</title>
         <link rel="stylesheet" href="../Public/tailwind.css">    
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="../Public/boton.css">
 <script>function mostrar(){
@@ -149,6 +150,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 							<div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
 								<div class="w-full flex flex-col mb-3">
 									<label class="font-semibold text-gray-600 py-2">Contraseña</label>
+
                                     <i> <h6>Debe tener  8 caracteres, una  mayúscula y un número* *</h6></i>
 									<input value="<?php echo $RowReporter['Password'] ?>" placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="Password" 
 
@@ -157,11 +159,10 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                                     id="contraseña">
                                    
               </div>
-              <div class=" flex justify-end relative ">
-              <span onclick="mostrar()" id="eye" class=" cursor-pointer relative top-10 material-symbols-outlined">
-visibility
-</span>
+              <div class=" flex justify-end relative">
+                                    <i class="fa fa-eye-slash absolute bottom-6 right-6 cursor-pointer" aria-hidden="true"  onclick="mostrar()" class="icon" id="eye" class=""></i>    
                             </div>
+                           
              
 								
 								</div>

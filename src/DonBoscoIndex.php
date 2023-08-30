@@ -27,32 +27,19 @@ $carpet_images = "../img/";
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <title>Noticias Don Bosco </title>
   <link rel="stylesheet" href="./css/ProfileImage.css">
-  <style>
-    div iframe {
-      display: none !important;
-    }
-
-    body {
-      top: 0 !important;
-    }
-
-    :root {
-      --breakpoint: 768px;
-      /* Valor predeterminado del breakpoint */
-    }
-  </style>
 
 </head>
 
 <body>
 
-<nav class="flex items-center   bg-gray-800 p-3 flex-wrap">
+      <nav class="flex items-center bg-blue-900 p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
           >Astrum Salesianum</span
         >
       </a>
+  
       <button
         class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
         data-target="#navigation"
@@ -60,52 +47,46 @@ $carpet_images = "../img/";
         <i class="material-icons">menu</i>
       </button>
       <div
-        class=" hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
         id="navigation"
       >
         <div
-          class="flex justify-between items-center lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center lg:h-auto pr-12"
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
         >
           <a
             href="./newindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span>Home</span>
+            <span  >Home</span>
           </a>
           <a
             href="./ChalecoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span>Chaleco</span>
+            <span  >Chaleco</span>
           </a>
           <a
             href="./Ricalindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span>Ricaldone</span>
           </a>
           <a
-            href="./DonBoscoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Don Bosco</span>
-          </a>
-          <a
             href="./MariaIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span>Maria</span>
           </a>
        
+    
         </div>
-       
         <div class="imagen-circular hidden lg:block" >
         <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="">
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
                   </div>
-                
       </div>
     </nav>
+  
 
   <!-- component -->
   <div class=" text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
