@@ -124,7 +124,7 @@ include("./PHP/InsertRegistro.php");?>
                         </div>
                         <div class="mt-4">
                             <label for="PhoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Numero Telefonico</label>
-                            <input id="PhoneNumber" required maxlength="14" minlength="13" value="<?php echo "+503 ".$defaultPhoneNumber; ?>"
+                            <input id="PhoneNumber" required  maxlength="9" minlength="8" value="<?php echo $defaultPhoneNumber; ?>"
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                                 type="tel" name="PhoneNumber" >
                         </div>
@@ -134,7 +134,7 @@ include("./PHP/InsertRegistro.php");?>
                                 <p><label class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label></p>
                             <br> 
                             </div>
-                            <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
+                            <i> <h6>Debe tener  8 caracteres, una  mayúscula y un número*</h6></i>
                             <input required id="contraseña"
                             
                                 class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none absolute"

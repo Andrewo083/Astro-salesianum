@@ -21,9 +21,10 @@ $result = mysqli_query($conexion, $query);
 
 if ($result) {
   if (mysqli_num_rows($result) > 0) {
+    $stateTable ="";
     // Resto del código para mostrar los comentarios
   } else {
-    echo "No hay comentarios.";
+   $stateTable = "No hay comentarios aún.";
   }
 } else {
   echo "Error en la consulta: " . mysqli_error($conexion);
@@ -117,6 +118,7 @@ if ($result) {
             <!-- Top bar -->
 
             <?php
+            echo "<h1>".$stateTable."</h1>";
                   while ($row = mysqli_fetch_array($result)) {
                   ?>
                    <?php 

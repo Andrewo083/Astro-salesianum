@@ -246,7 +246,7 @@ if (!$conexion) {
                         
                         <li class="flex border-b py-2">
                             <span class="font-bold w-24 pr-4">Numero:</span>
-                            <input type="tel"  class="text-gray-700 w-full " minlength="13" maxlength="14" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
+                            <input type="tel"  class="text-gray-700 w-full " minlength="8"  maxlength="9" name="PhoneNumber" id="PhoneNumber" value="<?php echo $row['PhoneNumber']?>" 
                            ><label for="PhoneNumber">
                               <span class="material-symbols-outlined w-full">
                                 edit

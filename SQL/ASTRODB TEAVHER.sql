@@ -102,7 +102,7 @@ CREATE TABLE `reporter` (
 --
 
 INSERT INTO `reporter` (`Email`, `ProfileImage`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES
-('Ketut@astro.sv', 'Ketut@astro.sv.png', '123', 'Katut', 'Subiyanto', '+503 7514-8248', 2);
+('Ketut@astro.sv', 'Ketut@astro.sv.png', '123', 'Katut', 'Subiyanto', '  7514-8248', 2);
 
 -- --------------------------------------------------------
 
@@ -125,8 +125,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Email`, `Name`, `LastName`, `Password`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES
-('ediwn.platero@gmail.com', 'Edwin', 'Platero Platero', '123', '+503 7849-6354', 3, ''),
-('rubencitonieto005@gmail.com', 'Ruben Alexander', 'Nieto', '123', '+503 75148248', 3, 'lawyer2.png'),
+('ediwn.platero@gmail.com', 'Edwin', 'Platero Platero', '123', '  7849-6354', 3, ''),
+('rubencitonieto005@gmail.com', 'Ruben Alexander', 'Nieto', '123', '  75148248', 3, 'lawyer2.png'),
 ('Salesiano@astro.sv', 'Astro ', 'Salesianum Administration', '123', '-', 1, 'AstroFavicon.png'),
 ('w', 'Rubén Alexander', 'Nieto', '123', '7763', 3, '');
 

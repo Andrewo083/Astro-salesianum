@@ -1,6 +1,8 @@
 <?php 
 session_start();
 
+include("");
+
 if($_SESSION['ROL'] != 1){  
   header("Location: ./Error.php");  
   
@@ -132,7 +134,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Numero de telefono<abbr title="required"></abbr></label>
-								<input value="<?php echo $RowReporter['PhoneNumber'] ?>" maxlength="14" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="PhoneNumber" id="integration_shop_name">
+								<input value="<?php echo $RowReporter['PhoneNumber'] ?>"  maxlength="9" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="PhoneNumber" id="integration_shop_name">
 								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
 							</div>
 						</div>
@@ -147,7 +149,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 							<div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
 								<div class="w-full flex flex-col mb-3">
 									<label class="font-semibold text-gray-600 py-2">Contraseña</label>
-                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un carácter especial*</h6></i>
+                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un número* *</h6></i>
 									<input value="<?php echo $RowReporter['Password'] ?>" placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="Password" 
 
                                     name="Password" 
