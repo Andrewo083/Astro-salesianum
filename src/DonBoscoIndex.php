@@ -77,6 +77,9 @@ $carpet_images = "../img/";
           >
             <span>Maria</span>
           </a>
+          <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <span><b>Mi Perfil</b></span>
+                  </a>
        
     
         </div>
