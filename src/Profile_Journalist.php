@@ -50,9 +50,11 @@ while ($row = mysqli_fetch_array($result)) {
     <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Reportero</title>
+    <link rel="stylesheet" href="../Public/menu.css">
     <link rel="stylesheet" href="../Public/tailwind.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-      <link rel="stylesheet" href="./css/Translate.css"><link rel="stylesheet" href="../Public/boton.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -71,55 +73,72 @@ while ($row = mysqli_fetch_array($result)) {
         }
     </style>
   </head>
-
+  
   <body>
 
     <!-- component -->
     <div>
-      <section class="relative mx-auto">
+     
         <!-- navbar -->
-        <nav class="flex justify-between bg-gray-900 text-white ">
-          <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-          <a href="./newindex.php">
-            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
-                <a class="text-3xl font-bold font-heading" href="./newindex.php">
-               
-                <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-               Astro Salesianum
-                </a>
-                <!-- Nav Links -->
-                <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-                <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
-                <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
-                <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
-                <li><a  href="./MariaIndex.php" class="hover:text-gray-200" href="#">Maria axuliadora</a></li>
-                </ul>
-              
-           
-            <!-- Header Icons -->
-            <div class=" xl:flex items-center space-x-3 ">
-           
-              <!-- Sign In / Register      -->
-              <a
-                href="./PHP/Logout.php"
-                class="bg-black text-white p-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col "
-                >Cerrar Sesion</a
-              >
-
-            </div>
-          </div>
-          <!-- Responsive navbar -->
-          <a class="xl:hidden flex mr-6 items-center" href="#">
-
-
+        <nav class="flex items-center bg-black p-3 flex-wrap">
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astrum Salesianum</span
+        >
+      </a>
+  
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Home</span>
           </a>
-          <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-            </svg>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Chaleco</span>
           </a>
-        </nav>
+          <a
+            href="./Ricalindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Ricaldone</span>
+          </a>
+          <a
+            href="./MariaIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Maria</span>
+          </a>
+          
+          <a
+            href="./PHP/Logout.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>CERRAR SESION</b></span>
+          </a>
+    
+        </div>
+        
+
+       
+      </div>
+    </nav>
 
       </section>
     </div>
@@ -154,7 +173,7 @@ while ($row = mysqli_fetch_array($result)) {
         <!-- Aquí colocas la URL de la imagen -->
         <img src="../img/<?php echo $row['ProfileImage'] ?>" alt="Imagen Circular">
         </button>
-        <div
+        <div style="display: none;"
         x-show="open"
         x-transition:enter="ease-out duration-300"
         x-transition:enter-start="opacity-0"
@@ -415,6 +434,19 @@ imagde1.addEventListener('change', function() {
   }
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $(".nav-toggler").each(function(_, navToggler) {
+        var target = $(navToggler).data("target");
+        $(navToggler).on("click", function() {
+          $(target).animate({
+            height: "toggle"
+          });
+        });
+      });
+    });
+  </script>
 <?php 
 
 ?>

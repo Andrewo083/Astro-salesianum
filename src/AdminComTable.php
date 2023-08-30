@@ -45,55 +45,82 @@ if ($result) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Public/boton.css">
   <link rel="stylesheet" href="./css/Translate.css">
-  <title>Astro Administrador </title>
+  <link rel="stylesheet" href="../Public/menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>  <link rel="stylesheet" href="../Public/boton.css">
+  <title>Astro ADMIN </title>
 </head>
 
 <body class="w-full h-screen  bg-cover " style="background-image: url('../img/bg_4.jpg');">
   <div>
     <section class="relative mx-auto">
       <!-- navbar -->
-      <nav class="flex justify-between bg-black text-white ">
-        <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <a href="./WelcomeAdmin.php">
-            <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
-
-          <a class="text-3xl font-bold font-heading" href="../src/welcomeAdmin.php">
-            <!-- <img class="h-9" src="logo.png" alt="logo"> -->
-            Astro <b>Administrador</b> 
+      <nav class="flex items-center bg-gray-900 p-3 flex-wrap">
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astro <b>ADMIN</b></span
+        >
+      </a>
+  
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Home</span>
           </a>
-          <!-- Nav Links -->
-          <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-            <li><a href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
-            <li><a href="./welcomeAdmin.php" class="hover:text-gray-200">Administracion</a></li>
-            <li><a href="./AdminJourTable.php" class="hover:text-gray-200" >Periodistas</a></li>
-            <li><a href="./AdminNewsTable.php" class="hover:text-gray-200" href="#">Noticias</a></li>
-            <li><a href="./AdminComTable.php" class="hover:text-gray-200" href="#">Comentarios</a></li>
-          </ul>
-          <!-- Header Icons -->
-          <div class="hidden xl:flex items-center space-x-5 ">
-            <a class="hover:text-gray-200" href="#">
-
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-              <a>
-                <a class="flex items-center hover:text-gray-200" href="#">
-
-                </a>
-                <!-- Sign In / Register      -->
-                <a href="./PHP/Logout.php" class="bg-black text-white p-3 m-3 font-semibold  cursor-pointer rounded hover:bg-white hover:text-black ease-in duration-200 flex-col ">Cerrar Sesion</a>
-          </div>
+          <a
+            href="./welcomeAdmin.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Administracion</span>
+          </a>
+          <a
+            href="./AdminJourTable.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Periodistas</span>
+          </a>
+          <a
+            href="./AdminNewsTable.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Noticias</span>
+          </a>
+          <a
+            href="./AdminComTable.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Comentarios</span>
+          </a>
+          <a
+            href="./PHP/Logout.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>CERRAR SESION</b></span>
+          </a>
+          
+       
+    
         </div>
-        <!-- Responsive navbar -->
-        <a class="xl:hidden flex mr-6 items-center" href="#">
-
-
-        </a>
-        <a class="navbar-burger self-center mr-12 xl:hidden" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-          </svg>
-        </a>
-      </nav>
+        
+                 
+      </div>
+    </nav>
 
     </section>
   </div>
@@ -170,3 +197,17 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 
 </html>
 <?php }?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+  $(".nav-toggler").each(function(_, navToggler) {
+    var target = $(navToggler).data("target");
+    $(navToggler).on("click", function() {
+      $(target).animate({
+        height: "toggle"
+      });
+    });
+  });
+});
+
+</script>

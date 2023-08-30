@@ -40,6 +40,8 @@ while ($row = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Publica tu noticia!</title>
     <link rel="stylesheet" href="../Public/boton.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -56,7 +58,68 @@ while ($row = mysqli_fetch_array($result)) {
         }
     </style>
 </head>
-<body>
+<body><nav class="flex items-center bg-black p-3 flex-wrap">
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astrum Salesianum</span
+        >
+      </a>
+  
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Home</span>
+          </a>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Chaleco</span>
+          </a>
+          <a
+            href="./Ricalindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Ricaldone</span>
+          </a>
+          <a
+            href="./MariaIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Maria</span>
+          </a>
+          
+          <a
+            href="./<?php include "./PHP/RestrictAncleRol.php" ?>"
+            class=" lg:hidden block  lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>Mi Perfil</b></span>
+          </a>
+          <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <div class="imagen-circular hidden lg:block" >
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
+                  </div>
+                  </a>
+    
+        </div>
+         </div>
+    </nav>
   
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
         <div class="bg-indigo-50 min-h-screen md:px-20 sm:pt-6">
@@ -200,5 +263,19 @@ while ($row = mysqli_fetch_array($result)) {
 <script> 
     function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+  $(".nav-toggler").each(function(_, navToggler) {
+    var target = $(navToggler).data("target");
+    $(navToggler).on("click", function() {
+      $(target).animate({
+        height: "toggle"
+      });
+    });
+  });
+});
+
+</script>
     
     

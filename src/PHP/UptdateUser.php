@@ -24,7 +24,7 @@ $Password = mysqli_real_escape_string($conexion, $Password);
 // Verificar si el correo electrónico contiene un punto en el dominio
 if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
     // Verificar si la contraseña cumple con los requisitos
-    if (strlen($Contraseña) >= 8 && preg_match("/[A-Z]/", $Contraseña) && preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $Contraseña)) {
+    if (strlen($Password) >= 8 && preg_match("/[A-Z]/", $Password) && preg_match("/[0-9]/", $Password)) {
         // Verificar si hay algún cambio en los campos
         $SQL = "SELECT * FROM `user` WHERE Email = '$ID'";
         $result = mysqli_query($conexion, $SQL);
@@ -52,16 +52,15 @@ if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
             }
         } else {
             echo "<script>
-                    var noChanges = alert('No hay cambios en los datos');
-                    if (noChanges) {
-                        window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
-                    } else {
-                        window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php'; // Cambiar la URL según sea necesario
-                    }
+                    alert('No hay cambios en los datos.');
+                    window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
                   </script>";
         }
     } else {
-        header("Location: ../Error.php");
+        echo "<script>
+                alert('La contraseña debe contener al menos una letra mayúscula y un número.');
+                window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
+              </script>";
     }
 } else {
     header("Location: ../Error.php");
@@ -69,4 +68,3 @@ if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
 
 mysqli_close($conexion);
 ?>
-

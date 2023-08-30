@@ -75,43 +75,50 @@ function editar($conexion) {
             $lastname = $_POST['LastName'];
             $phonenumber = $_POST['PhoneNumber'];
     
-            $queryVerif = "SELECT * FROM `reporter` WHERE `Email`  = '$email'";
-            $resultVerif = mysqli_query($conexion, $queryVerif);
-            $row = mysqli_fetch_assoc($resultVerif);
-    
-            $updateNeeded = false;
-            if (
-                $email != $row['Email'] ||
-                $password != $row['Password'] ||
-                $name != $row['Name'] ||
-                $lastname != $row['LastName'] ||
-                $phonenumber != $row['PhoneNumber']
-            ) {
-                $updateNeeded = true;
-            } else {
+            // Validación de contraseña
+            if (strlen($password) >= 8 && preg_match("/[A-Z]/", $password) && preg_match("/[0-9]/", $password)) {
+                $queryVerif = "SELECT * FROM `reporter` WHERE `Email`  = '$email'";
+                $resultVerif = mysqli_query($conexion, $queryVerif);
+                $row = mysqli_fetch_assoc($resultVerif);
+        
                 $updateNeeded = false;
-            }
-    
-            if ($updateNeeded == false) {
-                echo "<script>
-                var noChanges = alert('No hay cambios en los datos');
-                if (noChanges) {
-                    window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
+                if (
+                    $email != $row['Email'] ||
+                    $password != $row['Password'] ||
+                    $name != $row['Name'] ||
+                    $lastname != $row['LastName'] ||
+                    $phonenumber != $row['PhoneNumber']
+                ) {
+                    $updateNeeded = true;
                 } else {
-                    window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
+                    $updateNeeded = false;
                 }
-                </script>";
+        
+                if ($updateNeeded == false) {
+                    echo "<script>
+                    var noChanges = alert('No hay cambios en los datos');
+                    if (noChanges) {
+                        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
+                    } else {
+                        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
+                    }
+                    </script>";
+                } else {
+                    $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
+            
+                    mysqli_query($conexion, $query);
+            
+                    include("./Wait.html");
+                    // Redirigir después de 2 segundos
+                    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                }
             } else {
-                $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
-    
-                mysqli_query($conexion, $query);
-    
-                include("./Wait.html");
-                // Redirigir después de 2 segundos
-                header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                echo '<script>alert("La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres.");</script>';
+                echo "<script>window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';</script>";
             }
         } else {
             echo '<script>alert("El correo electrónico no es válido");</script>';
+            echo "<script>window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';</script>";
         }
     }
     
@@ -119,6 +126,7 @@ function editar($conexion) {
     $conexion->close();
     
 }
+
 
 
 

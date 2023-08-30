@@ -50,112 +50,83 @@ $name = $_SESSION['Name'];
   <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroSalesianum News</title>
-  <link rel="stylesheet" href="../Public/tailwind.css">
-  <link rel="stylesheet" href="./css/Translate.css">
+  <link rel="stylesheet" href="../Public/tailwind.css" />
+
+  <link rel="stylesheet" href="../Public/menu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
   <!--LINK DEL CSSS-->
   <link rel="stylesheet" href="../Public/boton.css">
 </head>
 <body>
   
-  <div class="flex w-full">
-    <div class="flex w-2/5 md:w-1/4 h-screen bg-white transition-all ease-in duration-300" id="slide">
-      <div class="mx-auto py-10">
+  
 
 
 
-        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-gray-700 duration-150">
-
-          Astro Salesianum
-        </h1>
-
-
-        <ul>
-          <li class="flex space-x-2 mt-10 ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            <span class="font-semibold cursor-pointer ">¡Bienvenido <b><?php echo $name; ?></b>!</span>
-          </li>
-          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            <a href="./<?php
-
-                        include "./PHP/RestrictAncleRol.php"
-
-                        ?>
-                            ">
-                              <span class="font-semibold">
-                                Ver tu perfil
-                              </span>
-                            </a>
-                          </li>
-                       
-                        
-                         
-                          <a href="./PHP/Logout.php"><button class="w-full mt-10 bg-gray-700 rounded-full py-1.5 text-white">Salir</button></a>
-                        </ul>
-                      </div>
-                    </div>
-
-
-
-                    <main class=" min-h-screen w-full">
-                      <nav class="flex justify-center px-10 bg-white py-6" id="menuu">
-
-                       
-                        <div class="flex items-center ">
-                        
-                          <a href="#">
-                            <img class="w-auto h-24 hidden" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" id="img">
-                            
-                        </a>
-            
-                        </div>
-                        <div class="flex items-center justify-center  px-4 py-2 rounded-md space-x-3">
-                          <ul class="flex items-center flex-shrink-0 space-x-6">
-                            <!-- Profile menu -->
-                            <li class="relative ">
-                              <a href="./DonBoscoIndex.php">
-                              <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Bosco.png" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
-                              </button>
-                            </a>
-                            </li>
-              
-                                   <li class="lative">
-                                    <a href="./Ricalindex.php">
-                              <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Rical.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
-                              </button>
-                            </a>
-                            </li>
-              
-                                   <li class="relative">
-                                    <a href="./ChalecoIndex.php">
-                              <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Cecilia.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
-                              </button>
-                              </a>
-                            </li>
-              
-                                   <li class="relative">
-                                    <a href="./MariaIndex.php">
-                              <button class="align-middle rounded-full border-2 border-gray-300 shadow-lg  focus:shadow-outline-purple focus:outline-none">
-                                <img class="object-cover w-10 h-10 rounded-full hover-image-1 flex-shrink-0" src="../img/Maria.jpg" Alt="Imagen representativa de Noticias Astro Salesianum" aria-hidden="true">
-                              </button>
-                              </a>
-                            </li>
-              
-                               
-              
-                          </ul>
-                        </div>
-
-                        
-                  
-                      </nav>
+<nav class="flex items-center bg-black p-3 flex-wrap">
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astrum Salesianum</span
+        >
+      </a>
+  
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Home</span>
+          </a>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Chaleco</span>
+          </a>
+          <a
+            href="./Ricalindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Ricaldone</span>
+          </a>
+          <a
+            href="./MariaIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Maria</span>
+          </a>
+          
+          <a
+            href="./<?php include "./PHP/RestrictAncleRol.php" ?>"
+            class=" lg:hidden block  lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>Mi Perfil</b></span>
+          </a>
+          <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <div class="imagen-circular hidden lg:block" >
+        <!-- Aquí colocas la URL de la imagen -->
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
+                  </div>
+                  </a>
+    
+        </div>
+         </div>
+    </nav>
                       <form action="" method="post">
                        
                       <?php 
@@ -276,20 +247,21 @@ if(isset($_POST['Special'])){
 
 
                       <section class="my-8">
-                              <div class="container mx-auto px-6">
-                   
-                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
-                                      <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                                          <div class="px-10 max-w-xl">
-                                              <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
-                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
-                                              <button name="Special" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                                  <span>Ver noticias</span>
-                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                                  </button>
-                                          </div>
-                                      </div>
-                                  </div>
+                      <div class="container mx-auto px-6">
+    <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
+        <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+            <div class="px-4 md:px-10 max-w-xl text-center md:text-left"> <!-- Añadido 'text-center' para centrar el contenido en pantallas pequeñas -->
+                <h2 class="text-2xl md:text-3xl text-white font-semibold">Eventos especiales</h2>
+                <p class="mt-2 text-gray-100">¡Aquí puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
+                <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                <button name="Special" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <span>Ver noticias</span>
+                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
                            
                                   <div class="md:flex mt-8 md:-mx-4">
 
@@ -490,7 +462,32 @@ while($row = mysqli_fetch_array($result)){
                     let slide = document.getElementById("slide")
                     let img = document.getElementById('img')
                     let menuu = document.getElementById('menuu')
+                    
+                    if (window.innerWidth <= 500){
+                      slide.classList.add("hidden")
+                      img.classList.remove("hidden")
+                      slide.classList.add("fixed")
+                      slide.classList.add("px-4")
+                      slide.classList.add("z-[100]")
+                      slide.classList.add("w-[150px]")
+                      slide.classList.add("px-4")
+                      menuu.classList.add("flex-col")
+                      menuu.classList.add("justify-center")
+                      
+  
+                    }else{
+                      //slide.classList.remove("hidden")
+                      //img.classList.add("hidden")
+                      //slide.classList.remove("fixed")
+                      //slide.classList.remove("px-4")
+                      //slide.classList.remove("z-[100]")
+                      //slide.classList.remove("w-[150px]")
+                      //slide.classList.remove("px-4")
+                      //menuu.classlist.remove("")
+                    }
+                    
                     slide.addEventListener('click', () => {
+                     
                       slide.classList.add("left-[-500px]")
                       slide.classList.add("absolute")
                       img.classList.remove('hidden')
@@ -499,6 +496,10 @@ while($row = mysqli_fetch_array($result)){
                     });
 
                     img.addEventListener('click', () => {
+                      if (window.innerWidth <= 500) {
+                        slide.classList.remove("hidden")
+
+                      }
                       slide.classList.remove("left-[-500px]")
                       slide.classList.remove("absolute")
                       img.classList.add('hidden')
@@ -506,6 +507,7 @@ while($row = mysqli_fetch_array($result)){
                       menuu.classList.add('justify-center')
                       menuu.classList.remove('justify-between')
                     });
+
 
                   </script>
 
@@ -564,5 +566,18 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 </footer>
                  
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+  $(".nav-toggler").each(function(_, navToggler) {
+    var target = $(navToggler).data("target");
+    $(navToggler).on("click", function() {
+      $(target).animate({
+        height: "toggle"
+      });
+    });
+  });
+});
 
+</script>
 </html>
