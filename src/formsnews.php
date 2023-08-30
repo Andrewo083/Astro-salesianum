@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_array($result)) {
 <body>
   
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
-        <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
+        <div class="bg-indigo-50 min-h-screen md:px-20 sm:pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Subir Noticia</h1>
             <div class="space-y-4">
@@ -97,25 +97,27 @@ while ($row = mysqli_fetch_array($result)) {
                 
 
               </label>
-              <div>
+              <div class="w-full p-4">
+              <div class="p-2">
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input required value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                
+                <input required value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md" />
+                
               </div>
-              <div>
+              <div class="p-2">
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
-                <input required maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md"  />
               </div>
-              <div>
+              <div class="p-2">
                 <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
-                <input required maxlength="75"  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required maxlength="75"  type="text"  id="drophead" name="drophead" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md"  />
               </div>
-              <div>
+              <div class="p-2">
                 <label for="date" class="text-2lx font-bold text-gray-500" >Fecha</label>
-                <input required  type="date"  id="date" name="date" max="<?php echo date('Y-m-d'); ?>" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input required  type="date"  id="date" name="date" max="<?php echo date('Y-m-d'); ?>" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md"  />
               </div>
 
-
-
+    </div>
 
 
 
