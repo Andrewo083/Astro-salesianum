@@ -114,8 +114,11 @@ $result = mysqli_query($conexion, $query);
     
         </div>
         <div class="imagen-circular hidden lg:block" >
+        <a
+            href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="">
+        </a>
                   </div>
       </div>
     </nav>
