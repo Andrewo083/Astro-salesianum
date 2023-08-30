@@ -62,7 +62,7 @@ while ($row = mysqli_fetch_array($result)) {
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astrum Salesianum</span
+          >Astro Salesianum</span
         >
       </a>
   
@@ -242,7 +242,7 @@ while ($row = mysqli_fetch_array($result)) {
               <img class="w-auto h-14" src="../img/AstroFavicon.png" alt="">
           </a>
 
-          <p class="max-w-md mx-auto mt-4 text-white">Astrum Salesianum</p>
+          <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
 
           <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
              
