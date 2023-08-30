@@ -141,7 +141,7 @@ if ($result) {
 
           <!-- Chat content -->
           
-          <div class="flex-1 flex flex-col bg-gray-100 overflow-hidden container mx-auto px-6 shadow-xl  pl-10  rounded-lg sm:py-2">
+          <div class="flex-1 flex flex-col bg-gray-100 overflow-hidden container mx-auto px-0 shadow-xl  pl-10  rounded-lg sm:py-0">
             <!-- Top bar -->
 
             <?php

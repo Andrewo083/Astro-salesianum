@@ -142,7 +142,7 @@ $query = mysqli_query($conexion, $sql);
 
 
                       <div class="mt-0 mr-0 mb-0 ml-4 flex-1 min-w-0">
-                        <p class="text-lg font-bold text-white truncate"> <?php echo $row['Email'] ?> </p>
+                        <p class="text-lg font-bold text-gray-900 truncate"> <?php echo $row['Email'] ?> </p>
                         <p class="text-gray-400 text-md">Periodista</p>
                       </div>
                     </div>
