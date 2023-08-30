@@ -5,7 +5,7 @@ $conexion = new mysqli("localhost", "root", "", "astrodb") or die(mysqli_error($
 if (!$conexion) {
     die("Error en la conexion" . mysqli_connect_error());
 }
-
+$defaultEmail = isset($_POST['Email']) ? $_POST['Email'] : '';
 // Verificamos si el formulario de inicio de sesión fue enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener el correo y la contraseña ingresados en el formulario
@@ -201,7 +201,7 @@ $conexion->close();
 
                         <div class="mt-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Correo</label>
-                            <input required class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email" id="email">
+                            <input required value="<?php echo $defaultEmail?>" class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name="Email" id="email">
                         </div>
                         <div class="mt-4 relative">
                             <div class="flex justify-between">
