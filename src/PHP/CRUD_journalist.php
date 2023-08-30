@@ -112,6 +112,7 @@ function editar($conexion) {
             }
         } else {
             echo '<script>alert("El correo electrónico no es válido");</script>';
+            echo "<script>window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';</script>";
         }
     }
     
