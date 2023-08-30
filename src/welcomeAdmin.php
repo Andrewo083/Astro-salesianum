@@ -33,7 +33,7 @@ if(isset($_SESSION['ROL'])){
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astrum Salesianum</span
+          >Astro <b>ADMINISTRADOR</b></span
         >
       </a>
   
@@ -57,6 +57,12 @@ if(isset($_SESSION['ROL'])){
             <span  >Home</span>
           </a>
           <a
+            href="./welcomeAdmin.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Administracion</span>
+          </a>
+          <a
             href="./AdminJourTable.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
@@ -74,14 +80,18 @@ if(isset($_SESSION['ROL'])){
           >
             <span>Comentarios</span>
           </a>
+          <a
+            href="./PHP/Logout.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>CERRAR SESION</b></span>
+          </a>
           
        
     
         </div>
-        <div class="imagen-circular hidden lg:block" >
-        <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
-                  </div>
+        
+              
       </div>
     </nav>
 

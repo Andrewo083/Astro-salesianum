@@ -77,13 +77,18 @@ $carpet_images = "../img/";
           >
             <span>Maria</span>
           </a>
+          <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <span><b>Mi Perfil</b></span>
+                  </a>
        
     
         </div>
+        <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <div class="imagen-circular hidden lg:block" >
         <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
                   </div>
+                  </a>
       </div>
     </nav>
   
