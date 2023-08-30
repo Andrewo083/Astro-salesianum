@@ -146,7 +146,7 @@ imagde1.addEventListener('change', function() {
         </div>
         
     <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
-        <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
+        <div class="bg-indigo-50 min-h-screen md:px-20 sm:pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Edita Tu Noticia</h1>
             <div class="space-y-4">
@@ -180,26 +180,27 @@ imagde1.addEventListener('change', function() {
               </div> 
 
             <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
-              <div>
+            <div class="w-full p-4">
+              <div class="p-2">
                 <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
-                <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
-              <div>
+              <div class="p-2">
                 <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
-                <input maxlength="70" type="text" value="<?php echo $row['headline']; ?>"  id="headline" name="headline" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input maxlength="70" type="text" value="<?php echo $row['headline']; ?>"  id="headline" name="headline" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
-              <div>
+              <div class="p-2">
                 <label for="drophead" class="text-2lx font-bold text-gray-500">Encabezado</label>
-                <input maxlength="75"  type="text" value="<?php echo $row['drophead']; ?>" id="drophead" name="drophead" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input maxlength="75"  type="text" value="<?php echo $row['drophead']; ?>" id="drophead" name="drophead" class="ml-2 outline-none py-1 px-30  sm:px-40 text-md border-2 rounded-md"  />
               </div>
-              <div>
+              <div class="p-2">
                 <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  id="date" name="date" class="ml-2 outline-none py-1 px-40 text-md border-2 rounded-md"  />
+                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  id="date" name="date" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
 
 
 
-
+</div>
 
 
               <div>
@@ -248,8 +249,9 @@ imagde1.addEventListener('change', function() {
                     </select>
                 </div>    
               </div>
+              <div class="pt-4">
            <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="ACTUALIZAR" name="edit">
-              
+              </div>
             </div>
           </div>
         </div>
