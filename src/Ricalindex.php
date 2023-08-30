@@ -27,6 +27,7 @@ $result = mysqli_query($conexion, $query);
     <title>Noticias Ricaldone</title>
     <link rel="stylesheet" href="./css/ProfileImage.css">
     <link rel="stylesheet" href="./css/Translate.css">
+    <link rel="stylesheet" href="../Public/menu.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <link rel="stylesheet" href="../Public/boton.css">
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

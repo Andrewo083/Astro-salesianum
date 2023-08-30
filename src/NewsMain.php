@@ -22,6 +22,7 @@ while ($row = mysqli_fetch_array($result)) {
     <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $row['headline'] ?></title>
+    <link rel="stylesheet" href="../Public/menu.css">
     <link rel="stylesheet" href="../Public/tailwind.css">
      <link rel="stylesheet" href="./css/ProfileImage.css">
      <link rel="stylesheet" href="./css/Translate.css">

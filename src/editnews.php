@@ -29,6 +29,7 @@ while($row = mysqli_fetch_array($result)){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="../Public/menu.css">
 <link rel="stylesheet" href="../Public/boton.css">
   <script >
     const imagde1 = document.getElementById('imagde1');
