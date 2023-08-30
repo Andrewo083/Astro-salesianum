@@ -32,7 +32,7 @@ $query = mysqli_query($conexion, $sql);
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="./css/Translate.css">
-  <title>Astro Administrador </title>
+  <title>Astro ADMIN </title>
 </head>
 
 <body class=" bg-cover w-full h-full" style="background-image: url('../img/bg_4.jpg');">
@@ -43,7 +43,7 @@ $query = mysqli_query($conexion, $sql);
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astro <b>ADMINISTRADOR</b></span
+          >Astro <b>ADMIN</b></span
         >
       </a>
   
@@ -85,7 +85,7 @@ $query = mysqli_query($conexion, $sql);
             <span>Noticias</span>
           </a>
           <a
-            href="./MariaIndex.php"
+            href="./AdminComTable.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span>Comentarios</span>

@@ -21,7 +21,7 @@ if(isset($_SESSION['ROL'])){
     <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../Public/tailwind.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro Administrador </title>
+    <title>Astro ADMIN </title>
     <link rel="stylesheet" href="../Public/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
 
@@ -33,7 +33,7 @@ if(isset($_SESSION['ROL'])){
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astro <b>ADMINISTRADOR</b></span
+          >Astro <b>ADMIN</b></span
         >
       </a>
   
@@ -75,7 +75,7 @@ if(isset($_SESSION['ROL'])){
             <span>Noticias</span>
           </a>
           <a
-            href="./MariaIndex.php"
+            href="./AdminComTable.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span>Comentarios</span>
@@ -102,7 +102,7 @@ if(isset($_SESSION['ROL'])){
       <div class="-mt-64 ">
         <div class="w-full text-center">
             <h1 class="font-bold text-5xl text-black">
-                Administrador
+                ADMIN
             </h1>
           <p class="text-sm tracking-widest  text-gray-700">¿Que desea hacer?</p>
         </div>

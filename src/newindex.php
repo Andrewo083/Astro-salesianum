@@ -65,7 +65,7 @@ $name = $_SESSION['Name'];
 
 
 
-<nav class="flex items-center bg-gray-900 p-3 flex-wrap">
+<nav class="flex items-center bg-black p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -93,13 +93,6 @@ $name = $_SESSION['Name'];
             <span  >Home</span>
           </a>
           <a
-            href="./DonBoscoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span  >Don Bosco</span>
-          </a>
-          
-          <a
             href="./ChalecoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
@@ -117,14 +110,22 @@ $name = $_SESSION['Name'];
           >
             <span>Maria</span>
           </a>
-       
-    
-        </div>
+          
+          <a
+            href="./<?php include "./PHP/RestrictAncleRol.php" ?>"
+            class=" lg:hidden block  lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>Mi Perfil</b></span>
+          </a>
+          <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <div class="imagen-circular hidden lg:block" >
         <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
                   </div>
-      </div>
+                  </a>
+    
+        </div>
+         </div>
     </nav>
                       <form action="" method="post">
                        

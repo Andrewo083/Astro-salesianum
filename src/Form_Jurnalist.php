@@ -41,7 +41,7 @@ if($_SESSION['ROL'] != 1){
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astro <b>ADMINISTRADOR</b></span
+          >Astro <b>ADMIN</b></span
         >
       </a>
   
@@ -83,7 +83,7 @@ if($_SESSION['ROL'] != 1){
             <span>Noticias</span>
           </a>
           <a
-            href="./MariaIndex.php"
+            href="./AdminComTable.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span>Comentarios</span>
