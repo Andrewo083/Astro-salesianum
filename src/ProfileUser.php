@@ -43,6 +43,7 @@ if ($_SESSION['ROL'] != 3) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Perfil Astro usuario</title>
       <link rel="stylesheet" href="../Public/tailwind.css">
+      <link rel="stylesheet" href="../Public/menu.css">
       <link rel="stylesheet" href="../Public/boton.css">
       <link rel="stylesheet" href="./css/ProfileImageUser.css">
       <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
