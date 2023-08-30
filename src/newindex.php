@@ -308,7 +308,7 @@ if(isset($_POST['Special'])){
 
       </form>
     <?php } else {
-          echo "-";
+          echo "";
           $sql_all = true;
           $sports = false;
 
