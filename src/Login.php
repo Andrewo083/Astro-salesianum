@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $Password = $_POST["Password"];
 
     // Consultas para seleccionar el correo, contraseña y nombre que coincidan con los ingresados para cada rol
-    $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND `Password` = '$Password'";
-    $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND `Password` = '$Password'";
+    $consultaRol2 = "SELECT * FROM `reporter` WHERE `Email` = '$Email' AND BINARY `Password` = '$Password'";
+    $consultaRol3 = "SELECT * FROM `user` WHERE `Email` = '$Email' AND BINARY `Password` = '$Password'";
 
     $resultadoRol2 = $conexion->query($consultaRol2);
     $resultadoRol3 = $conexion->query($consultaRol3);
