@@ -81,7 +81,7 @@ include("./PHP/InsertRegistro.php");?>
         </section>
 
         <!-- component -->
-        <div class="sm:p-44">
+        <div class="  p-4 sm:p-12">
             <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
                 <div class="hidden lg:block lg:w-1/2 bg-cover max-h-full"
                     style=" background-image:url('../img/ricaldepo.jpeg') "></div>
