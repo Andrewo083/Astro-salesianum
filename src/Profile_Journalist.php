@@ -114,7 +114,7 @@ while ($row = mysqli_fetch_array($result)) {
             <span  >Chaleco</span>
           </a>
           <a
-            href="./Don Bosco.php"
+            href="./DonBoscoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span  >Don Bosco</span>
@@ -344,10 +344,11 @@ while ($row = mysqli_fetch_array($result)) {
                           <a href="./editnews.php?new=<?php echo $new_row['id_news'] ?>" class="bg-gray-900 pt-1 pr-3 pb-1 pl-3 sm:pt-2 sm:pr-6 sm:pb-2 sm:pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Editar</a>
                           <form action="./PHP/CRUD_New.php" method="post">
-                           <a href="./PHP/deletenews.php?new=<?php echo $new_row['id_news']; ?>" type="submit"  name="delete" class="bg-red-800 pt-1 pr-3 pb-1 pl-3 sm:pt-2 sm:pr-6 sm:pb-2 sm:pl-6 text-lg font-medium text-gray-100 transition-all
+                           <a href="./PHP/ConfirmNewsbyReport.php?new=<?php echo $new_row['id_news']; ?>" type="submit"  name="delete" class="bg-red-800 pt-1 pr-3 pb-1 pl-3 sm:pt-2 sm:pr-6 sm:pb-2 sm:pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg" >Eliminar</a>
                           </form>
                           </div>
+                         
                           </div>
                       
                       </div>

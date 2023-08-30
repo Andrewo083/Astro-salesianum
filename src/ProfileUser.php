@@ -94,7 +94,7 @@ if ($_SESSION['ROL'] != 3) {
             <span  >Chaleco</span>
           </a>
           <a
-            href="./Don Bosco.php"
+            href="./DonBoscoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span  >Don Bosco</span>
@@ -311,7 +311,7 @@ if ($_SESSION['ROL'] != 3) {
                   </div>
 
                 </div>
-                <a href="./PHP/DeleteComments.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
+                <a href="./PHP/ConfirmCombyRepor.php?ID=<?php echo $rowCom['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-red-700 rounded-lg">Delete</a>
               </div><?php }
 

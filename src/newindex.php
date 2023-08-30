@@ -105,7 +105,7 @@ $name = $_SESSION['Name'];
             <span>Ricaldone</span>
           </a>
           <a
-            href="./Don Bosco.php"
+            href="./DonBoscoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
             <span  >Don Bosco</span>
