@@ -149,7 +149,7 @@ while ($row = mysqli_fetch_array($result)) {
         <!-- component -->
         
         <div class="container mx-auto px-6 py-6 text-center">
-          <div class="mx-44  py-10 ">
+          <div class="p-6">
             <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Noticias relacionadas</h1>
           </div>
           
@@ -204,13 +204,13 @@ $i++;
             </div>
           </section>
          
-            <div class="mx-44  py-10 ">
+            <div class="p-4 ">
               <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl">Comentanos!</h1>
             </div>
           
                 
                 		<!-- Chat content -->
-							<div class="flex-1  flex-col bg-gray-100 overflow-hidden container mx-auto px-6 shadow-xl  pl-10 flow-root rounded-lg sm:py-2">
+							<div class="flex-1  flex-col bg-gray-100 overflow-hidden container mx-auto px-6 shadow-xl  p-10 flow-root rounded-lg sm:py-2">
 								<!-- Top bar -->
                 
 
