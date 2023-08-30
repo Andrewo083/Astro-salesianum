@@ -99,7 +99,7 @@ CREATE TABLE `reporter` (
 --
 
 INSERT INTO `reporter` (`Email`, `ProfileImage`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES
-('Ketut@astro.sv', '', '1234', 'Katut', 'Barrientos', '+503 7514-8248', 2);
+('Ketut@astro.sv', '', '1234', 'Katut', 'Barrientos', '  7514-8248', 2);
 
 -- --------------------------------------------------------
 
@@ -123,12 +123,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`Email`, `Name`, `LastName`, `Password`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES
 ('', '', '', '', '', 3, 'lawyer2.png'),
-('cotuza@gmail.com', 'Cotuza', 'Feliz', 'cotuza123', '+503 77889900', 3, 'lawyer2.png'),
-('ediwn.platero@gmail.com', 'Edwin', 'Platero Platero', '123', '+503 7849-6354', 3, 'lawyer2.png'),
-('merinoventura123@gmail.com', 'Carlos Eduardo', ' Merino Ventura', '20110289C', '+503 79583464', 3, 'lawyer2.png'),
-('rubencitonieto005@gmail.com', 'Rubén Alexander', 'Nieto', '123', '+503 7763-565', 3, 'lawyer2.png'),
+('cotuza@gmail.com', 'Cotuza', 'Feliz', 'cotuza123', '  77889900', 3, 'lawyer2.png'),
+('ediwn.platero@gmail.com', 'Edwin', 'Platero Platero', '123', '  7849-6354', 3, 'lawyer2.png'),
+('merinoventura123@gmail.com', 'Carlos Eduardo', ' Merino Ventura', '20110289C', '  79583464', 3, 'lawyer2.png'),
+('rubencitonieto005@gmail.com', 'Rubén Alexander', 'Nieto', '123', '  7763-565', 3, 'lawyer2.png'),
 ('Salesiano@astro.sv', 'Astro ', 'Salesianum Administration', '123', '-', 1, 'lawyer2.png'),
-('vladi@gmail.com', 'Vladimir ', 'Penado', '123', '+503 75148248', 3, 'lawyer2.png'),
+('vladi@gmail.com', 'Vladimir ', 'Penado', '123', '  75148248', 3, 'lawyer2.png'),
 ('w', 'Rubén Alexander', 'Nieto', '123', '7763', 3, 'lawyer2.png');
 
 --

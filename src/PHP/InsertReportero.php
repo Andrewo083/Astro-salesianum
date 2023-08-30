@@ -26,7 +26,7 @@ move_uploaded_file($imagen_tmp, $url_main);
 // Verificar si el correo electrónico contiene un punto en el dominio
 if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
     // Verificar si la contraseña cumple con los requisitos
-    if (strlen($Contraseña) >= 8 && preg_match("/[A-Z]/", $Contraseña) && preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $Contraseña)) {
+    if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) && preg_match("/[0-9]/", $Contrasena))  {
         // Consulta SQL para buscar el correo en ambas tablas
         $consultaEmail = "SELECT Email FROM user WHERE Email = '$Email'
                           UNION

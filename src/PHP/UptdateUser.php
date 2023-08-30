@@ -24,7 +24,7 @@ $Password = mysqli_real_escape_string($conexion, $Password);
 // Verificar si el correo electrónico contiene un punto en el dominio
 if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
     // Verificar si la contraseña cumple con los requisitos
-    if (strlen($Password) >= 8 && preg_match("/[A-Z]/", $Password) && preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $Password)) {
+    if (strlen($Contraseña) >= 8 && preg_match("/[A-Z]/", $Contraseña) && preg_match("/[!@#$%^&*()\-_=+{};:,<.>]/", $Contraseña)) {
         // Verificar si hay algún cambio en los campos
         $SQL = "SELECT * FROM `user` WHERE Email = '$ID'";
         $result = mysqli_query($conexion, $SQL);
