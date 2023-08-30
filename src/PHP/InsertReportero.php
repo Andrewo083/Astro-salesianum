@@ -26,7 +26,7 @@ move_uploaded_file($imagen_tmp, $url_main);
 // Verificar si el correo electrónico contiene un punto en el dominio
 if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
     // Verificar si la contraseña cumple con los requisitos
-    if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) && preg_match("/[0-9]/", $Contrasena))  {
+    if (strlen($Contraseña) >= 8 && preg_match("/[A-Z]/", $Contraseña) && preg_match("/[0-9]/", $Contraseña))  {
         // Consulta SQL para buscar el correo en ambas tablas
         $consultaEmail = "SELECT Email FROM user WHERE Email = '$Email'
                           UNION
@@ -37,24 +37,22 @@ if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@"))
 
         // Verificar si el correo ya fue utilizado
         if ($resultadoEmail->num_rows > 0) {
-            echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.location.href = "../Form_Jurnalist.php";</script>';
+            echo '<script>alert("¡El correo electrónico ya está registrado!, por favor utiliza otro"); window.history.back();</script>';
         } else {
             // Insertar los datos en la tabla correspondiente
             $sql = "INSERT INTO `reporter`(`ProfileImage`,`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`) VALUES ('$imagen','$Email','$Contraseña','$Name','$LastName','$PhoneNumber','$Rol')";
 
             if ($conexion->query($sql)) {
-                include("./Wait.html");
-                header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                echo '<script>alert("¡Registro exitoso!"); window.location.href = "../AdminJourTable.php";</script>';
             } else {
-                include("./Error.php");
-                header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                echo '<script>alert("¡Error al registrar!"); window.history.back();</script>';
             }
         }
     } else {
-        header('Location: ../Error.php');
+        echo '<script>alert("¡La contraseña no cumple con los requisitos!"); window.history.back();</script>';
     }
 } else {
-    header('Location: ../Error.php');
+    echo '<script>alert("¡El correo electrónico no es válido!"); window.history.back();</script>';
 }
 
 // Cerrar la conexión
