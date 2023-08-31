@@ -106,7 +106,7 @@ $name = $_SESSION['Name'];
           </a>
           <a
             href="./Ricalindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
             <span>Ricaldone</span>
           </a>
