@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Crud_Journalist</title>
+</head>
+<body>
+    
 <?php 
 
 $conexion = new mysqli("localhost", "root","","astrodb")or die(mysqli_error($mysqli));
-
 
 diference($conexion);
 
@@ -11,7 +20,6 @@ function diference($conexion){
         insertar($conexion);
     }
     if(isset($_POST['editar'])){
-
         editar($conexion);
     }
     if(isset($_POST['Eliminar'])){
@@ -38,13 +46,39 @@ function insertar($conexion) {
         
         $imagen = "$Email.png";
         $url_main = $carpet_images . $imagen;
-        move_uploaded_file($imagen_tmp, $url_main);
-
-        $sql = $conexion->query("INSERT INTO reporter(Email, ProfileImage, Password, Name, LastName, PhoneNumber, ROL) VALUES ('$Email', '$imagen', '$Password', '$Name', '$LastName', '$PhoneNumber', '$ROL')");
-        if ($sql == 1) {
-            include("./Wait.html");
+        if (move_uploaded_file($imagen_tmp, $url_main)) {
+            $sql = $conexion->query("INSERT INTO reporter(Email, ProfileImage, Password, Name, LastName, PhoneNumber, ROL) VALUES ('$Email', '$imagen', '$Password', '$Name', '$LastName', '$PhoneNumber', '$ROL')");
+            if ($sql == 1) {
+                echo '<script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Registro exitoso",
+                    text: "¡Registro exitoso!"
+                }).then(() => {
+                    window.location.href = "./Wait.html";
+                });
+                </script>';
+            } else {
+                echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Error al registrar"
+                }).then(() => {
+                    window.location.href = "./Wait.html";
+                });
+                </script>';
+            }
         } else {
-            echo "<div class='alert alert-danger'>BIEN</div>";
+            echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Error al mover la imagen al servidor"
+            }).then(() => {
+                window.location.href = "./Wait.html";
+            });
+            </script>';
         }
     }
 }
@@ -95,44 +129,66 @@ function editar($conexion) {
                 }
         
                 if ($updateNeeded == false) {
-                    echo "<script>
-                    var noChanges = alert('No hay cambios en los datos');
-                    if (noChanges) {
-                        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
-                    } else {
-                        window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';
-                    }
-                    </script>";
+                    echo '<script>
+                    Swal.fire({
+                        icon: "info",
+                        title: "Información",
+                        text: "No hay cambios en los datos"
+                    }).then(() => {
+                        window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
+                    });
+                    </script>';
                 } else {
                     $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
             
                     mysqli_query($conexion, $query);
             
-                    include("./Wait.html");
-                    // Redirigir después de 2 segundos
-                    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                    echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Actualización exitosa",
+                        text: "¡Actualización exitosa!"
+                    }).then(() => {
+                        window.location.href = `http://localhost/Astro-salesianum/src/AdminJourTable.php`;
+                    });
+                    </script>';
                 }
             } else {
-                echo '<script>alert("La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres.");</script>';
-                echo "<script>window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';</script>";
+                echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres."
+                }).then(() => {
+                    window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
+                });
+                </script>';
             }
         } else {
-            echo '<script>alert("El correo electrónico no es válido");</script>';
-            echo "<script>window.location.href = 'http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=$email';</script>";
+            echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "El correo electrónico no es válido"
+            }).then(() => {
+                window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
+            });
+            </script>';
         }
     }
+    
+    // Redirigir incluso cuando no se haya realizado ningún cambio
+    echo '<script>
+    setTimeout(() => {
+        window.location.href = `http://localhost/Astro-salesianum/src/AdminJourTable.php`;
+    }, 2000); // Redirigir después de 2 segundos
+    </script>';
     
     // Cerrar la conexión
     $conexion->close();
     
 }
 
-
-
-
-
-
-
-
-
 ?>
+</body>
+</html>
