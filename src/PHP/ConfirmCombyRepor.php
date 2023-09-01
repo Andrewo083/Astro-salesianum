@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Confirmación </title>
+    <title>Confirmación</title>
 </head>
 <body>
     <?php
@@ -29,22 +29,11 @@
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Cambiar esta línea para redirigir después de la confirmación
-                Swal.fire(
-                    'Eliminado',
-                    'El registro ha sido eliminado exitosamente.',
-                    'success'
-                ).then(() => {
-                    window.location.href = 'DeleteComments.php?ID=$ID';
-                });
+                // Realizar la acción de eliminación
+                window.location.href = 'DeleteComments.php?ID=$ID';
             } else {
-                Swal.fire(
-                    'Cancelado',
-                    'La eliminación ha sido cancelada.',
-                    'error'
-                ).then(() => {
-                    window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
-                });
+                // Redireccionar en caso de cancelación
+                window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
             }
         });
     </script>";
