@@ -64,7 +64,7 @@ function submit($conexion)
             title: "Registro exitoso",
             text: "El registro se ha completado exitosamente."
         }).then(() => {
-            window.location.href = "./Wait.html";
+            window.location.href = "../Profile_Journalist.php";
         });
         </script>';
     } else {
