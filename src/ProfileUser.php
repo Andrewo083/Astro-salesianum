@@ -2,31 +2,14 @@
 
 session_start();
 
-if (!isset($_SESSION['Email'])) {
-  header("Location: ./Login.php");
-  exit();
-}
+include("./PHP/LoginVerif.php");
 
 if ($_SESSION['ROL'] != 3) {
 
   header("Location: ./Error.php");
 } else {
 
-  include('./PHP/conexion.php');
-
-  $conexion = new mysqli($host, $user, $password, $bd);
-
-  if (!$conexion) {
-    die("Error en la conedxion" . mysqli_connect_error());
-  }
-
-  $email = $_SESSION['Email'];
-
-  $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-  $carpet_images = "../img/";
-  $query = "SELECT * FROM `user` WHERE `email` = '$email'";
-  $result = mysqli_query($conexion, $query);
-
+include("./PHP/ProfUserStart.php");
   while ($row = mysqli_fetch_array($result)) {
 
 
@@ -284,10 +267,7 @@ if ($_SESSION['ROL'] != 3) {
 
             <h1>¡Tus Comentarios en Nuestras Noticia están Aquí!</h1>
             <?php
-            $email =  $row['Email'];
-
-            $queryCom = "SELECT * FROM `comments` WHERE `id_user` = '$email'";
-            $resultCom = mysqli_query($conexion, $queryCom);
+            include("./PHP/UserComVar.php");
             while ($rowCom = mysqli_fetch_array($resultCom)) {
               include("./PHP/PrintUser.php");
             ?>

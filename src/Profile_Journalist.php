@@ -2,10 +2,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['Email'])) {
-    header("Location: ./Login.php");
-    exit();
-}
+include("./PHP/LoginVerif.php");
 
 if(
 
@@ -19,20 +16,8 @@ if(
   
   include('./PHP/conexion.php');
 
-$conexion = new mysqli($host, $user, $password, $bd);
 
-if (!$conexion) {
-  die("Error en la conedxion" . mysqli_connect_error());
-}
-$email = $_SESSION['Email'];
-//$email = $_GET['jour'];
-
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-$carpet_images = "../img/";
-$query = "SELECT * FROM `reporter` WHERE `email` = '$email'";
-$result = mysqli_query($conexion, $query);
-
-
+include("./PHP/ProfJurnVarOne.php");
 
 while ($row = mysqli_fetch_array($result)) {
 

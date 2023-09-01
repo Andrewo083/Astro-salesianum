@@ -1,16 +1,8 @@
 <?PHP
 session_start();
+include("./PHP/LoginVerif.php");
 
- $carpet_images = "../img/";
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-$State = "Active";
-
-$query = "SELECT * FROM `news` WHERE `school` = 'Instituto Ricaldone' AND `State` = '$State' ORDER BY 'date' DESC";
-$result = mysqli_query($conexion, $query);
-
-  $carpet_images = "../img/";
-
-
+include("./PHP/ricalDataOne");
 
 
 ?>
@@ -159,9 +151,7 @@ $result = mysqli_query($conexion, $query);
 
 
 <?php while($row = mysqli_fetch_array($result)){
-  $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
-  $numero_caracteres = 300;
-  $contenido_recortado = substr($contenido, 0, $numero_caracteres);
+ include("./PHP/ricalDataTwo.php");
 ?>
         <!--INCIO DE NOTICIA-->
        
