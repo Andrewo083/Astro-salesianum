@@ -28,7 +28,7 @@ $result = mysqli_query($conexion, $query);
        <link rel="stylesheet" href="./css/ProfileImage.css">
        <link rel="stylesheet" href="./css/Translate.css">
        <link rel="stylesheet" href="../Public/menu.css">
-       <link rel="stylesheet" href="../Public/boton.css">
+       <link rel="stylesheet" href="../Public/boton.css"> 
        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
@@ -47,7 +47,7 @@ $result = mysqli_query($conexion, $query);
 </head>
 <body>
 
-<nav class="flex items-center bg-sky-600 p-3 flex-wrap">
+<nav class="flex items-center bg-sky-600 p-3 flex-wrap fixed top-0 w-full z-[100000]" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -115,6 +115,7 @@ $result = mysqli_query($conexion, $query);
                   </div>
       </div>
     </nav>
+
    <!-- component -->
 <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16

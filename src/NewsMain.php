@@ -35,14 +35,12 @@ while ($row = mysqli_fetch_array($result)) {
   </head>
 
   <body>
-    <div>
-      <section class="relative mx-auto">
-        <!-- navbar -->
-        <nav class="flex items-center bg-black p-3 flex-wrap">
+
+  <nav class="flex items-center bg-black p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Astro Salesianum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+          >Astro Salesianum</span
         >
       </a>
   
@@ -52,62 +50,61 @@ while ($row = mysqli_fetch_array($result)) {
       >
         <i class="material-icons">menu</i>
       </button>
-    
       <div
         class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
         id="navigation"
       >
         <div
           class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
-        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        >
           <a
             href="./newindex.php"
-            
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white" >Home</span>
-          </a>
-          <a
-            href="./ChalecoIndex.php"
-           
-          >
-            <span   class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white" >Chaleco</span>
+            <span  >Home</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Don Bosco</span>
+            <span  >Don bosco</span>
+          </a>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
+          >
+            <span>Santa Cecilia</span>
           </a>
           <a
             href="./Ricalindex.php"
-           
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-blacke"
           >
-            <span  class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white">Ricaldone</span>
+            <span>Ricaldone</span>
           </a>
           <a
             href="./MariaIndex.php"
-           
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white">Maria</span>
+            <span>Maria Auxiliadora</span>
           </a>
-          
-          <a
-            href="./<?php include "./PHP/RestrictAncleRol.php" ?>"
-            class=" lg:hidden block  lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span><b>Mi Perfil</b></span>
-          </a>
-          <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
-        <div class="imagen-circular hidden lg:block" >
-        <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
-                  </div>
+          <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <span><b>Mi Perfil</b></span>
                   </a>
+          
+       
     
         </div>
-         </div>
+        &nbsp;&nbsp;
+        <div class="imagen-circular hidden lg:block" >
+        <!-- Aquí colocas la URL de la imagen -->
+        <a
+            href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="">
+        </a>
+                  </div>
+      </div>
     </nav>
-        <!-- END NAV-->
+
 
         <!-- component -->
 
@@ -388,9 +385,7 @@ $i++;
   </body>
 
   </html>
-  <script> 
-    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
@@ -405,6 +400,14 @@ $i++;
 });
 
 </script>
+<script>
+    function Menu(e){
+      let list = document.getElementById("lean:D");
+      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+  </script><script> 
+    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     
 
