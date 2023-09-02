@@ -35,7 +35,7 @@ include("./PHP/InsertRegistro.php");?>
     <div>
         <section class="relative mx-auto">
             <!-- navbar -->
-            <nav class="flex justify-between bg-gray-900 text-white ">
+            <nav class="flex justify-between bg-gray-900 text-white fixed top-0 w-full" style="z-index: 1000;">
                 <div class="px-5 xl:px-12 py-6 flex w-full items-center">   
                     <a href="./index.html">
                     <img src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum" width="45px"></a>
@@ -48,7 +48,7 @@ include("./PHP/InsertRegistro.php");?>
        
                 </ul>
                     <!-- Header Icons -->
-                    <div class="hidden xl:flex items-center space-x-5 items-center">
+                    <div class="hidden xl:flex  space-x-5 items-center">
                         <a class="hover:text-gray-200" href="#">
 
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

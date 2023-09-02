@@ -27,30 +27,7 @@ $result = mysqli_query($conexion, $query);
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
-        function toggleElement() {
-            var screenWidth = window.innerWidth;
 
-            // Cambia este valor a la resolución en la que deseas mostrar u ocultar el elemento
-            var breakpoint = 768; // Por ejemplo, 768px
-
-            var element = document.getElementById("elementToToggle");
-            
-            var element2 = document.getElementById("elementToToggle2");
-
-            if (screenWidth <= breakpoint) {
-                element.style.display = "none";
-                element2.style.display = "block";  // Oculta el elemento
-            } else {
-                element.style.display = "block";
-                element2.style.display = "none"; // Muestra el elemento
-            }
-        }
-
-        // Ejecuta la función al cargar la página y cuando la ventana cambia de tamaño
-        window.onload = toggleElement;
-        window.onresize = toggleElement;
-    </script>
     <style>
     div iframe {
       display: none !important;
@@ -66,7 +43,7 @@ $result = mysqli_query($conexion, $query);
 <body>
 
 
-<nav class="flex items-center bg-yellow-500 p-3 flex-wrap">
+<nav class="flex items-center bg-yellow-500 p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"

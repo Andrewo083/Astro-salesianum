@@ -47,7 +47,7 @@ $result = mysqli_query($conexion, $query);
 </head>
 <body>
 
-<nav class="flex items-center bg-sky-600 p-3 flex-wrap fixed top-0 w-full z-[100000]" style="z-index: 1000;">
+<nav class="flex items-center bg-sky-600 p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"

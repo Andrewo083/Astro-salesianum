@@ -65,7 +65,7 @@ $name = $_SESSION['Name'];
 
 
 
-<nav class="flex items-center bg-black p-3 flex-wrap">
+<nav class="flex items-center bg-black p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -151,7 +151,7 @@ if(isset($_POST['Special'])){
 
 //BARRA DE ESPECIAL
 ?>
-<section class="my-8">
+<section class="my-8 ">
                               <div class="container mx-auto px-6">
 <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
