@@ -25,13 +25,11 @@ while ($row = mysqli_fetch_array($result)) {
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  
+<body>
 
-
-  </head>
-
-  <body>
-
-  <nav class="flex items-center bg-black p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
+  <nav class="flex items-center bg-yellow-500 p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -66,13 +64,13 @@ while ($row = mysqli_fetch_array($result)) {
           </a>
           <a
             href="./ChalecoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
-            <span>Santa Cecilia</span>
+            <span  >Santa Cecilia</span>
           </a>
           <a
             href="./Ricalindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-blacke"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
             <span>Ricaldone</span>
           </a>
@@ -85,21 +83,18 @@ while ($row = mysqli_fetch_array($result)) {
           <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <span><b>Mi Perfil</b></span>
                   </a>
-          
        
     
         </div>
-        &nbsp;&nbsp;
         <div class="imagen-circular hidden lg:block" >
-        <!-- Aquí colocas la URL de la imagen -->
         <a
             href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+        <!-- Aquí colocas la URL de la imagen -->
                     <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="">
         </a>
                   </div>
       </div>
     </nav>
-
 
         <!-- component -->
 
@@ -255,22 +250,6 @@ $i++;
                 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
-
  <!--COMENTARIOS-->
 
                 <!-- FORMULARIO-->
@@ -378,10 +357,12 @@ $i++;
 </footer>
 
   </body>
+  <script> 
+    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  </html>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
   $(".nav-toggler").each(function(_, navToggler) {
@@ -395,14 +376,10 @@ $i++;
 });
 
 </script>
-<script>
-    function Menu(e){
-      let list = document.getElementById("lean:D");
-      e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
-    }
-  </script><script> 
-    function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  </script>
     
     
 
+
+  </html>
