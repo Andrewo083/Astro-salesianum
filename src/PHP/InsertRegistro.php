@@ -5,8 +5,8 @@ if (!$conexion) {
     die("Error en la conexion" . mysqli_connect_error());
 }
 
-$defaultName = isset($_POST['Name']) ? $_POST['Name'] : '';
-$defaultLastName = isset($_POST['LastName']) ? $_POST['LastName'] : '';
+$defaultName = isset($_POST['Name']) ? htmlspecialchars($_POST['Name']) : '';
+$defaultLastName = isset($_POST['LastName']) ? htmlspecialchars($_POST['LastName']) : '';
 $defaultEmail = isset($_POST['Email']) ? $_POST['Email'] : '';
 $defaultPhoneNumber = isset($_POST['PhoneNumber']) ? $_POST['PhoneNumber'] : '';
 
@@ -15,11 +15,11 @@ $exitoRegistro = ""; // Variable para almacenar mensaje de éxito
 $esperaRegistro = ""; // Variable para almacenar mensaje de espera
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $Name = $_POST['Name'];
-    $LastName = $_POST['LastName'];
-    $Email = $_POST['Email'];
-    $PhoneNumber = $_POST['PhoneNumber'];
-    $Contrasena = $_POST['password'];
+    $Name = htmlspecialchars($_POST['Name']);
+    $LastName = htmlspecialchars($_POST['LastName']);
+    $Email = htmlspecialchars($_POST['Email']);
+    $PhoneNumber = htmlspecialchars($_POST['PhoneNumber']);
+    $Contrasena = htmlspecialchars($_POST['password']);
     $imagen = "lawyer2.png";
 
     $Rol = 3;
@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $errorCorreo = '¡El correo electrónico ya está registrado!, por favor utiliza otro';
         } else {
             // Verificar si la contraseña cumple con los requisitos
-            if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) && preg_match("/[0-9]/", $Contrasena))  {
+            if (strlen($Contrasena) >= 8 && preg_match("/[A-Z]/", $Contrasena) && preg_match("/[0-9]/", $Contrasena) && strpos($Contrasena, ' ') === false) {
+                $hashedPassword = password_hash($Contrasena, PASSWORD_DEFAULT);
                 // Insertar los datos en la tabla correspondiente
                 $sql = "INSERT INTO `user`(`Email`, `Password`, `Name`, `LastName`, `PhoneNumber`, `ROL`, `ProfileImage`) VALUES ('$Email','$Contrasena','$Name','$LastName','$PhoneNumber','$Rol','$imagen')";
 

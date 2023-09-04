@@ -101,79 +101,104 @@ function editar($conexion) {
         $ProfileImage = mysqli_real_escape_string($conexion, $_POST['Imagen']);
         $ROL = "2"; 
     
-        // Verificación de correo electrónico
-        if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
-            $email = $_POST['Email'];
-            $password = $_POST['Password'];
-            $name = $_POST['Name'];
-            $lastname = $_POST['LastName'];
-            $phonenumber = $_POST['PhoneNumber'];
-    
-            // Validación de contraseña
-            if (strlen($password) >= 8 && preg_match("/[A-Z]/", $password) && preg_match("/[0-9]/", $password)) {
-                $queryVerif = "SELECT * FROM `reporter` WHERE `Email`  = '$email'";
-                $resultVerif = mysqli_query($conexion, $queryVerif);
-                $row = mysqli_fetch_assoc($resultVerif);
+        // Verificar si hay campos vacíos
+        if (empty($Email) || empty($Password) || empty($Name) || empty($LastName) || empty($PhoneNumber) || empty($ProfileImage)) {
+            echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Todos los campos son obligatorios"
+                }).then(() => {
+                    window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${ID}`;
+                });
+                </script>';
+        } else {
+            // Verificación de correo electrónico
+            if (strpos($Email, ".") !== false && strrpos($Email, ".") > strpos($Email, "@")) {
+                $email = $_POST['Email'];
+                $password = $_POST['Password'];
+                $name = $_POST['Name'];
+                $lastname = $_POST['LastName'];
+                $phonenumber = $_POST['PhoneNumber'];
         
-                $updateNeeded = false;
-                if (
-                    $email != $row['Email'] ||
-                    $password != $row['Password'] ||
-                    $name != $row['Name'] ||
-                    $lastname != $row['LastName'] ||
-                    $phonenumber != $row['PhoneNumber']
-                ) {
-                    $updateNeeded = true;
-                } else {
+                // Validación de contraseña
+                if (strlen($password) >= 8 && preg_match("/[A-Z]/", $password) && preg_match("/[0-9]/", $password)) {
+                    $queryVerif = "SELECT * FROM `reporter` WHERE `Email`  = '$email'";
+                    $resultVerif = mysqli_query($conexion, $queryVerif);
+                    $row = mysqli_fetch_assoc($resultVerif);
+            
                     $updateNeeded = false;
-                }
-        
-                if ($updateNeeded == false) {
+                    if (
+                        $email != $row['Email'] ||
+                        $password != $row['Password'] ||
+                        $name != $row['Name'] ||
+                        $lastname != $row['LastName'] ||
+                        $phonenumber != $row['PhoneNumber']
+                    ) {
+                        $updateNeeded = true;
+                    } else {
+                        $updateNeeded = false;
+                    }
+            
+                    if ($updateNeeded == false) {
+                        echo '<script>
+                        Swal.fire({
+                            icon: "info",
+                            title: "Información",
+                            text: "No hay cambios en los datos"
+                        }).then(() => {
+                            window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
+                        });
+                        </script>';
+                    } else {
+                        $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
+                
+                        $result = mysqli_query($conexion, $query);
+    
+                        if ($result) {
+                            echo '<script>
+                            Swal.fire({
+                                icon: "success",
+                                title: "Actualización exitosa",
+                                text: "¡Actualización exitosa!"
+                            }).then(() => {
+                                window.location.href = `http://localhost/Astro-salesianum/src/AdminJourTable.php`;
+                            });
+                            </script>';
+                        } else {
+                            echo '<script>
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Error al actualizar"
+                            }).then(() => {
+                                window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
+                            });
+                            </script>';
+                        }
+                    }
+                } else {
                     echo '<script>
                     Swal.fire({
-                        icon: "info",
-                        title: "Información",
-                        text: "No hay cambios en los datos"
+                        icon: "error",
+                        title: "Error",
+                        text: "La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres."
                     }).then(() => {
                         window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
                     });
                     </script>';
-                } else {
-                    $query = "UPDATE `reporter` SET `Email`='$Email',`ProfileImage`='$ProfileImage',`Password`='$Password',`Name`='$Name',`LastName`='$LastName',`PhoneNumber`='$PhoneNumber',`ROL`='$ROL' WHERE `Email` = '$ID'";
-            
-                    mysqli_query($conexion, $query);
-            
-                    echo '<script>
-                    Swal.fire({
-                        icon: "success",
-                        title: "Actualización exitosa",
-                        text: "¡Actualización exitosa!"
-                    }).then(() => {
-                        window.location.href = `http://localhost/Astro-salesianum/src/AdminJourTable.php`;
-                    });
-                    </script>';
-                }
+                }alist.php?reporter=asfafaf@gmail.com
             } else {
                 echo '<script>
                 Swal.fire({
                     icon: "error",
                     title: "Error",
-                    text: "La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres."
+                    text: "El correo electrónico no es válido"
                 }).then(() => {
                     window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
                 });
                 </script>';
             }
-        } else {
-            echo '<script>
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "El correo electrónico no es válido"
-            }).then(() => {
-                window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
-            });
-            </script>';
         }
     }
     
@@ -186,8 +211,8 @@ function editar($conexion) {
     
     // Cerrar la conexión
     $conexion->close();
-    
 }
+
 
 ?>
 </body>
