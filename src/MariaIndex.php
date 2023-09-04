@@ -1,17 +1,9 @@
 <?PHP
 session_start();
 
- $carpet_images = "../img/";
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-$State = "Active";
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio María Auxiliadora' AND `State` = '$State' ORDER BY 'date' DESC";
-$result = mysqli_query($conexion, $query);
+include("./PHP/MariaVar.php");
 
-  $carpet_images = "../img/";
-
-
-
-
+//relative path
 ?>
 
 <!-- Luego, en tu código HTML -->

@@ -91,15 +91,15 @@ include("./PHP/adminVerif.php");
     </nav>
 
    
-	<div class=" bg-red-200 h-96 bg-no-repeat"style="background-image: url(../img/bg.2.jpeg)">
+	<div class="object-cover first-letter:bg-no-repeat"style="background-image: url(../img/AdminBKG.png)">
 	</div>
 
       <div class="-mt-64 ">
         <div class="w-full text-center">
-            <h1 class="font-bold text-5xl text-black">
-                ADMIN
+            <h1 class="font-bold text-5xl text-white">
+                ASTRO <b>ADMINISTRACIÓN</b>
             </h1>
-          <p class="text-sm tracking-widest  text-gray-700">¿Que desea hacer?</p>
+          <p class="text-sm tracking-widest  text-white">¿Que desea hacer?</p>
         </div>
       </div>
               

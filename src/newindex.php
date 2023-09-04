@@ -187,11 +187,11 @@ if(isset($_POST['Special'])){
         ?>
           <section class="my-8">
             <div class="container mx-auto px-6">
-              <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/cdbbkg1.jpg')">
+              <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/SportsBKG.jpg')">
                 <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                   <div class="px-10 max-w-xl">
                     <h2 class="text-2xl text-white font-semibold">Deportes</h2>
-                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@Rubén Nieto✅</b></a></i>
                     <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                       <span>Regresar</span>
 
@@ -239,6 +239,7 @@ if(isset($_POST['Special'])){
 </section>
                                   <?php
 }else if(isset($_POST['Everything'])){
+  
   $sql_all = true;
   $sports = false;
   
@@ -249,63 +250,61 @@ if(isset($_POST['Special'])){
  
 ?>
 
-
-
-                      <section class="my-8">
-                      <div class="container mx-auto px-6">
-    <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
-        <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-            <div class="px-4 md:px-10 max-w-xl text-center md:text-left"> <!-- Añadido 'text-center' para centrar el contenido en pantallas pequeñas -->
-                <h2 class="text-2xl md:text-3xl text-white font-semibold">Eventos especiales</h2>
-                <p class="mt-2 text-gray-100">¡Aquí puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
-                <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
-                <button name="Special" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                    <span>Ver noticias</span>
-                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<section class="my-8">
+                              <div class="container mx-auto px-6">
+                   
+                                  <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
+                                      <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                                          <div class="px-10 max-w-xl">
+                                              <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
+                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
+                                              <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                                              <button name="Special" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                                  <span>Ver noticias</span>
+                                                  <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                                  </button>
+                                          </div>
+                                      </div>
+                                  </div>
                            
                                   <div class="md:flex mt-8 md:-mx-4">
 
-                <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/cdbbkg1.jpg')">
-                  <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                    <div class="px-10 max-w-xl">
-                      <h2 class="text-2xl text-white font-semibold">Deportes</h2>
-                      <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                      <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
-                      <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                        <span>Ver noticias</span>
-                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                          <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
+            <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/SportsBKG.jpg')">
+              <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                <div class="px-10 max-w-xl">
+                  <h2 class="text-2xl text-white font-semibold">Deportes</h2>
+                  <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Rubén Nieto✅</b></a></i>
+                  <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <span>Ver noticias</span>
+                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </button>
                 </div>
-
-
-                <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/mariaculture.jpg')">
-                  <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                    <div class="px-10 max-w-xl">
-                      <h2 class="text-2xl text-white font-semibold">Cultura</h2>
-                      <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
-                      <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
-                      <button name="Culture" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                        <span>Ver noticias</span>
-                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                          <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
               </div>
+            </div>
 
-      </form>
+
+            <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('../img/mariaculture.jpg')">
+              <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                <div class="px-10 max-w-xl">
+                  <h2 class="text-2xl text-white font-semibold">Cultura</h2>
+                  <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                  <button name="Culture" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <span>Ver noticias</span>
+                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          </form>
     <?php } else {
           echo "";
           $sql_all = true;
@@ -336,12 +335,12 @@ if(isset($_POST['Special'])){
                            
                                   <div class="md:flex mt-8 md:-mx-4">
 
-            <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/cdbbkg1.jpg')">
+            <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('../img/SportsBKG.jpg')">
               <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                 <div class="px-10 max-w-xl">
                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                  <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Rubén Nieto✅</b></a></i>
                   <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                     <span>Ver noticias</span>
                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -571,8 +570,6 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 </footer>
                  
 </body>
-
-</html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
@@ -587,3 +584,4 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 });
 
 </script>
+</html>
