@@ -62,13 +62,13 @@ if($_SESSION['ROL'] != 1){
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./welcomeAdmin.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Administracion</span>
+            <span  >Administración</span>
           </a>
           <a
             href="./AdminJourTable.php"
@@ -92,7 +92,7 @@ if($_SESSION['ROL'] != 1){
             href="./PHP/Logout.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span><b>CERRAR SESION</b></span>
+            <span><b>Cerrar Sesión</b></span>
           </a>
           
        
@@ -143,17 +143,17 @@ if($_SESSION['ROL'] != 1){
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                              type="text" name="integration[shop_name]"
                                             id="integration_shop_name">
-                                        <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+                                        <p class="text-red text-xs hidden">Por favor, llena este espacio.</p>
                                     </div>
 
                                     <div class="mb-3 space-y-2 w-full text-xs">
-                                        <label class="font-semibold text-gray-600 py-2">Email del periodista<abbr
+                                        <label class="font-semibold text-gray-600 py-2">E-mail del periodista<abbr
                                                 title="required"></abbr></label>
                                         <input required placeholder="Email ID"
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                              type="email" name="Email"
                                             id="integration_shop_name">
-                                        <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+                                        <p class="text-red text-xs hidden">Por favor, llena este espacio.</p>
                                     </div>
                                 </div>
                                 <div class="md:flex flex-row md:space-x-4 w-full text-xs">
@@ -164,17 +164,17 @@ if($_SESSION['ROL'] != 1){
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                              type="text" name="LastName"
                                             id="integration_shop_name">
-                                        <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+                                        <p class="text-red text-xs hidden">Por favor, llena este espacio.</p>
                                     </div>
 
                                     <div class="mb-3 space-y-2 w-full text-xs">
-                                        <label class="font-semibold text-gray-600 py-2">Numero de telefono<abbr
+                                        <label class="font-semibold text-gray-600 py-2">Número de teléfono.realizar esta acción.<abbr
                                                 title="required"></abbr></label>
-                                        <input required placeholder="Numero de telefono"
+                                        <input required placeholder="Número de teléfono.realizar esta acción."
                                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                                              type="tel" name="PhoneNumber" value="" minlength="8"  maxlength="9"
                                             id="integration_shop_name">
-                                        <p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+                                        <p class="text-red text-xs hidden">Por favor, llena este espacio.</p>
                                     </div>
                                 </div>
                             </div>

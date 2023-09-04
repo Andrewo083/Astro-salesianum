@@ -49,13 +49,13 @@ include("./PHP/adminVerif.php");
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./welcomeAdmin.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Administracion</span>
+            <span  >Administración</span>
           </a>
           <a
             href="./AdminJourTable.php"
@@ -79,7 +79,7 @@ include("./PHP/adminVerif.php");
             href="./PHP/Logout.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span><b>CERRAR SESION</b></span>
+            <span><b>Cerrar Sesión</b></span>
           </a>
           
        

@@ -63,7 +63,7 @@ include("./PHP/ricalDataOne");
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           
           <a
@@ -88,7 +88,7 @@ include("./PHP/ricalDataOne");
             href="./MariaIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span>Maria Auxiliadora</span>
+            <span>María Auxiliadora</span>
           </a>
           <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <span><b>Mi Perfil</b></span>
@@ -134,7 +134,7 @@ include("./PHP/ricalDataOne");
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </p>
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">reservados por</p>
               <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p><br>
-              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografias son cortesia de</p>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografías son cortesía de</p>
              
               <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1"><a href="https://www.instagram.com/epicyears/">@epicyears!</a></p>
             </div>

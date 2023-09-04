@@ -83,7 +83,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -168,13 +168,13 @@ while ($row = mysqli_fetch_array($result)) {
               </label>
               <div class="w-full p-4">
               <div class="p-2">
-                <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
+                <label for="photographer" class="text-2lx font-bold text-gray-500">Fotógrafo.</label>
                 
                 <input required value="@Epicyears!" type="text"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md" />
                 
               </div>
               <div class="p-2">
-                <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
+                <label for="headline" class="text-2lx font-bold text-gray-500">Título</label>
                 <input required maxlength="70" type="text"  id="headline" name="headline" class="ml-2 outline-none py-1 px-30 sm:px-40 text-md border-2 rounded-md"  />
               </div>
               <div class="p-2">
@@ -192,23 +192,23 @@ while ($row = mysqli_fetch_array($result)) {
 
               <div>
 
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (400 caracteres)</label>
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer Párrafo (400 caracteres)</label>
                 <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
               </div>
               <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
 
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
 </div>
               <div>
@@ -219,12 +219,12 @@ while ($row = mysqli_fetch_array($result)) {
                         <option value="Colegio Don Bosco">Colegio Don Bosco</option>
                         <option value="Instituto Ricaldone">Instituto Ricaldone</option>
                         <option value="Colegio Santa Cecilia">Colegio Santa Cecilia </option>
-                        <option value="Colegio Maria Auxiliadora">Colegio Maria Auxiliadora</option>
+                        <option value="Colegio María Auxiliadora">Colegio María Auxiliadora</option>
                     </select>
                 </div>    
               </div>
               <div>
-                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una Categoria:</label>
+                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una Categoría:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
                     <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="category">

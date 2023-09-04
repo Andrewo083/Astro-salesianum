@@ -90,7 +90,7 @@ $name = $_SESSION['Name'];
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -115,7 +115,7 @@ $name = $_SESSION['Name'];
             href="./MariaIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span>Maria Auxiliadora</span>
+            <span>María Auxiliadora</span>
           </a>
           <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <span><b>Mi Perfil</b></span>
@@ -157,7 +157,7 @@ if(isset($_POST['Special'])){
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
-                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
                                                  
@@ -191,7 +191,7 @@ if(isset($_POST['Special'])){
                 <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                   <div class="px-10 max-w-xl">
                     <h2 class="text-2xl text-white font-semibold">Deportes</h2>
-                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                     <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                       <span>Regresar</span>
 
@@ -227,7 +227,7 @@ if(isset($_POST['Special'])){
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Cultura</h2>
-                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p> <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                                              <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                                               <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                                                   <span>Regresar</span>
                                                   
@@ -275,7 +275,7 @@ if(isset($_POST['Special'])){
                     <div class="px-10 max-w-xl">
                       <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                       <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                      <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
+                      <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
                       <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                         <span>Ver noticias</span>
                         <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -292,7 +292,7 @@ if(isset($_POST['Special'])){
                     <div class="px-10 max-w-xl">
                       <h2 class="text-2xl text-white font-semibold">Cultura</h2>
                       <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
-                      <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                      <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                       <button name="Culture" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                         <span>Ver noticias</span>
                         <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -325,7 +325,7 @@ if(isset($_POST['Special'])){
                                           <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
-                                              <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                                              <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                                               <button name="Special" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                                   <span>Ver noticias</span>
                                                   <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -341,7 +341,7 @@ if(isset($_POST['Special'])){
                 <div class="px-10 max-w-xl">
                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                  <i class="text-gray-300">Fotografias son cortesia de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Giovanni Mejia✅</b></a></i>
                   <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                     <span>Ver noticias</span>
                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -358,7 +358,7 @@ if(isset($_POST['Special'])){
                 <div class="px-10 max-w-xl">
                   <h2 class="text-2xl text-white font-semibold">Cultura</h2>
                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar cómo nuestros Jóvenes Salesianos se desenvuelven en nuestra cultura y desarrollan sus habilidades culutrales y artisticas.</p>
-                  <i class="text-gray-300">Fotografias son cortesia de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>
                   <button name="Culture" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                     <span>Ver noticias</span>
                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -395,7 +395,7 @@ $State = "Active";
 if($sql_all == true){
  $query = "SELECT * FROM `news` WHERE `State` = '$State' ORDER BY `date` DESC";
 }else{
- //estoy seleccionando las noticias por categoria y ordeno por la fecha.
+ //estoy seleccionando las noticias por Categoría y ordeno por la fecha.
  $query = "SELECT * FROM `news` WHERE `Category` = '$category' AND `State` = '$State' ORDER BY `date` DESC";
 }
 

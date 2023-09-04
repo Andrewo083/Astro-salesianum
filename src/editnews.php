@@ -105,7 +105,7 @@ imagde1.addEventListener('change', function() {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -188,11 +188,11 @@ imagde1.addEventListener('change', function() {
             <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
             <div class="w-full p-4">
               <div class="p-2">
-                <label for="photographer" class="text-2lx font-bold text-gray-500">Fotografo</label>
+                <label for="photographer" class="text-2lx font-bold text-gray-500">Fotógrafo.</label>
                 <input  type="text" value="<?php echo $row['photographer']; ?>"  id="photographer" name="photographer" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
               <div class="p-2">
-                <label for="headline" class="text-2lx font-bold text-gray-500">Titulo</label>
+                <label for="headline" class="text-2lx font-bold text-gray-500">Título</label>
                 <input maxlength="70" type="text" value="<?php echo $row['headline']; ?>"  id="headline" name="headline" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
               <div class="p-2">
@@ -201,7 +201,7 @@ imagde1.addEventListener('change', function() {
               </div>
               <div class="p-2">
                 <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  id="date" name="date" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
+                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  " id="date" name="date" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
 
 
@@ -211,23 +211,23 @@ imagde1.addEventListener('change', function() {
 
               <div>
 
-                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer parrafo (400 caracteres)</label>
+                <label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Primer Párrafo (400 caracteres)</label>
                 <textarea id="description" cols="15" rows="5" name="BodyOne"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyOne']?></textarea>
               </div>
               <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Segundo Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyTwo"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyTwo']?></textarea>
 </div>
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Tercer Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyThree"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyThree']?></textarea>
 </div>
 
 <div>
 
-<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto parrafo (400 caracteres)</label>
+<label for="description" class="block mb-2 text-lg text-gray-500 font-bold">Describe el Cuarto Párrafo (400 caracteres)</label>
 <textarea id="description" cols="15" rows="5" name="BodyFour"  maxlength="400" placeholder="Escribe tu noticia..." class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"><?php echo $row['BodyFour']?></textarea>
 </div>
                 <label for="name" class="text-lx font-bold text-gray-500">Seleccione un Colegio:</label>
@@ -238,12 +238,12 @@ imagde1.addEventListener('change', function() {
                         <option value="Colegio Don Bosco">Colegio Don Bosco</option>
                         <option value="Instituto Ricaldone">Instituto Ricaldone</option>
                         <option value="Colegio Santa Cecilia">Colegio Santa Cecilia especiales</option>
-                        <option value="Colegio Maria Auxiliadora">Colegio Maria Auxiliadora</option>
+                        <option value="Colegio María Auxiliadora">Colegio María Auxiliadora</option>
                     </select>
                 </div>    
               </div>
               <div>
-                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una Categoria:</label>
+                <label for="name" class="text-lx font-bold text-gray-500">Seleccione una Categoría:</label>
                 <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
 
                     <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500" name="category">
@@ -256,7 +256,7 @@ imagde1.addEventListener('change', function() {
                 </div>    
               </div>
               <div class="pt-4">
-           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="ACTUALIZAR" name="edit">
+           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="ACctualizar" name="edit">
               </div>
             </div>
           </div>

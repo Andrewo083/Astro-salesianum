@@ -64,13 +64,13 @@ $query = mysqli_query($conexion, $sql);
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./welcomeAdmin.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Administracion</span>
+            <span  >Administración</span>
           </a>
           <a
             href="./AdminJourTable.php"
@@ -94,7 +94,7 @@ $query = mysqli_query($conexion, $sql);
             href="./PHP/Logout.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span><b>CERRAR SESION</b></span>
+            <span><b>Cerrar Sesión</b></span>
           </a>
           
        
@@ -115,11 +115,11 @@ $query = mysqli_query($conexion, $sql);
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
           <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
             <div>
-              <p class="text-xl font-bold text-black">Adminitracion de cuentas</p>
-              <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-black">Aqui podras editar los datos del reportero o en dado caso, eliminarlo.</p>
+              <p class="text-xl font-bold text-black">Administración de cuentas</p>
+              <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-black">Aquí podrás editar los datos del reportero o, en dado caso, eliminarlo.</p>
             </div>
             <div class="mt-4 mr-0 mb-0 ml-0 sm:mt-0">
-                <p class="sr-only">Search Position</p>
+                <p class="sr-only">Buscar Posición</p>
                 <div class="relative">
                 
                   <a href="./Form_Jurnalist.php"class="bg-gray-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
@@ -150,7 +150,7 @@ $query = mysqli_query($conexion, $sql);
                       <a href="./Edit_Jurnalist.php?reporter=<?php echo $row['Email']; ?>" class="bg-gray-900 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
                           duration-200 hover:bg-gray-700 rounded-lg">Edit</a>
                       <a href="./PHP/ConfirmDelJourbyAdmin.php?ID=<?php echo $row['Email'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
-                          duration-200 hover:bg-red-700 rounded-lg">Delete</a>
+                          duration-200 hover:bg-red-700 rounded-lg">Eliminar</a>
                     </div>
 
                   </div>

@@ -26,7 +26,7 @@ session_start();
                 </a>
                 <!-- Nav Links -->
               <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Home</a></li>
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Hogar</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>
@@ -96,7 +96,8 @@ session_start();
         <p
           class="mt-10 text-base leading-normal text-center text-gray-600 md:w-9/12 lg:w-7/12 dark:text-white"
         >
-          Lo sentimos falta algun dato, hay un dato incorrecto o no se puede realizar esta accion.
+         
+Lo sentimos, falta algún dato, hay un dato incorrecto o no se puede realizar esta acción.
         </p>
         <div class="mt-12 md:mt-14 w-full flex justify-center">
           <a href="./newindex.php"

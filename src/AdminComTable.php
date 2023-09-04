@@ -81,13 +81,13 @@ if ($result) {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./welcomeAdmin.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Administracion</span>
+            <span  >Administración</span>
           </a>
           <a
             href="./AdminJourTable.php"
@@ -111,7 +111,7 @@ if ($result) {
             href="./PHP/Logout.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span><b>CERRAR SESION</b></span>
+            <span><b>Cerrar Sesión</b></span>
           </a>
           
        
@@ -133,8 +133,8 @@ if ($result) {
       <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto max-w-4xl sm:px-6 lg:px-8">
         <div class="pt-0 pr-4 pb-0 pl-4 mt-0 mr-auto mb-0 ml-auto sm:flex sm:items-center sm:justify-between">
           <div>
-            <p class="text-xl font-bold text-gray-700">Todos Los Comentarios!</p>
-            <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podras llevar un control de los comentarios</p>
+            <p class="text-xl font-bold text-gray-700">¡Todos Los Comentarios!</p>
+            <p class="text-sm mt-1 mr-0 mb-0 ml-0 font-semi-bold text-gray-600">Aqui podrás llevar un control de los comentarios.</p>
           </div>
         </div>
         <div class=" mt-8 mr-0 mb-0 ml-0 pt-4 pr-10 pb-4 pl-10 flow-root rounded-lg sm:py-2">
@@ -175,7 +175,7 @@ if ($result) {
                
                
                     <a href="./PHP/ConfirmCombyAdmin.php?ID=<?php echo $row['id_comment'] ?> " class="bg-red-800 pt-2 pr-6 pb-2 pl-6 text-lg font-medium text-gray-100 transition-all
-                          duration-200 hover:bg-red-700 rounded-lg">Delete</a>
+                          duration-200 hover:bg-red-700 rounded-lg">Eliminar</a>
                   
                 </div>
               </div>

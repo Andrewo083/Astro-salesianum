@@ -19,7 +19,7 @@ $carpet_images = "C:/xampp/htdocs/Astro-salesianum/img/";
 $imagen = $_FILES['imagen']['name'];
     $imagen_tmp = $_FILES['imagen']['tmp_name'];
 
-        $imagen =  "$headline-$id_reporter-fotografo-$photographer.png";
+        $imagen =  "$headline-$id_reporter-Fotógrafo.-$photographer.png";
 
     $urlPlusImage = $carpet_images.$imagen;
     move_uploaded_file($imagen_tmp, $urlPlusImage);

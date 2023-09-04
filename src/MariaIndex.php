@@ -4,7 +4,7 @@ session_start();
  $carpet_images = "../img/";
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
 $State = "Active";
-$query = "SELECT * FROM `news` WHERE `school` = 'Colegio Maria Auxiliadora' AND `State` = '$State' ORDER BY 'date' DESC";
+$query = "SELECT * FROM `news` WHERE `school` = 'Colegio María Auxiliadora' AND `State` = '$State' ORDER BY 'date' DESC";
 $result = mysqli_query($conexion, $query);
 
   $carpet_images = "../img/";
@@ -72,13 +72,13 @@ $result = mysqli_query($conexion, $query);
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Don bosco</span>
+            <span  >Don Bosco</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -96,7 +96,7 @@ $result = mysqli_query($conexion, $query);
             href="./MariaIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span>Maria Auxiliadora</span>
+            <span>María Auxiliadora</span>
           </a>
           <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <span><b>Mi Perfil</b></span>
@@ -134,7 +134,7 @@ $result = mysqli_query($conexion, $query);
                     0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </p>
 
-              <p class="inline text-xs font-medium">COLEGIO MARIA AUXILIADORA</p>
+              <p class="inline text-xs font-medium">COLEGIO María Auxiliadora</p>
 
 
             </div>
@@ -144,7 +144,7 @@ $result = mysqli_query($conexion, $query);
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Derechos </p>
               <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">reservados por</p>
               <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">Astro salesianum</p><br>
-              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografias son cortesia de</p>
+              <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">Fotografías son cortesía de</p>
              
               <p class="text-black text-sm font-medium inline mt-0 mr-1 mb-0 ml-1"><a href="https://www.instagram.com/epicyears/">@epicyears!</a></p>
             </div>

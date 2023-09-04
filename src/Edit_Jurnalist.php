@@ -74,13 +74,13 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Home</span>
+            <span  >Hogar</span>
           </a>
           <a
             href="./welcomeAdmin.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Administracion</span>
+            <span  >Administración</span>
           </a>
           <a
             href="./AdminJourTable.php"
@@ -104,7 +104,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
             href="./PHP/Logout.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span><b>CERRAR SESION</b></span>
+            <span><b>Cerrar Sesión</b></span>
           </a>
           
        
@@ -146,26 +146,26 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Nombre del periodista<abbr title="required"></abbr></label>
 								<input placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="Name" id="integration_shop_name" value="<?php echo $RowReporter['Name'] ?>">
-								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+								<p class="text-red text-xs hidden">Por favor, llena este espacio..</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
-								<label class="font-semibold text-gray-600 py-2">Email del periodista<abbr title="required"></abbr></label>
+								<label class="font-semibold text-gray-600 py-2">E-Mail del periodista<abbr title="required"></abbr></label>
 								<input readonly value="<?php echo $RowReporter['Email'] ?>" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="email" name="Email" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+								<p class="text-red text-xs hidden">Por favor, llena este espacio..</p>
 							</div>
 						</div>
 						<div class="md:flex flex-row md:space-x-4 w-full text-xs">
 							<div class="mb-3 space-y-2 w-full text-xs">
 								<label class="font-semibold text-gray-600 py-2">Apellido<abbr title="required"></abbr></label>
 								<input value="<?php echo $RowReporter['LastName'] ?>" placeholder="Company Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="LastName" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+								<p class="text-red text-xs hidden">Por favor, llena este espacio..</p>
 							</div>
                             
 							<div class="mb-3 space-y-2 w-full text-xs">
-								<label class="font-semibold text-gray-600 py-2">Numero de telefono<abbr title="required"></abbr></label>
+								<label class="font-semibold text-gray-600 py-2">Número de teléfono.<abbr title="required"></abbr></label>
 								<input value="<?php echo $RowReporter['PhoneNumber'] ?>"  maxlength="9" placeholder="Email ID" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"  type="text" name="PhoneNumber" id="integration_shop_name">
-								<p class="text-red text-xs hidden">Porfavor llena este espacio.</p>
+								<p class="text-red text-xs hidden">Por favor, llena este espacio..</p>
 							</div>
 						</div>
 
@@ -180,7 +180,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
 								<div class="w-full flex flex-col mb-3">
 									<label class="font-semibold text-gray-600 py-2">Contraseña</label>
 
-                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un número* *</h6></i>
+                                    <i> <h6>Debe tener  8 caracteres, una  mayúscula y un número*</h6></i>
 									<input value="<?php echo $RowReporter['Password'] ?>" placeholder="Address" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="Password" 
 
                                     name="Password" 
