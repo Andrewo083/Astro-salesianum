@@ -155,10 +155,10 @@ imagde1.addEventListener('change', function() {
         <div class="bg-indigo-50 min-h-screen md:px-20 sm:pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Edita Tu Noticia</h1>
+
+            
+
             <div class="space-y-4">
-
-
-              <div>
                 <label for="title" class="text-2lx font-bold text-gray-500">Imagen Actual</label>
                 <input readonly type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
                 <input  type="hidden" value="<?php echo $row['id_news']; ?>" id="reporter" name="id_news" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
