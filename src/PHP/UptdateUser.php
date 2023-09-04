@@ -1,4 +1,5 @@
 <?php
+
 include('conexion.php');
 
 $conexion = new mysqli($host, $user, $password, $bd);
@@ -25,7 +26,7 @@ $Password = mysqli_real_escape_string($conexion, $Password);
 if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
     // Verificar si la contraseña cumple con los requisitos
     if (strlen($Password) >= 8 && preg_match("/[A-Z]/", $Password) && preg_match("/[0-9]/", $Password)) {
-        // Verificar si hay algún cambio en los campos
+        // Verificar si hay cambios en los campos
         $SQL = "SELECT * FROM `user` WHERE Email = '$ID'";
         $result = mysqli_query($conexion, $SQL);
         $row = mysqli_fetch_assoc($result);
@@ -39,20 +40,28 @@ if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
             $updateNeeded = true;
         }
 
-        if ($updateNeeded) {
-            $updateSQL = "UPDATE `user` SET `Name`='$Name',`LastName`='$LastName',`Password`='$Password',
-                          `PhoneNumber`='$PhoneNumber',`ROL`='$Rol' WHERE Email = '$ID'";
+        // Verificar si hay campos vacíos
+        if (!empty($Name) && !empty($LastName) && !empty($PhoneNumber) && !empty($Password)) {
+            if ($updateNeeded) {
+                $updateSQL = "UPDATE `user` SET `Name`='$Name',`LastName`='$LastName',`Password`='$Password',
+                              `PhoneNumber`='$PhoneNumber',`ROL`='$Rol' WHERE Email = '$ID'";
 
-            if (mysqli_query($conexion, $updateSQL)) {
-                include("./Wait.html");
-                header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+                if (mysqli_query($conexion, $updateSQL)) {
+                    include("./Wait.html");
+                    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+                } else {
+                    include("./Error.php");
+                    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+                }
             } else {
-                include("./Error.php");
-                header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+                echo "<script>
+                        alert('No hay cambios en los datos.');
+                        window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
+                      </script>";
             }
         } else {
             echo "<script>
-                    alert('No hay cambios en los datos.');
+                    alert('Todos los campos deben estar llenos.');
                     window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
                   </script>";
         }

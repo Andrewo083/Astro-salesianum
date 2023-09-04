@@ -256,7 +256,7 @@ imagde1.addEventListener('change', function() {
                 </div>    
               </div>
               <div class="pt-4">
-           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="ACctualizar" name="edit">
+           <input class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-gray-800  " type="submit" value="Actualizar" name="edit">
               </div>
             </div>
           </div>
