@@ -2,7 +2,7 @@
 session_start();
 include("./PHP/LoginVerif.php");
 
-include("./PHP/ricalDataOne");
+include("./PHP/ricalDataOne.php");
 
 
 ?>
@@ -13,7 +13,8 @@ include("./PHP/ricalDataOne");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/AstroFavicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Public/tailwind.css" />
     <title>Noticias Ricaldone</title>
