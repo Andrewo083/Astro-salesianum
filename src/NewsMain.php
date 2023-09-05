@@ -29,7 +29,7 @@ while ($row = mysqli_fetch_array($result)) {
   
 <body>
 
-  <nav class="flex items-center bg-yellow-500 p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
+  <nav class="flex items-center bg-black p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -44,43 +44,43 @@ while ($row = mysqli_fetch_array($result)) {
         <i class="material-icons">menu</i>
       </button>
       <div
-        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        class="hidden top-navbar lg:inline-flex lg:flex-grow lg:w-auto"
         id="navigation"
       >
         <div
-          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto  lg:items-center items-start  flex flex-col lg:h-auto"
         >
           <a
             href="./newindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
             <span  >Hogar</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
             <span  >Don Bosco</span>
           </a>
           <a
             href="./ChalecoIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
             <span  >Santa Cecilia</span>
           </a>
           <a
             href="./Ricalindex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white  items-center justify-center hover:bg-white hover:text-black"
           >
             <span>Ricaldone</span>
           </a>
           <a
             href="./MariaIndex.php"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
+            class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
             <span>María Auxiliadora</span>
           </a>
-          <a class="lg:hidden block w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
+          <a class="lg:hidden block  px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black" href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <span><b>Mi Perfil</b></span>
                   </a>
        
@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_array($result)) {
 
         <div class="container mx-auto px-6 py-16 text-center">
         <div class="">
-        <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
+        <h1 class="text-3xl mt-10 text-center font-bold text-gray-800 dark:text-white lg:text-4xl"><?php echo $row['headline']?></h1>
         <p class="mt-6 text-gray-500 dark:text-gray-300"><b><?php echo $row['drophead'] ?></b><br><br><?php echo $row['BodyOne'] ?></p><br>
         <a class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto " href="https://www.instagram.com/epicyears/"><b>Fotógrafo.:</b> <?php echo $row['photographer']; ?>✅
         </a>

@@ -151,8 +151,9 @@ if(isset($_POST['Special'])){
 
 //BARRA DE ESPECIAL
 ?>
-<section class="my-8">
-                              <div class="container mx-auto px-6">
+<section class="my-8
+">
+                              <div class="container mx-auto px-6 mt-10">
 <div class="h-64 mt-10 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                                           <div class="px-10 max-w-xl">
