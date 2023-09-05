@@ -75,6 +75,10 @@ imagde1.addEventListener('change', function() {
     <title>¡Editalo!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div>
@@ -171,19 +175,74 @@ imagde1.addEventListener('change', function() {
 
 
 
-
-
-
-
-
-
-
-<!--Aqui debería estar el click de la ventana emergente -->
+              <div class="flex flex-col items-center " x-data="{ open: false }">
+            <button @click="open = true">
+              <div>
+                <div class=" bg-white p-2 rounded-full md:p-4; ">
 
                 <img class=" object-cover rounded-3xl" src="../img/<?php echo $row['main_image']; ?>" alt="Current profile photo" id="preview1" height="700px" width="700px"/>
 
 
-              </div> 
+              </div>
+              </button>
+              <div style="display: none;" x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background backdrop, show/hide based on modal state." class="fixed inset-0 flex justify-center item  bg-gray-600 bg-opacity-75 transition-opacity">
+
+<div class="fixed overflow-y-auto">
+  <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+    <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="relative transform  overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg" @click.away="open = true">
+      <div class="relative  flex items-center justify-center py-2 px-4 sm:px-6 lg:px-8">
+        <div class="absolute opacity-60 inset-0 z-0"></div>
+        <div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+          <div class="text-center">
+            <h2 class="mt-5 text-3xl font-bold text-gray-900">
+              ¡Edita tu Foto!
+            </h2>
+            <p class="mt-2 text-sm text-gray-400">
+              Selecciona una imagen para cambiar tu foto de perfil
+            </p>
+          </div>
+          <form class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email'] ?>" method="POST" enctype="multipart/form-data">
+
+            <div class="md:space-y-2 mb-3">
+
+              <div class="flex items-center py-6">
+                <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
+                  <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px" />
+                </div>
+                <label class="cursor-pointer ">
+
+                  <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
+                  <input required class="hidden" name="imagen" type="file" id="imagde1" accept="image/*">
+                </label>
+                <div class=" flex justify-end relative">
+                  <i class="fa fa-eye-slash relative bottom-6 right-6  z-10 cursor-pointer" aria-hidden="true" onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <i>
+                <h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6>
+              </i>
+              <button type="submit" class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
+                Upload
+              </button>
+              <center>
+                <p @click="open = false" type="button" class="  hover:p-2.5 hover:px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold hover:text-red-500   focus:outline-none focus:ring-2 cursor-pointer focus:ring-red-500 focus:ring-offset-2 transition-all text-sm">
+                  Cancel
+                </p>
+              </center>
+
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+
 
             <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
             <div class="w-full p-4">
