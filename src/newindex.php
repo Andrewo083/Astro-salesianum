@@ -250,13 +250,17 @@ if(isset($_POST['Special'])){
   $culture = false;
  
 ?>
-
+<br><br><br><br><br>
 <section class="my-8">
+<br><br><br><br><br>
                               <div class="container mx-auto px-6">
+                              <br><br><br><br><br>
+                              <br><br><br><br><br>
                    
                                   <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
+                                  <br><br><br><br><br><br><br><br><br><br>
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                                          <div class="px-10 max-w-xl">
+                                          <div class="px-10 max-w-xl"><br><br><br><br><br><br><br><br><br><br>
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
                                               <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>

@@ -31,27 +31,7 @@ while($row = mysqli_fetch_array($result)){
 <head>
 <link rel="stylesheet" href="../Public/menu.css">
 <link rel="stylesheet" href="../Public/boton.css">
-  <script >
-    const imagde1 = document.getElementById('imagde1');
-const preview1 = document.getElementById('preview1');
-
-imagde1.addEventListener('change', function() {
-  const archivo = imagde1.files[0];
-  if (archivo) {
-    const lector = new FileReader();
-
-    lector.addEventListener('load', function() {
-      preview1.src = lector.result;
-      preview1.style.display = 'block';
-    });
-
-    lector.readAsDataURL(archivo);
-  } else {
-    preview1.src = '#';
-    preview1.style.display = 'none';
-  }
-});
-  </script>
+  
 <style>
         /* Estilos para hacer la imagen redonda */
         .imagen-circular {
@@ -155,7 +135,7 @@ imagde1.addEventListener('change', function() {
         </section>
         </div>
         
-    <form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
+    
         <div class="bg-indigo-50 min-h-screen md:px-20 sm:pt-6">
           <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
             <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">Edita Tu Noticia</h1>
@@ -163,9 +143,11 @@ imagde1.addEventListener('change', function() {
             
 
             <div class="space-y-4">
-                <label for="title" class="text-2lx font-bold text-gray-500">Imagen Actual</label>
-                <input readonly type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
-                <input  type="hidden" value="<?php echo $row['id_news']; ?>" id="reporter" name="id_news" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
+                <label for="title" ><span class="text-2lx font-bold text-gray-500">Imagen Actual </span><h6><i>Presiona la imagen para editar la foto de tu Noticia.</i></h6></label>
+
+
+                
+
               </div>
 
 
@@ -198,21 +180,28 @@ imagde1.addEventListener('change', function() {
               ¡Edita tu Foto!
             </h2>
             <p class="mt-2 text-sm text-gray-400">
-              Selecciona una imagen para cambiar tu foto de perfil
+              Selecciona una imagen para cambiar la foto de tu noticia
             </p>
           </div>
-          <form class="mt-8 space-y-3" action="./PHP/EditUserImage.php?User=<?php echo $_SESSION['Email'] ?>" method="POST" enctype="multipart/form-data">
+          <form class="mt-8 space-y-3" action="./PHP/editImageNew.php?new=<?php echo $new ?>" method="POST" enctype="multipart/form-data">
 
             <div class="md:space-y-2 mb-3">
 
               <div class="flex items-center py-6">
                 <div class=" mr-4 flex-none rounded-xl border overflow-hidden">
-                  <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview1" height="200px" width="200px" />
+                  <img class=" object-cover rounded-3xl" src="../img/subir.jpg" alt="Current profile photo" id="preview2" height="200px" width="200px" />
                 </div>
                 <label class="cursor-pointer ">
 
                   <span class="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-900  hover:bg-blue-950 hover:shadow-lg">Seleccionar</span>
-                  <input required class="hidden" name="imagen" type="file" id="imagde1" accept="image/*">
+
+
+                  <input required class="hidden" name="imagen" type="file" id="imagde2" accept="image/*">
+                  <input type="hidden" name="headline" value="<?php echo $row['headline']; ?>">
+                  <input type="hidden" name="photographer" value="<?php echo $row['photographer'] ?>">
+                  <input type="hidden" name="id_reporter" value="<?php echo $row['id_reporter'] ?>">
+
+
                 </label>
                 <div class=" flex justify-end relative">
                   <i class="fa fa-eye-slash relative bottom-6 right-6  z-10 cursor-pointer" aria-hidden="true" onclick="mostrar()" class="icon" id="eye" class="translate-y-32"></i>
@@ -222,7 +211,7 @@ imagde1.addEventListener('change', function() {
 
             <div>
               <i>
-                <h6>Tu imagen se actualizará al Iniciar Sesión de nuevo*</h6>
+                <h6>La imagen se puede tardar unos segundos al actualizar*</h6>
               </i>
               <button type="submit" class="my-4 w-full flex justify-center bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
                 Upload
@@ -242,7 +231,11 @@ imagde1.addEventListener('change', function() {
   </div>
 </div>
 </div> 
+<form method="post" enctype="multipart/form-data" action="./PHP/CRUD_New.php">
+<input readonly type="hidden" value="<?php echo $row['id_reporter']; ?>" id="reporter" name="id_reporter" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
 
+
+                <input  type="hidden" value="<?php echo $row['id_news']; ?>" id="reporter" name="id_news" class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"  />
 
             <input type="hidden" name="imagen" value="<?php echo $row['main_image']?>">
             <div class="w-full p-4">
@@ -260,7 +253,7 @@ imagde1.addEventListener('change', function() {
               </div>
               <div class="p-2">
                 <label for="date" class="text-2lx font-bold text-gray-500">Fecha</label>
-                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>  " id="date" name="date" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
+                <input value="<?php echo $row['date']; ?>" type="date" max="<?php echo date('Y-m-d'); ?>" id="date" name="date" class="ml-2 outline-none py-1 px-30 sm:px-40  text-md border-2 rounded-md"  />
               </div>
 
 
@@ -378,4 +371,46 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
   });
 });
 
+</script>
+<script>
+  const imagde1 = document.getElementById('imagde1');
+  const preview1 = document.getElementById('preview1');
+
+  imagde1.addEventListener('change', function() {
+    const archivo = imagde1.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+
+      lector.addEventListener('load', function() {
+        preview1.src = lector.result;
+        preview1.style.display = 'block';
+      });
+
+      lector.readAsDataURL(archivo);
+    } else {
+      preview1.src = '../img/subir.jpg'; // Cambiar a la imagen por defecto
+      preview1.style.display = 'block'; // Cambiar a 'block' si deseas mostrar la imagen por defecto
+    }
+  });
+</script>
+<script>
+  const imagde2 = document.getElementById('imagde2');
+  const preview2 = document.getElementById('preview2');
+
+  imagde2.addEventListener('change', function() {
+    const archivo = imagde2.files[0];
+    if (archivo) {
+      const lector = new FileReader();
+
+      lector.addEventListener('load', function() {
+        preview2.src = lector.result;
+        preview2.style.display = 'block';
+      });
+
+      lector.readAsDataURL(archivo);
+    } else {
+      preview2.src = '../img/subir.jpg'; // Cambiar a la imagen por defecto
+      preview2.style.display = 'block'; // Cambiar a 'block' si deseas mostrar la imagen por defecto
+    }
+  });
 </script>
