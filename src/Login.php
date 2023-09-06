@@ -69,7 +69,7 @@ include("./PHP/loginBack.php");
         <!-- component -->
         <div class=" p-4 sm:p-12  ">
             <div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-                <div class="hidden lg:block lg:w-1/2 bg-cover max-h-full" style=" background-image:url('../img/ricaldepo.jpeg') "></div>
+                <div class="hidden lg:block lg:w-1/2 bg-cover max-h-full" style=" background-image:url('../img/ricaldepo.jpeg') "><i class="text-white" class="text-xs">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i> </div>
                 <div class="w-full p-8 lg:w-1/2">
                     <h2 class="text-2xl font-semibold text-gray-700 text-center">Login</h2>
                     <p class="text-xl text-gray-600 text-center">Bienvenido de vuelta!</p>

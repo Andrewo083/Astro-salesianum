@@ -187,7 +187,7 @@ function editar($conexion) {
                         window.location.href = `http://localhost/Astro-salesianum/src/Edit_Jurnalist.php?reporter=${email}`;
                     });
                     </script>';
-                }alist.php?reporter=asfafaf@gmail.com
+                }
             } else {
                 echo '<script>
                 Swal.fire({

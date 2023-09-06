@@ -1,21 +1,6 @@
 <?php
 session_start();
-if($_SESSION['ROL'] != 1){ 
- header("Location: ./Error.php"); 
-  
- }else{
-
-include('./PHP/conexion.php');
-
-$conexion = new mysqli($host, $user, $password, $bd);
-
-if (!$conexion) {
-  die("Error en la conexion" . mysqli_connect_error());
-}
-
-$sql = "SELECT * FROM `reporter`";
-
-$query = mysqli_query($conexion, $sql);
+include("./PHP/AdminJourData.php");
 ?>
 
 <!DOCTYPE html>
@@ -175,7 +160,7 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 </body>
 
 </html>
-<?php } ?>
+
 
 +<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>

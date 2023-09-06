@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Update User</title>
+</head>
+<body>
+
 <?php
 
 include('conexion.php');
@@ -54,22 +64,39 @@ if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
                     header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
                 }
             } else {
-                echo "<script>
-                        alert('No hay cambios en los datos.');
-                        window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
-                      </script>";
+                echo '<script>
+                        Swal.fire({
+                            icon: "info",
+                            title: "Información",
+                            text: "No hay cambios en los datos"
+                        }).then(() => {
+                            window.location.href = `http://localhost/Astro-salesianum/src/ProfileUser.php`;
+                        });
+                        </script>';
             }
         } else {
-            echo "<script>
-                    alert('Todos los campos deben estar llenos.');
-                    window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
-                  </script>";
+           
+            echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Uno de los campos ha de estar vacios Verifica que estén completos"
+            }).then(() => {
+                window.location.href = `http://localhost/Astro-salesianum/src/ProfileUser.php`;
+            });
+            </script>';
+          
         }
     } else {
-        echo "<script>
-                alert('La contraseña debe contener al menos una letra mayúscula y un número.');
-                window.location.href = 'http://localhost/Astro-salesianum/src/ProfileUser.php';
-              </script>";
+        echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "La contraseña no es válida. Debe contener al menos una letra mayúscula, un número y tener al menos 8 caracteres."
+                    }).then(() => {
+                        window.location.href = `http://localhost/Astro-salesianum/src/ProfileUser.php`;
+                    });
+                    </script>';
     }
 } else {
     header("Location: ../Error.php");
@@ -77,3 +104,6 @@ if (strpos($ID, ".") !== false && strrpos($ID, ".") > strpos($ID, "@")) {
 
 mysqli_close($conexion);
 ?>
+</body>
+</html>
+

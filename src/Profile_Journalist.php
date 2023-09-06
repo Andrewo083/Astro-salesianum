@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./ChalecoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Chaleco</span>
+            <span>Santa Cecilia</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -304,7 +304,7 @@ while ($row = mysqli_fetch_array($result)) {
                             <div class="w-full flex-none text-lg text-gray-100 font-bold leading-none p-2"><?php echo $new_row['headline'] ?></div>
                               <div class="flex-auto text-gray-100 my-1">
                                    <span class="mr-3 "><?php echo $new_row['Category'] ?></span><span class="mr-3 border-r border-gray-600  max-h-0"></span><span>Casa: <?php echo $new_row['school'] ?></span>
-                                    <p class="">Fotógrafo.: <?php echo $new_row['photographer'] ?></p>
+                                    <p class="">Fotógrafo: <?php echo $new_row['photographer'] ?></p>
                                     <?php echo $new_row['drophead'] ?>
                                    <p class=""><?php echo $new_row['date'] ?></p>
 

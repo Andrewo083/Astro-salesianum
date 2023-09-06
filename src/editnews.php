@@ -1,24 +1,9 @@
 <?php 
 session_start();
 
-if($_SESSION['ROL'] == 3){
 
-    header("Location: ./Error.php");
 
-}else{
-
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-
-$email = $_SESSION['Email'];
-$QueryJournalist = "SELECT * FROM reporter WHERE Email = '$email'";
-$ResultJournalist = mysqli_query($conexion, $QueryJournalist);
-while($RowQuery = mysqli_fetch_array($ResultJournalist)){
-  $ProfileImage = $RowQuery['ProfileImage'];
-}
-$new= $_GET['new'];
-$carpet_images = "../img/";
-$query = "SELECT * FROM `news` WHERE `id_news` = '$new'";
-$result = mysqli_query($conexion, $query);
+include("./PHP/editNews-Var.php");
 while($row = mysqli_fetch_array($result)){
 
 
@@ -95,7 +80,7 @@ while($row = mysqli_fetch_array($result)){
             href="./ChalecoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Chaleco</span>
+            <span>Santa Cecilia</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -358,7 +343,7 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 </body>
 </html>
 
-<?php } } ?>  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<?php }  ?>  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
   $(".nav-toggler").each(function(_, navToggler) {

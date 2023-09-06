@@ -74,7 +74,7 @@ include("./PHP/ProfUserStart.php");
             href="./ChalecoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Chaleco</span>
+            <span>Santa Cecilia</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -208,6 +208,9 @@ include("./PHP/ProfUserStart.php");
           <div class="w-full flex flex-col md:w-1/3">
             <div class="flex-1 bg-white rounded-lg shadow-xl p-8">
               <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
+
+
+              
               <form action="./PHP/UptdateUser.php?ID=<?php echo $_SESSION['Email'] ?>" method="post">
                 <ul class="mt-2 text-gray-700 ">
                   <li class="flex border-y py-2 ">

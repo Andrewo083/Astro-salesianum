@@ -1,24 +1,7 @@
 <?php 
 session_start();
-
-
-
-if($_SESSION['ROL'] != 1){  
-  header("Location: ./Error.php");  
-  
-  }else{
-
-
-$conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-
-$email_reporter = $_GET['reporter'];
-$QueryReporter = "SELECT * FROM reporter WHERE Email = '$email_reporter'";
-$ResultReporter = mysqli_query($conexion, $QueryReporter);
+include("./PHP/editJourVar.php");
 while($RowReporter = mysqli_fetch_array($ResultReporter)){
-  
-
-
-
 ?>
 
 
@@ -248,7 +231,7 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
-<?php } } ?>
+<?php }  ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>

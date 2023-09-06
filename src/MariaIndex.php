@@ -153,9 +153,7 @@ include("./PHP/MariaVar.php");
 
 
 <?php while($row = mysqli_fetch_array($result)){
-  $contenido = $row['BodyOne']; // Supongamos que aquí tienes el contenido de la base de datos
-  $numero_caracteres = 300;
-  $contenido_recortado = substr($contenido, 0, $numero_caracteres);
+ include("./PHP/SchoolContent.php");
 ?>
         <!--INCIO DE NOTICIA-->
        
@@ -171,15 +169,8 @@ include("./PHP/MariaVar.php");
         
           <div class="pt-2 pr-0 pb-0 pl-0">
            <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline">
-               <?php
-                $email = $row['id_reporter'];
-
-              include( "./PHP/PrintJournalist.php");
-              if($email == NULL){
-                echo "@Astro Salesianum";
-              }else{
-              echo "@".$Name.$LastName;
-              }
+              <?php 
+              include("./PHP/SchoolVerifRepor.php");
               ?>
             </p>
             <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <?php echo $row['date']; ?> ·</p>

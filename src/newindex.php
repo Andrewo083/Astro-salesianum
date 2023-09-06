@@ -51,7 +51,7 @@ $name = $_SESSION['Name'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroSalesianum News</title>
   <link rel="stylesheet" href="../Public/tailwind.css" />
-
+  <link rel="stylesheet" href="./css/ProfileImage.css">
   <link rel="stylesheet" href="../Public/menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -125,13 +125,14 @@ $name = $_SESSION['Name'];
           <a href="./<?php include "./PHP/RestrictAncleRol.php" ?>">
         <div class="imagen-circular hidden lg:block" >
         <!-- Aquí colocas la URL de la imagen -->
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" class="h-8 w-8">
+                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Imagen Circular" >
                   </div>
                   </a>
+                 
     
         </div>
          </div>
-    </nav>
+    </nav><br><br><br>
                       <form action="" method="post">
                        
                       <?php 
@@ -250,17 +251,16 @@ if(isset($_POST['Special'])){
   $culture = false;
  
 ?>
-<br><br><br><br><br>
+
 <section class="my-8">
-<br><br><br><br><br>
+
                               <div class="container mx-auto px-6">
-                              <br><br><br><br><br>
-                              <br><br><br><br><br>
+                             
                    
                                   <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('../img/eventsrical.jpg')">
-                                  <br><br><br><br><br><br><br><br><br><br>
+                                
                                       <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                                          <div class="px-10 max-w-xl"><br><br><br><br><br><br><br><br><br><br>
+                                          <div class="px-10 max-w-xl">
                                               <h2 class="text-2xl text-white font-semibold">Eventos especiales</h2>
                                               <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar los eventos que realizan nuestros jóvenes en sus colegios al compartir un momento de fraternidad y competencia.</p>
                                               <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@epicyears!✅</b></a></i>

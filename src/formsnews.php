@@ -11,21 +11,6 @@ if(isset($_SESSION['Email'])){
   
 $Email = $_SESSION['Email'];
 $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
-$carpet_images = "../img/";
-$query = "SELECT * FROM `reporter` WHERE `email` = '$Email'";
-$result = mysqli_query($conexion, $query);
-
-
-
-while ($row = mysqli_fetch_array($result)) {
-
-
-
-
-
-}
-
-
 
 ?>
 
@@ -89,7 +74,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./ChalecoIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Chaleco</span>
+            <span>Santa Cecilia</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
