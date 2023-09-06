@@ -9,8 +9,9 @@ if ($_SESSION['ROL'] != 3) {
   header("Location: ./Error.php");
 } else {
 
-  include("./PHP/ProfUserStart.php");
+include("./PHP/ProfUserStart.php");
   while ($row = mysqli_fetch_array($result)) {
+
 
 ?>
 
@@ -30,62 +31,90 @@ if ($_SESSION['ROL'] != 3) {
       <link rel="stylesheet" href="./css/ProfileImageUser.css">
       <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
-      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
     </head>
 
     <body>
-      <style>
-        div iframe {
-          display: none !important;
-        }
+    <style>
+    div iframe {
+      display: none !important;
+    }
 
-        body {
-          top: 0 !important;
-        }
-      </style>
-      <!--VIVA EL SEXOOOOOOOOOO-->
+    body {
+      top: 0 !important;
+    }
+    </style>
+    <!--VIVA EL SEXOOOOOOOOOO-->
       <!-- navbar -->
 
       <div>
         <section class="relative mx-auto">
           <!-- navbar -->
           <nav class="flex items-center bg-black p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
-            <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
-              <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
-              <span class="text-xl text-white font-bold uppercase tracking-wide">Astro Salesianum</span>
-            </a>
-
-            <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target="#navigation">
-              <i class="material-icons">menu</i>
-            </button>
-            <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
-              <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-                <a href="./newindex.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span>Inicio</span>
-                </a>
-                <a href="./ChalecoIndex.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span>Santa Cecilia</span>
-                </a>
-                <a href="./DonBoscoIndex.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span>Don Bosco</span>
-                </a>
-                <a href="./Ricalindex.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span>Ricaldone</span>
-                </a>
-                <a href="./MariaIndex.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span>Maria Auxiliadora</span>
-                </a>
-
-                <a href="./PHP/Logout.php" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white">
-                  <span><b>Cerrar Sesión</b></span>
-                </a>
-
-              </div>
-            </div>
-          </nav>
+      <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
+    <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
+        <span class="text-xl text-white font-bold uppercase tracking-wide"
+          >Astro Salesianum</span
+        >
+      </a>
+  
+      <button
+        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        data-target="#navigation"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+        <div
+          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
+        >
+          <a
+            href="./newindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Inicio</span>
+          </a>
+          <a
+            href="./ChalecoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Santa Cecilia</span>
+          </a>
+          <a
+            href="./DonBoscoIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span  >Don Bosco</span>
+          </a>
+          <a
+            href="./Ricalindex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white  items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Ricaldone</span>
+          </a>
+          <a
+            href="./MariaIndex.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>Maria Auxiliadora</span>
+          </a>
+          
+          <a
+            href="./PHP/Logout.php"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span><b>Cerrar Sesión</b></span>
+          </a>
+    
+        </div>
+         </div>
+    </nav>
 
 
         </section>
@@ -191,7 +220,7 @@ if ($_SESSION['ROL'] != 3) {
               <h4 class="text-xl text-gray-900 font-bold">¡Edita tu Información personal!</h4>
 
 
-
+              
               <form action="./PHP/UptdateUser.php?ID=<?php echo $_SESSION['Email'] ?>" method="post">
                 <ul class="mt-2 text-gray-700 ">
                   <li class="flex border-y py-2 ">
@@ -385,3 +414,4 @@ if ($_SESSION['ROL'] != 3) {
   }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
