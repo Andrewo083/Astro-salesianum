@@ -31,7 +31,7 @@ $imagen = $_FILES['imagen']['name'];
    include("./Wait.html");
    
 
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
    
 
 

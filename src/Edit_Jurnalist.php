@@ -30,6 +30,15 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
   }</script>
 </head>
 <body class="w-full h-screen bg-no-repeat bg-cover" style="background-image: url('../img/cdbevents.jpg');">
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
     <section class="relative mx-auto">
             <!-- navbar -->
             <nav class="flex items-center bg-gray-900 p-3 flex-wrap">
@@ -57,7 +66,7 @@ while($RowReporter = mysqli_fetch_array($ResultReporter)){
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./welcomeAdmin.php"

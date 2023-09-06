@@ -31,9 +31,9 @@ $imagen = $_FILES['imagen']['name'];
     
     include("./Wait.html");
     if($_SESSION['ROL']==2){
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
     }else if($_SESSION['ROL']==1){
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
     }
    
 }

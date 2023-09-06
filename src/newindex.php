@@ -52,6 +52,7 @@ $name = $_SESSION['Name'];
   <title>AstroSalesianum News</title>
   <link rel="stylesheet" href="../Public/tailwind.css" />
   <link rel="stylesheet" href="./css/ProfileImage.css">
+  <link rel="stylesheet" href="../Public/boton.css">
   <link rel="stylesheet" href="../Public/menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -60,7 +61,15 @@ $name = $_SESSION['Name'];
   <link rel="stylesheet" href="../Public/boton.css">
 </head>
 <body>
-  
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
   
 
 
@@ -90,7 +99,7 @@ $name = $_SESSION['Name'];
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -193,7 +202,7 @@ if(isset($_POST['Special'])){
                 <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                   <div class="px-10 max-w-xl">
                     <h2 class="text-2xl text-white font-semibold">Deportes</h2>
-                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/epicyears/"><b>@Rubén Nieto✅</b></a></i>
+                    <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p> <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/rubnniett_/"><b>@Rubén Nieto✅</b></a></i>
                     <button name="Everything" class="flex items-center mt-4 px-3 py-2 bg-red-600 text-white text-sm uppercase font-medium rounded hover:bg-red-500 focus:outline-none focus:bg-red-500">
                       <span>Regresar</span>
 
@@ -279,7 +288,7 @@ if(isset($_POST['Special'])){
                 <div class="px-10 max-w-xl">
                   <h2 class="text-2xl text-white font-semibold">Deportes</h2>
                   <p class="mt-2 text-gray-100">¡Aqui! Puedes encontrar sobre las noticias más importantes de la Liga Salesiana con las competencias y juegos deportivos que realizan nuestros jóvenes.</p>
-                  <i class="text-gray-300">Fotografías son cortesía de: <a href=""><b>@Rubén Nieto✅</b></a></i>
+                  <i class="text-gray-300">Fotografías son cortesía de: <a href="https://www.instagram.com/rubnniett_"><b>@Rubén Nieto✅</b></a></i>
                   <button name="Sports" class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                     <span>Ver noticias</span>
                     <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -528,9 +537,7 @@ while($row = mysqli_fetch_array($result)){
 
 
                       <!--LINK DEL JS-->
-                    <script> 
-function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 
 
@@ -546,7 +553,6 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
         <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
 
 
-        <div class="translate " id="google_translate_element">
 
 
           <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
@@ -569,12 +575,16 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+              
+              
           </div>
       </div>
   </div>
+  <div class="group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
 </footer>
                  
 </body>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
@@ -589,4 +599,7 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 });
 
 </script>
+<script> 
+function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </html>

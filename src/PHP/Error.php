@@ -26,7 +26,7 @@ echo $_SESSION['ROL'];
                 </a>
                 <!-- Nav Links -->
               <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Hogar</a></li>
+                <li><a  href="./newindex.php" class="hover:text-gray-200" href="#">Inicio</a></li>
                 <li><a href="./ChalecoIndex.php" class="hover:text-gray-200" >Santa Cecilia</a></li>
                 <li><a href="./Ricalindex.php" class="hover:text-gray-200" href="#">Ricaldone</a></li>
                 <li><a href="./DonBoscoIndex.php" class="hover:text-gray-200" href="#">Don Bosco</a></li>

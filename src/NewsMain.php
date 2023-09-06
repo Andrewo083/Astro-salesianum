@@ -28,6 +28,15 @@ while ($row = mysqli_fetch_array($result)) {
 </head>
   
 <body>
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
 
   <nav class="flex items-center bg-black p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
@@ -54,7 +63,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto  px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./DonBoscoIndex.php"

@@ -33,6 +33,15 @@ $carpet_images = "../img/";
 
 <body>
 
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
       <nav class="flex items-center bg-blue-900 p-3 flex-wrap fixed top-0 w-full" style="z-index: 1000;">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
@@ -58,7 +67,7 @@ $carpet_images = "../img/";
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -178,39 +187,39 @@ $carpet_images = "../img/";
     </div>
   </div> <br><br><br><br><br><br>
   <footer class="bg-gray-800">
-    <div class="container px-3 py-5 mx-auto">
-      <div class="flex flex-col items-center text-center">
-        <a href="#">
-          <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
-        </a>
+        <div class="container px-3 py-5 mx-auto">
+          <div class="flex flex-col items-center text-center">
+            <a href="#">
+              <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
+            </a>
 
-        <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
+            <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
 
-        <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+            <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
+
+
+
+            </div>
+          </div>
+
+          <hr class="my-10 border-gray-200" />
+
+          <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+
+            <div class="flex mt-3 -mx-2 sm:mt-0">
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
+
+              <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+            </div>
+          </div>
+        </div>
 
         <div class="group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
 
-        </div>
-      </div>
-
-      <hr class="my-10 border-gray-200" />
-
-      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-        <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
-
-        <div class="flex mt-3 -mx-2 sm:mt-0">
-          <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit">
-           
-          </a>
-
-          <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
-
-          <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
-
-        </div>
-      </div>
-    </div>
-  </footer>
+      </footer>
   <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({

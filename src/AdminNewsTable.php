@@ -26,6 +26,16 @@ if($_SESSION['ROL'] != 1){
 </head>
 <body  class="w-full h-full bg-cover"
 style="background-image: url('../img/bg_4.jpg');">
+
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
 <nav class="flex items-center bg-gray-900 p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
@@ -51,7 +61,7 @@ style="background-image: url('../img/bg_4.jpg');">
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./welcomeAdmin.php"

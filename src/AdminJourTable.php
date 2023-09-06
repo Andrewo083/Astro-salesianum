@@ -21,6 +21,15 @@ include("./PHP/AdminJourData.php");
 </head>
 
 <body class=" bg-cover w-full h-full" style="background-image: url('../img/bg_4.jpg');">
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
 <div>
         <section class="relative mx-auto">
             <!-- navbar -->
@@ -49,7 +58,7 @@ include("./PHP/AdminJourData.php");
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./welcomeAdmin.php"

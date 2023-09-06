@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     include("./Wait.html");
 
-                    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Login.php');
+                    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Login.php');
                 } else {
                     $esperaRegistro = 'Ha ocurrido un error. Por favor, inténtalo nuevamente.';
                     include("./Error.php");

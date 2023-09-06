@@ -24,6 +24,17 @@ include("./PHP/adminVerif.php");
      <link rel="stylesheet" href="./css/Translate.css">
 </head>
 <body>
+
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
+
 <nav class="flex items-center bg-gray-900 p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
@@ -49,7 +60,7 @@ include("./PHP/adminVerif.php");
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./welcomeAdmin.php"
@@ -91,13 +102,14 @@ include("./PHP/adminVerif.php");
     </nav>
 
    
-	<div class="object-cover first-letter:bg-no-repeat"style="background-image: url(../img/AdminBKG.png)">
-	</div>
+		<div class=" bg-red-200 h-[250px] sm:h-[450px] bg-no-repeat"style="background-image: url(../img/bg.2.jpeg)">
+    </div>
+	
 
       <div class="-mt-64 ">
         <div class="w-full text-center">
-            <h1 class="font-bold text-5xl text-white">
-                ASTRO <b>ADMINISTRACIÓN</b>
+            <h1 class="font-bold text-2xl sm:text-5xl mt-10 sm:mt-0 text-white">
+                ASTRO <b class="">ADMINISTRACIÓN</b>
             </h1>
           <p class="text-sm tracking-widest  text-white">¿Que desea hacer?</p>
         </div>
@@ -165,6 +177,7 @@ include("./PHP/adminVerif.php");
   
       </div>
       </div>
+      
   
       <footer class="bg-gray-800">
   <div class="container px-3 py-5 mx-auto">

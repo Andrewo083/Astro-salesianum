@@ -27,7 +27,7 @@ $imagen = $_FILES['imagen']['name'];
 
     mysqli_query($conexion, $query);
     include("./Wait.html");
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
    
 
 

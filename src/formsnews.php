@@ -43,7 +43,19 @@ $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
         }
     </style>
 </head>
-<body><nav class="flex items-center bg-black p-3 flex-wrap">
+<body>
+
+<style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
+  
+<nav class="flex items-center bg-black p-3 flex-wrap">
       <a href="./newindex.php" class="p-2 mr-4 inline-flex items-center">
     <img src="../img/AstroFavicon.png" alt="" class="h-8 w-8 mr-2">
         <span class="text-xl text-white font-bold uppercase tracking-wide"
@@ -68,7 +80,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -92,7 +104,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'astrodb');
             href="./MariaIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span>Maria</span>
+            <span>Maria Auxiliadora</span>
           </a>
           
           <a

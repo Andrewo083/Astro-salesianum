@@ -14,10 +14,10 @@ $resultado = mysqli_query($conexion, $sql);
 
 if (mysqli_affected_rows($conexion) > 0) {
     include("./Wait.html");
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
 } else {
     include("./Error.php");
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
 }
 
 mysqli_close($conexion);

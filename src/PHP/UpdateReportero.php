@@ -69,17 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($count_reporter > 0 || $count_user > 0) {
                         // El correo electrónico ya está registrado en otra tabla
                         echo "El correo ya ha sido utilizado";
-                        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
                     } else {
                         // Consulta SQL para actualizar el registro del reportero
                         $sql = "UPDATE `reporter` SET ProfileImage='$imagen', Email='$email', Password='$password', Name='$name', LastName='$lastName', PhoneNumber='$phoneNumber' WHERE Email='$reportero_id'";
 
                         if ($conexion->query($sql) === TRUE) {
                             include("./Wait.html");
-                            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
                         } else {
                             include("./Error.php");
-                            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
+                            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminJourTable.php');
                         }
                     }
                 }

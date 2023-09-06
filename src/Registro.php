@@ -28,7 +28,15 @@ include("./PHP/InsertRegistro.php");?>
 
 
 <body>
+<style>
+    div iframe {
+      display: none !important;
+    }
 
+    body {
+      top: 0 !important;
+    }
+    </style>
     <!-- component -->
 
 

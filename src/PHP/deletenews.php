@@ -10,7 +10,7 @@ if($_SESSION['ROL']==1){
 
     mysqli_query($conexion, $query);
     include("./Wait.html");
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminNewsTable.php');
 
 }elseif($_SESSION['ROL']==2){
        $conexion = mysqli_connect('localhost', 'root', '','astrodb')or die(mysqli_error($mysqli));
@@ -21,7 +21,7 @@ if($_SESSION['ROL']==1){
 
     mysqli_query($conexion, $query);
     include("./Wait.html");
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/Profile_Journalist.php');
 }
 
 

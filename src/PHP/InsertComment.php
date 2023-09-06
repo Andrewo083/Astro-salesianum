@@ -64,10 +64,10 @@ if(isset($_SESSION['Email'])){
         if ($conexion->query($sql)) {
             //pagina wait
             include("./Wait.html");
-         header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
+         header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
         } else {
             include("./Error.php");
-            header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
+            header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/NewsMain.php?new='.urlencode($id_new));
         }
     }
 

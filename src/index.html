@@ -20,32 +20,32 @@
 			var xx = setInterval(function () {
 				switch (cont) {
 					case 0: {
-						$("#slider-1").fadeOut(400);
-						$("#slider-2").delay(400).fadeIn(400);
+						$("#slider-1").fadeOut(300);
+						$("#slider-2").delay(300).fadeIn(300);
 						$("#sButton1").removeClass("bg-purple-800");
 						$("#sButton2").addClass("bg-purple-800");
 						cont = 1;
 						break;
 					}
 					case 1: {
-						$("#slider-2").fadeOut(400);
-						$("#slider-3").delay(400).fadeIn(400);
+						$("#slider-2").fadeOut(300);
+						$("#slider-3").delay(300).fadeIn(300);
 						$("#sButton2").removeClass("bg-purple-800");
 						$("#sButton3").addClass("bg-purple-800");
 						cont = 2;
 						break;
 					}
 					case 2: {
-						$("#slider-3").fadeOut(400);
-						$("#slider-4").delay(400).fadeIn(400);
+						$("#slider-3").fadeOut(300);
+						$("#slider-4").delay(300).fadeIn(300);
 						$("#sButton3").removeClass("bg-purple-800");
 						$("#sButton4").addClass("bg-purple-800");
 						cont = 3;
 						break;
 					}
 					case 3: {
-						$("#slider-4").fadeOut(400);
-						$("#slider-1").delay(400).fadeIn(400);
+						$("#slider-4").fadeOut(300);
+						$("#slider-1").delay(300).fadeIn(300);
 						$("#sButton4").removeClass("bg-purple-800");
 						$("#sButton1").addClass("bg-purple-800");
 						cont = 0;
@@ -61,38 +61,38 @@
 		}
 	
 		function sliderButton1() {
-			$("#slider-2, #slider-3, #slider-4").fadeOut(400);
-			$("#slider-1").delay(400).fadeIn(400);
+			$("#slider-2, #slider-3, #slider-4").fadeOut(300);
+			$("#slider-1").delay(300).fadeIn(300);
 			$("#sButton2, #sButton3, #sButton4").removeClass("bg-purple-800");
 			$("#sButton1").addClass("bg-purple-800");
-			reinitLoop(4000);
+			reinitLoop(2000);
 			cont = 0;
 		}
 	
 		function sliderButton2() {
-			$("#slider-1, #slider-3, #slider-4").fadeOut(400);
-			$("#slider-2").delay(400).fadeIn(400);
+			$("#slider-1, #slider-3, #slider-4").fadeOut(300);
+			$("#slider-2").delay(300).fadeIn(300);
 			$("#sButton1, #sButton3, #sButton4").removeClass("bg-purple-800");
 			$("#sButton2").addClass("bg-purple-800");
-			reinitLoop(4000);
+			reinitLoop(2000);
 			cont = 1;
 		}
 	
 		function sliderButton3() {
-			$("#slider-1, #slider-2, #slider-4").fadeOut(400);
-			$("#slider-3").delay(400).fadeIn(400);
+			$("#slider-1, #slider-2, #slider-4").fadeOut(300);
+			$("#slider-3").delay(300).fadeIn(300);
 			$("#sButton1, #sButton2, #sButton4").removeClass("bg-purple-800");
 			$("#sButton3").addClass("bg-purple-800");
-			reinitLoop(4000);
+			reinitLoop(2000);
 			cont = 2;
 		}
 	
 		function sliderButton4() {
-			$("#slider-1, #slider-2, #slider-3").fadeOut(400);
-			$("#slider-4").delay(400).fadeIn(400);
+			$("#slider-1, #slider-2, #slider-3").fadeOut(300);
+			$("#slider-4").delay(300).fadeIn(300);
 			$("#sButton1, #sButton2, #sButton3").removeClass("bg-purple-800");
 			$("#sButton4").addClass("bg-purple-800");
-			reinitLoop(4000);
+			reinitLoop(2000);
 			cont = 3;
 		}
 	
@@ -106,6 +106,16 @@
 	</head>
 	
 	<body>
+
+		<style>
+			div iframe {
+			  display: none !important;
+			}
+		
+			body {
+			  top: 0 !important;
+			}
+			</style>
 	  <div class="sliderAx h-auto">
 		  <div id="slider-1" >
 			<div class="bg-cover bg-center  h-auto text-white py-56 px-10 object-fill" style="background-image: url(../img/index1.jpg)">

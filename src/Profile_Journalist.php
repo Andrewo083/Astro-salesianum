@@ -62,6 +62,15 @@ while ($row = mysqli_fetch_array($result)) {
   </head>
   
   <body>
+  <style>
+    div iframe {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+    </style>
 
     <!-- component -->
     <div>
@@ -92,7 +101,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./ChalecoIndex.php"
@@ -116,7 +125,7 @@ while ($row = mysqli_fetch_array($result)) {
             href="./MariaIndex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span>Maria</span>
+            <span>Maria Auxiliadora</span>
           </a>
           
           <a

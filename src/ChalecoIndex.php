@@ -61,7 +61,7 @@ include("./PHP/ChalecoFirstData.php");
             href="./newindex.php"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-white hover:text-black"
           >
-            <span  >Hogar</span>
+            <span  >Inicio</span>
           </a>
           <a
             href="./DonBoscoIndex.php"
@@ -183,41 +183,43 @@ include("./PHP/SchoolContent.php");
        
       </div>
     </div>
-  </div> <br><br><br><br><br>
-    <footer class="bg-yellow-800">
-  <div class="container px-3 py-5 mx-auto">
-      <div class="flex flex-col items-center text-center">
-          <a href="#">
+  </div> 
+  <footer class="bg-gray-800">
+        <div class="container px-3 py-5 mx-auto">
+          <div class="flex flex-col items-center text-center">
+            <a href="#">
               <img class="w-auto h-14" src="../img/AstroFavicon.png" Alt="Imagen representativa de Noticias Astro Salesianum">
-          </a>
+            </a>
 
-          <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
+            <p class="max-w-md mx-auto mt-4 text-white">Astro Salesianum</p>
 
-          <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
-          <div class="group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
+            <div class="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
 
-              
+
+
+            </div>
           </div>
-      </div>
 
-      <hr class="my-10 border-gray-200" />
+          <hr class="my-10 border-gray-200" />
 
-      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
+          <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-500">© Copyright 2023. Crea J Astro Salesianum.</p>
 
-          <div class="flex mt-3 -mx-2 sm:mt-0">
+            <div class="flex mt-3 -mx-2 sm:mt-0">
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Teams </a>
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Privacy </a>
 
               <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit"> Cookies </a>
+            </div>
           </div>
+        </div>
 
-          <div class = "group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
-      </div>
-  </div>
+        <div class="group fixed bottom-0 right-0 p-2  flex items-end justify-end w-24 h-24 " id="google_translate_element">
 
-  <script> 
+      </footer>
+</body>
+<script> 
 function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: "es",includedLanguages: "en,es",}, "google_translate_element" ); } </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -236,7 +238,5 @@ function googleTranslateElementInit() { new google.translate.TranslateElement({ 
 });
 
 </script>
-</footer>
-</body>
 
 </html>

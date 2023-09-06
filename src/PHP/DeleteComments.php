@@ -18,16 +18,16 @@ if ($conexion->query($SQL)) {
     include("./Wait.html");
     
     if($_SESSION['ROL']== 1){
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
     }else{
-        header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
+        header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/ProfileUser.php');
     }
 
     
 } else {
     include("./Error.php");
 
-    header('Refresh: 2; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
+    header('Refresh: 1; URL=http://localhost/Astro-salesianum/src/AdminComTable.php');
 }
 
 $conexion->close();
