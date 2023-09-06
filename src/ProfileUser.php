@@ -138,7 +138,7 @@ include("./PHP/ProfUserStart.php");
                 <div class=" bg-white p-2 rounded-full md:p-4; ">
                   <div class="imagen-circular">
 
-                    <img src="../img/<?php echo $_SESSION['ProfileImage'] ?>" alt="Foto de perfil">
+                    <img src="../img/<?php  echo $row['ProfileImage']; ?>" alt="Foto de perfil">
                   </div>
 
                 </div>
@@ -205,7 +205,7 @@ include("./PHP/ProfUserStart.php");
 
 
             <div class="flex items-center space-x-2 mt-2">
-              <p class="text-2xl"><?php echo $_SESSION['Name']; ?></p>
+              <p class="text-2xl"><?php  echo $row['Name']; ?></p>
 
             </div>
             <p class="text-gray-700">Correo: <?php echo $row['Email']; ?> </p>
@@ -273,7 +273,7 @@ include("./PHP/ProfUserStart.php");
             </div>
 
           </div>
-
+       
           <div class="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
             <h4 class="text-xl text-gray-900 font-bold">Comentarios</h4>
 
