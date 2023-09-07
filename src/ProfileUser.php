@@ -12,7 +12,7 @@ if ($_SESSION['ROL'] != 3) {
 include("./PHP/ProfUserStart.php");
   while ($row = mysqli_fetch_array($result)) {
 
-    $_SESSION['ProfileImage'] = $row['ProfileImage'];
+   $_SESSION['ProfileImage'] = $row['ProfileImage'];
 
 
 ?>

@@ -20,6 +20,7 @@ if(
 include("./PHP/ProfJurnVarOne.php");
 
 while ($row = mysqli_fetch_array($result)) {
+  $_SESSION['ProfileImage'] = $row['ProfileImage'];
 
 
 
